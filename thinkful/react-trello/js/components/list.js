@@ -9,13 +9,16 @@ export default class List extends React.Component {
     }
 
     render() {
+        const jv = this.props.cards.map((item, idx) => {
+            return (
+                <div key={item.id}>
+                    <Card text={item.text}/>
+                </div>
+            )
+        });
         return (
-            <div className="each-board">
-                <h2>Board title: {this.props.title}</h2>
-                this.props.
-            // <div className="list">
-            //     {list}
-            // </div>
+            <div>
+                {jv}
             </div>
         );
     }
