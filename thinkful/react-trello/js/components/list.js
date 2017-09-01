@@ -3,6 +3,28 @@
 import React from 'react';
 import Card from './card';
 
+export default class List extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="each-board">
+                <h2>Board title: {this.props.title}</h2>
+                this.props.
+            // <div className="list">
+            //     {list}
+            // </div>
+            </div>
+        );
+    }
+
+
+}
+
+/*
+stateless
 
 export default function List() {
     const card = [];
@@ -10,8 +32,10 @@ export default function List() {
         card.push(<Card />);
     }
     return (
+        <h2>{this.props.title}</h2>
         <div className="list">
-            {card}
+            {this.props.cards}
         </div>
     );
 }
+*/
