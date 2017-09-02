@@ -6,29 +6,18 @@ import Card from './card';
 export default class List extends React.Component {
     constructor(props) {
         super(props);
+        console.log("--- List(constructor)");
         this.state = {value: ''};
-        this.handleChange = this.props.onChange.bind(this);
-        this.handleSubmit = this.props.onSubmit.bind(this);
-
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.props.onAddInputChanged.bind(this);
+        this.handleSubmit = this.props.onAddSubmit.bind(this);
     }
 
-    // handleSubmit(event) {
-    //     alert('A name was submitted: ' + this.state.value);
-    //     event.preventDefault();
-    // }
-
-    // handleChange(event) {
-    //     console.log("handlechange");
-    //     this.setState({value: event.target.value});
-    // }
-
     render() {
+        console.log("--- list:render");
         const jv = this.props.cards.map((item, idx) => {
             return (
-                <div key={item.id}>
-                    <Card text={item.text}/>
+                <div key={Math.floor(Math.random() * 100000)}>
+                    <Card text={item}/>
                 </div>
             )
         });
@@ -39,13 +28,13 @@ export default class List extends React.Component {
                     <div className="js--error-msg form-error"></div>
                     <div>
                         <input id="card" name="card" type="text" required placeholder="Card" 
-                                value={this.state.value} onChange={this.handleChange} />
+                                onBlur={this.handleChange} />
                     </div>
-
                     <button className="submit-button" type="submit">Add Card</button>
                 </form>
             </div>
         );
     }
-
 }
+
+// value={this.state.value} 
