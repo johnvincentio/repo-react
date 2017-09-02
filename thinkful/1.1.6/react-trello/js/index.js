@@ -44,9 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('app')
     );
 });
-
-/*
-document.addEventListener('DOMContentLoaded', () =>
-    ReactDOM.render(<Board />, document.getElementById('app'))
-);
-*/
