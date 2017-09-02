@@ -11,9 +11,7 @@ export default function Board() {
 
     return (
         <div className="list">
-            abcd
             {list}
-            efgh
         </div>
     );
 }
