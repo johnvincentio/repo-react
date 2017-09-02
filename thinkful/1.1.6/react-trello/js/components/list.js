@@ -49,20 +49,3 @@ export default class List extends React.Component {
     }
 
 }
-
-/*
-stateless
-
-export default function List() {
-    const card = [];
-    for (let i=0; i<3; i++) {
-        card.push(<Card />);
-    }
-    return (
-        <h2>{this.props.title}</h2>
-        <div className="list">
-            {this.props.cards}
-        </div>
-    );
-}
-*/

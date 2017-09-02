@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     ReactDOM.render(
         <Board title="Board Name from index.js" lists={data} />, 
-        document.getElementById('app')
+            document.getElementById('app')
     );
 });
 
