@@ -11,7 +11,7 @@ export default class Board extends React.Component {
     render() {
         return (
             <div key={Math.floor(Math.random() * 100000)}>
-                <h2>Board main title: Any title</h2>
+                <h2>Board main title: {this.props.title}</h2>
                 <ListContainer />
             </div>
         );
