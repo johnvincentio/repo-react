@@ -1,6 +1,7 @@
 
+// js/components/board.js
 import React from 'react';
-import List from './list';
+import ListContainer from './list-container';
 
 export default class Board extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class Board extends React.Component {
       return (
         <div key={this.createId()}>
           <h2>Board title: {item.title}</h2>
-          <List title={title} cards={cards} />
+          <ListContainer title={title} cards={cards} />
         </div>
       );
     });
@@ -36,4 +37,5 @@ export default class Board extends React.Component {
       </div>
     );
   }
+
 }
