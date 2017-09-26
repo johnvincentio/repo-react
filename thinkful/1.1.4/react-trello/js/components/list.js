@@ -2,14 +2,31 @@
 import React from 'react';
 import Card from './card';
 
-export default function List() {
-  const cards = [];
-  for (let i = 0; i < 3; i++) {
-    cards.push(<Card />);
+export default class List extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  return (
-    <div className="card-list">
-      {cards}
-    </div>
-  );
+
+  createId() {
+    return Math.floor(Math.random() * 100000);
+  }
+
+  render() {
+    const jv = this.props.cards.map((item, idx) => {
+      return (
+        <div key={this.createId()}>
+          <Card text={item.text} />
+        </div>
+      );
+    });
+  
+    return (
+      <div>
+        <h3>{this.props.title}</h3>
+        <div className="card-list">
+          {jv}
+        </div>
+      </div>
+    );
+  }
 }
