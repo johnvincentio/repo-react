@@ -19,7 +19,7 @@ export default class List extends React.Component {
         </div>
       );
     });
-  
+
     return (
       <div>
         <h3>{this.props.title}</h3>
