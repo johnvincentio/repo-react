@@ -29,8 +29,8 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-			},
-			{
+      },
+      {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -48,8 +48,8 @@ const config = {
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
     ],
-	},
-	resolve: {
+  },
+  resolve: {
     extensions: ['.js', '.jsx'],
   },
   plugins: [

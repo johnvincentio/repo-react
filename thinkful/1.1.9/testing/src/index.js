@@ -1,2 +1,3 @@
-require('babel-polyfill');
+const message = require('./message');
 
+document.write(message.sayHello());
