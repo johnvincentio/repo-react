@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EMAILS from './emails';
-import Email from './email';
+import EmailBrief from './email-brief';
 import Utils from './utils';
 
 function Mailbox(props) {
@@ -20,7 +20,8 @@ function Mailbox(props) {
     const item = EMAILS[type][id];
     return (
       <li key={Utils.createId()}>
-        <Email
+        <EmailBrief
+          type={type}
           id={item.id}
           from={item.from}
           to={item.to}
@@ -32,7 +33,7 @@ function Mailbox(props) {
   });
   return (
     <div>
-      <h2>Mailbox header - {type}</h2>
+      <h2>{type}</h2>
       <ul>
         {emails}
       </ul>

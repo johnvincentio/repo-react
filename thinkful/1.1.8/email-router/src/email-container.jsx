@@ -3,12 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import EMAILS from './emails';
-import Email from './email';
+import EmailDetailed from './email-detailed';
 
 function EmailContainer(props) {
   const type = props.match.params.mailbox_name;
   const item = EMAILS[type][props.match.params.id];
-  return (<Email
+  return (<EmailDetailed
+    type={type}
     id={item.id}
     from={item.from}
     to={item.to}
