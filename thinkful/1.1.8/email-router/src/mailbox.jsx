@@ -5,7 +5,7 @@ import EMAILS from './emails';
 import Email from './email';
 import Utils from './utils';
 
-class Mailbox extends React.Component {
+function Mailbox(props) {
   // constructor(props) {
   //   super(props);
 
@@ -15,31 +15,29 @@ class Mailbox extends React.Component {
   //   // this.state = { type: props.match.params.mailbox_name };
   // }
 
-  render() {
-    const type = this.props.match.params.mailbox_name;
-    const emails = Object.keys(EMAILS[type]).map((id) => {
-      const item = EMAILS[type][id];
-      return (
-        <li key={Utils.createId()}>
-          <Email
-            id={item.id}
-            from={item.from}
-            to={item.to}
-            title={item.title}
-            content={item.content}
-          />
-        </li>
-      );
-    });
+  const type = props.match.params.mailbox_name;
+  const emails = Object.keys(EMAILS[type]).map((id) => {
+    const item = EMAILS[type][id];
     return (
-      <div>
-        <h2>Mailbox header - {type}</h2>
-        <ul>
-          {emails}
-        </ul>
-      </div>
+      <li key={Utils.createId()}>
+        <Email
+          id={item.id}
+          from={item.from}
+          to={item.to}
+          title={item.title}
+          content={item.content}
+        />
+      </li>
     );
-  }
+  });
+  return (
+    <div>
+      <h2>Mailbox header - {type}</h2>
+      <ul>
+        {emails}
+      </ul>
+    </div>
+  );
 }
 
 Mailbox.propTypes = {
