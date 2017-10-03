@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Email(props) {
-  // console.log('--- Email');
   return (
     <div>
       <h1>Single Email</h1>

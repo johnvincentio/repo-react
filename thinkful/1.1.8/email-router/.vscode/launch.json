@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run webpack",
+      "program": "${workspaceRoot}/node_modules/.bin/webpack",
+      "args": [ 
+        "--config",
+        "${workspaceRoot}/webpack.config.js"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${file}"
+    }
+  ]
+}
