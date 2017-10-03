@@ -3,9 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
-import Home from './home';
-import Mailbox from './mailbox';
-import EmailContainer from './email-container';
+import Home from './components/home';
+import Mailbox from './components/mailbox';
+import EmailContainer from './components/email-container';
 
 const Main = () => (
   <main>

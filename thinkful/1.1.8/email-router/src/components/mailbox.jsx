@@ -1,9 +1,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import EMAILS from './emails';
+import EMAILS from '../emails';
 import EmailBrief from './email-brief';
-import Utils from './utils';
+import Utils from '../utils';
 
 function Mailbox(props) {
   // constructor(props) {

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import EMAILS from './emails';
+import EMAILS from '../emails';
 import EmailDetailed from './email-detailed';
 
 function EmailContainer(props) {
