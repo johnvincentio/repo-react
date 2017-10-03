@@ -1,8 +1,9 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Email(props) {
-  console.log('--- Email');
+function Email(props) {
+  // console.log('--- Email');
   return (
     <div>
       <h1>Single Email</h1>
@@ -14,3 +15,13 @@ export default function Email(props) {
     </div>
   );
 }
+
+Email.propTypes = {
+  id: PropTypes.number.isRequired,
+  from: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
+
+export default Email;
