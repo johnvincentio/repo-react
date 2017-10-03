@@ -1,5 +1,5 @@
 
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -30,6 +30,11 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
       { // regular css files
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -43,6 +48,9 @@ const config = {
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file

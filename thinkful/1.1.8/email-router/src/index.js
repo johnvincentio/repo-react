@@ -3,6 +3,61 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
+import Home from './home';
+import Mailbox from './mailbox';
+import EmailContainer from './email-container';
+
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/:mailbox_name" component={Mailbox} />
+      <Route path="/:mailbox_name/:id" component={EmailContainer} />
+    </Switch>
+  </main>
+);
+
+/*
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/:mailbox_name" component={Mailbox} />
+    </Switch>
+  </main>
+);
+*/
+
+const Header = () => (
+  <header>
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/inbox">Inbox</Link></li>
+        <li><Link to="/spam">Spam</Link></li>
+        <li><Link to="/inbox/0">Inbox 0</Link></li>
+        <li><Link to="/spam/0">Spam 0</Link></li>
+      </ul>
+    </nav>
+  </header>
+);
+
+const App = () => (
+  <div>
+    <Header />
+    <Main />
+  </div>
+);
+
+// This demo uses a HashRouter instead of BrowserRouter
+// because there is no server to match URLs
+ReactDOM.render((
+  <HashRouter>
+    <App />
+  </HashRouter>
+), document.getElementById('root'));
+
+/*
 // A simple data API that will be used to get the data for our
 // components. On a real website, a more robust data fetching
 // solution would be more appropriate.
@@ -65,63 +120,4 @@ const Roster = () => (
     <Route path="/roster/:number" component={Player} />
   </Switch>
 );
-
-const Schedule = () => (
-  <div>
-    <ul>
-      <li>6/5 @ Evergreens</li>
-      <li>6/8 vs Kickers</li>
-      <li>6/14 @ United</li>
-    </ul>
-  </div>
-);
-
-const Home = () => (
-  <div>
-    <h1>Welcome to the Tornadoes Website!</h1>
-  </div>
-);
-
-// The Main component renders one of the three provided
-// Routes (provided that one matches). Both the /roster
-// and /schedule routes will match any pathname that starts
-// with /roster or /schedule. The / route will only match
-// when the pathname is exactly the string "/"
-const Main = () => (
-  <main>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/roster" component={Roster} />
-      <Route path="/schedule" component={Schedule} />
-    </Switch>
-  </main>
-);
-
-// The Header creates links that can be used to navigate
-// between routes.
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/roster">Roster</Link></li>
-        <li><Link to="/schedule">Schedule</Link></li>
-      </ul>
-    </nav>
-  </header>
-);
-
-const App = () => (
-  <div>
-    <Header />
-    <Main />
-  </div>
-);
-
-// This demo uses a HashRouter instead of BrowserRouter
-// because there is no server to match URLs
-ReactDOM.render((
-  <HashRouter>
-    <App />
-  </HashRouter>
-), document.getElementById('root'));
+*/
