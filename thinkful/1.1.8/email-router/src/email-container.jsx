@@ -6,7 +6,8 @@ import EMAILS from './emails';
 import Email from './email';
 
 function EmailContainer(props) {
-  const item = EMAILS.inbox[props.match.params.id];
+  const type = props.match.params.mailbox_name;
+  const item = EMAILS[type][props.match.params.id];
   return (<Email
     id={item.id}
     from={item.from}
@@ -20,7 +21,7 @@ EmailContainer.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
-      // title: PropTypes.string.isRequired,
+      mailbox_name: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };
