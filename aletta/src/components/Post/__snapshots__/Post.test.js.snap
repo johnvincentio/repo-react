@@ -1,0 +1,24 @@
+exports[`test Post component should render the title as a link when the titleLink prop is true 1`] = `
+<div>
+  <h2
+    className="title">
+    <Link
+      className="link"
+      replace={false}
+      to="/post/undefined" />
+  </h2>
+  <p
+    className="content" />
+</div>
+`;
+
+exports[`test Post component should render the title not as a link 1`] = `
+<div>
+  <h2
+    className="title">
+    My post
+  </h2>
+  <p
+    className="content" />
+</div>
+`;

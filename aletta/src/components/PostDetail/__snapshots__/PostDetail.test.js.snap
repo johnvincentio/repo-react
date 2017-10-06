@@ -1,0 +1,5 @@
+exports[`test PostDetail component should render correctly 1`] = `
+<div>
+  <Post />
+</div>
+`;

@@ -1,0 +1,12 @@
+exports[`test About component should render as expected 1`] = `
+<div>
+  <h1
+    className="heading">
+    Hi, I am Kristian!
+  </h1>
+  <p
+    className="bio">
+    This section is all about me, yay!
+  </p>
+</div>
+`;

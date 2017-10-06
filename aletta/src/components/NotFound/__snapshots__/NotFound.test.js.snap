@@ -1,0 +1,5 @@
+exports[`test NotFound component should render as expected 1`] = `
+<h1>
+  Whoops! There is nothing to see here
+</h1>
+`;

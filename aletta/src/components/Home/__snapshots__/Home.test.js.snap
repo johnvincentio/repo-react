@@ -1,0 +1,35 @@
+exports[`test Home component should render "No posts here" if no posts were supplied 1`] = `
+<div>
+  <p>
+    No posts here
+  </p>
+</div>
+`;
+
+exports[`test Home component should render a single post 1`] = `
+<div>
+  <Post
+    content="One of the easiest ways to get a job in the early GitHub days..."
+    excerpt="One of the easiest ways to get a job"
+    slug="how-to-build-a-progressive-web-app-with-react"
+    title="How to build a progressive web app with React"
+    titleLink={true} />
+</div>
+`;
+
+exports[`test Home component should render two posts 1`] = `
+<div>
+  <Post
+    content="One of the easiest ways to get a job in the early GitHub days..."
+    excerpt="One of the easiest ways to get a job"
+    slug="how-to-build-a-progressive-web-app-with-react"
+    title="How to build a progressive web app with React"
+    titleLink={true} />
+  <Post
+    content="One of the easiest ways to get a job in the early GitHub days..."
+    excerpt="One of the easiest ways to get a job"
+    slug="how-to-build-a-progressive-web-app-with-react"
+    title="How to build a progressive web app with React"
+    titleLink={true} />
+</div>
+`;
