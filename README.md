@@ -10,3 +10,7 @@ see thinkful/1.1.8/email-router
 
 see mocha-image-gallery
 
+
+### Jest Tests for Gallery
+
+see jest-image-gallery

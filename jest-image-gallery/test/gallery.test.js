@@ -19,23 +19,25 @@ describe('Gallery component', function() {
       <Gallery images={data} />,
 		);
     const result = renderer.toJSON();
-    result.props.className.should.equal('gallery');
-    result.children.length.should.equal(3);
+
+    expect(result.props.className).toBe('gallery');
+    expect(result.children.length).toBe(3);
 
     result.children.forEach((item, idx) => {
-      item.type.should.equal('div');
-      item.props.className.should.equal('gallery-image');
-      item.children.length.should.equal(2);
+      expect(item.type).toBe('div');
+      expect(item.props.className).toBe('gallery-image');
+      expect(item.children.length).toBe(2);
 
       const div0 = item.children[0];
-      div0.type.should.equal('img');
-      div0.props.src.should.equal(data[idx].url);
-      div0.props.alt.should.equal(data[idx].description);
+      expect(div0.type).toBe('img');
+      expect(div0.props.src).toBe(data[idx].url);
+      expect(div0.props.alt).toBe(data[idx].description);
 
       const div1 = item.children[1];
-      div1.type.should.equal('p');
-      div1.children.length.should.equal(1);
-      div1.children[0].should.equal(data[idx].description);
+      expect(div1.type).toBe('p');
+      expect(div1.children.length).toBe(1);
+      expect(div1.children[0]).toBe(data[idx].description);
     });
   });
 });
+
