@@ -1,8 +1,9 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './card';
 
-export default class List extends React.Component {
+class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
@@ -11,13 +12,11 @@ export default class List extends React.Component {
   }
 
   render() {
-    const jv = this.props.cards.map((item, idx) => {
-      return (
-          <div key={Math.floor(Math.random() * 100000)}>
-              <Card text={item} />
-          </div>
-      );
-    });
+    const jv = this.props.cards.map(item => (
+      <div key={Math.floor(Math.random() * 100000)}>
+        <Card text={item} />
+      </div>
+    ));
 
     return (
       <div>
@@ -28,11 +27,14 @@ export default class List extends React.Component {
         <form id="js--submit" onSubmit={this.handleSubmit}>
           <div className="js--error-msg form-error" />
           <div>
-              <input id="card" name="card" type="text" 
-                required
-                placeholder="Card"
-                onBlur={this.handleChange}
-              />
+            <input
+              id="card"
+              name="card"
+              type="text"
+              required
+              placeholder="Card"
+              onBlur={this.handleChange}
+            />
           </div>
           <button className="submit-button" type="submit">Add Card</button>
         </form>
@@ -40,3 +42,12 @@ export default class List extends React.Component {
     );
   }
 }
+
+List.propTypes = {
+  title: PropTypes.string.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onAddInputChanged: PropTypes.func.isRequired,
+  onAddSubmit: PropTypes.func.isRequired,
+};
+
+export default List;
