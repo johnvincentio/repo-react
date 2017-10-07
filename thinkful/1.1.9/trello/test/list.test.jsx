@@ -20,7 +20,7 @@ describe('List component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it.only('Renders the List', () => {
+  it('Renders the List', () => {
     const title = 'Current Cards';
     const state = { value: '', cards: ['aaa', 'bbb'] };
     const testRenderer = TestRenderer.create(

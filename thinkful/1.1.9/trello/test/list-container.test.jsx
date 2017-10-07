@@ -7,7 +7,7 @@ import ListContainer from '../src/components/list-container';
 
 /* global describe, it, expect */
 
-describe.only('ListContainer component', () => {
+describe('ListContainer component', () => {
   it('renders a snapshot', () => {
     const title = 'title-list';
     const cards = [

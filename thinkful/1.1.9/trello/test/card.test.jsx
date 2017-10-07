@@ -21,10 +21,6 @@ describe('Card component', () => {
     );
 
     const result = testRenderer.toJSON();
-    // console.log('>>> result');
-    // console.log(result);
-    // console.log('<<< result');
-
     expect(result.type).toBe('div');
     expect(result.children.length).toBe(1);
     expect(result.children[0]).toBe(text);

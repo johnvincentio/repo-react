@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board component renders a snapshot 1`] = `
+<div>
+  <h1>
+    title-list
+  </h1>
+  <div
+    className="list"
+  >
+    <div>
+      <h2>
+        Board title: 
+      </h2>
+      <div>
+        <h3>
+          Current Cards
+        </h3>
+        <div
+          className="card-list"
+        >
+          <div>
+            <div>
+              aaa
+            </div>
+          </div>
+          <div>
+            <div>
+              bbb
+            </div>
+          </div>
+        </div>
+        <form
+          id="js--submit"
+          onSubmit={[Function]}
+        >
+          <div
+            className="js--error-msg form-error"
+          />
+          <div>
+            <input
+              id="card"
+              name="card"
+              onBlur={[Function]}
+              placeholder="Card"
+              required={true}
+              type="text"
+            />
+          </div>
+          <button
+            className="submit-button"
+            type="submit"
+          >
+            Add Card
+          </button>
+        </form>
+      </div>
+    </div>
+    <div>
+      <h2>
+        Board title: 
+      </h2>
+      <div>
+        <h3>
+          Current Cards
+        </h3>
+        <div
+          className="card-list"
+        >
+          <div>
+            <div>
+              aaa
+            </div>
+          </div>
+          <div>
+            <div>
+              bbb
+            </div>
+          </div>
+        </div>
+        <form
+          id="js--submit"
+          onSubmit={[Function]}
+        >
+          <div
+            className="js--error-msg form-error"
+          />
+          <div>
+            <input
+              id="card"
+              name="card"
+              onBlur={[Function]}
+              placeholder="Card"
+              required={true}
+              type="text"
+            />
+          </div>
+          <button
+            className="submit-button"
+            type="submit"
+          >
+            Add Card
+          </button>
+        </form>
+      </div>
+    </div>
+    <div>
+      <h2>
+        Board title: 
+      </h2>
+      <div>
+        <h3>
+          Current Cards
+        </h3>
+        <div
+          className="card-list"
+        >
+          <div>
+            <div>
+              aaa
+            </div>
+          </div>
+          <div>
+            <div>
+              bbb
+            </div>
+          </div>
+        </div>
+        <form
+          id="js--submit"
+          onSubmit={[Function]}
+        >
+          <div
+            className="js--error-msg form-error"
+          />
+          <div>
+            <input
+              id="card"
+              name="card"
+              onBlur={[Function]}
+              placeholder="Card"
+              required={true}
+              type="text"
+            />
+          </div>
+          <button
+            className="submit-button"
+            type="submit"
+          >
+            Add Card
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
