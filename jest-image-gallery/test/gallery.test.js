@@ -11,7 +11,7 @@ const data = [
   { id: 2, url: 'https://www.johnvincent.io/internet-resources/resources/images/logos/webpack.ico', description: 'Webpack' },
 ];
 
-/* eslint-env node, mocha */
+/* global describe, it, expect */
 
 describe('Gallery component', function() {
   it('Renders the Gallery and description', function() {

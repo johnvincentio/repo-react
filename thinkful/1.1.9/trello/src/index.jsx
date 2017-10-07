@@ -14,9 +14,9 @@ const data = [
   { id: createId(), title: 'board-title3' },
 ];
 
-document.addEventListener('DOMContentLoaded', () =>
+document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Board title="Board Name from index.js" lists={data} />,
     document.getElementById('root'),
-  ),
-);
+  );
+});

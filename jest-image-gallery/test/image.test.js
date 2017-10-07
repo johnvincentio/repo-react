@@ -6,8 +6,10 @@ import TestRenderer from 'react-test-renderer';
 
 import Image from '../src/components/image';
 
+/* global describe, it, expect */
+
 describe('Image component', function() {
-  it('Renders the image and description',  function() {
+  it('Renders the image and description', function() {
     const url = 'http://www.example.com/image.png';
     const description = 'Example description';
 
