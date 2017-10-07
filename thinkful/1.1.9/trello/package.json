@@ -1,0 +1,42 @@
+{
+  "name": "jv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "help": "webpack --help",
+    "build": "webpack",
+    "prod": "NODE_ENV=production npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.1.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
