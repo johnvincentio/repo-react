@@ -17,13 +17,13 @@ User guessed a number
 Generate a new random number
 */
 export const USER_GUESSED_NUMBER = 'USER_GUESSED_NUMBER';
-export const addRepository = guess => ({
+export const userGuessedNumber = guess => ({
   type: USER_GUESSED_NUMBER,
   guess,
 });
 
 export const RANDOM_NUMBER = 'RANDOM_NUMBER';
-export const rateRepository = (fromNumber, toNumber) => ({
+export const generateRandomNumber = (fromNumber, toNumber) => ({
   type: RANDOM_NUMBER,
   fromNumber,
   toNumber,
