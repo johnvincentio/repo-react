@@ -15,6 +15,7 @@ Actions:
 
 User guessed a number
 Generate a new random number
+New Game
 */
 export const USER_GUESSED_NUMBER = 'USER_GUESSED_NUMBER';
 export const userGuessedNumber = guess => ({
@@ -22,9 +23,14 @@ export const userGuessedNumber = guess => ({
   guess,
 });
 
-export const RANDOM_NUMBER = 'RANDOM_NUMBER';
-export const generateRandomNumber = (fromNumber, toNumber) => ({
-  type: RANDOM_NUMBER,
-  fromNumber,
-  toNumber,
+// export const RANDOM_NUMBER = 'RANDOM_NUMBER';
+// export const generateRandomNumber = (fromNumber, toNumber) => ({
+//   type: RANDOM_NUMBER,
+//   fromNumber,
+//   toNumber,
+// });
+
+export const NEW_GAME = 'NEW_GAME';
+export const handleNewGame = () => ({
+  type: NEW_GAME,
 });
