@@ -13,10 +13,7 @@ export class GuessForm extends React.Component {
   }
 
   handleGuess() {
-    const guess = this.guessInput.value;
-    console.log('handleGuess; guess '+guess);
-    console.log(this.props);
-    // actions.userGuessedNumber(actions.userGuessedNumber(guess));
+    const guess = parseInt(this.guessInput.value, 10);
     this.props.actions.userGuessedNumber(guess);
   }
 
@@ -35,9 +32,9 @@ export class GuessForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
-  repositories: state,
-});
+// const mapStateToProps = (state, props) => ({
+//   repositories: state,
+// });
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
