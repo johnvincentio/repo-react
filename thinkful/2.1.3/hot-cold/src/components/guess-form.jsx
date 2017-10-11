@@ -13,8 +13,13 @@ export class GuessForm extends React.Component {
   }
 
   handleGuess() {
-    const guess = parseInt(this.guessInput.value, 10);
-    this.props.actions.userGuessedNumber(guess);
+    const input = this.guessInput.value;
+    console.log(input);
+    if (! isNaN(input)) {
+      const guess = parseInt(input, 10);
+      console.log(guess);
+      this.props.actions.userGuessedNumber(guess);
+    }
   }
 
   render() {
@@ -22,7 +27,7 @@ export class GuessForm extends React.Component {
       <div>
         <div className="js--error-msg form-error" />
         <div>
-          <input type="text" ref={ref => this.guessInput = ref} />
+          <input type="text" ref={ref => this.guessInput = ref} required />
           <button type="button" onClick={this.handleGuess}>
             Guess
           </button>
@@ -32,15 +37,9 @@ export class GuessForm extends React.Component {
   }
 }
 
-// const mapStateToProps = (state, props) => ({
-//   repositories: state,
-// });
-
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
 });
-
-// export default connect(mapStateToProps)(GuessForm);
 
 export default connect(null, mapDispatchToProps)(GuessForm);
 
