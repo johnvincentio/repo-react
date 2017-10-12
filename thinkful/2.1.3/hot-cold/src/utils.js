@@ -1,7 +1,7 @@
 
 class Utils {
   static handleComment(target, guess) {
-    console.log(`--- Utils.handleComment; guess ${guess} target ${target}`);
+    // console.log(`--- Utils.handleComment; guess ${guess} target ${target}`);
     const diff = Math.abs(guess - target);
     if (diff > 80) {
       return 'Incredibly frozen';

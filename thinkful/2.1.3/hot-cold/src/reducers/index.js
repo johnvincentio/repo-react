@@ -24,15 +24,11 @@ export const repositoryReducer = (state = initialState, action) => {
   }
 
   if (action.type === actions.NEW_GAME) {
-    //    const jv = Object.assign({}, initialRepositoryState);
-    //    jv.random = randomInteger(1, 100);
-    //    return jv;
-    // const jv1 = Object.assign({}, ...initialState, { random: randomInteger(1, 100) });
-    // const jv1 = Object.assign({}, { guessed: [], comment: 'Make your Guess!', random: randomInteger(1, 100) });
-    // console.log(jv1);
     return Object.assign(
       {}, state,
-      { guessed: [], comment: 'Make your Guess!', random: randomInteger(1, 100), completed: false },
+      {
+        guessed: [], comment: 'Make your Guess!', random: randomInteger(1, 100), completed: false,
+      },
     );
   }
 

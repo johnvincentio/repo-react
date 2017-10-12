@@ -10,32 +10,17 @@ import * as actions from '../actions/index';
 import GuessForm from './guess-form';
 import GuessList from './guess-list';
 
-// eslint-disable-next-line react/prefer-stateless-function
-export class Board extends React.Component {
-// eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-    // console.log('>>> Board');
-    // console.log(props);
-    // props.actions.handleNewGame();
-    // console.log('Board; after handleNewGame');
-    // console.log(props);
-    // console.log('<<< Board');
-  }
-
-  render() {
-    const form = this.props.completed ? '' : <GuessForm />;
-    return (
-      <div className="inner">
-        <div>app comment {this.props.comment}</div>
-        {form}
-        {/* <GuessForm /> */}
-        <GuessList />
-        <div>Guess #{this.props.guess}!</div>
-        <div>Random #{this.props.random}</div>
-      </div>
-    );
-  }
+function Board(props) {
+  const form = props.completed ? '' : <GuessForm />;
+  return (
+    <div className="inner">
+      <div>app comment {props.comment}</div>
+      {form}
+      <GuessList />
+      <div>Guess #{props.guess}!</div>
+      <div>Random #{props.random}</div>
+    </div>
+  );
 }
 
 Board.propTypes = {

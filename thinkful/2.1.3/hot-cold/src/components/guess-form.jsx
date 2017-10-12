@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -35,20 +36,14 @@ export class GuessForm extends React.Component {
   }
 }
 
+GuessForm.propTypes = {
+  actions: PropTypes.shape({
+    userGuessedNumber: PropTypes.func,
+  }).isRequired,
+};
+
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
 export default connect(null, mapDispatchToProps)(GuessForm);
-
-
-/*
-<input
-id="card"
-name="card"
-type="text"
-required
-placeholder="Enter your Guess"
-onBlur={this.handleChange}
-/>
-*/
