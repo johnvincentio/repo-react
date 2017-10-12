@@ -14,7 +14,7 @@ function Board(props) {
   const form = props.completed ? '' : <GuessForm />;
   return (
     <div className="inner">
-      <div>app comment {props.comment}</div>
+      <div>{props.comment}</div>
       {form}
       <GuessList />
       <div>Guess #{props.guess}!</div>

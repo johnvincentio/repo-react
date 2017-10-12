@@ -22,8 +22,10 @@ export class Navigation extends React.Component {
     return (
       <nav>
         <ul>
-          <li><a className="what" href="/">What?</a></li>
-          <li><a className="new" href="/" onClick={this.handleNewGame}>New Game</a></li>
+          <li><button type="button" onClick={this.handleHelp}>Help</button></li>
+          <li><button type="button" onClick={this.handleNewGame}>New Game</button></li>
+          {/* <li><a className="what" href="/">What?</a></li>
+          <li><a className="new" href="/" onClick={this.handleNewGame}>New Game</a></li> */}
         </ul>
       </nav>
     );
