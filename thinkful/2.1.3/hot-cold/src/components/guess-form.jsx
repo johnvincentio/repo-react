@@ -14,10 +14,8 @@ export class GuessForm extends React.Component {
 
   handleGuess() {
     const input = this.guessInput.value;
-    console.log(input);
-    if (! isNaN(input)) {
+    if (!Number.isNaN(input)) {
       const guess = parseInt(input, 10);
-      console.log(guess);
       this.props.actions.userGuessedNumber(guess);
     }
   }
