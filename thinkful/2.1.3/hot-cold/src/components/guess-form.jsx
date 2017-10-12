@@ -26,7 +26,7 @@ export class GuessForm extends React.Component {
       <div>
         <div className="js--error-msg form-error" />
         <div>
-          <input type="text" ref={ref => this.guessInput = ref} required />
+          <input type="text" ref={(input) => { this.guessInput = input; }} required />
           <button type="button" onClick={this.handleGuess}>
             Guess
           </button>
