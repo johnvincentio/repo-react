@@ -10,13 +10,13 @@ const DIST_FOLDER = path.resolve(APP_FOLDER, './dist');
 const DIST_FOLDER_STYLE = path.resolve(DIST_FOLDER, './css');
 
 const config = {
-  entry: ['./src/index.js', './src/scss/index.scss'],
+  entry: ['./src/index.jsx', './src/scss/index.scss'],
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js',
   },
 
-	devtool: 'source-map',
+  devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
@@ -30,8 +30,8 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-			},
-			{
+      },
+      {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -49,8 +49,8 @@ const config = {
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
     ],
-	},
-	resolve: {
+  },
+  resolve: {
     extensions: ['.js', '.jsx'],
   },
   plugins: [

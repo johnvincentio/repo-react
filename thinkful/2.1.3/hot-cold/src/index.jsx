@@ -8,10 +8,10 @@ import Game from './components/game';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-      <Provider store={store}>
-          <Game />
-      </Provider>,
-      document.getElementById('root'),
+    <Provider store={store}>
+      <Game />
+    </Provider>,
+    document.getElementById('root'),
   );
 });
 
