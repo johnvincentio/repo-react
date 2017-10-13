@@ -40,7 +40,6 @@ export const repositoryReducer = (state = initialState, action) => {
   }
 
   if (action.type === actions.HELP) {
-    console.log('action.type === actions.HELP');
     return Object.assign(
       {}, state,
       {
@@ -50,7 +49,6 @@ export const repositoryReducer = (state = initialState, action) => {
   }
 
   if (action.type === actions.DISMISS_HELP) {
-    console.log('action.type === actions.DISMISS_HELP');
     return Object.assign(
       {}, state,
       {

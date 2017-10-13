@@ -18,3 +18,8 @@ see jest-image-gallery
 ### Test Trello Components with Jest
 
 see thinkful/1.1.9/trello
+
+### Hot or Cold
+
+see thinkful/2.1.3/hot-cold
+

@@ -19,10 +19,9 @@ export class Help extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const display = this.props.help ? 'display' : 'hide';
     const classes = `overlay ${display}`;
-    console.log('classes '+classes);
+    /* eslint max-len: [2, 150, 4] */ // maximum length of 150 characters
     return (
       <div className={classes} >
         <div className="content">

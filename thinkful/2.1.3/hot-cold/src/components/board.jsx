@@ -19,7 +19,7 @@ function Board(props) {
       {form}
       <div className="guess">Guess #<span>{props.guess}</span></div>
       <GuessList />
-      <div className="random">Random #{props.random}</div>
+      {/* <div className="random">Random #{props.random}</div> */}
     </section>
   );
 }
@@ -27,7 +27,7 @@ function Board(props) {
 Board.propTypes = {
   comment: PropTypes.string.isRequired,
   guess: PropTypes.number.isRequired,
-  random: PropTypes.number.isRequired,
+  // random: PropTypes.number.isRequired,
   completed: PropTypes.bool.isRequired,
 };
 

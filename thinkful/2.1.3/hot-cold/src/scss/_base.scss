@@ -29,7 +29,6 @@ input, textarea, select, button {
     font-family: $font-family;
 }
 
-
 .game {
   background-color: palette(primary, game);
   color: palette(header, text);
@@ -61,31 +60,6 @@ header nav button {
   }
 }
 
-/*
-background-color: palette(sidebar);
-color: palette(sidebar, button);
-font-size: 80%;
-margin-top: 10px;
-
-border-radius: 2px;
-line-height: normal;
-white-space: nowrap;
-text-align: center;
-cursor: pointer;
-text-rendering: auto;
-*/
-
-/*
-  display: block;
-  border: 0;
-  font-size: 14px;
-  padding: 12px 20px;
-  margin: 22px auto;
-  width: 96%;
-  max-width: 320px;
-  color: palette(settings);
-*/
-
 .board {
   width: $width;
   margin: 0 auto;
@@ -108,13 +82,7 @@ text-rendering: auto;
 
 .guess-form {
   background-color: palette(guess-form, bg);
-  // font-weight: 400;
-  // font-size: 1.5em;
-  // padding: 1em 0.5em;
-  // input.guess-text {
-  //   font-size: 2em;
-  //   text-align: center;
-  // }
+
   input {
     background-color: palette(guess-form, input-bg);
     color: palette(guess-form, text);
@@ -128,12 +96,12 @@ text-rendering: auto;
       text-align: center;
     }
   }
-
 }
 
 .guessed-list {
   background-color: palette(guess-list, bg);
   text-align: left;
+
   div {
     background-color: palette(guess-list, item-bg);
     display: inline-block;
@@ -153,6 +121,7 @@ text-rendering: auto;
   font-weight: 400;
   font-size: 1.5em;
   padding: 1em 0.5em;
+
   span {
     color: palette(guess, text2);
     padding: 0 5px;
