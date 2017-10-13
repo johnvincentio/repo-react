@@ -11,6 +11,7 @@ const initialState = {
   comment: 'Make your Guess!',
   random: randomInteger(1, 100),
   completed: false,
+  help: false,
 };
 
 export const repositoryReducer = (state = initialState, action) => {
@@ -34,6 +35,26 @@ export const repositoryReducer = (state = initialState, action) => {
       {}, state,
       {
         guessed: [], comment: 'Make your Guess!', random: randomInteger(1, 100), completed: false,
+      },
+    );
+  }
+
+  if (action.type === actions.HELP) {
+    console.log('action.type === actions.HELP');
+    return Object.assign(
+      {}, state,
+      {
+        help: true,
+      },
+    );
+  }
+
+  if (action.type === actions.DISMISS_HELP) {
+    console.log('action.type === actions.DISMISS_HELP');
+    return Object.assign(
+      {}, state,
+      {
+        help: false,
       },
     );
   }

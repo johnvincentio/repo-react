@@ -10,7 +10,13 @@ import * as actions from '../actions/index';
 export class Navigation extends React.Component {
   constructor(props) {
     super(props);
+    this.handleHelp = this.handleHelp.bind(this);
     this.handleNewGame = this.handleNewGame.bind(this);
+  }
+
+  handleHelp(event) {
+    event.preventDefault();
+    this.props.actions.handleHelp();
   }
 
   handleNewGame(event) {
@@ -32,6 +38,7 @@ export class Navigation extends React.Component {
 
 Navigation.propTypes = {
   actions: PropTypes.shape({
+    handleHelp: PropTypes.func,
     handleNewGame: PropTypes.func,
   }).isRequired,
 };

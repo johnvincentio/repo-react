@@ -16,6 +16,7 @@ $app-colors: (
   bg4-color: rgb(17, 168, 171),
   bg5-color: rgb(26, 78, 149),
   bg6-color: #50597b,
+  bg7-color: #e74c3c,
 
   text1-color: #f39c12
 );
@@ -53,6 +54,11 @@ $palettes: (
   ),
   header: (
     text: app-color('white-color')
+  ),
+  help: (
+    bg: app-color('bg7-color'),
+    button: app-color('dark-color'),
+    button-active: darken(app-color('white-color'), 25%),
   )
 );
 
