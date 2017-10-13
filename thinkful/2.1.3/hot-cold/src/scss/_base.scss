@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 1px solid red;
 }
 
 .hide {
@@ -26,6 +25,14 @@ input, textarea, select, button {
     font-family: $font-family;
 }
 
+
+.game {
+  background-color: palette(primary, game);
+  color: palette(header, text);
+  margin: 12px;
+//  height: 600px;
+}
+
 header nav button {
   background-color: palette(nav, bg);
   color: palette(nav, text);
@@ -35,12 +42,21 @@ header nav button {
   font-weight: 500;
   font-size: 1.5em;
   text-align: center;
+  padding: 10px 10px;
   cursor: pointer;
 
   &:hover,
   &:focus {
       color: palette(nav, button-active);
   }
+  &:first-child {
+    float: left;
+  }
+  &:last-child {
+    float: right;
+  }
+}
+
 /*
 background-color: palette(sidebar);
 color: palette(sidebar, button);
@@ -65,24 +81,11 @@ text-rendering: auto;
   max-width: 320px;
   color: palette(settings);
 */
-  &:first-child {
-    float: left;
-  }
-  &:last-child {
-    float: right;
-  }
-}
-
-
-.game {
-  background-color: palette(primary, game);
-  color: palette(header, text);
-  margin: 15px;
-}
 
 .board {
   width: $width;
   margin: 0 auto;
+  padding: 50px 0;
   h1 {
     color: palette(nav, text);
     font-weight: 900;
