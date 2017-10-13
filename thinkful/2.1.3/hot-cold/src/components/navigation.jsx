@@ -20,12 +20,12 @@ export class Navigation extends React.Component {
 
   render() {
     return (
-      <nav>
-        <ul>
-          <li><button type="button" onClick={this.handleHelp}>Help</button></li>
-          <li><button type="button" onClick={this.handleNewGame}>New Game</button></li>
-        </ul>
-      </nav>
+      <header>
+        <nav>
+          <button type="button" onClick={this.handleHelp}>Help</button>
+          <button type="button" onClick={this.handleNewGame}>New Game</button>
+        </nav>
+      </header>
     );
   }
 }

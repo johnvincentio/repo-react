@@ -1,4 +1,61 @@
 
+$width: 380px;
+$height: 380px;
+
 $font-family: helvetica;
 $font-color: #ecf0f1;
-$bg-color: #3498db;
+
+$app-colors: (
+  white-color: white,
+  black-color: black,
+  dark-color: #1F253D,
+
+  bg1-color: #95a5a6,
+  bg2-color: #cc324b,
+  bg3-color: #394264,
+  bg4-color: rgb(17, 168, 171),
+  bg5-color: rgb(26, 78, 149),
+  bg6-color: #50597b,
+
+  text1-color: #f39c12
+);
+@function app-color($key: 'primary') {
+  @return map-get($app-colors, $key);
+}
+
+$palettes: (
+  primary: (
+    body: app-color('bg3-color'),
+    game: app-color('dark-color')
+  ),
+  nav: (
+    bg: app-color('dark-color'),
+    text: app-color('white-color'),
+    button-active: darken(app-color('white-color'), 12%),
+  ),
+  comments: (
+    bg: app-color('bg2-color'),
+    text: app-color('white-color')
+  ),
+  guess-form: (
+    bg: app-color('bg3-color'),
+    text: app-color('white-color'),
+    input-bg: app-color('bg6-color')
+  ),
+  guess: (
+    bg: app-color('bg3-color'),
+    text: app-color('black-color'),
+    text2: app-color('text1-color')
+  ),
+  guess-list: (
+    bg: app-color('bg4-color'),
+    item-bg: app-color('bg5-color')
+  ),
+  header: (
+    text: app-color('white-color')
+  )
+);
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}

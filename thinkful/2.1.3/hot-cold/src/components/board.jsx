@@ -13,13 +13,14 @@ import GuessList from './guess-list';
 function Board(props) {
   const form = props.completed ? '' : <GuessForm />;
   return (
-    <div className="inner">
-      <div>{props.comment}</div>
+    <section className="board">
+      <div><h1>Hot or Cold</h1></div>
+      <div className="comment">{props.comment}</div>
       {form}
+      <div className="guess">Guess #<span>{props.guess}</span></div>
       <GuessList />
-      <div>Guess #{props.guess}!</div>
-      <div>Random #{props.random}</div>
-    </div>
+      <div className="random">Random #{props.random}</div>
+    </section>
   );
 }
 

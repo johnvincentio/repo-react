@@ -9,7 +9,7 @@ import Board from './board';
 
 function Game() {
   return (
-    <div className="outer">
+    <div className="game">
       <Navigation />
       <Board />
     </div>
