@@ -7,7 +7,7 @@ import Utils from '../utils';
 const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const initialState = {
-  guessed: [46, 62],
+  guessed: [],
   comment: 'Make your Guess!',
   random: randomInteger(1, 100),
   completed: false,
@@ -20,7 +20,7 @@ export const repositoryReducer = (state = initialState, action) => {
     if (action.guess > 0 && action.guess < 101) {
       return Object.assign(
         {}, state,
-        { guessed: [action.guess, ...state.guessed], comment, completed },
+        { guessed: [...state.guessed, action.guess], comment, completed },
       );
     }
     return Object.assign(
