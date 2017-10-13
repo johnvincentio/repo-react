@@ -2,6 +2,9 @@
 class Utils {
   static handleComment(target, guess) {
     // console.log(`--- Utils.handleComment; guess ${guess} target ${target}`);
+    if (guess < 1 || guess > 100) {
+      return 'Invalid, please enter a number between 1 and 100';
+    }
     const diff = Math.abs(guess - target);
     if (diff > 80) {
       return 'Incredibly frozen';

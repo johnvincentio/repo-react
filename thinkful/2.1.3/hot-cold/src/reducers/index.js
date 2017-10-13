@@ -17,9 +17,15 @@ export const repositoryReducer = (state = initialState, action) => {
   if (action.type === actions.USER_GUESSED_NUMBER) {
     const comment = Utils.handleComment(state.random, action.guess);
     const completed = state.random === action.guess;
+    if (action.guess > 0 && action.guess < 101) {
+      return Object.assign(
+        {}, state,
+        { guessed: [action.guess, ...state.guessed], comment, completed },
+      );
+    }
     return Object.assign(
       {}, state,
-      { guessed: [action.guess, ...state.guessed], comment, completed },
+      { guessed: state.guessed, comment, completed },
     );
   }
 
