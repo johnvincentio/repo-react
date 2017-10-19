@@ -7,7 +7,7 @@ import * as actions from '../actions/index';
 
 export class Repository extends React.Component {
   constructor(props) {
-    super(props);
+		super(props);
     this.changeRating = this.changeRating.bind(this);
   }
 
