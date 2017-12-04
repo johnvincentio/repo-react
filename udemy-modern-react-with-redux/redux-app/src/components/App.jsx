@@ -1,9 +1,12 @@
+
 import React from 'react';
+
+import BookList from '../containers/book-list';
 
 export default class App extends React.Component {
 	render() {
 		return (
-			<div>Simple App</div>
+			<div><BookList /></div>
 		);
 	}
 }

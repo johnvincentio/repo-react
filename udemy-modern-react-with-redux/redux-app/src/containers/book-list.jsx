@@ -2,7 +2,6 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class BookList extends React.Component {
 	constructor(props) {
@@ -13,9 +12,9 @@ class BookList extends React.Component {
 	}
 
 	renderList() {
-		return this.props.books((book) => {
+		return this.props.books.map((book) => {
 			return (
-				<li key={book.title} classMame="list-group-item">{book.title}</li>
+				<li key={book.title} className="list-group-item">{book.title}</li>
 			);
 		});
 	}
@@ -28,4 +27,12 @@ class BookList extends React.Component {
 	}
 }
 
-export default BookList;
+const mapStateToProps = state => ({
+	books: state.books,
+});
+
+// const mapDispatchToProps = dispatch => ({
+// 	actions: bindActionCreators(actions, dispatch),
+// });
+
+export default connect(mapStateToProps)(BookList);
