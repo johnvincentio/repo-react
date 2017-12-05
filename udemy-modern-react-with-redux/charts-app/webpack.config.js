@@ -9,6 +9,8 @@ const APP_FOLDER = path.resolve(__dirname, './src');
 const DIST_FOLDER = path.resolve(APP_FOLDER, './dist');
 const DIST_FOLDER_STYLE = path.resolve(DIST_FOLDER, './css');
 
+require('dotenv').config();		// load from .env file
+
 const config = {
   entry: ['./src/index.jsx', './src/scss/index.scss'],
   output: {
@@ -54,6 +56,7 @@ const config = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
+		new webpack.EnvironmentPlugin(['NODE_ENV', 'API_KEY']),
     new ExtractTextPlugin({ // define where to save the file
       filename: '[name].bundle.css',
       allChunks: true,

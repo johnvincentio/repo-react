@@ -7,6 +7,10 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './components/App';
 import reducers from './reducers';
 
+const { API_KEY } = process.env;
+
+console.log(`API_KEY ${process.env.API_KEY}`);
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
