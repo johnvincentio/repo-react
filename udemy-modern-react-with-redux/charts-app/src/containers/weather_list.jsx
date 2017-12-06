@@ -2,8 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
-// import { Sparklines } from 'react-sparklines';
+import Chart from '../components/chart';
 
 import * as actions from '../actions/index';
 
@@ -29,19 +28,13 @@ class WeatherList extends React.Component {
 			<tr key={name}>
 				<td>{name}</td>
 				<td>
-					<Sparklines height={120} width={180} data={temps}>
-						<SparklinesLine color="red" />
-					</Sparklines>
+					<Chart data={temps} color="orange" />
 				</td>
 				<td>
-					<Sparklines height={120} width={180} data={pressures}>
-						<SparklinesLine color="red" />
-					</Sparklines>
+					<Chart data={pressures} color="green" />
 				</td>
 				<td>
-					<Sparklines height={120} width={180} data={humidities}>
-						<SparklinesLine color="red" />
-					</Sparklines>
+					<Chart data={humidities} color="blue" />
 				</td>
 			</tr>
 		);
