@@ -8,7 +8,7 @@ function average(data) {
 	return _.round(_.sum(data) / data.length);
 }
 
-const SettingsProjects = props => (
+const Chart = props => (
 	<div>
 		<Sparklines height={120} width={180} data={props.data}>
 			<SparklinesLine color={props.color} />
@@ -18,5 +18,4 @@ const SettingsProjects = props => (
 	</div>
 );
 
-export default SettingsProjects;
-
+export default Chart;
