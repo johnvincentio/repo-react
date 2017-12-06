@@ -40,10 +40,6 @@ class SearchBar extends React.Component {
 	}
 }
 
-// const mapStateToProps = state => ({
-// 	books: state.books,
-// });
-
 const mapDispatchToProps = dispatch => ({
 	actions: bindActionCreators({ fetchWeather }, dispatch),
 });
