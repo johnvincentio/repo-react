@@ -15,3 +15,7 @@ npm i react-sparklines --save
 
 npm i lodash --save
 
+npm i react-google-maps --save
+npm uninstall react-google-maps --save
+
+npm i google-map-react --save

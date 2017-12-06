@@ -1,18 +1,16 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Chart from '../components/chart';
-import GoogleMap from '../components/google_map';
 
-import * as actions from '../actions/index';
+import Chart from '../components/chart';
+import GoogleMapContainer from '../components/GoogleMapContainer';
+
 
 class WeatherList extends React.Component {
 	constructor(props) {
 		super(props);
 		console.log('>>> WeatherList; constructor');
 		console.log(props);
-		console.log(actions);
 		console.log('<<< WeatherList; constructor');
 	}
 	renderWeather(cityData) {
@@ -21,6 +19,7 @@ class WeatherList extends React.Component {
 		const pressures = cityData.list.map(weather => weather.main.pressure);
 		const humidities = cityData.list.map(weather => weather.main.humidity);
 		const { lon, lat } = cityData.city.coord;
+		const zoom = 11;
 
 		console.log('temps ',temps);
 		console.log('pressures ',pressures);
@@ -28,7 +27,7 @@ class WeatherList extends React.Component {
 
 		return (
 			<tr key={name}>
-				<td><GoogleMap lon={lon} lat={lat} /></td>
+				<td><GoogleMapContainer lon={lon} lat={lat} zoom={zoom} /></td>
 				<td>
 					<Chart data={temps} color="orange" units="K" />
 				</td>
@@ -64,9 +63,5 @@ class WeatherList extends React.Component {
 const mapStateToProps = state => ({
 	weather: state.weather,
 });
-
-// const mapDispatchToProps = dispatch => ({
-// 	actions: bindActionCreators(actions, dispatch),
-// });
 
 export default connect(mapStateToProps)(WeatherList);
