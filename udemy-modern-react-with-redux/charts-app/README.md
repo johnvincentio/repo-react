@@ -12,3 +12,6 @@ npm i --save react-sparklines@1.6.0
 npm uninstall --save react-sparklines
 
 npm i react-sparklines --save
+
+npm i lodash --save
+
