@@ -1,0 +1,157 @@
+
+header {
+	background-color: palette(header, base);
+	color: palette(header, text);
+
+	text-align: center;
+	position: relative;
+
+	.header-container {
+		width: 100%;
+
+		.header-logo {
+			text-align: left;
+			padding: 1em 1em 1em 30px;
+			h1 {
+				text-transform: uppercase;
+				font-weight: 300;
+				font-size: 1.8rem;
+				a {
+					color: palette(header, text);
+					text-decoration: none;
+
+					&:hover,
+					&:focus {
+						cursor: pointer;
+						background: none;
+						border: none;
+						color: palette(header, select);
+						svg {
+							fill: palette(header, select);
+						}
+					}
+
+					.logo {
+						font-weight: bold;
+					}
+					svg {
+						vertical-align: middle;
+						margin-right: 5.5px;
+						width: 45px;
+						height: 45px;
+						fill: palette(header, text);
+					}
+				}
+			}
+		}
+
+		nav {
+			padding: 1em;
+				
+			ul {
+				list-style-type: none;
+				li {
+					width: 100%;
+					margin: 0 0 1em 0;
+					display: block;
+					&:last-child {
+						margin: 0;
+					}
+					a {
+						color: palette(header, text);
+						text-decoration: none;
+						text-transform: uppercase;
+						&:hover,
+						&:focus {
+							background: none;
+							border: none;
+							color: palette(header, select);
+						}
+					}
+				}
+			}
+		}
+
+		.header-nav-toggle {
+			border-width: 0;
+
+			svg {
+				width: 25px;
+				height: 25px;
+				fill: palette(header, text);
+				cursor: pointer;
+
+				position: absolute;
+				top: 1.6em;
+				right: 25px;
+				z-index: 1;
+
+				&:hover {
+					width: 30px;
+					height: 30px;
+					@include opacity(0.85);
+
+					top: 1.5em;
+					right: 26px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	header .header-container .header-logo h1 {
+		font-weight: 300;
+		font-size: 2.0rem;
+	}
+	header .header-container .header-logo h1 a svg {
+		width: 35px;
+		height: 35px;        
+	}
+	header .header-container .header-nav-toggle svg {
+		width: 20px;
+		height: 20px;
+		right: 26px;
+	}
+}
+
+@media screen and (min-width: 580px) {
+
+header {
+	padding: 1em;
+
+	.header-container {
+		max-width: 1170px;
+		margin: 0 auto;
+		overflow: hidden;
+
+		.header-logo {
+			padding: 0;
+			background: none;
+			float: left;
+			h1 {
+				font-size: 3rem;
+			}
+		}
+		.header-no-nav {
+			text-align: center;
+			float: none;
+		}
+
+		nav {
+			margin-top: 15px;
+			padding: .5em;
+			background: none;
+			float: right;
+			display: block;
+
+			ul li {
+				width: auto;
+				margin: 0 .5em;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+}

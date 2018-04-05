@@ -1,0 +1,14 @@
+
+footer {
+	//    flex: none;
+	position: fixed;
+
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-color: palette(dashboard, footer);
+	color: palette(dashboard, footer-text);
+	padding: 10px;
+	text-align: center;
+}

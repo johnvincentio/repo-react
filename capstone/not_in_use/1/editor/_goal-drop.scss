@@ -1,0 +1,12 @@
+
+.goal-drop {
+	&--droppable {
+		border: 5px solid yellow;
+		height: 5px;	
+	}
+	&--dropping {
+		border: 5px dashed yellowgreen;
+		background-color: yellow;
+		height: 40px;	
+	}
+}

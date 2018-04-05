@@ -1,0 +1,12 @@
+
+.task-drop {
+	&--droppable {
+		border: 5px solid green;
+		height: 5px;		
+	}
+	&--dropping {
+		border: 5px dashed darkgreen;
+		background-color: lightgray;
+		height: 40px;		
+	}
+}

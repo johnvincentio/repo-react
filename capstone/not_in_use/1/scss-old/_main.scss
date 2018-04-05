@@ -1,0 +1,85 @@
+
+/* Icons */
+
+%my-svg {
+	cursor: pointer;
+	vertical-align: middle;
+	fill: palette(dashboard, icon-color);
+	&:hover, &:focus {
+			fill: palette(dashboard, icon-hover-color);
+	}
+}
+
+/* override header */
+
+header .header-container {
+	min-width: $sidebar_width;
+	max-width: none;
+}
+
+/* Page containers */
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	min-width: $sidebar_width;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+// .page-header {
+//     /* fixed size */
+//     flex: none;
+//     padding: 10px;
+//     // font-size: 3em;
+//     // font-weight: bold;
+//     background-color: palette(dashboard, header);
+//     text-align: left;
+// }
+
+.page-container {
+	/* resize in container */
+	flex: 1;
+	/* IMPORTANT for FireFox */
+	overflow-y: auto;
+	overflow-x: hidden;
+	/* new flex container for content */
+	display: flex;
+	flex-direction: column;
+
+	.content-panel {
+			flex: 1 1 auto;
+			background-color: transparent;
+			color: palette(dashboard, text);
+			padding: 20px;
+			width: 100%;
+			min-width: $sidebar_width;
+			overflow-y: auto;
+			overflow-x: hidden;
+			display: flex;
+			/* new flex for content/ads*/
+			flex-direction: row;
+
+			.application-panel {
+					flex: 1 1 auto;
+					width: 100%;
+					padding: 10px;
+					min-width: 300px;
+			}
+	}
+}
+
+@media screen and (max-width: $breakpoint-1) {
+	.page-container .content-panel {
+			padding: 0;
+	}
+}
+
+@media (min-width: $transform-width) {
+
+	.page-container {
+			flex-direction: row;
+	}
+
+}

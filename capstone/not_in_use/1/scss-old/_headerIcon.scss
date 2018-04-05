@@ -1,0 +1,18 @@
+
+.header-icon {
+
+	svg {
+
+		background-color: palette(header, base);
+		width: 25px;
+		height: 25px;
+		fill: palette(header, text);
+		cursor: pointer;
+
+		&:hover {
+			width: 30px;
+			height: 30px;
+			@include opacity(0.85);
+		}
+	}
+}

@@ -1,0 +1,23 @@
+
+$sidebar_width: 320px;
+$transform-width: 750px;
+
+$breakpoint-1: 380px;
+
+$width: 380px;
+$height: 380px;
+
+$font-family: helvetica;
+$font-color: #ecf0f1;
+
+@import 'mixins';
+
+@import 'colors';
+@import 'base';
+
+@import 'header';
+@import 'main';
+@import 'nav-menu';
+@import 'sidebar';
+@import 'footer';
+

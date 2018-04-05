@@ -1,0 +1,24 @@
+
+.nav-menu-open,
+.nav-menu-close {
+    svg {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &.open-menu {
+            fill: palette(nav-menu, open);        
+        }
+        &.close-menu {
+            fill: palette(nav-menu, close);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        &:hover {
+            width: 20px;
+            height: 20px;
+            @include opacity(0.85);
+        }
+    }
+}
