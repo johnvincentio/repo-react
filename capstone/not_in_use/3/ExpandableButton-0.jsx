@@ -1,11 +1,13 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as actions from '../../actions/';
-import { selectType } from '../../types';
+import * as actions from '../actions/';
+
+import { selectType } from '../types';
 
 /*
 https://codepen.io/SoufianeLasri/pen/BobJzG?q=expand+button&limit=all&type=type-pens
@@ -64,7 +66,9 @@ class ExpandableButton extends React.Component {
 
 	handleClickMenuClone() {
 		// console.log('ExpandableButton::handleClickMenuClone');
-		const { selectedType, selectedGoalId, selectedProjectId, selectedTaskId } = this.props.selected;
+		const {
+			selectedType, selectedGoalId, selectedProjectId, selectedTaskId,
+		} = this.props.selected;
 		// console.log('selectedType ', selectedType);
 		switch (selectedType) {
 			case 'goal':
@@ -86,7 +90,9 @@ class ExpandableButton extends React.Component {
 
 	handleClickMenuDelete() {
 		// console.log('ExpandableButton::handleClickMenuDelete');
-		const { selectedType, selectedGoalId, selectedProjectId, selectedTaskId } = this.props.selected;
+		const {
+			selectedType, selectedGoalId, selectedProjectId, selectedTaskId,
+		} = this.props.selected;
 		// console.log('selectedType ', selectedType);
 		switch (selectedType) {
 			case 'goal':
@@ -111,7 +117,9 @@ class ExpandableButton extends React.Component {
 
 	handleClickMenuLink() {
 		// console.log('ExpandableButton::handleClickMenuLink');
-		const { selectedType, selectedGoalId, selectedProjectId } = this.props.selected;
+		const {
+			selectedType, selectedGoalId, selectedProjectId,
+		} = this.props.selected;
 		// console.log('selectedType ', selectedType);
 		switch (selectedType) {
 			case 'goal':
@@ -137,47 +145,37 @@ class ExpandableButton extends React.Component {
 		const showLink = selectedType === 'goal' || selectedType === 'project';
 
 		if (!showEdit) {
-			return <div />;
+			return (
+				<div />
+			);
 		}
 		const buttonClass = showEdit ? 'isActive' : '';
 
 		return (
 			<div className={`${buttonClass} expandableButton`}>
-				<button className="expandButton" onClick={this.handleClickMenu}>
-					<i className="fa fa-cog" />
-				</button>
-				{showAdd && (
-					<button className="add" onClick={() => this.handleClickMenuAdd()}>
-						<i className="fa fa-plus" />
-					</button>
-				)}
-				{showEdit && (
-					<button className="edit" onClick={() => this.handleClickMenuEdit()}>
-						<i className="fa fa-pencil" />
-					</button>
-				)}
-				{showClone && (
-					<button className="clone" onClick={() => this.handleClickMenuClone()}>
-						<i className="fa fa-clone" />
-					</button>
-				)}
-				{showDelete && (
-					<button className="delete" onClick={() => this.handleClickMenuDelete()}>
-						<i className="fa fa-trash" />
-					</button>
-				)}
-				{showLink && (
-					<button className="link" onClick={() => this.handleClickMenuLink()}>
-						<i className="fa fa-external-link" />
-					</button>
-				)}
+				<button className="expandButton" onClick={this.handleClickMenu}><i className="fa fa-cog" /></button>
+				{showAdd &&
+					<button className="add" onClick={() => this.handleClickMenuAdd()}><i className="fa fa-plus" /></button>
+				}
+				{showEdit &&
+					<button className="edit" onClick={() => this.handleClickMenuEdit()}><i className="fa fa-pencil" /></button>
+				}
+				{showClone &&
+					<button className="clone" onClick={() => this.handleClickMenuClone()}><i className="fa fa-clone" /></button>
+				}
+				{showDelete &&
+					<button className="delete" onClick={() => this.handleClickMenuDelete()}><i className="fa fa-trash" /></button>
+				}
+				{showLink &&
+					<button className="link" onClick={() => this.handleClickMenuLink()}><i className="fa fa-external-link" /></button>
+				}
 			</div>
 		);
 	}
 }
 
 ExpandableButton.propTypes = {
-	selected: selectType.isRequired, // eslint-disable-line react/no-typos
+	selected: selectType.isRequired,		// eslint-disable-line react/no-typos
 	actions: PropTypes.shape({
 		selectedInitialize: PropTypes.func.isRequired,
 		cloneUserGoal: PropTypes.func.isRequired,
@@ -187,19 +185,19 @@ ExpandableButton.propTypes = {
 		cloneUserTask: PropTypes.func.isRequired,
 		deleteUserTask: PropTypes.func.isRequired,
 		commandAdd: PropTypes.func.isRequired,
-		commandEdit: PropTypes.func.isRequired
+		commandEdit: PropTypes.func.isRequired,
 	}).isRequired,
 	history: PropTypes.shape({
-		push: PropTypes.func.isRequired
-	}).isRequired
+		push: PropTypes.func.isRequired,
+	}).isRequired,
 };
 
 const mapStateToProps = state => ({
-	selected: state.selectedReducer.selected
+	selected: state.selectedReducer.selected,
 });
 
 const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators(actions, dispatch)
+	actions: bindActionCreators(actions, dispatch),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ExpandableButton));
