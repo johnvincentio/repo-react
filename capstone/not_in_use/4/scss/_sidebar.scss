@@ -1,0 +1,59 @@
+
+.sidebar {
+	background-color: palette(sidebar);
+	color: palette(sidebar, text);
+	overflow-y: auto;
+}
+
+.sidebar-grid {
+  display: grid;
+  // grid-row-gap: 10px;
+  // grid-column-gap: 10px;
+  // height: 100vh;
+	margin: 0;
+	height: 100%;
+
+	grid-template-areas:
+	"top top"
+	// "menu submenu";
+	"submenu submenu";
+ 	grid-template-rows: auto 1fr;  
+	grid-template-columns: 30% 1fr;
+
+	&--top {
+		grid-area: top;
+		background-color: lightblue;
+		padding: 10px 0px;
+	}
+
+	&--left {
+		background-color: lightblue;
+		grid-area: menu;
+		.icon {
+			display: block;
+		}
+		.button {
+			border: none transparent;
+			border-radius: 0;
+			outline: none;
+		}
+		svg {
+			background-color: palette(header, base);
+			width: 35px;
+			height: 35px;
+			fill: palette(header, text);
+			cursor: pointer;
+	
+			&:hover {
+				width: 30px;
+				height: 30px;
+				@include opacity(0.85);
+			}
+		}
+	}
+
+	&--right {
+		background-color: lightgray;
+		grid-area: submenu;      
+	}
+}

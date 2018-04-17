@@ -1,0 +1,85 @@
+
+$bkg: rgb(133, 153, 228);
+$txt: rgb(75, 71, 71);
+
+.taskeditviewer {
+
+	&--card {
+		@include button-to-div;
+		width: 300px;
+		height: 450px;
+		border: 1px solid #a4b8cc;
+		position: relative;
+		background-color: $bkg;
+		border-radius: 5px;
+		color: $txt;
+
+		display: flex;
+		// justify-content: space-between;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		&-top {
+			// position: relative;
+			// height: 100px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-bottom: 10px;
+		}
+
+		&-cancel {
+			@include button-to-div;
+			background-color: $bkg;
+			color: black;
+			font-size: 22px;
+			padding-right: 6px;
+		}
+
+		&-status {
+			padding-top: 7px;
+			padding-left: 5px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		&-main {
+			background-color: $bkg;
+			padding: 0 12px;
+			margin-bottom: 10px;
+		}
+	
+		&-description {
+			background-color: white;
+			font-weight: 500;
+			font-size: 18px;
+			border-radius: 5px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 5px;
+			padding-right: 5px;
+			width: 95%;
+			@include text-truncate;
+		}
+
+		&-start-date {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding-bottom: 5px;
+			padding-left: 5px;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		&-end-date {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding-bottom: 5px;
+			padding-right: 5px;
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+}

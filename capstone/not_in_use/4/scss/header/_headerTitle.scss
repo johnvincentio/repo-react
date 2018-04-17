@@ -1,0 +1,50 @@
+
+.header-title {
+	text-align: left;
+	padding: 1em 1em 1em 30px;
+	h1 {
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 1.8rem;
+		a {
+			color: palette(header, text);
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				cursor: pointer;
+				background: none;
+				border: none;
+				color: palette(header, select);
+				svg {
+					fill: palette(header, select);
+				}
+			}
+
+			.logo {
+				font-weight: bold;
+			}
+			svg {
+				vertical-align: middle;
+				margin-right: 5.5px;
+				width: 45px;
+				height: 45px;
+				fill: palette(header, text);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.header-title {
+		padding: 1em 1em 1em 15px;
+		h1 {
+			font-weight: 300;
+			font-size: 1.5rem;
+			a svg {
+				width: 25px;
+				height: 25px;        
+			}
+		}
+	}
+}

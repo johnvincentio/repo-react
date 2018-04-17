@@ -1,0 +1,15 @@
+
+.editor {
+	border: 1px solid red;
+	background-color: lightgray;
+	margin: 10px;
+	&--h2 {
+		padding: 10px 0;
+	}
+	&--p {
+		color: black;
+	}
+	&--goals-container {
+		margin: 5px 20px;
+	}
+}
