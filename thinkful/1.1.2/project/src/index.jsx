@@ -1,49 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import Board from './components/board';
+import './index.css';
 
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
-import { appTheme } from './themes/themes';
-
-import Root from './root/Root';
-
-import configureStore from './store/configureStore';
-
-// import { authUser } from './redux/actions/user.actions';
-
-const store = configureStore();
-
-// console.log(`NODE_ENV ${process.env.NODE_ENV}`);
-
-/*
-const token = localStorage.getItem('token');
-if (token) {
-	// console.log('*** found a token');
-	store.dispatch(authUser(token));
-}
-*/
-
-document.addEventListener('DOMContentLoaded', () => {
-	ReactDOM.render(
-		<MuiThemeProvider theme={appTheme}>
-			<CssBaseline />
-			<Provider store={store}>
-				<Root />
-			</Provider>
-		</MuiThemeProvider>,
-		document.getElementById('root')
-	);
-});
-
-/*
-document.addEventListener('DOMContentLoaded', () => {
-	ReactDOM.render(
-		<Router>
-			<Root store={store} />
-		</Router>,
-		document.getElementById('root'),
-	);
-});
-*/
+ReactDOM.render(<Board />, document.getElementById('root'));
