@@ -44,7 +44,7 @@ const config = {
 		contentBase: path.join(__dirname, 'dist'),
 		compress: false, // true
 		// inline: true,
-		port: 8001,
+		port: 8002,
 		clientLogLevel: 'info',
 		proxy: {
 			'/api/**': { target: 'http://localhost:3001', changeOrigin: true, secure: false }
@@ -99,9 +99,10 @@ const config = {
 	plugins: [
 		new webpack.EnvironmentPlugin(['NODE_ENV', 'API_KEY']),
 		extractSCSSBundle,
-		new CopyWebpackPlugin([{ from: 'index.html', to: '.' }], { debug: 'info' })
+		new CopyWebpackPlugin([{ from: 'index.html', to: '.' }], { debug: 'info' }),
 		// new CopyWebpackPlugin([{ from: 'src/assets/images', to: 'images' }], { debug: 'info' }),
 		// new CopyWebpackPlugin([{ from: 'src/assets/fonts', to: 'assets/fonts' }], { debug: 'info' })
+		new CopyWebpackPlugin([{ from: 'static/favicon_package/*', to: '.' }], { debug: 'info' })
 	]
 };
 
