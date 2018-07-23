@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 import './contact.css';
 
-const Contact = ({ name, photo, address }) => (
-	<div>
-		<img src={photo} alt={photo} />
-		<div className="name">{name}</div>
-		<div className="address">{address}</div>
-	</div>
+const Contact = ({ index, name, photo, address }) => (
+	<section id={`contact-${index}`} className="contact">
+		<img className="contact-photo" src={photo} alt={photo} />
+		<h2 className="contact-name">{name}</h2>
+		<address className="contact-address">{address}</address>
+	</section>
 );
 
 Contact.propTypes = {
+	index: PropTypes.number.isRequired,
 	name: PropTypes.string.isRequired,
 	photo: PropTypes.string.isRequired,
 	address: PropTypes.string.isRequired

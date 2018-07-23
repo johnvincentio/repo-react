@@ -1,4 +1,4 @@
-img {
+/* img {
   float: left;
   height: 55px;
   width: 55px;
@@ -16,4 +16,36 @@ img {
   float: right;
   font-size: 24px;
   font-weight: 400;
+} */
+
+.contact {
+  display: flex;
+  line-height: 64px;
+  border-bottom: 1px solid black;
+}
+
+.contact:last-child {
+  border: 0;
+}
+
+.contact-photo {
+  order: 0;
+  height: 64px;
+  width: 64px;
+}
+
+.contact-name {
+  order: 1;
+  flex-grow: 1;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.contact-address {
+  order: 2;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-right: 10px;
+  font-style: normal;
 }
