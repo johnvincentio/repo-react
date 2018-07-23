@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavigationBar from './components/navigation-bar';
+import AddressBook from './components/AddressBook';
 import './index.css';
 
-const links = [
+const contacts = [
 	{
-		text: 'Courses',
-		href: 'http://www.thinkful.com/courses/'
+		name: 'Alice Aardvark',
+		photo: 'https://api.adorable.io/avatars/64/alice%40thinkful.com',
+		address: '1600 Pennsylvania Ave'
 	},
 	{
-		text: 'Mentorship',
-		href: 'http://www.thinkful.com/mentorship/'
+		name: 'Bob Bear',
+		photo: 'https://api.adorable.io/avatars/64/bob%40thinkful.com',
+		address: '725 5th Ave'
+	},
+	{
+		name: 'Carol Coyote',
+		photo: 'https://api.adorable.io/avatars/64/carol%40thinkful.com',
+		address: '4 Pennsylvania Plaza'
 	}
 ];
-
-ReactDOM.render(<NavigationBar title="Thinkful" links={links} />, document.getElementById('root'));
+ReactDOM.render(<AddressBook contacts={contacts} />, document.getElementById('root'));

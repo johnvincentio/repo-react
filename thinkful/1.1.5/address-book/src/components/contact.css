@@ -1,0 +1,19 @@
+img {
+  float: left;
+  height: 55px;
+  width: 55px;
+}
+
+.name {
+  padding-left: 10px;
+  float: left;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.address {
+  padding-right: 10px;
+  float: right;
+  font-size: 24px;
+  font-weight: 400;
+}
