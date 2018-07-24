@@ -7,6 +7,28 @@ import styled from 'styled-components';
 
 import GuessList from './GuessList';
 
+export const Outer = styled.section`
+	position: relative;
+	background-color: #394264;
+	width: 380px;
+	height: 380px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0 auto;
+
+	box-shadow: rgb(26, 31, 52) 1px 1px, rgb(26, 31, 52) 2px 2px, rgb(26, 31, 52) 3px 3px,
+		rgb(26, 31, 53) 4px 4px, rgb(26, 32, 53) 5px 5px, rgb(27, 32, 53) 6px 6px,
+		rgb(27, 32, 54) 7px 7px, rgb(27, 32, 54) 8px 8px, rgb(27, 32, 54) 9px 9px,
+		rgb(27, 33, 55) 10px 10px, rgb(27, 33, 55) 11px 11px, rgb(28, 33, 55) 12px 12px,
+		rgb(28, 33, 56) 13px 13px, rgb(28, 34, 56) 14px 14px, rgb(28, 34, 56) 15px 15px,
+		rgb(28, 34, 57) 16px 16px, rgb(29, 34, 57) 17px 17px, rgb(29, 34, 57) 18px 18px,
+		rgb(29, 35, 58) 19px 19px, rgb(29, 35, 58) 20px 20px, rgb(29, 35, 58) 21px 21px,
+		rgb(29, 35, 59) 22px 22px, rgb(30, 35, 59) 23px 23px, rgb(30, 36, 59) 24px 24px,
+		rgb(30, 36, 60) 25px 25px, rgb(30, 36, 60) 26px 26px, rgb(30, 36, 60) 27px 27px,
+		rgb(31, 37, 61) 28px 28px;
+`;
+
 export const Title = styled.h2`
 	margin: 0 auto;
 	background: #cc324b;
@@ -79,38 +101,35 @@ export const Guess = styled.p`
 export default class Game extends React.Component {
 	handleGuess = () => {
 		const input = this.guessInput.value;
-		console.log('handleGuess; input ', input);
 		const guess = parseInt(input, 10);
 		if (!Number.isNaN(guess)) {
-			console.log('handleGuess; guess ', guess);
 			this.props.handleGuess(guess * 1);
-			this.guessInput.value = ' ';
+			this.guessInput.value = '';
 		}
 	};
 
 	render() {
-		console.log('Game::render(); guesses ', this.props.guesses);
 		return (
-			<section className="game">
-				<Title id="feedback">{this.props.text}</Title>
+			<Outer>
+				<Title>{this.props.text}</Title>
 
-				<form onSubmit={e => e.preventDefault()}>
-					<input
-						type="text"
-						name="userGuess"
-						id="userGuess"
-						className="text"
-						maxLength="3"
-						autoComplete="off"
-						placeholder="Enter your Guess"
-						required
-						ref={input => {
-							this.guessInput = input;
-						}}
-					/>
-					<Button onClick={this.handleGuess}>Guess</Button>
-				</form>
-
+				{!this.props.victory && (
+					<form onSubmit={e => e.preventDefault()}>
+						<input
+							type="text"
+							name="userGuess"
+							id="userGuess"
+							className="text"
+							maxLength="3"
+							autoComplete="off"
+							placeholder="Enter your Guess"
+							ref={input => {
+								this.guessInput = input;
+							}}
+						/>
+						<Button onClick={this.handleGuess}>Guess</Button>
+					</form>
+				)}
 				<p>Answer is {this.props.answer}</p>
 
 				<Guess>
@@ -118,7 +137,7 @@ export default class Game extends React.Component {
 				</Guess>
 
 				<GuessList guesses={this.props.guesses} />
-			</section>
+			</Outer>
 		);
 	}
 }
@@ -127,5 +146,6 @@ Game.propTypes = {
 	handleGuess: PropTypes.func.isRequired,
 	guesses: PropTypes.arrayOf(PropTypes.number).isRequired,
 	answer: PropTypes.number.isRequired,
-	text: PropTypes.string.isRequired
+	text: PropTypes.string.isRequired,
+	victory: PropTypes.bool.isRequired
 };

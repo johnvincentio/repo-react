@@ -6,9 +6,8 @@ import PropTypes from 'prop-types';
 import './help.css';
 
 export default function Help(props) {
-	console.log('Game');
 	return (
-		<div className="overlay" id="modal">
+		<div className="overlay">
 			<div className="content">
 				<h3>What do I do?</h3>
 				<div>
