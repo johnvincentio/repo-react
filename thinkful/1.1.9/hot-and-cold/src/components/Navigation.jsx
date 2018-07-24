@@ -12,10 +12,6 @@ export const Nav = styled.nav`
 `;
 
 export const Li = styled.li`
-	// text-transform: uppercase;
-	// font-weight: 700;
-	// font-size: 1.2em;
-
 	&:first-child {
 		float: left;
 	}
