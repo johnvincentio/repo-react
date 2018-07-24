@@ -11,8 +11,12 @@ export default class HotCold extends React.Component {
 		super(props);
 		this.state = {
 			// characters: props.characters,
-			search: ''
+			showHelp: false
 		};
+	}
+
+	toggleHelp() {
+		this.setState({ showHelp: !this.state.showHelp });
 	}
 
 	// setSearch = search => {
@@ -31,12 +35,9 @@ export default class HotCold extends React.Component {
 	render() {
 		return (
 			<div className="hot-cold">
-				<Navigation />
-				<Help />
-				<Game />
-				{/* <SearchForm value={this.state.search} onChange={value => this.setSearch(value)} />
-				<CharacterCount count={this.state.characters.length} />
-				<CharacterList characters={this.state.characters} /> */}
+				{!this.state.showHelp && <Navigation toggleHelp={() => this.toggleHelp()} />}
+				{this.state.showHelp && <Help toggleHelp={() => this.toggleHelp()} />}
+				{!this.state.showHelp && <Game />}
 			</div>
 		);
 	}

@@ -3,6 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './help.css';
+
 export default function Help(props) {
 	console.log('Game');
 	return (
@@ -24,21 +26,13 @@ export default function Help(props) {
 						</li>
 					</ul>
 					<p>So, Are you ready?</p>
-					<a className="close" href="#">
-						Got It!
-					</a>
+					<button onClick={props.toggleHelp}>Got It!</button>
 				</div>
 			</div>
 		</div>
 	);
 }
 
-// Game.propTypes = {
-// 	characters: PropTypes.arrayOf(
-// 		PropTypes.shape({
-// 			name: PropTypes.string.isRequired,
-// 			description: PropTypes.string.isRequired,
-// 			actor: PropTypes.string.isRequired
-// 		})
-// 	).isRequired
-// };
+Help.propTypes = {
+	toggleHelp: PropTypes.func.isRequired
+};

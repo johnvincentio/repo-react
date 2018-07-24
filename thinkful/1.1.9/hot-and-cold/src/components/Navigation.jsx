@@ -10,6 +10,9 @@ export default function Navigation(props) {
 			<nav>
 				<ul className="clearfix">
 					<li>
+						<button onClick={props.toggleHelp}>What!</button>
+					</li>
+					<li>
 						<a className="what" href="#">
 							What ?
 						</a>
@@ -26,12 +29,6 @@ export default function Navigation(props) {
 	);
 }
 
-// Game.propTypes = {
-// 	characters: PropTypes.arrayOf(
-// 		PropTypes.shape({
-// 			name: PropTypes.string.isRequired,
-// 			description: PropTypes.string.isRequired,
-// 			actor: PropTypes.string.isRequired
-// 		})
-// 	).isRequired
-// };
+Navigation.propTypes = {
+	toggleHelp: PropTypes.func.isRequired
+};
