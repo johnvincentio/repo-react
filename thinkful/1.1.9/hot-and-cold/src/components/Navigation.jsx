@@ -12,9 +12,9 @@ export const Nav = styled.nav`
 `;
 
 export const Li = styled.li`
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 1.2em;
+	// text-transform: uppercase;
+	// font-weight: 700;
+	// font-size: 1.2em;
 
 	&:first-child {
 		float: left;
@@ -31,6 +31,9 @@ export const Button = styled.button`
 	margin: 0;
 	padding: 0;
 	background: #1f253d;
+
+	text-transform: uppercase;
+	font-weight: 700;
 	font-size: 1.2em;
 `;
 
@@ -42,7 +45,6 @@ export const Title = styled.h1`
 `;
 
 export default function Navigation(props) {
-	console.log('Navigation 99');
 	return (
 		<header>
 			<Nav>
@@ -51,7 +53,7 @@ export default function Navigation(props) {
 						<Button onClick={props.toggleHelp}>What?</Button>
 					</Li>
 					<Li>
-						<Button onClick={props.toggleHelp}>+ New Game</Button>
+						<Button onClick={props.toggleGame}>+ New Game</Button>
 					</Li>
 				</ul>
 			</Nav>
@@ -61,5 +63,6 @@ export default function Navigation(props) {
 }
 
 Navigation.propTypes = {
-	toggleHelp: PropTypes.func.isRequired
+	toggleHelp: PropTypes.func.isRequired,
+	toggleGame: PropTypes.func.isRequired
 };

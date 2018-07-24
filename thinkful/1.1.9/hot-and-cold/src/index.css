@@ -78,7 +78,7 @@ ul li {
     rgb(30, 36, 60) 27px 27px, rgb(31, 37, 61) 28px 28px;
 }
 
-h2 {
+/* h2 {
   margin: 0 auto;
   background: #cc324b;
   padding: 1em 0.4em;
@@ -89,19 +89,19 @@ h2 {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   color: #fff;
-}
+} */
 
-.game p {
+/* .game p {
   margin-top: 0.5em;
   font-size: 1.8em;
   padding-bottom: 0.5em;
-}
+} */
 
-#count {
+/* #count {
   color: #f39c12;
   font-weight: 700;
   font-size: 1.5em;
-}
+} */
 
 input {
   width: 300px;
@@ -117,7 +117,7 @@ input {
   border-radius: 4px;
 }
 
-input.button {
+/* input.button {
   background: #1f253d;
   color: #95a5a6;
   font-size: 2em;
@@ -138,7 +138,7 @@ input.button:hover {
   -o-transition: background 1s ease-in-out;
   transition: background 1s ease-in-out;
   cursor: pointer;
-}
+} */
 
 input.text {
   text-align: center;
