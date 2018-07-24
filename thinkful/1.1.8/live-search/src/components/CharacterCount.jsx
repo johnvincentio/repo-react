@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './character-count.css';
 
@@ -15,3 +16,7 @@ export default function CharacterCount(props) {
 		</span>
 	);
 }
+
+CharacterCount.propTypes = {
+	count: PropTypes.number.isRequired
+};
