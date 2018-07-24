@@ -92,7 +92,7 @@ export default class Game extends React.Component {
 		console.log('Game::render(); guesses ', this.props.guesses);
 		return (
 			<section className="game">
-				<Title id="feedback">Make your Guess!</Title>
+				<Title id="feedback">{this.props.text}</Title>
 
 				<form onSubmit={e => e.preventDefault()}>
 					<input
@@ -126,5 +126,6 @@ export default class Game extends React.Component {
 Game.propTypes = {
 	handleGuess: PropTypes.func.isRequired,
 	guesses: PropTypes.arrayOf(PropTypes.number).isRequired,
-	answer: PropTypes.number.isRequired
+	answer: PropTypes.number.isRequired,
+	text: PropTypes.string.isRequired
 };

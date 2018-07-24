@@ -6,13 +6,16 @@ import Game from './Game';
 import Help from './Help';
 import Navigation from './Navigation';
 
+import Utils from '../utils';
+
 export default class HotCold extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			guesses: [12, 67],
 			showHelp: false,
-			answer: this.randomInteger(1, 100)
+			answer: this.randomInteger(1, 100),
+			text: 'Make your Guess!'
 		};
 	}
 
@@ -30,11 +33,11 @@ export default class HotCold extends React.Component {
 	}
 
 	handleGuess(value) {
-		console.log('handleGuess; value ', value);
+		console.log('handleGuess; value ', value, ' answer ', this.state.answer);
+		const text = Utils.handleComment(value, this.state.answer);
 		const arr = JSON.parse(JSON.stringify(this.state.guesses));
 		arr.push(value);
-		// const arr = { ...this.state.guesses, value };
-		this.setState({ guesses: arr });
+		this.setState({ guesses: arr, text });
 	}
 
 	render() {
@@ -50,6 +53,7 @@ export default class HotCold extends React.Component {
 						handleGuess={value => this.handleGuess(value)}
 						guesses={this.state.guesses}
 						answer={this.state.answer}
+						text={this.state.text}
 					/>
 				)}
 			</div>
