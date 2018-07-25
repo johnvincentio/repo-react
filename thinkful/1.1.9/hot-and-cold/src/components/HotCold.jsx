@@ -22,7 +22,7 @@ export default class HotCold extends React.Component {
 
 	randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-	initGame() {
+	toggleGame() {
 		this.setState({
 			guesses: [],
 			answer: this.randomInteger(1, 100),
@@ -33,10 +33,6 @@ export default class HotCold extends React.Component {
 	}
 	toggleHelp() {
 		this.setState({ showHelp: !this.state.showHelp });
-	}
-
-	toggleGame() {
-		this.initGame();
 	}
 
 	handleGuess(value) {
