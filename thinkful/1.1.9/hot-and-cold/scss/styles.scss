@@ -5,8 +5,4 @@
 @import 'variables';
 @import 'mixins';
 
-.clearfix {
-  @include clearfix;
-}
-
 @import 'base';
