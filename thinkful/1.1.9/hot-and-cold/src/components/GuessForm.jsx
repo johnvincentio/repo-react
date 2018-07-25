@@ -47,6 +47,7 @@ export default class GameForm extends React.Component {
 							ref={input => {
 								this.guessInput = input;
 							}}
+							autoFocus
 						/>
 						<button onClick={this.handleGuess}>Guess</button>
 					</form>
