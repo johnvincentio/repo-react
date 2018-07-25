@@ -7,7 +7,7 @@ import './guessList.scss';
 
 export default function GuessList(props) {
 	const characters = props.guesses.map((guess, index) => <li key={index}>{guess}</li>);
-	return <ul className="guessBox clearfix">{characters}</ul>;
+	return <ul className="guessList clearfix">{characters}</ul>;
 }
 
 GuessList.propTypes = {

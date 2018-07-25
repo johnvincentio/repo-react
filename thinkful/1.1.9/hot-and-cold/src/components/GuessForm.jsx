@@ -35,7 +35,7 @@ export default class GameForm extends React.Component {
 		return (
 			<Fragment>
 				{!this.props.victory && (
-					<form onSubmit={e => e.preventDefault()}>
+					<form className="guessForm" onSubmit={e => e.preventDefault()}>
 						<input
 							type="text"
 							name="userGuess"
