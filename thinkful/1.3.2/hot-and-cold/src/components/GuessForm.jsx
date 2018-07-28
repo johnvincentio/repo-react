@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './guessForm.scss';
 
-export default class GameForm extends React.Component {
+export default class GuessForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -58,7 +58,7 @@ export default class GameForm extends React.Component {
 	}
 }
 
-GameForm.propTypes = {
+GuessForm.propTypes = {
 	handleGuess: PropTypes.func.isRequired,
 	answer: PropTypes.number.isRequired,
 	victory: PropTypes.bool.isRequired
