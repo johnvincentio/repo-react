@@ -54,12 +54,12 @@ describe('<Help />', () => {
 		});
 	});
 
-	describe.only('button', () => {
+	describe('button', () => {
 		it('Find the button', () => {
 			const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
 			expect(wrapper.find('button').text()).toEqual('Got It!');
 		});
-		it.only('Fire the button', () => {
+		it('Fire the button', () => {
 			const callback = jest.fn();
 			const wrapper = mount(<Help toggleHelp={callback} />);
 			expect(callback).not.toHaveBeenCalled();
