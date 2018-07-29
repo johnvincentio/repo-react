@@ -3,6 +3,21 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"jest": {
+		"roots": [
+			"<rootDir>/src/",
+			"<rootDir>/tests/__tests__/"
+		],
+		"testRegex": "./tests/__tests__/.*.(js|jsx)$",
+		"setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+		"testPathIgnorePatterns": [
+			"<rootDir>/tests/__tests__/setup/"
+		],
+		"moduleNameMapper": {
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
+			"\\.(css|less|scss)$": "<rootDir>/tests/__mocks__/styleMock.js"
+		}
+	},
 	"scripts": {
 		"test-help": "jest --help",
 		"test": "jest",
@@ -67,12 +82,5 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^3.3.3"
-	},
-	"jest": {
-		"setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
-		"moduleNameMapper": {
-			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-			"\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
-		}
 	}
 }

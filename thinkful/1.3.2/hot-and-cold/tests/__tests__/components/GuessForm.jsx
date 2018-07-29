@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { GuessForm } from '../../src/components';
+import { GuessForm } from '../../../src/components';
 
 describe('<GuessForm />', () => {
 	it('Renders without crashing', () => {
