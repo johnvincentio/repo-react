@@ -21,8 +21,31 @@ describe('<Help />', () => {
 		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
 		expect(wrapper.find('h3').text()).toEqual('What do I do?');
 	});
-	it('Renders h3 conains', () => {
+	it('Renders h3 contains', () => {
 		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
 		expect(wrapper.contains(<h3>What do I do?</h3>)).toBeTruthy();
+	});
+
+	it('Renders contains ul', () => {
+		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
+		expect(
+			wrapper
+				.find('div')
+				.find('div')
+				.find('p')
+		).toHaveLength(2);
+	});
+	it('Renders contains ul', () => {
+		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
+		expect(wrapper.find('p')).toHaveLength(2);
+	});
+
+	it('Renders contains ul', () => {
+		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
+		expect(wrapper.find('ul')).toHaveLength(1);
+	});
+	it('Renders contains li', () => {
+		const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
+		expect(wrapper.find('li')).toHaveLength(3);
 	});
 });
