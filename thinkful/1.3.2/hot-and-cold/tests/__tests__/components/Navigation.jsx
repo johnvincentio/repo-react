@@ -11,7 +11,7 @@ describe('<Navigation />', () => {
 	const toggleHelp = jest.fn();
 	const toggleGame = jest.fn();
 
-	describe('basic', () => {
+	describe('smoke-test', () => {
 		it('Renders without crashing', () => {
 			shallow(<Navigation toggleHelp={toggleHelp} toggleGame={toggleGame} />);
 		});
@@ -28,49 +28,51 @@ describe('<Navigation />', () => {
 		});
 	});
 
-	describe('help button', () => {
-		it('Find the button', () => {
-			const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={toggleGame} />);
-			expect(
+	describe('callbacks-events', () => {
+		describe('help button', () => {
+			it('Find the button', () => {
+				const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={toggleGame} />);
+				expect(
+					wrapper
+						.find('button')
+						.first()
+						.text()
+				).toEqual('What?');
+			});
+			it('Fire the button', () => {
+				const callback = jest.fn();
+				const wrapper = shallow(<Navigation toggleHelp={callback} toggleGame={toggleGame} />);
+				expect(callback).not.toHaveBeenCalled();
+
 				wrapper
 					.find('button')
 					.first()
-					.text()
-			).toEqual('What?');
+					.simulate('click');
+				expect(callback).toHaveBeenCalled();
+			});
 		});
-		it('Fire the button', () => {
-			const callback = jest.fn();
-			const wrapper = shallow(<Navigation toggleHelp={callback} toggleGame={toggleGame} />);
-			expect(callback).not.toHaveBeenCalled();
 
-			wrapper
-				.find('button')
-				.first()
-				.simulate('click');
-			expect(callback).toHaveBeenCalled();
-		});
-	});
+		describe('game button', () => {
+			it('Find the button', () => {
+				const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={toggleGame} />);
+				expect(
+					wrapper
+						.find('button')
+						.first()
+						.text()
+				).toEqual('What?');
+			});
+			it('Fire the button', () => {
+				const callback = jest.fn();
+				const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={callback} />);
+				expect(callback).not.toHaveBeenCalled();
 
-	describe('game button', () => {
-		it('Find the button', () => {
-			const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={toggleGame} />);
-			expect(
 				wrapper
 					.find('button')
-					.first()
-					.text()
-			).toEqual('What?');
-		});
-		it('Fire the button', () => {
-			const callback = jest.fn();
-			const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={callback} />);
-			expect(callback).not.toHaveBeenCalled();
-
-			wrapper
-				.find('button')
-				.at(1)
-				.simulate('click');
-			expect(callback).toHaveBeenCalled();
+					.at(1)
+					.simulate('click');
+				expect(callback).toHaveBeenCalled();
+			});
 		});
 	});
 });

@@ -10,7 +10,7 @@ import { Help } from '../../../src/components';
 describe('<Help />', () => {
 	const toggleHelp = jest.fn();
 
-	describe('basic', () => {
+	describe('smoke-test', () => {
 		it('Renders without crashing', () => {
 			shallow(<Help toggleHelp={toggleHelp} />);
 		});
@@ -54,11 +54,14 @@ describe('<Help />', () => {
 		});
 	});
 
-	describe('button', () => {
+	describe('properties-state', () => {
 		it('Find the button', () => {
 			const wrapper = shallow(<Help toggleHelp={toggleHelp} />);
 			expect(wrapper.find('button').text()).toEqual('Got It!');
 		});
+	});
+
+	describe('callbacks-events', () => {
 		it('Fire the button', () => {
 			const callback = jest.fn();
 			const wrapper = mount(<Help toggleHelp={callback} />);
