@@ -33,7 +33,7 @@ export default class GuessForm extends React.Component {
 
 	render() {
 		return (
-			<Fragment>
+			<div>
 				{!this.props.victory && (
 					<form className="guessForm" onSubmit={e => e.preventDefault()}>
 						<input
@@ -53,7 +53,7 @@ export default class GuessForm extends React.Component {
 					</form>
 				)}
 				{this.state.showAnswer && <p>Answer is {this.props.answer}</p>}
-			</Fragment>
+			</div>
 		);
 	}
 }

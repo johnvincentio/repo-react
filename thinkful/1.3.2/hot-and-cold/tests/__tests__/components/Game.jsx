@@ -1,6 +1,6 @@
 //
 
-/* global describe, it, jest */
+/* global describe, it, jest, expect */
 
 import React from 'react';
 import { shallow } from 'enzyme';
