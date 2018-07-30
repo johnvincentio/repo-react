@@ -39,6 +39,17 @@ describe('<GuessList />', () => {
 				expect(wrapper.find('li')).toHaveLength(guesses.length);
 			});
 		});
+
+		describe('verify non empty list', () => {
+			it('Renders contains li', () => {
+				const wrapper = shallow(<GuessList guesses={guesses} />);
+				const items = wrapper.find('li');
+				expect(items.length).toEqual(guesses.length);
+				guesses.forEach((item, index) => {
+					expect(items.at(index).text()).toEqual(item.toString());
+				});
+			});
+		});
 	});
 
 	describe('content', () => {
