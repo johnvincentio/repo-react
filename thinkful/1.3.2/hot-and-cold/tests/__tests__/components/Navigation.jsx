@@ -3,7 +3,7 @@
 /* global describe, it, jest, expect */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import { Navigation } from '../../../src/components';
 
@@ -43,7 +43,6 @@ describe('<Navigation />', () => {
 				const callback = jest.fn();
 				const wrapper = shallow(<Navigation toggleHelp={callback} toggleGame={toggleGame} />);
 				expect(callback).not.toHaveBeenCalled();
-
 				wrapper
 					.find('button')
 					.first()
@@ -66,7 +65,6 @@ describe('<Navigation />', () => {
 				const callback = jest.fn();
 				const wrapper = shallow(<Navigation toggleHelp={toggleHelp} toggleGame={callback} />);
 				expect(callback).not.toHaveBeenCalled();
-
 				wrapper
 					.find('button')
 					.at(1)
