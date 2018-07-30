@@ -24,6 +24,7 @@ describe('<GuessForm />', () => {
 				<GuessForm handleGuess={handleGuess} answer={answer} victory={victory} />
 			);
 			expect(wrapper.find('form').hasClass('guessForm')).toEqual(true);
+			expect(wrapper.find('p').exists()).toBeFalsy();
 		});
 	});
 
@@ -58,7 +59,7 @@ describe('<GuessForm />', () => {
 			expect(callback).not.toHaveBeenCalled();
 		});
 
-		it.only('Fire the button', () => {
+		it('Fire the button', () => {
 			const callback = jest.fn();
 			const wrapper = mount(<GuessForm handleGuess={callback} answer={answer} victory={victory} />);
 			const value = 10;
@@ -67,6 +68,31 @@ describe('<GuessForm />', () => {
 			wrapper.find('button').simulate('click');
 			expect(callback).toHaveBeenCalled();
 			expect(callback).toHaveBeenCalledWith(value);
+		});
+
+		it('Should reset input', () => {
+			const callback = jest.fn();
+			const wrapper = mount(<GuessForm handleGuess={callback} answer={answer} victory={victory} />);
+			const input = wrapper.find('input[type="text"]');
+			input.instance().value = 10;
+			wrapper.find('button').simulate('click');
+			expect(input.instance().value).toEqual('');
+		});
+
+		it('Ask for Help', () => {
+			const callback = jest.fn();
+			const wrapper = mount(<GuessForm handleGuess={callback} answer={answer} victory={victory} />);
+			expect(wrapper.find('p').exists()).toBeFalsy();
+			wrapper.find('input[type="text"]').instance().value = '?';
+			wrapper.find('button').simulate('click');
+			expect(callback).not.toHaveBeenCalled();
+			expect(wrapper.state().showAnswer).toEqual(true);
+			expect(wrapper.find('p').exists()).toBeTruthy();
+
+			wrapper.find('button').simulate('click');
+			expect(callback).not.toHaveBeenCalled();
+			expect(wrapper.state().showAnswer).toEqual(false);
+			expect(wrapper.find('p').exists()).toBeFalsy();
 		});
 	});
 });

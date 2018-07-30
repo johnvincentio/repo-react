@@ -1,6 +1,6 @@
 //
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './guessForm.scss';
@@ -23,8 +23,8 @@ export default class GuessForm extends React.Component {
 		const guess = parseInt(input, 10);
 		if (!Number.isNaN(guess)) {
 			this.props.handleGuess(guess * 1);
-			this.guessInput.value = '';
 		}
+		this.guessInput.value = '';
 	};
 
 	toggleAnswer() {
