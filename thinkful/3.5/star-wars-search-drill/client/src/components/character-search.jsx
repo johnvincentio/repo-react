@@ -16,7 +16,8 @@ export class CharacterSearch extends React.Component {
 		console.log('CharacterSearch::onChange; ', value);
 	};
 
-	handleSearch = () => {
+	handleSearch = e => {
+		e.preventDefault();
 		const input = this.input.value;
 		console.log('handleSearch, input ', input);
 		this.props.actions.searchCharacters(input);
@@ -43,13 +44,13 @@ export class CharacterSearch extends React.Component {
 		console.log('CharacterSearch::render, props ', this.props);
 		return (
 			<div className="character-search">
-				<form onSubmit={e => e.preventDefault()}>
+				<form onSubmit={e => this.handleSearch(e)}>
 					<input
 						type="search"
 						ref={input => (this.input = input)}
 						onChange={e => this.onChange(e.target.value)}
 					/>
-					<button onClick={this.handleSearch}>Search</button>
+					<button>Search</button>
 				</form>
 				<ul className="character-search-results">{this.renderResults()}</ul>
 			</div>
