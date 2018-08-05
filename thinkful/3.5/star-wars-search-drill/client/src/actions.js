@@ -22,17 +22,15 @@ export const searchCharactersError = error => ({
 });
 
 export const searchCharacters = name => dispatch => {
-	// Make this async action using the search function
-	// It should dispatch the three sync actions above
-	console.log('Action::searchCharacters;name ', name);
+	// console.log('Action::searchCharacters;name ', name);
 	dispatch(searchCharactersRequest());
 	search(name)
 		.then(characters => {
-			console.log('characters ', characters);
+			// console.log('characters ', characters);
 			dispatch(searchCharactersSuccess(characters));
 		})
 		.catch(err => {
-			console.log('err ', err);
+			// console.log('err ', err);
 			dispatch(searchCharactersError(err));
 		});
 };

@@ -11,8 +11,6 @@ import Spinner from 'react-spinkit';
 
 import * as actions from '../actions';
 
-// import { searchCharacters } from '../actions';
-
 export class CharacterSearch extends React.Component {
 	onChange = value => {
 		console.log('CharacterSearch::onChange; ', value);
@@ -44,8 +42,6 @@ export class CharacterSearch extends React.Component {
 		console.log('CharacterSearch::render, props ', this.props);
 		return (
 			<div className="character-search">
-				{/* When this form is submitted you should submit the
-                    searchCharacters action */}
 				<form onSubmit={e => e.preventDefault()}>
 					<input
 						type="search"
@@ -61,12 +57,16 @@ export class CharacterSearch extends React.Component {
 }
 
 CharacterSearch.propTypes = {
-	characters: PropTypes.string.isRequired,
+	characters: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 	loading: PropTypes.bool.isRequired,
-	error: PropTypes.bool.isRequired,
+	error: PropTypes.bool,
 	actions: PropTypes.shape({
 		searchCharacters: PropTypes.func.isRequired
 	}).isRequired
+};
+
+CharacterSearch.defaultProps = {
+	error: null
 };
 
 const mapStateToProps = state => ({
