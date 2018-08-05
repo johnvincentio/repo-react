@@ -23,8 +23,9 @@ export class CharacterSearch extends React.Component {
 	};
 
 	renderResults() {
+		console.log('CharacterSearch::renderResults, props ', this.props);
 		if (this.props.loading) {
-			return <Spinner spinnerName="circle" noFadeIn />;
+			return <Spinner name="circle" color="orange" fadeIn="none" />;
 		}
 
 		if (this.props.error) {

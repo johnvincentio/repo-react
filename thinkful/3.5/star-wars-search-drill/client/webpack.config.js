@@ -64,6 +64,13 @@ const config = {
 			},
 			{
 				test: /\.css$/,
+				include: /node_modules/,
+				loaders: ['style-loader', 'css-loader']
+			},
+
+			{
+				test: /\.css$/,
+				exclude: /node_modules/,
 				loader: ExtractTextPlugin.extract({
 					fallback: 'style-loader/url!file-loader',
 					use: ['css-loader'],
