@@ -5,7 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP_FOLDER = path.resolve(__dirname, './src');
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
 
 // const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
 const ICONS_FOLDER = path.resolve(__dirname, './icons');
@@ -14,7 +13,7 @@ const ASSETS_FOLDER = path.resolve(__dirname, './src/assets');
 const DIST_FOLDER = path.resolve(__dirname, './dist');
 const DIST_FOLDER_STYLE = path.resolve(DIST_FOLDER, './css');
 
-const INCLUDE_SCSS_FOLDER = path.resolve(__dirname, './src/components');
+const INCLUDE_SCSS_FOLDER = path.resolve(__dirname, './src');
 
 const extractSCSSBundle = new ExtractTextPlugin({
 	filename: '[name].bundle.css',
@@ -30,7 +29,7 @@ console.log('webpack; PRODUCTION_MODE ', PRODUCTION_MODE);
 
 const config = {
 	// entry: ['./src/index.jsx', './src/scss/index.scss', './src/components/main.scss'],
-	entry: ['./src/index.jsx', './scss/styles.scss'],
+	entry: ['./src/index.jsx'],
 	output: {
 		path: DIST_FOLDER,
 		filename: 'bundle.js'
@@ -75,14 +74,8 @@ const config = {
 			{
 				test: /\.(sass|scss)$/,
 				include: INCLUDE_SCSS_FOLDER,
-				exclude: [SCSS_FOLDER, /node_modules/],
+				exclude: [/node_modules/],
 				use: ['style-loader', 'css-loader', 'sass-loader']
-			},
-			{
-				test: /\.(sass|scss)$/,
-				include: SCSS_FOLDER,
-				exclude: [INCLUDE_SCSS_FOLDER, /node_modules/],
-				loader: extractSCSSBundle.extract(['css-loader', 'sass-loader'])
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
