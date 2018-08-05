@@ -3,6 +3,7 @@
 
 function _search(name) {
 	if (Math.random() < 0.25) {
+		console.log('CREATE AN ERROR');
 		return Promise.reject('Something went wrong');
 	}
 

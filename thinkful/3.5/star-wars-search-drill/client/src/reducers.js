@@ -15,10 +15,15 @@ const initialState = {
 };
 
 export function characterReducer(state = initialState, action) {
+	console.log('characterReducer; state ', state, ' action ', action);
 	// Handle these sync actions
 	if (action.type === SEARCH_CHARACTERS_REQUEST) {
+		return Object.assign({}, state, { characters: [], loading: true, error: null });
 	} else if (action.type === SEARCH_CHARACTERS_SUCCESS) {
+		return Object.assign({}, state, { characters: action.characters, loading: false, error: null });
 	} else if (action.type === SEARCH_CHARACTERS_ERROR) {
+		console.log('SEARCH_CHARACTERS_ERROR; action.error ', action.error);
+		return Object.assign({}, state, { characters: [], loading: false, error: action.error });
 	}
 	return state;
 }
