@@ -1,0 +1,25 @@
+{
+  "name": "trello",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "react-redux": "^5.0.2",
+    "react-scripts": "1.1.4"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "author": "Joe Turner <joe@oampo.co.uk>",
+  "license": "MIT"
+}
