@@ -1,19 +1,21 @@
 //
 
+/* eslint-disable import/no-named-as-default */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
 
-import configureStore from './store/configureStore';
+import CharacterSearch from './components/character-search';
 
-import HotCold from './components/HotCold';
+import store from './store';
 
-const store = configureStore();
+import './index.css';
 
 ReactDOM.render(
 	<Provider store={store}>
-		<HotCold />
+		<CharacterSearch />
 	</Provider>,
 	document.getElementById('root')
 );

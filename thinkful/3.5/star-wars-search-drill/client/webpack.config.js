@@ -5,7 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP_FOLDER = path.resolve(__dirname, './src');
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
 
 // const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
 const ICONS_FOLDER = path.resolve(__dirname, './icons');
@@ -30,7 +29,7 @@ console.log('webpack; PRODUCTION_MODE ', PRODUCTION_MODE);
 
 const config = {
 	// entry: ['./src/index.jsx', './src/scss/index.scss', './src/components/main.scss'],
-	entry: ['./src/index.jsx', './scss/styles.scss'],
+	entry: ['./src/index.jsx'],
 	output: {
 		path: DIST_FOLDER,
 		filename: 'bundle.js'
@@ -63,26 +62,13 @@ const config = {
 				exclude: /node_modules/,
 				loader: 'babel-loader'
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	loader: ExtractTextPlugin.extract({
-			// 		fallback: 'style-loader/url!file-loader',
-			// 		use: ['css-loader'],
-			// 		publicPath: DIST_FOLDER_STYLE
-			// 	})
-			// },
-
 			{
-				test: /\.(sass|scss)$/,
-				include: INCLUDE_SCSS_FOLDER,
-				exclude: [SCSS_FOLDER, /node_modules/],
-				use: ['style-loader', 'css-loader', 'sass-loader']
-			},
-			{
-				test: /\.(sass|scss)$/,
-				include: SCSS_FOLDER,
-				exclude: [INCLUDE_SCSS_FOLDER, /node_modules/],
-				loader: extractSCSSBundle.extract(['css-loader', 'sass-loader'])
+				test: /\.css$/,
+				loader: ExtractTextPlugin.extract({
+					fallback: 'style-loader/url!file-loader',
+					use: ['css-loader'],
+					publicPath: DIST_FOLDER_STYLE
+				})
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
