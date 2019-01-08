@@ -1,5 +1,5 @@
 {
-	"extends": "airbnb",
+	"extends": ["airbnb", "prettier"],
 	"env": {
 		"node": true,
 		"browser": false,
@@ -7,10 +7,17 @@
 	},
 	"globals": {},
 	"rules": {
-		"indent": [2, "tab"],
-		"no-tabs": 0,
-		"react/jsx-indent": ["off", 2],
-		"react/jsx-indent-props": ["off", 2]
+		"no-console": 0,
+		"max-len": [
+			"error",
+			{
+				"code": 120,
+				"tabWidth": 2,
+				"comments": 120
+			}
+		],
+		"indent": [2, "tab", { "SwitchCase": 1 }],
+		"no-tabs": 0
 	},
 	"plugins": []
 }
