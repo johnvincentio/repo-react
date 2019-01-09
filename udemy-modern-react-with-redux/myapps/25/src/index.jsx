@@ -2,50 +2,74 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import faker from 'faker';
 
-import { appTheme } from './themes/themes';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
-import Root from './root/Root';
+const data = [
+	{ id: 0, author: 'Sam', timeAgo: 'Today at 6:00pm', content: 'Blog post' },
+	{ id: 1, author: 'John', timeAgo: 'Today at midnight', content: 'Anything' }
+];
 
-import configureStore from './store/configureStore';
+const App = () => {
 
-// import { authUser } from './redux/actions/user.actions';
+	const details = data.map(item => (
+		<div key={`tag-${item.id}`}>
+			<ApprovalCard>
+				<CommentDetail
+					author={item.author}
+					avatar={faker.image.avatar()}
+					timeAgo={item.timeAgo}
+					content={item.content}
+				/>
+			</ApprovalCard>
+		</div>
+	));
+	return (
+		<div className="ui container comments">
+			<ApprovalCard>
+				<div>
+					<h4>Warning</h4>
+					Are you sure you want to do this?
+				</div>
+			</ApprovalCard>
+			{details}
+		</div>
+	);
+}
 
-const store = configureStore();
-
-// console.log(`NODE_ENV ${process.env.NODE_ENV}`);
 
 /*
-const token = localStorage.getItem('token');
-if (token) {
-	// console.log('*** found a token');
-	store.dispatch(authUser(token));
+const Segment = (props) => (
+	<div className="ui placeholder segment">{props.children}</div>
+);
+
+const App2 = () => {
+	return (
+		<div>
+			<Segment>
+				<div className="ui icon header">
+					<i className="pdf file outline icon"></i>
+					No documents are listed for this customer.
+				</div>
+				<div className="ui primary button">Add Document</div>
+			</Segment>
+			<Segment>
+				<h4 className="ui header">For Your Information</h4>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+				</p>
+			</Segment>
+		</div>
+	);
 }
 */
 
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(
-		<MuiThemeProvider theme={appTheme}>
-			<CssBaseline />
-			<Provider store={store}>
-				<Root />
-			</Provider>
-		</MuiThemeProvider>,
+		<App />,
 		document.getElementById('root')
 	);
 });
-
-/*
-document.addEventListener('DOMContentLoaded', () => {
-	ReactDOM.render(
-		<Router>
-			<Root store={store} />
-		</Router>,
-		document.getElementById('root'),
-	);
-});
-*/
