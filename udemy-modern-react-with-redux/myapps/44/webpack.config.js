@@ -9,23 +9,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const copyWebpackPluginOptions = 'warning'; // info, debug, warning
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const transforms = require('./transforms');
 
-// const APP_FOLDER = path.resolve(__dirname, './src');
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
-// const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
 const ICONS_FOLDER = path.resolve(__dirname, './icons');
 
 const DIST_FOLDER = path.resolve(__dirname, './dist');
-// const DIST_FOLDER_STYLE = path.resolve(DIST_FOLDER, './css');
-
-const INCLUDE_SCSS_FOLDER = path.resolve(__dirname, './src');
 
 const HTMLPlugin = new HtmlWebpackPlugin({
 	template: './templates/index.hbs',
@@ -47,10 +37,10 @@ const HTMLPlugin = new HtmlWebpackPlugin({
 	FACEBOOK_APP_ID: transforms.FACEBOOK_APP_ID
 });
 
-const extractSCSSBundle = new MiniCssExtractPlugin({
-	filename: '[name].[contenthash].css',
-	chunkFilename: '[id].[contenthash].css'
-});
+// const extractCSSBundle = new MiniCssExtractPlugin({
+// 	filename: '[name].[contenthash].css',
+// 	chunkFilename: '[id].[contenthash].css'
+// });
 
 // console.log('webpack; node-env ', process.env.NODE_ENV);
 const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
@@ -58,7 +48,7 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx'];
 
 config.optimization = {
 	splitChunks: {
@@ -86,41 +76,16 @@ config.optimization = {
 	]
 };
 
-// config.plugins = [CleanPLugin, AnalyzerPlugin, HTMLPlugin];
-
 config.plugins = [
-	// new CleanWebpackPlugin([DIST_FOLDER]),
 
 	// list all React app required env variables
 	new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID']),
 
 	HTMLPlugin,
-	// new InlineSourcePlugin(),
-
-	// create css bundle
-	extractSCSSBundle,
-	// new MiniCssExtractPlugin(),
-
-	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	}),
-
-	// copy static assets
-	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/google9104b904281bf3a3.html', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/robots.txt', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
-		debug: copyWebpackPluginOptions
+	new MiniCssExtractPlugin({
+		filename: "style.css"
 	})
 
-	// new CopyWebpackPlugin([{ from: 'scss/fonts', to: 'assets/fonts' }], { debug: 'info' })
 ];
 
 config.module = {
@@ -131,32 +96,15 @@ config.module = {
 			loader: 'babel-loader'
 		},
 		{
-			test: /\.(sass|scss)$/,
-			include: INCLUDE_SCSS_FOLDER,
-			exclude: [SCSS_FOLDER, /node_modules/],
-			use: ['style-loader', 'css-loader', 'sass-loader']
-		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_FOLDER,
-			exclude: [INCLUDE_SCSS_FOLDER, /node_modules/],
+			test: /\.css$/,
+			exclude: /node_modules/,
 			use: [
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				{
-					loader: 'css-loader',
-					options: {
-						sourceMap: true,
-						modules: true,
-						localIdentName: '[local]___[hash:base64:5]'
-					}
-				},
-				{
-					loader: 'sass-loader'
-				}
-			]
+				MiniCssExtractPlugin.loader,
+				{ loader: 'css-loader', options: { url: false, sourceMap: true } },
+				{ loader: 'sass-loader', options: { sourceMap: true } }
+			],
 		},
+
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 			// include: [FONTS_FOLDER, ICONS_FOLDER],
@@ -210,24 +158,9 @@ if (!PRODUCTION_MODE) {
 module.exports = config;
 
 /*
-module.exports = {
-  plugins: [
-    new webpack.optimize.AggressiveSplittingPlugin({
-      minSize: 100,
-      maxSize: 200,
-    })
-  ],
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "initial",
-        }
-      }
-    }
-  }
-}
+		{
+			test: /\.ddcss$/,
+			exclude: /node_modules/,
+			loader: extractCSSBundle
+		},
 */
