@@ -3,6 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Clock from './Clock';
+
 import './style.css';
 
 const seasonConfig = {
@@ -30,7 +32,7 @@ const SeasonDisplay = (props) => {
 	return (
 		<div className={`season-display ${obj.season}`}>
 			<i className={`icon-left ${obj.icon} icon massive`} />
-			<h1>{obj.text}</h1>
+			<h1>{obj.text} <Clock /></h1>
 			<i className={`icon-right ${obj.icon} icon massive`} />
 		</div>
 	)
