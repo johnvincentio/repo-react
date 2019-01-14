@@ -44,7 +44,7 @@ class App extends React.Component {
 		console.log('--- App; componentDidUpdate');
 	}
 
-	render() {
+	content() {
 		if (this.state.errorMessage) {
 			return <div>Error Message: {this.state.errorMessage} </div>
 		}
@@ -54,6 +54,14 @@ class App extends React.Component {
 		return (
 			<Spinner message="Please accept location request" />
 		);
+	}
+
+	render() {
+		return (
+			<div>
+				{this.content()}
+			</div>
+		)
 	}
 }
 
