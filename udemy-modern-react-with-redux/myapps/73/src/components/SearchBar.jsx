@@ -1,0 +1,24 @@
+//
+
+import React from 'react';
+
+class SearchBar extends React.Component {
+	state = {
+		time: null
+	}
+
+	render() {
+		return (
+			<div className="ui segment">
+				<form className="ui form">
+					<div className="field">
+						<label>Image search</label>
+						<input type="text" />
+					</div>
+				</form>
+			</div>
+		);
+	}
+}
+
+export default SearchBar;
