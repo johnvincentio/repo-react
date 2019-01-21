@@ -1,22 +1,2 @@
 
 
-fred
-
-
-fred
-
-☐ geolocation api
-https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
-
-
-DevTools, More Tools, Sensors
-
-Browser, i icon before the url
-Location, Block
-
-returns:
-	PositionError {code: 1, message: "User denied Geolocation"}
-
-
-
-

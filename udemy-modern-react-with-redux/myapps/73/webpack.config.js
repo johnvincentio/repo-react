@@ -83,7 +83,8 @@ config.optimization = {
 config.plugins = [
 
 	// list all React app required env variables
-	new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID']),
+	new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID', 'API_BASE_URL',
+		'ACCESS_KEY']),
 
 	HTMLPlugin,
 	extractSCSSBundle,
