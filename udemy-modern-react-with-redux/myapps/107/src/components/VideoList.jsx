@@ -1,30 +1,23 @@
 //
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import ImageCard from './ImageCard';
+import VideoItem from './VideoItem';
+
+import { videosType } from '../types';
 
 import './VideoList.scss';
 
 const VideoList = (props) => {
-	const images = props.images.map((image) => (
-		<ImageCard key={image.id} image={image} />
+	const videos = props.videos.map((video) => (
+		<VideoItem key={video.id.videoId} video={video} />
 	));
 	return (
-		<div className="video-list">{images}</div>
+		<div className="video-list">{videos}</div>
 	)
 }
 
 VideoList.propTypes = {
-	images: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.string.isRequired,
-			urls: PropTypes.shape({
-				regular: PropTypes.string.isRequired
-			}),
-			description: PropTypes.string.isRequired
-		}).isRequired,
-	).isRequired
+	videos: videosType.isRequired // eslint-disable-line react/no-typos
 };
 
 export default VideoList;
