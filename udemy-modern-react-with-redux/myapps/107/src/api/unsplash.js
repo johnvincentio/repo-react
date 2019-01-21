@@ -1,13 +1,16 @@
 import axios from 'axios';
 
 const env = {
-	API_BASE_URL: process.env.API_BASE_URL,
-	ACCESS_KEY: process.env.ACCESS_KEY
+	YOUTUBE_APIS_URL: process.env.YOUTUBE_APIS_URL,
+	YOUTUBE_PLAY_VIDEO_URL: process.env.YOUTUBE_PLAY_VIDEO_URL,
+	YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY
 }
 
 export default axios.create({
 	baseURL: env.API_BASE_URL,
-	headers: {
-		Authorization: `Client-ID ${env.ACCESS_KEY}`,
+	params: {
+		part: 'snippet',
+		maxResults: 5,
+		key: env.YOUTUBE_API_KEY
 	}
 });

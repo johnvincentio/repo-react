@@ -83,8 +83,8 @@ config.optimization = {
 config.plugins = [
 
 	// list all React app required env variables
-	new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID', 'API_BASE_URL',
-		'ACCESS_KEY']),
+	new webpack.EnvironmentPlugin(['NODE_ENV', 'YOUTUBE_APIS_URL',
+		'YOUTUBE_PLAY_VIDEO_URL', 'YOUTUBE_API_KEY']),
 
 	HTMLPlugin,
 	extractSCSSBundle,
