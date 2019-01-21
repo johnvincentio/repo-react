@@ -7,7 +7,7 @@ const env = {
 }
 
 export default axios.create({
-	baseURL: env.API_BASE_URL,
+	baseURL: env.YOUTUBE_APIS_URL,
 	params: {
 		part: 'snippet',
 		maxResults: 5,

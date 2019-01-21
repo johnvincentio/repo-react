@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import unsplash from '../api/unsplash';
+import youtube from '../api/youtube';
 
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
@@ -11,22 +11,22 @@ import './App.scss';
 
 class App extends React.Component {
 
-	state = { images: [] };
+	state = { items: [] };
 
 	onSearchSubmit = async (term) => {
-		const response = await unsplash.get('search/photos', {
-			params: { query: term }
+		const response = await youtube.get('/search', {
+			params: { q: term }
 		});
-		// console.log('response ', response.data.results);
-		this.setState({ images: response.data.results })
+		console.log('response ', response);
+		this.setState({ items: response.data.items })
 	};
 
 	render() {
 		return (
 			<div className="ui container app-container">
 				<SearchBar onSubmit={this.onSearchSubmit} />
-				Found: {this.state.images.length} images
-				<ImageList images={this.state.images} />
+				Found: {this.state.items.length} images
+				<ImageList images={this.state.items} />
 			</div>
 		);
 	}
