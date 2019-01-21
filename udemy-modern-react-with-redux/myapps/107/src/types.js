@@ -13,7 +13,7 @@ export const videoType = PropTypes.shape({
 		title: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
 		thumbnails: PropTypes.shape({
-			high: PropTypes.shape({
+			medium: PropTypes.shape({
 				url: PropTypes.string.isRequired,
 				height: PropTypes.number.isRequired,
 				width: PropTypes.number.isRequired

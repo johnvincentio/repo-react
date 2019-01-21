@@ -1,42 +1,27 @@
 //
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { videoType } from '../types';
 
-class VideoItem extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { spans: 0 };
-		this.imageRef = React.createRef();
-	}
+import './VideoItem.scss';
 
-	// componentDidMount() {
-	// 	this.imageRef.current.addEventListener('load', this.setSpans);
-	// }
-
-	// setSpans = () => {
-	// 	const { clientHeight } = this.imageRef.current;
-	// 	const spans = Math.ceil(clientHeight / 10);
-	// 	this.setState({ spans });
-	// }
-
-	render() {
-		console.log('video ', this.props.video);
-		// const { urls, description } = this.props.video;
-		// return (
-		// 	<div style={{ gridRowEnd: `span ${this.state.spans}` }}>
-		// 		<img ref={this.imageRef} alt={description} src={urls.regular} />
-		// 	</div>
-		// );
-		return (
-			<div>VideoItem...</div>
-		)
-	}
+const VideoItem = (props) => {
+	const { video, onVideoSelect } = props;
+	return (
+		<div className="video-item item" onClick={() => onVideoSelect(video)} >
+			<img className="ui image" alt={video.snippet.description} src={video.snippet.thumbnails.medium.url} />
+			<div className="content">
+				<div className="header">{video.snippet.title}</div>
+			</div>
+		</div>
+	)
 }
 
 VideoItem.propTypes = {
-	video: videoType.isRequired // eslint-disable-line react/no-typos
+	video: videoType.isRequired, // eslint-disable-line react/no-typos
+	onVideoSelect: PropTypes.func.isRequired
 };
 
 export default VideoItem;
