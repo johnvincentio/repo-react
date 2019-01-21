@@ -2,14 +2,17 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import ImageCard from './ImageCard';
+
+import './ImageList.scss';
 
 const ImageList = (props) => {
 	console.log('props.images ', props.images);
-	const images = props.images.map(({ id, urls, description }) => (
-		<img key={id} src={urls.regular} alt={description} />
+	const images = props.images.map((image) => (
+		<ImageCard key={image.id} image={image} />
 	));
 	return (
-		<div>{images}</div>
+		<div className="image-list">{images}</div>
 	)
 }
 
@@ -19,7 +22,8 @@ ImageList.propTypes = {
 			id: PropTypes.string.isRequired,
 			urls: PropTypes.shape({
 				regular: PropTypes.string.isRequired
-			})
+			}),
+			description: PropTypes.string.isRequired
 		}).isRequired,
 	).isRequired
 };
