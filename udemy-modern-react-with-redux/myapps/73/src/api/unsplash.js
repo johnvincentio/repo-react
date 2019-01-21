@@ -5,8 +5,6 @@ const env = {
 	ACCESS_KEY: process.env.ACCESS_KEY
 }
 
-console.log(`API_BASE_URL ${process.env.API_BASE_URL}`);
-
 export default axios.create({
 	baseURL: env.API_BASE_URL,
 	headers: {
