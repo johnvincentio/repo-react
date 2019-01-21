@@ -5,7 +5,7 @@ import React from 'react';
 import youtube from '../api/youtube';
 
 import SearchBar from './SearchBar';
-import ImageList from './ImageList';
+import VideoList from './VideoList';
 
 import './App.scss';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
 			<div className="ui container app-container">
 				<SearchBar onSubmit={this.onSearchSubmit} />
 				Found: {this.state.items.length} images
-				<ImageList images={this.state.items} />
+				<VideoList images={this.state.items} />
 			</div>
 		);
 	}

@@ -4,18 +4,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImageCard from './ImageCard';
 
-import './ImageList.scss';
+import './VideoList.scss';
 
-const ImageList = (props) => {
+const VideoList = (props) => {
 	const images = props.images.map((image) => (
 		<ImageCard key={image.id} image={image} />
 	));
 	return (
-		<div className="image-list">{images}</div>
+		<div className="video-list">{images}</div>
 	)
 }
 
-ImageList.propTypes = {
+VideoList.propTypes = {
 	images: PropTypes.arrayOf(
 		PropTypes.shape({
 			id: PropTypes.string.isRequired,
@@ -27,4 +27,4 @@ ImageList.propTypes = {
 	).isRequired
 };
 
-export default ImageList;
+export default VideoList;
