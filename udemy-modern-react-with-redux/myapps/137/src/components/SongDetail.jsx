@@ -13,8 +13,9 @@ const SongDetail = ({ selectedSong }) => {
 			<div>
 				<h3>Details For:</h3>
 				<p>
-					<div>Title: {selectedSong.title}</div>
-					<div>Duration: {selectedSong.duration}</div>
+					Title: {selectedSong.title}
+					<br />
+					Duration: {selectedSong.duration}
 				</p>
 			</div>
 		);
