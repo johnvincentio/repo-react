@@ -1,11 +1,10 @@
 
 import { combineReducers } from 'redux';
-// import { createResponsiveStateReducer } from 'redux-responsive';
 
-import data from './data.reducer';
+import songs from './songs.reducer';
 
 const rootReducer = combineReducers({
-	dataReducer: data,
+	songs,
 });
 
 export default rootReducer;

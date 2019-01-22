@@ -1,1 +1,5 @@
-export const GET_USER_DATA = 'GET_USER_DATA';
+//
+
+const SONG_SELECTED = 'SONG_SELECTED';
+
+export default SONG_SELECTED;

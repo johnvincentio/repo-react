@@ -58,7 +58,7 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx'];
 
 config.optimization = {
 	splitChunks: {
@@ -100,11 +100,6 @@ config.plugins = [
 	// create css bundle
 	extractSCSSBundle,
 	// new MiniCssExtractPlugin(),
-
-	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	}),
 
 	// copy static assets
 	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
