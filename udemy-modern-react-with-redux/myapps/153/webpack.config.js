@@ -101,11 +101,6 @@ config.plugins = [
 	extractSCSSBundle,
 	// new MiniCssExtractPlugin(),
 
-	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	}),
-
 	// copy static assets
 	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
 		debug: copyWebpackPluginOptions
