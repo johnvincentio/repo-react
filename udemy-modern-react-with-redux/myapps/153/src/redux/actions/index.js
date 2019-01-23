@@ -1,4 +1,3 @@
 
-// export * from './app.actions';
-
-export * from './data.actions';
+export * from './posts.actions';
+export * from './users.actions';

@@ -1,11 +1,12 @@
 
 import { combineReducers } from 'redux';
-// import { createResponsiveStateReducer } from 'redux-responsive';
 
-import data from './data.reducer';
+import postsReducer from './posts.reducer';
+import usersReducer from './users.reducer';
 
 const rootReducer = combineReducers({
-	dataReducer: data,
+	postsReducer,
+	usersReducer
 });
 
 export default rootReducer;
