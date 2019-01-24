@@ -11,9 +11,7 @@ import { postsType } from '../types';
 class PostList extends React.Component {
 
 	componentDidMount() {
-		console.log('>>> PostList; componentDidMount; this.props ', this.props);
 		this.props.actions.fetchPosts();
-		console.log('<<< PostList; componentDidMount');
 	}
 
 	renderList() {
@@ -29,15 +27,11 @@ class PostList extends React.Component {
 	}
 
 	render() {
-		console.log('PostList::render(); this.props ', this.props);
-		console.log('renderList() ', this.renderList());
 		return (
 			<div className="ui container">
 				<div className="ui divided list">
 					{this.renderList()}
 				</div>
-				<div>PostList...</div>
-				{/* <div><PostList posts={this.props.posts} /></div> */}
 			</div>
 		);
 	}
@@ -61,7 +55,7 @@ const mapStateToProps = state => ({
 // const mapStateToProps = state => {
 // 	console.log('state ', state);
 // 	return {
-// 		posts: state.postsReducer
+// 		posts: state.postsReducer.posts
 // 	}
 // };
 
@@ -70,8 +64,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
-
-/*
-<i class="user icon"></i>
-*/
-

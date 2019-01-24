@@ -9,8 +9,8 @@ export const handleUsers = (users) => ({
 });
 
 export const fetchUsers = () => async dispatch => {
-	console.log('usersActions; fetchUsers');
+	// console.log('usersActions; fetchUsers');
 	const response = await jsonPlaceHolder.get('/users');
-	console.log('response ', response);
+	// console.log('response ', response);
 	dispatch(handleUsers(response.data));
 };

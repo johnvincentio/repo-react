@@ -11,9 +11,7 @@ import { usersType } from '../types';
 class UserList extends React.Component {
 
 	componentDidMount() {
-		console.log('>>> PostList; componentDidMount; this.props ', this.props);
 		this.props.actions.fetchUsers();
-		console.log('<<< PostList; componentDidMount');
 	}
 
 	renderList() {
@@ -29,8 +27,6 @@ class UserList extends React.Component {
 	}
 
 	render() {
-		console.log('UserList::render(); this.props ', this.props);
-		console.log('renderList() ', this.renderList());
 		return (
 			<div className="ui container">
 				<div className="ui divided list">
@@ -52,24 +48,19 @@ UserList.propTypes = {
 	}).isRequired,
 };
 
-// const mapStateToProps = state => ({
-// 	posts: state.postsReducer.posts,
-// });
+const mapStateToProps = state => ({
+	users: state.usersReducer.users
+});
 
-const mapStateToProps = state => {
-	console.log('Userlist::state ', state);
-	return {
-		users: state.usersReducer.users
-	}
-};
+// const mapStateToProps = state => {
+// 	console.log('Userlist::state ', state);
+// 	return {
+// 		users: state.usersReducer.users
+// 	}
+// };
 
 const mapDispatchToProps = dispatch => ({
 	actions: bindActionCreators(actions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList);
-
-/*
-<i class="user icon"></i>
-	*/
-

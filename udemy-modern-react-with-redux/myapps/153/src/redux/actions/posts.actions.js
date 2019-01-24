@@ -15,21 +15,21 @@ export const fetchPosts = () => async dispatch => {
 	dispatch(handlePosts(response.data));
 };
 
-export const fetchPostsGOOD1 = () => {
-	return async function (dispatch, getState) {
-		const response = await jsonPlaceHolder.get('/posts');
-		dispatch(handlePosts(response.data));
-	};
-};
+// export const fetchPostsGOOD1 = () => {
+// 	return async function (dispatch, getState) {
+// 		const response = await jsonPlaceHolder.get('/posts');
+// 		dispatch(handlePosts(response.data));
+// 	};
+// };
 
-export const fetchPostsGOOD2 = () => {
-	return async (dispatch) => {
-		const response = await jsonPlaceHolder.get('/posts');
-		dispatch(handlePosts(response.data));
-	};
-};
+// export const fetchPostsGOOD2 = () => {
+// 	return async (dispatch) => {
+// 		const response = await jsonPlaceHolder.get('/posts');
+// 		dispatch(handlePosts(response.data));
+// 	};
+// };
 
-export const fetchPostsGOOD3 = () => async dispatch => {
-	const response = await jsonPlaceHolder.get('/posts');
-	dispatch(handlePosts(response.data));
-};
+// export const fetchPostsGOOD3 = () => async dispatch => {
+// 	const response = await jsonPlaceHolder.get('/posts');
+// 	dispatch(handlePosts(response.data));
+// };
