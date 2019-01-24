@@ -1,5 +1,5 @@
 
-import { FETCH_POSTS, HANDLE_POSTS } from '../constants';
+import { HANDLE_POSTS } from '../constants';
 
 import jsonPlaceHolder from '../../api/jsonPlaceHolder';
 

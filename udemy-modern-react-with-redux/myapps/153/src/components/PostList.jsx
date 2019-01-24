@@ -54,16 +54,16 @@ PostList.propTypes = {
 	}).isRequired,
 };
 
-// const mapStateToProps = state => ({
-// 	posts: state.postsReducer.posts,
-// });
+const mapStateToProps = state => ({
+	posts: state.postsReducer.posts,
+});
 
-const mapStateToProps = state => {
-	console.log('state ', state);
-	return {
-		posts: state.postsReducer
-	}
-};
+// const mapStateToProps = state => {
+// 	console.log('state ', state);
+// 	return {
+// 		posts: state.postsReducer
+// 	}
+// };
 
 const mapDispatchToProps = dispatch => ({
 	actions: bindActionCreators(actions, dispatch),

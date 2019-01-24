@@ -1,11 +1,16 @@
 
-import { FETCH_USER, FETCH_USERS } from '../constants';
+import { HANDLE_USERS } from '../constants';
 
-/* eslint-disable import/prefer-default-export */
-export const fetchUser = () => ({
-	type: FETCH_USER
+import jsonPlaceHolder from '../../api/jsonPlaceHolder';
+
+export const handleUsers = (users) => ({
+	type: HANDLE_USERS,
+	payload: users
 });
 
-export const fetchUsers = () => ({
-	type: FETCH_USERS
-});
+export const fetchUsers = () => async dispatch => {
+	console.log('usersActions; fetchUsers');
+	const response = await jsonPlaceHolder.get('/users');
+	console.log('response ', response);
+	dispatch(handleUsers(response.data));
+};

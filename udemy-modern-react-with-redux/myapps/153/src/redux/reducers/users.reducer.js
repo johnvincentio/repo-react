@@ -1,12 +1,11 @@
 
-import { FETCH_USER, FETCH_USERS } from '../constants';
+import { HANDLE_USERS } from '../constants';
 
 export default (state = [], action) => {
+	console.log('UsersReducer; type ', action.type, ' payload ', action.payload);
 	switch (action.type) {
-		case FETCH_USER:
-			return Object.assign({}, state);
-		case FETCH_USERS:
-			return Object.assign({}, state);
+		case HANDLE_USERS:
+			return { ...state, users: action.payload };
 		default:
 			return state;
 	}
