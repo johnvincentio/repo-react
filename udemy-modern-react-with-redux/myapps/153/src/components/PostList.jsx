@@ -6,21 +6,25 @@ import { bindActionCreators } from 'redux';
 
 import * as actions from '../redux/actions';
 
+import UserHeader from './UserHeader';
 import { postsType } from '../types';
 
 class PostList extends React.Component {
 
 	componentDidMount() {
-		this.props.actions.fetchPosts();
+		this.props.actions.fetchPostsAndUsers();
 	}
 
 	renderList() {
 		return this.props.posts.map(post => (
 			<div key={post.id} className="item">
-				<i className="user icon" />
+				<i className="large middle aligned icon user" />
 				<div className="content">
-					<div className="header">{post.title}</div>
-					<div className="description">{post.body}</div>
+					<div className="description">
+						<h2>{post.title}</h2>
+						<p>{post.body}</p>
+					</div>
+					<UserHeader userId={post.userId} />
 				</div>
 			</div>
 		));
@@ -29,7 +33,7 @@ class PostList extends React.Component {
 	render() {
 		return (
 			<div className="ui container">
-				<div className="ui divided list">
+				<div className="ui relaxed divided list">
 					{this.renderList()}
 				</div>
 			</div>
@@ -44,7 +48,7 @@ PostList.defaultProps = {
 PostList.propTypes = {
 	posts: postsType,
 	actions: PropTypes.shape({
-		fetchPosts: PropTypes.func.isRequired,
+		fetchPostsAndUsers: PropTypes.func.isRequired,
 	}).isRequired,
 };
 

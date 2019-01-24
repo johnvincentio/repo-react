@@ -2,10 +2,10 @@
 import { HANDLE_POSTS } from '../constants';
 
 export default (state = [], action) => {
-	// console.log('PostsReducer; type ', action.type, ' payload ', action.payload);
 	switch (action.type) {
 		case HANDLE_POSTS:
 			return { ...state, posts: action.payload };
+		// return { ...state, posts: action.payload.filter(post => post.id < 2) };
 		default:
 			return state;
 	}

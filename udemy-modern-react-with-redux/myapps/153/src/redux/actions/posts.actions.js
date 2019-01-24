@@ -1,6 +1,8 @@
 
 import { HANDLE_POSTS } from '../constants';
 
+import { fetchUser } from './users.actions';
+
 import jsonPlaceHolder from '../../api/jsonPlaceHolder';
 
 export const handlePosts = (posts) => ({
@@ -8,12 +10,23 @@ export const handlePosts = (posts) => ({
 	payload: posts
 });
 
-export const fetchPosts = () => async dispatch => {
-	console.log('postsActions; fetchPosts');
+export const fetchPostsAndUsers = () => async dispatch => {
 	const response = await jsonPlaceHolder.get('/posts');
-	console.log('response ', response);
+
+	const userList = [];
+	response.data.forEach(post => {
+		if (userList.findIndex(user => user === post.userId) === -1) {
+			userList.push(post.userId);
+		}
+	})
+	userList.forEach(user => {
+		dispatch(fetchUser(user));
+	})
+
 	dispatch(handlePosts(response.data));
 };
+
+
 
 // export const fetchPostsGOOD1 = () => {
 // 	return async function (dispatch, getState) {

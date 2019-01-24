@@ -17,7 +17,7 @@ class UserList extends React.Component {
 	renderList() {
 		return this.props.users.map(user => (
 			<div key={user.id} className="item">
-				<i className="user icon" />
+				<i className="icon user" />
 				<div className="content">
 					<div className="header">ID: {user.id}</div>
 					<div className="description">Name: {user.name}</div>
