@@ -197,6 +197,7 @@ if (!PRODUCTION_MODE) {
 		// inline: true,
 		port: 8002,
 		clientLogLevel: 'info',
+		historyApiFallback: true,
 		proxy: {
 			'/api/**': {
 				target: 'http://localhost:3001',
