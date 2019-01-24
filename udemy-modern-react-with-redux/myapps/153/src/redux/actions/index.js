@@ -45,7 +45,6 @@ export const fetchPosts = () => async dispatch => {
 
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
 	await dispatch(fetchPosts());
-	console.log('getState() ', getState());
 
 	const userList = [];
 	getState().postsReducer.posts.forEach(post => {
@@ -57,10 +56,6 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
 		dispatch(fetchUser(user));
 	})
 };
-
-
-
-
 
 // export const fetchPostsGOOD1 = () => {
 // 	return async function (dispatch, getState) {
