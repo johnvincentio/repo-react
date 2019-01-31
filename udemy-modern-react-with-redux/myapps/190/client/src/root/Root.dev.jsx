@@ -3,11 +3,13 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// import DevTools from './DevTools';
+import DevTools from './DevTools';
 
 import { StreamCreate, StreamDelete, StreamEdit, StreamList, StreamShow } from '../components/streams';
 
 import Header from '../components/Header';
+
+import './Devtools.scss';
 
 const Root = () => (
 	<div className="ui container">
@@ -22,10 +24,23 @@ const Root = () => (
 			</Switch>
 		</Router>
 
-		{/* <div className="devtools">
+		<div>any</div>
+		<div className="devtools">
 			<DevTools />
-		</div> */}
+		</div>
 	</div>
 );
 
 export default Root;
+
+/*
+	text-align: left;
+	position: fixed;
+	left: 10px;
+	top: 80px;
+
+		<div className="devtools">
+			<DevTools />
+		</div>
+*/
+

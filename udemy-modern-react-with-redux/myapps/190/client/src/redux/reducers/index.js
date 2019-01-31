@@ -1,11 +1,10 @@
 
 import { combineReducers } from 'redux';
-// import { createResponsiveStateReducer } from 'redux-responsive';
 
-import data from './data.reducer';
+import authReducer from './auth.reducer';
 
 const rootReducer = combineReducers({
-	dataReducer: data,
+	auth: authReducer
 });
 
 export default rootReducer;

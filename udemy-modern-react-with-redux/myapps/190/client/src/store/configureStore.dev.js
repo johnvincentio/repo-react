@@ -1,7 +1,6 @@
 //
 
 import { createStore, applyMiddleware, compose } from 'redux';
-// import { responsiveStoreEnhancer } from 'redux-responsive';
 import { persistState } from 'redux-devtools';
 
 import thunk from 'redux-thunk';
@@ -21,24 +20,3 @@ const configureStore = (initialState = {}) => {
 };
 
 export default configureStore;
-
-/*
-
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-
-import rootReducer from '../reducers/';
-
-const configureStore = (initialState = {}) => {
-	const middleware = [thunk];
-	const enhancers = [];
-	const store = createStore(
-		rootReducer,
-		initialState,
-		compose(applyMiddleware(...middleware), ...enhancers),
-	);
-	return store;
-};
-
-export default configureStore;
-*/
