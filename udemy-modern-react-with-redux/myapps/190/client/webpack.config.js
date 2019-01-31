@@ -184,6 +184,7 @@ if (PRODUCTION_MODE) {
 if (!PRODUCTION_MODE) {
 	config.output = {
 		path: DIST_FOLDER,
+		publicPath: '/',
 		chunkFilename: '[name].bundle.js',
 		filename: '[name].bundle.js'
 	};

@@ -1,31 +1,30 @@
+
 import React from 'react';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import DevTools from './DevTools';
+// import DevTools from './DevTools';
 
-import App from '../components/App';
-import NotFoundPage from '../components/NotFoundPage';
+import { StreamCreate, StreamDelete, StreamEdit, StreamList, StreamShow } from '../components/streams';
 
-const PageOne = () => (<div>PageOne</div>);
-const PageTwo = () => (
-	<div>PageTwo</div>
-);
+import Header from '../components/Header';
 
 const Root = () => (
-	<div>
-		<BrowserRouter>
+	<div className="ui container">
+		<Router>
 			<Switch>
-				<Route exact path="/" component={App} />
-				<Route exact path="/one" component={PageOne} />
-				<Route exact path="/two" component={PageTwo} />
-				<Route component={NotFoundPage} />
+				<Header />
+				<Route exact path="/" component={StreamList} />
+				<Route exact path="/streams/new" component={StreamCreate} />
+				<Route exact path="/streams/edit" component={StreamEdit} />
+				<Route exact path="/streams/delete" component={StreamDelete} />
+				<Route exact path="/streams/show" component={StreamShow} />
 			</Switch>
-		</BrowserRouter>
+		</Router>
 
-		<div className="devtools">
+		{/* <div className="devtools">
 			<DevTools />
-		</div>
+		</div> */}
 	</div>
 );
 
