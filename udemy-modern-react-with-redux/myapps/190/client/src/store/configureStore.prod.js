@@ -1,5 +1,5 @@
+
 import { createStore, compose, applyMiddleware } from 'redux';
-// import { responsiveStoreEnhancer } from 'redux-responsive';
 import thunk from 'redux-thunk';
 
 import rootReducer from '../redux/reducers';
@@ -12,5 +12,3 @@ const configureStore = (initialState = {}) => {
 };
 
 export default configureStore;
-
-// compose(responsiveStoreEnhancer, applyMiddleware(...middleware), ...enhancers),
