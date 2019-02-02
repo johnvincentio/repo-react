@@ -15,7 +15,6 @@ class StreamCreate extends React.Component {
 					{label}
 					<input id={htmlFor} {...input} autoComplete="off" />
 				</label>
-				<div>{meta.error}</div>
 				{this.renderError(meta)}
 			</div>
 		);
@@ -25,7 +24,7 @@ class StreamCreate extends React.Component {
 		this.props.onSubmit(formValues);
 	};
 
-	renderError({ error, touched }) {
+	renderError = ({ error, touched }) => {
 		console.log('renderError, error ', error, ' touched ', touched)
 		if (touched && error) {
 			return (
@@ -34,12 +33,13 @@ class StreamCreate extends React.Component {
 				</div>
 			);
 		}
+		return null;
 	}
 
 	render() {
 		console.log('****** StreamCreate; props ', this.props);
 		return (
-			<form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
+			<form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
 				<Field name="title" component={this.renderInput} label="Enter Title" htmlFor="title" />
 				<Field
 					name="description"
@@ -52,6 +52,8 @@ class StreamCreate extends React.Component {
 		);
 	}
 }
+
+
 
 const validate = formValues => {
 	const errors = {};
