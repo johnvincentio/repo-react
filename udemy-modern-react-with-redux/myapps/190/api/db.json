@@ -1,0 +1,29 @@
+{
+  "streams": [
+    {
+      "title": "My Stream",
+      "description": "This is a great stream.",
+      "id": 1
+    },
+    {
+      "title": "Other Stream",
+      "description": "Here's some stream",
+      "id": 2
+    },
+    {
+      "title": "Me Streaming Component Reuse!",
+      "description": "This stream is about refactoring!!!",
+      "id": 4
+    },
+    {
+      "title": "nbmhjm",
+      "description": "hkm,kj,j,",
+      "id": 5
+    },
+    {
+      "title": "nbmhjm",
+      "description": "hkm,kj,j,",
+      "id": 6
+    }
+  ]
+}

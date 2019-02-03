@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+
+import { createStream } from '../../redux/actions';
 
 class StreamCreate extends React.Component {
 
@@ -21,7 +24,8 @@ class StreamCreate extends React.Component {
 	};
 
 	onSubmit = formValues => {
-		this.props.onSubmit(formValues);
+		console.log('StreamCreate::onSubmit')
+		this.props.createStream(formValues);
 	};
 
 	renderError = ({ error, touched }) => {
@@ -47,15 +51,14 @@ class StreamCreate extends React.Component {
 					label="Enter Description"
 					htmlFor="description"
 				/>
-				<button type="button" className="ui button primary">Submit</button>
+				<button type="submit" className="ui button primary">Submit</button>
 			</form>
 		);
 	}
 }
 
-
-
 const validate = formValues => {
+	console.log('validate');
 	const errors = {};
 
 	if (!formValues.title) {
@@ -70,10 +73,28 @@ const validate = formValues => {
 };
 
 StreamCreate.propTypes = {
-	handleSubmit: PropTypes.func.isRequired
+	handleSubmit: PropTypes.func.isRequired,
+	createStream: PropTypes.func.isRequired
 };
 
-export default reduxForm({
+const formWrapped = reduxForm({
 	form: 'streamForm',
 	validate
 })(StreamCreate);
+
+export default connect(null, { createStream })(formWrapped);
+
+/*
+function mapStateToProps(state) {
+	// console.log('memberMain::mapStateToProps, state ', state);
+	return { goals: state.user.goals };
+}
+
+export default compose(
+	withStyles(MemberMainStyles),
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)
+)(MemberMain);
+*/
