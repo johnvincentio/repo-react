@@ -118,7 +118,12 @@ config.plugins = [
 	}),
 	new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
 		debug: copyWebpackPluginOptions
-	})
+	}),
+
+	// copy modal
+	new CopyWebpackPlugin([{ from: 'static/modal.html', to: '.' }], {
+		debug: copyWebpackPluginOptions
+	}),
 
 	// new CopyWebpackPlugin([{ from: 'scss/fonts', to: 'assets/fonts' }], { debug: 'info' })
 ];
