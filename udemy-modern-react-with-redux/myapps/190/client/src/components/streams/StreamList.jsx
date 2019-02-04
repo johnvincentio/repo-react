@@ -32,7 +32,7 @@ class StreamList extends React.Component {
 	}
 
 	renderList() {
-		console.log('StreamList::renderList, props ', this.props);
+		// console.log('StreamList::renderList, props ', this.props);
 		return this.props.streams.map(stream => (
 			<div className="item" key={stream.id}>
 				{this.renderAdmin(stream)}
@@ -61,7 +61,7 @@ class StreamList extends React.Component {
 	}
 
 	render() {
-		console.log('StreamList::render, props ', this.props);
+		// console.log('StreamList::render, props ', this.props);
 		return (
 			<div>
 				<h2>Streams</h2>
@@ -79,7 +79,7 @@ StreamList.propTypes = {
 };
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps, state ', state);
+	// console.log('mapStateToProps, state ', state);
 	return {
 		streams: Object.values(state.streams),
 		currentUserId: state.auth.userId,
