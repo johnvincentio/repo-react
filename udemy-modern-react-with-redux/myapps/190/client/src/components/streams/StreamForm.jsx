@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import { createStream } from '../../redux/actions';
 
-class StreamCreate extends React.Component {
+class StreamForm extends React.Component {
 
 	renderInput = props => {
 		// console.log('--- renderInput, props ', props);
@@ -24,7 +24,7 @@ class StreamCreate extends React.Component {
 	};
 
 	onSubmit = formValues => {
-		// console.log('StreamCreate::onSubmit')
+		// console.log('StreamForm::onSubmit')
 		this.props.createStream(formValues);
 	};
 
@@ -41,7 +41,7 @@ class StreamCreate extends React.Component {
 	}
 
 	render() {
-		console.log('****** StreamCreate; props ', this.props);
+		console.log('****** StreamForm; props ', this.props);
 		return (
 			<form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
 				<Field name="title" component={this.renderInput} label="Enter Title" htmlFor="title" />
@@ -72,7 +72,7 @@ const validate = formValues => {
 	return errors;
 };
 
-StreamCreate.propTypes = {
+StreamForm.propTypes = {
 	handleSubmit: PropTypes.func.isRequired,
 	createStream: PropTypes.func.isRequired
 };
@@ -80,7 +80,7 @@ StreamCreate.propTypes = {
 const formWrapped = reduxForm({
 	form: 'streamForm',
 	validate
-})(StreamCreate);
+})(StreamForm);
 
 export default connect(null, { createStream })(formWrapped);
 

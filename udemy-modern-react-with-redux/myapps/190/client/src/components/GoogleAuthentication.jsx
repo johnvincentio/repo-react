@@ -91,7 +91,7 @@ GoogleAuthentication.defaultProps = {
 };
 
 const mapStateToProps = state => {
-	console.log('state ', state);
+	// console.log('state ', state);
 	return { isSignedIn: state.auth.isSignedIn };
 };
 
