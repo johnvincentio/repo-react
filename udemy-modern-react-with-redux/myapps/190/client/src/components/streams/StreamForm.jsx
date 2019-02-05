@@ -38,7 +38,7 @@ class StreamForm extends React.Component {
 	}
 
 	render() {
-		console.log('****** StreamForm; props ', this.props);
+		// console.log('****** StreamForm; props ', this.props);
 		return (
 			<form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
 				<Field name="title" component={this.renderInput} label="Enter Title" htmlFor="title" />
@@ -78,19 +78,3 @@ export default reduxForm({
 	form: 'streamForm',
 	validate
 })(StreamForm);
-
-
-/*
-function mapStateToProps(state) {
-	// console.log('memberMain::mapStateToProps, state ', state);
-	return { goals: state.user.goals };
-}
-
-export default compose(
-	withStyles(MemberMainStyles),
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)
-)(MemberMain);
-*/

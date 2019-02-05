@@ -26,7 +26,3 @@ const Root = () => (
 );
 
 export default Root;
-
-/*
-<Route exact path="/" render={props => <AsyncHomeMain datatype="home" {...props} />} />
-*/

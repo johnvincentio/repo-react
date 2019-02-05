@@ -8,14 +8,15 @@ import { fetchStream, editStream } from '../../redux/actions';
 
 import StreamForm from './StreamForm';
 
+import { matchType, streamType } from '../../types';
+
 class StreamEdit extends React.Component {
 	componentDidMount() {
-		console.log('StreamEdit::componentDidMount')
 		this.props.fetchStream(this.props.match.params.id);
 	}
 
 	onSubmit = formValues => {
-		console.log('onSubmit, formValues ', formValues)
+		// console.log('onSubmit, formValues ', formValues);
 		this.props.editStream(this.props.match.params.id, formValues);
 	};
 
@@ -39,20 +40,19 @@ class StreamEdit extends React.Component {
 }
 
 StreamEdit.propTypes = {
+	match: matchType.isRequired,
+	stream: streamType.isRequired,
 	fetchStream: PropTypes.func.isRequired,
 	editStream: PropTypes.func.isRequired,
 	// isSignedIn: PropTypes.bool.isRequired,
 	// currentUserId: PropTypes.string.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
-	console.log('mapStateToProps, state ', state, ' ownProps ', ownProps);
-	return {
-		stream: state.streams[ownProps.match.params.id]
-		// currentUserId: state.auth.userId,
-		// isSignedIn: state.auth.isSignedIn
-	};
-};
+const mapStateToProps = (state, ownProps) => (
+	{ stream: state.streams[ownProps.match.params.id] }
+	// currentUserId: state.auth.userId,
+	// isSignedIn: state.auth.isSignedIn
+);
 
 export default connect(
 	mapStateToProps,
