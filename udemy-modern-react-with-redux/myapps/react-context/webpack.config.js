@@ -1,4 +1,3 @@
-//
 
 const path = require('path');
 const webpack = require('webpack');
@@ -8,10 +7,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const copyWebpackPluginOptions = 'warning'; // info, debug, warning
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -100,25 +95,6 @@ config.plugins = [
 	// create css bundle
 	extractSCSSBundle,
 	// new MiniCssExtractPlugin(),
-
-	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	}),
-
-	// copy static assets
-	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/google9104b904281bf3a3.html', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/robots.txt', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	})
 
 	// new CopyWebpackPlugin([{ from: 'scss/fonts', to: 'assets/fonts' }], { debug: 'info' })
 ];
@@ -210,26 +186,3 @@ if (!PRODUCTION_MODE) {
 }
 
 module.exports = config;
-
-/*
-module.exports = {
-  plugins: [
-    new webpack.optimize.AggressiveSplittingPlugin({
-      minSize: 100,
-      maxSize: 200,
-    })
-  ],
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "initial",
-        }
-      }
-    }
-  }
-}
-*/

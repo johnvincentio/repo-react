@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import LanguageContext from '../contexts/LanguageContext';
 import ColorContext from '../contexts/ColorContext';
 
