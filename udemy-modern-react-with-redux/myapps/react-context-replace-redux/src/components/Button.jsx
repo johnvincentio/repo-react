@@ -5,15 +5,15 @@ import LanguageContext from '../contexts/LanguageContext';
 import ColorContext from '../contexts/ColorContext';
 
 class Button extends React.Component {
-	renderSubmit(value) {		// eslint-disable-line class-methods-use-this
-		return value === 'english' ? 'Submit' : 'Voorleggen';
+	renderSubmit(language) {		// eslint-disable-line class-methods-use-this
+		return language === 'english' ? 'Submit' : 'Voorleggen';
 	}
 
 	renderButton(color) {
 		return (
 			<button type="submit" className={`ui ${color} button`}>
 				<LanguageContext.Consumer>
-					{value => this.renderSubmit(value)}
+					{({ language }) => this.renderSubmit(language)}
 				</LanguageContext.Consumer>
 			</button>
 		)
