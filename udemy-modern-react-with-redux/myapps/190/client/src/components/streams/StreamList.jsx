@@ -76,8 +76,13 @@ class StreamList extends React.Component {
 StreamList.propTypes = {
 	streams: streamsType.isRequired,
 	fetchStreams: PropTypes.func.isRequired,
-	isSignedIn: PropTypes.bool.isRequired,
-	currentUserId: PropTypes.string.isRequired
+	isSignedIn: PropTypes.bool,
+	currentUserId: PropTypes.string
+};
+
+StreamList.defaultProps = {
+	isSignedIn: false,
+	currentUserId: ''
 };
 
 const mapStateToProps = state => (
