@@ -1,5 +1,5 @@
 {
- "name": "udemy-modern-react-with-redux",
+ "name": "190",
  "version": "1.0.0",
  "description": "change-this",
  "repository": {
@@ -8,20 +8,20 @@
  },
  "main": "index.js",
  "scripts": {
-  "eslint_versions": "npm info eslint-config-airbnb@latest peerDependencies",
+	"eslint_versions": "npm info eslint-config-airbnb@latest peerDependencies",
   "USELESS": "nothing"
  },
  "keywords": [],
  "author": "",
  "license": "ISC",
  "devDependencies": {
-  "acorn": "^6.0.7",
-  "eslint": "^5.13.0",
+  "acorn": "^6.0.5",
+  "eslint": "^5.12.1",
   "eslint-config-airbnb": "^17.1.0",
   "eslint-config-prettier": "^3.6.0",
-  "eslint-loader": "^2.1.2",
-  "eslint-plugin-import": "^2.16.0",
-  "eslint-plugin-jsx-a11y": "^6.2.1",
+  "eslint-loader": "^2.1.1",
+  "eslint-plugin-import": "^2.15.0",
+  "eslint-plugin-jsx-a11y": "^6.1.2",
   "eslint-plugin-react": "^7.12.4"
  }
 }
