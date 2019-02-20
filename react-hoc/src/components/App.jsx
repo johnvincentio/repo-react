@@ -1,8 +1,8 @@
 
 import React from 'react';
 
-import Button from './Button';
-import withButton from './withButton';
+import Button from './button/Button';
+import withButton from './button/withButton';
 
 class App extends React.Component {
 
