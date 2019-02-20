@@ -7,7 +7,7 @@ function AuthWrapper(WrappedComponent) {
 			if (this.props.isLoggedIn) {
 				return <WrappedComponent {...this.props} />
 			}
-			return <p>You're not logged in ☹️</p>
+			return <p>You're not logged in</p>
 		}
 	}
 }
