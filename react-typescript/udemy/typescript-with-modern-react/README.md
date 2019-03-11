@@ -1,6 +1,6 @@
 # Course
 
-[Udemy Cpurse](https://www.udemy.com/typescript-with-react-hooks-and-context)
+[Udemy Course](https://www.udemy.com/typescript-with-react-hooks-and-context)
 
 ## Extensions
 
@@ -43,10 +43,29 @@ sum(1, 'a');
 ```
 
 
+# Babel
 
+.babelrc
 
+```
+{
+  "presets": ["@babel/env", "@babel/react", "@babel/typescript"],
+  "plugins": [
+    "@babel/proposal-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
+```
 
+```
+npm i @babel/preset-typescript --save-dev
+```
 
+```
+npm i @types/react @types/react-dom --save-dev
+
+```
 
 
 
