@@ -50,7 +50,7 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.tsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx', './scss/styles.scss'];
 
 config.optimization = {
 	splitChunks: {
