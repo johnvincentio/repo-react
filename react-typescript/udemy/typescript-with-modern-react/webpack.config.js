@@ -50,7 +50,7 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './scss/styles.scss'];
+config.entry = ['./src/index.tsx', './scss/styles.scss'];
 
 config.optimization = {
 	splitChunks: {
@@ -83,7 +83,7 @@ config.plugins = [new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID']), 
 config.module = {
 	rules: [
 		{
-			test: /\.(js|jsx)$/,
+			test: /\.(js|jsx|tsx)$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader'
 		},
@@ -124,7 +124,7 @@ config.module = {
 };
 
 config.resolve = {
-	extensions: ['.js', '.jsx']
+	extensions: ['.ts', '.tsx', '.js']
 };
 
 if (PRODUCTION_MODE) {

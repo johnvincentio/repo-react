@@ -1,4 +1,9 @@
-# Course
+# Typescript
+
+[Typescript](https://www.typescriptlang.org/)
+[Playground](https://www.typescriptlang.org/play/index.html)
+
+## Course
 
 [Udemy Course](https://www.udemy.com/typescript-with-react-hooks-and-context)
 
@@ -14,9 +19,6 @@
 Cmd Shift F - Search
 
 
-
-[Typescript](https://www.typescriptlang.org/)
-[Playground](https://www.typescriptlang.org/play/index.html)
 
 
 ### Type Checking
@@ -61,6 +63,8 @@ sum(1, 'a');
 ```
 npm i @babel/preset-typescript --save-dev
 ```
+
+Do not appear to need this
 
 ```
 npm i @types/react @types/react-dom --save-dev
