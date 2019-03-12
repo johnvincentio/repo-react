@@ -76,6 +76,12 @@ npm i @types/react @types/react-dom --save-dev
 
 * Create React Sandbox
 
+Create react app
+
+```
+npm init react-app my-app
+```
+
 
 
 
