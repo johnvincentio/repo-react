@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import { Provider } from 'react-redux';
 
-import Root from './root/Root';
-import App from './components/App';
+// import Root from './root/Root';
+import App from './App';
 
-import configureStore from './store/configureStore';
+import { StoreProvider } from './Store';
 
-// import { authUser } from './redux/actions/user.actions';
+// import configureStore from './store/configureStore';
 
-const store = configureStore();
+// const store = configureStore();
+
+ReactDOM.render(
+	<StoreProvider>
+		<App />
+	</StoreProvider>,
+	document.getElementById('root')
+);
 
 /*
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 */
 
+/*
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(
 		<Provider store={store}>
@@ -38,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('root')
 	);
 });
+*/
 
 /*
 document.addEventListener('DOMContentLoaded', () => {

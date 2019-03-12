@@ -83,6 +83,8 @@ npm init react-app my-app
 ```
 
 
+https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes
+
 
 
 
