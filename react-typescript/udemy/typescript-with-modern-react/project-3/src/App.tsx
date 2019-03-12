@@ -25,19 +25,24 @@ export default function App(): JSX.Element {
 		});
 	};
 
-	const toggleFavAction = (episode: IEpisode): IAction =>
-		dispatch({
+	const toggleFavAction = (episode: IEpisode): IAction => {
+		const dispatchObj = {
 			type: 'ADD_FAV',
 			payload: episode
-		});
+		};
+		return dispatch(dispatchObj);
+	};
 
-	console.log('state ', state);
+	// console.log('state ', state);
 
 	return (
 		<React.Fragment>
 			<header className="header">
-				<h1>Rick and Morty</h1>
-				<p>Pick you favorite episode</p>
+				<div>
+					<h1>Rick and Morty</h1>
+					<p>Pick you favorite episode</p>
+				</div>
+				<div>Favourite(s): {state.favourites.length}</div>
 			</header>
 
 			{console.log(state.episodes)}
@@ -52,7 +57,7 @@ export default function App(): JSX.Element {
 									Season: {episode.season} Number: {episode.number}
 								</div>
 								<button type="button" onClick={() => toggleFavAction(episode)}>
-									Fav
+									{state.favourites.find((fav: IEpisode) => fav.id === episode.id) ? 'Unfav' : 'Fav'}
 								</button>
 							</section>
 						</section>

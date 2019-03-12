@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { IState, IAction } from './interfaces';
+import { IState, IAction, IEpisode } from './interfaces';
 
 const initialState: IState = {
 	episodes: [],
@@ -16,7 +16,13 @@ function reducer(state: IState, action: IAction): IState {
 		case 'FETCH_DATA':
 			return { ...state, episodes: action.payload };
 		case 'ADD_FAV':
-			return { ...state, favourites: [...state.favourites, action.payload] };
+			const episode = action.payload;
+			const episodeInFav = state.favourites.includes(episode);
+			if (episodeInFav) {
+				const arr = state.favourites.filter((fav: IEpisode) => fav.id !== episode.id);
+				return { ...state, favourites: [...arr] };
+			}
+			return { ...state, favourites: [...state.favourites, episode] };
 		default:
 			return state;
 	}
