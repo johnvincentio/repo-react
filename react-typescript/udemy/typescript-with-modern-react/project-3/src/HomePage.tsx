@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { Store } from './Store';
-import { IState, IEpisode, IEpisodeProps } from './interfaces';
+import { IEpisodeProps } from './interfaces';
 import { fetchDataAction, toggleFavAction } from './actions';
 
 const EpisodesList = React.lazy<any>(() => import('./EpisodesList'));
