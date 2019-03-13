@@ -2,21 +2,25 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// import { Provider } from 'react-redux';
-
-// import Root from './root/Root';
-import App from './App';
+import { Router, RouteComponentProps } from '@reach/router';
 
 import { StoreProvider } from './Store';
 
-// import configureStore from './store/configureStore';
+import HomePage from './HomePage';
+import FavPage from './FavPage';
 
-// const store = configureStore();
+import App from './App';
+
+const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps) => props.pageComponent;
 
 ReactDOM.render(
 	<StoreProvider>
-		<App />
+		<Router>
+			<App path="/">
+				<RouterPage pageComponent={<HomePage />} path="/" />
+				<RouterPage pageComponent={<FavPage />} path="/fav" />
+			</App>
+		</Router>
 	</StoreProvider>,
 	document.getElementById('root')
 );
