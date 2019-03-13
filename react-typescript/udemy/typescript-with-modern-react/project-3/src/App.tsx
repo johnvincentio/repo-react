@@ -2,11 +2,12 @@
 
 import React from 'react';
 
+import { Store } from './Store';
 import { IAction, IEpisode } from './interfaces';
 
-import { Store } from './Store';
-
 import './App.scss';
+
+const EpisodesList = React.lazy<any>(() => import('./EpisodesList'));
 
 export default function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
@@ -33,6 +34,12 @@ export default function App(): JSX.Element {
 		return dispatch(dispatchObj);
 	};
 
+	const props = {
+		episodes: state.episodes,
+		toggleFavAction,
+		favourites: state.favourites
+	};
+
 	// console.log('state ', state);
 
 	return (
@@ -46,7 +53,17 @@ export default function App(): JSX.Element {
 			</header>
 
 			{console.log(state.episodes)}
-			<section className="episode-layout">
+
+			<React.Suspense fallback={<div>loading...</div>}>
+				<section className="episode-layout">
+					<EpisodesList {...props} />
+				</section>
+			</React.Suspense>
+		</React.Fragment>
+	);
+}
+
+/*
 				{state.episodes.map((episode: IEpisode) => {
 					return (
 						<section key={episode.id} className="episode-box">
@@ -63,7 +80,4 @@ export default function App(): JSX.Element {
 						</section>
 					);
 				})}
-			</section>
-		</React.Fragment>
-	);
-}
+	*/
