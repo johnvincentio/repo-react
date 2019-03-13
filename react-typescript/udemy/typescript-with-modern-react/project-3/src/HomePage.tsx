@@ -3,7 +3,8 @@
 import React from 'react';
 
 import { Store } from './Store';
-import { IAction, IEpisode, IEpisodeProps } from './interfaces';
+import { IState, IEpisode, IEpisodeProps } from './interfaces';
+import { fetchDataAction, toggleFavAction } from './actions';
 
 const EpisodesList = React.lazy<any>(() => import('./EpisodesList'));
 
@@ -11,29 +12,12 @@ export default function HomePage() {
 	const { state, dispatch } = React.useContext(Store);
 
 	React.useEffect(() => {
-		state.episodes.length === 0 && fetchDataAction();
+		state.episodes.length === 0 && fetchDataAction(dispatch);
 	});
-
-	const fetchDataAction = async () => {
-		const URL = 'https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes';
-		const data = await fetch(URL);
-		const dataJSON = await data.json();
-		return dispatch({
-			type: 'FETCH_DATA',
-			payload: dataJSON._embedded.episodes
-		});
-	};
-
-	const toggleFavAction = (episode: IEpisode): IAction => {
-		const dispatchObj = {
-			type: 'ADD_FAV',
-			payload: episode
-		};
-		return dispatch(dispatchObj);
-	};
 
 	const props: IEpisodeProps = {
 		episodes: state.episodes,
+		store: { state, dispatch },
 		toggleFavAction,
 		favourites: state.favourites
 	};
