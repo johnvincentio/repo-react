@@ -163,7 +163,6 @@ class RegisterForm extends React.Component {
 
 					<TextField
 						type="input"
-						autoFocus
 						error={errorLastName}
 						name="lastname"
 						placeholder="Last Name"
@@ -188,7 +187,6 @@ class RegisterForm extends React.Component {
 
 					<TextField
 						type="email"
-						autoFocus
 						error={errorEmail}
 						name="email"
 						placeholder="Email Address"
