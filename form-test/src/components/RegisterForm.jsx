@@ -1,9 +1,8 @@
 //
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // import { connect } from 'react-redux';
 // import { bindActionCreators, compose } from 'redux';
@@ -50,6 +49,10 @@ class RegisterForm extends React.Component {
 
 	init = () => {
 		this.state = {
+			firstname_field: '',
+			firstname_error: '',
+			lastname_field: '',
+			lastname_error: '',
 			email_field: '',
 			email_error: '',
 			password_field: '',
@@ -72,11 +75,22 @@ class RegisterForm extends React.Component {
 		// console.log('>>> RegisterForm::validate');
 		let isError = false;
 		const errors = {
+			firstname_error: '',
+			lastname_error: '',
 			email_error: '',
 			password_error: '',
 			confirm_error: '',
 			error_text: null
 		};
+		if (this.state.firstname_field.length < 5) {
+			isError = true;
+			errors.firstname_error = 'First name must be longer than 5 characters';
+		}
+		if (this.state.lastname_field.length < 5) {
+			isError = true;
+			errors.lastname_error = 'Last name must be longer than 5 characters';
+		}
+
 		if (this.state.email_field.length < 5) {
 			isError = true;
 			errors.email_error = 'Email address must be longer than 5 characters';
@@ -111,6 +125,8 @@ class RegisterForm extends React.Component {
 	render() {
 		console.log('RegisterForm::render(); state ', this.state);
 		const { classes } = this.props;
+		const errorFirstName = this.isError('firstname');
+		const errorLastName = this.isError('lastname');
 		const errorEmail = this.isError('email');
 		const errorPassword = this.isError('password');
 		const errorConfirm = this.isError('confirm');
@@ -120,6 +136,56 @@ class RegisterForm extends React.Component {
 				<Error text={this.state.error_text} />
 
 				<fieldset name="contact-info">
+					<TextField
+						type="input"
+						autoFocus
+						error={errorFirstName}
+						name="firstname"
+						placeholder="First Name"
+						label="First Name"
+						value={this.state.firstname_field}
+						onChange={e => this.change(e)}
+						margin="dense"
+						className={classes.FormControl}
+						helperText={this.state.firstname_error}
+						autoComplete="firstname"
+						itemProp="givenName"
+						itemScope
+						itemType="http://schema.org/Person"
+						InputProps={{
+							inputProps: {
+								'aria-label': 'First Name',
+								'aria-required': 'true'
+							}
+						}}
+					/>
+					<br />
+
+					<TextField
+						type="input"
+						autoFocus
+						error={errorLastName}
+						name="lastname"
+						placeholder="Last Name"
+						label="Last Name"
+						value={this.state.lastname_field}
+						onChange={e => this.change(e)}
+						margin="dense"
+						className={classes.FormControl}
+						helperText={this.state.lastname_error}
+						autoComplete="lastname"
+						itemProp="familyName"
+						itemScope
+						itemType="http://schema.org/Person"
+						InputProps={{
+							inputProps: {
+								'aria-label': 'Last Name',
+								'aria-required': 'true'
+							}
+						}}
+					/>
+					<br />
+
 					<TextField
 						type="email"
 						autoFocus
