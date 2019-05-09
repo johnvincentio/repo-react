@@ -16,6 +16,7 @@ const transforms = require('./transforms');
 const ICONS_FOLDER = path.resolve(__dirname, './icons');
 
 const DIST_FOLDER = path.resolve(__dirname, './dist');
+const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
 
 const HTMLPlugin = new HtmlWebpackPlugin({
 	template: './templates/index.hbs',
@@ -37,10 +38,9 @@ const HTMLPlugin = new HtmlWebpackPlugin({
 	FACEBOOK_APP_ID: transforms.FACEBOOK_APP_ID
 });
 
-// const extractCSSBundle = new MiniCssExtractPlugin({
-// 	filename: '[name].[contenthash].css',
-// 	chunkFilename: '[id].[contenthash].css'
-// });
+const extractCSSBundle = new MiniCssExtractPlugin({
+	filename: '[name].css'
+});
 
 // console.log('webpack; node-env ', process.env.NODE_ENV);
 const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
@@ -77,15 +77,11 @@ config.optimization = {
 };
 
 config.plugins = [
-
 	// list all React app required env variables
 	new webpack.EnvironmentPlugin(['NODE_ENV', 'GOOGLE_APP_ID']),
 
 	HTMLPlugin,
-	new MiniCssExtractPlugin({
-		filename: "style.css"
-	})
-
+	extractCSSBundle
 ];
 
 config.module = {
@@ -97,14 +93,14 @@ config.module = {
 		},
 		{
 			test: /\.css$/,
+			include: INCLUDE_CSS_FOLDER,
 			exclude: /node_modules/,
 			use: [
 				MiniCssExtractPlugin.loader,
 				{ loader: 'css-loader', options: { url: false, sourceMap: true } },
 				{ loader: 'sass-loader', options: { sourceMap: true } }
-			],
+			]
 		},
-
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 			// include: [FONTS_FOLDER, ICONS_FOLDER],
