@@ -8,7 +8,7 @@
  },
  "main": "index.js",
  "scripts": {
-	"eslint_versions": "npm info eslint-config-airbnb@latest peerDependencies",
+  "eslint_versions": "npm info eslint-config-airbnb@latest peerDependencies",
   "USELESS": "nothing"
  },
  "keywords": [],
