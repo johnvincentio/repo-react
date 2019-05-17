@@ -3,16 +3,30 @@
 import PropTypes from 'prop-types';
 
 /*
-* Describe DateTime type
-*/
+ * Describe match
+ */
+
+export const matchType = PropTypes.shape({
+	isExact: PropTypes.bool.isRequired,
+	path: PropTypes.string.isRequired,
+	url: PropTypes.string.isRequired,
+	params: PropTypes.any.isRequired
+	// params: PropTypes.shape({
+	// 	id: PropTypes.string.isRequired
+	// }).isRequired
+});
+
+/*
+ * Describe DateTime type
+ */
 export const dateTimeType = PropTypes.shape({
 	date: PropTypes.string,
 	time: PropTypes.string
 });
 
 /*
-* Describe task tags
-*/
+ * Describe task tags
+ */
 // export const tagType = PropTypes.shape({
 // 	id: PropTypes.number.isRequired,
 // 	title: PropTypes.string.isRequired,
@@ -23,8 +37,8 @@ export const dateTimeType = PropTypes.shape({
 export const tagsType = PropTypes.arrayOf(PropTypes.string.isRequired);
 
 /*
-* Describe tasks
-*/
+ * Describe tasks
+ */
 export const taskType = PropTypes.shape({
 	taskid: PropTypes.number.isRequired,
 	title: PropTypes.string.isRequired,
@@ -44,8 +58,8 @@ export const taskType = PropTypes.shape({
 export const tasksType = PropTypes.arrayOf(taskType.isRequired);
 
 /*
-* Describe projects
-*/
+ * Describe projects
+ */
 export const projectType = PropTypes.shape({
 	projectid: PropTypes.number.isRequired,
 	title: PropTypes.string.isRequired,
@@ -57,8 +71,8 @@ export const projectType = PropTypes.shape({
 export const projectsType = PropTypes.arrayOf(projectType.isRequired);
 
 /*
-* Describe goals
-*/
+ * Describe goals
+ */
 export const goalType = PropTypes.shape({
 	goalid: PropTypes.number.isRequired,
 	title: PropTypes.string.isRequired,
@@ -70,8 +84,8 @@ export const goalType = PropTypes.shape({
 export const goalsType = PropTypes.arrayOf(goalType.isRequired);
 
 /*
-* Describe tasksList
-*/
+ * Describe tasksList
+ */
 export const taskListType = PropTypes.shape({
 	goal: goalType.isRequired,
 	project: projectType.isRequired,
@@ -81,8 +95,8 @@ export const taskListType = PropTypes.shape({
 export const tasksListType = PropTypes.arrayOf(taskListType.isRequired);
 
 /*
-* Describe Dnd object
-*/
+ * Describe Dnd object
+ */
 
 export const emptyType = PropTypes.shape({});
 
@@ -107,8 +121,8 @@ export const dndType = PropTypes.shape({
 });
 
 /*
-* Describe events
-*/
+ * Describe events
+ */
 export const eventType = PropTypes.shape({
 	goalId: PropTypes.number.isRequired,
 	projectId: PropTypes.number.isRequired,
@@ -125,22 +139,8 @@ export const eventType = PropTypes.shape({
 export const eventsType = PropTypes.arrayOf(eventType.isRequired);
 
 /*
-* Describe application types
-*/
-// export const matchType = PropTypes.shape({
-// 	match: PropTypes.any
-// });
-
-export const matchType = PropTypes.shape({
-	isExact: PropTypes.bool.isRequired,
-	path: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	params: PropTypes.any.isRequired
-});
-
-/*
-* Describe table headers
-*/
+ * Describe table headers
+ */
 export const tableHeaderType = PropTypes.shape({
 	id: PropTypes.string.isRequired,
 	numeric: PropTypes.bool.isRequired,
@@ -151,8 +151,8 @@ export const tableHeaderType = PropTypes.shape({
 export const tableHeadersType = PropTypes.arrayOf(tableHeaderType.isRequired);
 
 /*
-* Describe users
-*/
+ * Describe users
+ */
 export const userType = PropTypes.shape({
 	username: PropTypes.string.isRequired,
 	role: PropTypes.string.isRequired,
@@ -182,8 +182,8 @@ export const overType = PropTypes.shape({
 */
 
 /*
-* Describe selected type
-*/
+ * Describe selected type
+ */
 // export const selectType = PropTypes.shape({
 // 	selectedType: PropTypes.string.isRequired,
 // 	selectedGoalId: PropTypes.number.isRequired,
@@ -192,8 +192,8 @@ export const overType = PropTypes.shape({
 // });
 
 /*
-* Describe command type
-*/
+ * Describe command type
+ */
 // export const commandType = PropTypes.shape({
 // 	commandedType: PropTypes.string.isRequired
 // });

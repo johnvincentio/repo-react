@@ -26,7 +26,8 @@ const transforms = require('./transforms');
 
 const SCSS_FOLDER = path.resolve(__dirname, './scss');
 // const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
-const ICONS_FOLDER = path.resolve(__dirname, './icons');
+// const ICONS_FOLDER = path.resolve(__dirname, './icons');
+const ICONS_FOLDER = path.resolve(__dirname, './src/assets/icons');
 const DIST_FOLDER = path.resolve(__dirname, './dist');
 const INCLUDE_SCSS_FOLDER = path.resolve(__dirname, './src');
 const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
@@ -78,10 +79,10 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './src/index.tsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx', './scss/styles.scss'];
 
 config.resolve = {
-	extensions: ['.js', '.jsx', '.ts', '.tsx']
+	extensions: ['.js', '.jsx']
 };
 
 /*

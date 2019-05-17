@@ -56,6 +56,10 @@ import grey from '@material-ui/core/colors/grey';
 const backImage = 'images/home.jpg';
 
 const baseTheme = createMuiTheme({
+	// typography: {
+	// 	useNextVariants: true,
+	// 	suppressDeprecationWarnings: true
+	// },
 	palette: {
 		primary: {
 			c100: blue[100],
