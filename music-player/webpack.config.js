@@ -198,6 +198,11 @@ const plugins = [
 		debug: copyWebpackPluginOptions
 	}),
 
+	// copy music
+	new CopyWebpackPlugin([{ from: 'src/music', to: 'music' }], {
+		debug: copyWebpackPluginOptions
+	}),
+
 	// copy static assets
 	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
 		debug: copyWebpackPluginOptions

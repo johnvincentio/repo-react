@@ -15,7 +15,10 @@ const Routes = () => (
 	<BrowserRouter>
 		<Switch>
 			<Route exact path="/" render={props => <Home datatype="home" {...props} />} />
-			<Route exact path="/play" render={props => <Home datatype="play" {...props} />} />
+			<Route exact path="/play/:id1/:id2" render={props => <Home datatype="play-track" {...props} />} />
+
+			<Route exact path="/play/:id1/" render={props => <Home datatype="play-folder" {...props} />} />
+
 			<Route exact path="/test1" component={Test1} />
 			<Redirect to="/" />
 		</Switch>

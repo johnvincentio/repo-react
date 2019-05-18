@@ -10,10 +10,11 @@ export const matchType = PropTypes.shape({
 	isExact: PropTypes.bool.isRequired,
 	path: PropTypes.string.isRequired,
 	url: PropTypes.string.isRequired,
-	params: PropTypes.any.isRequired
-	// params: PropTypes.shape({
-	// 	id: PropTypes.string.isRequired
-	// }).isRequired
+	// params: PropTypes.any.isRequired
+	params: PropTypes.shape({
+		folderId: PropTypes.string.isRequired,
+		trackId: PropTypes.string
+	}).isRequired
 });
 
 /*
