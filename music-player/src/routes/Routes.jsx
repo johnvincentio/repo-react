@@ -1,23 +1,64 @@
 //
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import Home from '../containers/Home';
+import Layout from '../containers/Layout';
+
+import Folders from '../components/Folders';
+import PlayTrack from '../components/PlayTrack';
+import PlayFolder from '../components/PlayFolder';
 
 import Test1 from '../other/Test1';
 
-const PageOne = () => <div>PageOne</div>;
-const PageTwo = () => <div>PageTwo</div>;
+const FoldersPage = props => {
+	return (
+		<Layout {...props}>
+			<Folders />
+		</Layout>
+	);
+};
+
+const PlayTrackPage = props => {
+	return (
+		<Layout {...props}>
+			<PlayTrack folderId={props.match.params.id1} trackId={props.match.params.id2} {...props} />
+		</Layout>
+	);
+};
+PlayTrackPage.propTypes = {
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			id1: PropTypes.string.isRequired,
+			id2: PropTypes.string.isRequired
+		}).isRequired
+	}).isRequired
+};
+
+const PlayFolderPage = props => {
+	return (
+		<Layout {...props}>
+			<PlayFolder folderId={props.match.params.id1} {...props} />
+		</Layout>
+	);
+};
+PlayFolderPage.propTypes = {
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			id1: PropTypes.string.isRequired
+		}).isRequired
+	}).isRequired
+};
 
 const Routes = () => (
 	<BrowserRouter>
 		<Switch>
-			<Route exact path="/" render={props => <Home datatype="home" {...props} />} />
-			<Route exact path="/play/:id1/:id2" render={props => <Home datatype="play-track" {...props} />} />
+			<Route exact path="/" render={props => <FoldersPage {...props} />} />
+			<Route exact path="/play/:id1/:id2" render={props => <PlayTrackPage {...props} />} />
 
-			<Route exact path="/play/:id1/" render={props => <Home datatype="play-folder" {...props} />} />
+			<Route exact path="/play/:id1/" render={props => <PlayFolderPage {...props} />} />
 
 			<Route exact path="/test1" component={Test1} />
 			<Redirect to="/" />
@@ -26,20 +67,3 @@ const Routes = () => (
 );
 
 export default Routes;
-
-/*
-<Route
-	exact
-	path="/"
-	render={props => (
-		<Layout datatype="all" {...props}>
-			<PageOne />
-		</Layout>
-	)}
-/>
-
-<Route path="/widgets/new" render={props => <Layout datatype="create" {...props} />} />
-<Route path="/widgets/edit/:id" render={props => <Layout datatype="edit" {...props} />} />
-<Route path="/widgets/delete/:id" render={props => <Layout datatype="delete" {...props} />} />
-<Route path="/widgets/:id" render={props => <Layout datatype="select" {...props} />} />
-*/

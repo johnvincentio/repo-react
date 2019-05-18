@@ -49,7 +49,7 @@ class Layout extends React.Component {
 
 	render() {
 		console.log('Layout; props ', this.props);
-		const { classes, main } = this.props;
+		const { classes } = this.props;
 		return (
 			<div className={classes.root}>
 				<AppBar className={classes.appBar}>
@@ -133,7 +133,7 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
 	classes: PropTypes.object.isRequired,
-	main: PropTypes.bool.isRequired,
+	// main: PropTypes.bool.isRequired,
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 	// actions: PropTypes.shape({
 	// 	searchWidgets: PropTypes.func.isRequired
