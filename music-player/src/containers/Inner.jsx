@@ -12,24 +12,24 @@ const styles = theme => ({
 		textAlign: 'left',
 		backgroundColor: 'white',
 		color: theme.text.main,
-		boxShadow: theme.boxShadow.e6,
-		[theme.breakpoints.up('xs')]: {
-			width: '100%',
-			margin: 0,
-			padding: '5px 3px',
-			borderRadius: 0
-		},
-		[theme.breakpoints.up('sm')]: {
-			width: '90%',
-			margin: '40px auto',
-			padding: '10px',
-			borderRadius: '5px'
-		},
-		[theme.breakpoints.up('md')]: {
-			margin: '40px auto',
-			padding: '20px 40px',
-			borderRadius: '10px'
-		}
+		boxShadow: theme.boxShadow.e6
+		// [theme.breakpoints.up('xs')]: {
+		// 	width: '100%',
+		// 	margin: 0,
+		// 	padding: '5px 3px',
+		// 	borderRadius: 0
+		// },
+		// [theme.breakpoints.up('sm')]: {
+		// 	width: '90%',
+		// 	margin: '40px auto',
+		// 	padding: '10px',
+		// 	borderRadius: '5px'
+		// },
+		// [theme.breakpoints.up('md')]: {
+		// 	margin: '40px auto',
+		// 	padding: '20px 40px',
+		// 	borderRadius: '10px'
+		// }
 	}
 });
 

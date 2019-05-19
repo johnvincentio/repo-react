@@ -10,7 +10,9 @@ import { appTheme } from '../themes/themes';
 
 const styles = () => ({
 	outer: {
-		position: 'relative',
+		display: 'flex',
+		flexDirection: 'row',
+		// position: 'relative',
 		marginTop: `calc(2 * ${appTheme.topNavLineHeight}px - 1px)`,
 		zIndex: '-100',
 		width: '100%',
@@ -19,7 +21,7 @@ const styles = () => ({
 	}
 });
 
-const Outer = ({ classes, children }) => <main className={classes.outer}>{children}</main>;
+const Outer = ({ classes, children }) => <section className={classes.outer}>{children}</section>;
 
 Outer.propTypes = {
 	classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
