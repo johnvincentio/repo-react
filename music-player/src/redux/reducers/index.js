@@ -1,11 +1,10 @@
-
 import { combineReducers } from 'redux';
 // import { createResponsiveStateReducer } from 'redux-responsive';
 
-import data from './data.reducer';
+import dataReducer from './data.reducer';
 
 const rootReducer = combineReducers({
-	dataReducer: data,
+	data: dataReducer
 });
 
 export default rootReducer;

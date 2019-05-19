@@ -9,19 +9,43 @@ import { bindActionCreators } from 'redux';
 
 import Button from '@material-ui/core/Button';
 
+import {
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+	FormControl,
+	Input,
+	InputLabel,
+	InputAdornment,
+	IconButton,
+	Divider
+} from '@material-ui/core';
+
+// import { treeType, foldersType } from '../types';
+
 import * as actions from '../redux/actions';
 
 import Outer from '../containers/Outer';
 import Inner from '../containers/Inner';
 
 class Folders extends React.Component {
+	state = {
+		folder: 1,
+		track: null
+	};
+
 	componentDidMount() {
 		console.log('--- Folders::componentDidMount');
 		this.props.actions.getMusicData();
 	}
 
+	renderList() {
+		console.log('Folders::renderList(); props ', this.props);
+	}
+
 	render() {
-		console.log('Folders::render()');
+		console.log('Folders::render(); props ', this.props);
 		return (
 			<Outer>
 				<Inner>
@@ -36,6 +60,8 @@ class Folders extends React.Component {
 
 Folders.propTypes = {
 	// widgets: widgetsType.isRequired,
+	tree: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+	folders: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
 	actions: PropTypes.shape({
 		getMusicData: PropTypes.func.isRequired
 	}).isRequired
@@ -44,9 +70,8 @@ Folders.propTypes = {
 function mapStateToProps(state) {
 	console.log('Folders::mapStateToProps(), state ', state);
 	return {
-		// widgets: Object.values(state.data),
-		// userId: state.auth.userId,
-		// signedIn: state.auth.signedIn
+		tree: state.data.tree,
+		folders: state.data.folders
 	};
 }
 

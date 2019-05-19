@@ -6,7 +6,7 @@ import MUSIC_DATA from '../music-data';
 
 const initialState = MUSIC_DATA;
 
-function data(state = initialState, action) {
+export default (state = initialState, action) => {
 	switch (action.type) {
 		// case FETCH_MUSIC_DATA:
 		// 	console.log('FETCH_MUSIC_DATA; action.payload ', action.payload);
@@ -15,6 +15,4 @@ function data(state = initialState, action) {
 		default:
 			return state;
 	}
-}
-
-export default data;
+};
