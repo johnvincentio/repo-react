@@ -3,6 +3,18 @@
 import PropTypes from 'prop-types';
 
 /*
+ * Describe music data
+ */
+
+export const treeType = PropTypes.shape({
+	tree: PropTypes.any.isRequired
+});
+
+export const foldersType = PropTypes.shape({
+	folders: PropTypes.any.isRequired
+});
+
+/*
  * Describe match
  */
 
