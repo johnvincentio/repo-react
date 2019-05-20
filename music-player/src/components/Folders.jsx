@@ -1,16 +1,21 @@
 //
 
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+// import { withRouter, Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+
+// import { makeStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link';
 
 import {
 	List,
@@ -32,19 +37,22 @@ import * as actions from '../redux/actions';
 import Outer from '../containers/Outer';
 import Inner from '../containers/Inner';
 
-import AppBreadCrumbs from './AppBreadCrumbs';
+import { appTheme } from '../themes/themes';
 
-// const useStyles = makeStyles(theme => ({
-// 	root: {
-// 		justifyContent: 'center',
-// 		flexWrap: 'wrap'
-// 	},
-// }));
+const styles = () => ({
+	root: {
+		justifyContent: 'center',
+		flexWrap: 'wrap'
+	},
+	paper: {
+		padding: appTheme.spacing(1, 2)
+	}
+});
 
 class Folders extends React.Component {
 	state = {
-		folder: 100,
-		track: null
+		folderId: 100,
+		trackId: null
 	};
 
 	componentDidMount() {
@@ -53,24 +61,62 @@ class Folders extends React.Component {
 	}
 
 	selectFile = (e, id) => {
+		e.preventDefault();
 		console.log('Folders::selectFile; id ', id);
 	};
 
-	selectFolder = (e, id) => {
-		console.log('Folders::selectFolder; id ', id);
+	selectFolder = (e, folderId) => {
+		e.preventDefault();
+		console.log('Folders::selectFolder; folderId ', folderId);
+		this.setState({ folderId, trackId: null });
 	};
 
-	renderCurrentFolder() {
-		console.log('Folders::renderCurrentFolder(); props ', this.props);
-		const root = this.props.folders[0];
-		const current = this.props.folders[this.state.folder];
-		const dir = current.dir.replace(`${root.dir}/`, '');
-		return <div>Current Folder: {dir}</div>;
+	createBreadCrumbList(folder) {
+		console.log('AppBreadCrumbs::createBreadCrumbList(); props ', this.props);
+		const list = [];
+		let current = this.props.folders[folder];
+		list.push(current);
+		while (current.previous !== null) {
+			current = this.props.folders[current.previous];
+			list.push(current);
+		}
+		console.log('(1) list ', list);
+		const arr = list.reverse();
+		console.log('arr ', arr);
+		return arr.map(item => (
+			<div key={item.index}>
+				{item.index === 0 ? (
+					<Link color="inherit" href="/" onClick={event => this.selectFolder(event, item.index)}>
+						{'Home'}
+					</Link>
+				) : (
+					<Link color="inherit" href="/" onClick={event => this.selectFolder(event, item.index)}>
+						{item.name}
+					</Link>
+				)}
+			</div>
+		));
 	}
 
-	renderSubFolders() {
-		console.log('Folders::renderSubFolders(); props ', this.props);
-		const current = this.props.folders[this.state.folder];
+	renderCurrentFiles(folderId) {
+		console.log('Folders::renderCurrentFiles(); folderId ', folderId, ' props ', this.props);
+		const current = this.props.folders[folderId];
+		const { mp3 } = current;
+		return mp3.map(item => (
+			<div key={item.tags.fileIdx}>
+				<ListItem button onClick={event => this.selectFile(event, item.tags.fileIdx)}>
+					{/* <ListItemIcon>
+						<GoalsIcon />
+					</ListItemIcon> */}
+					<ListItemText inset primary={item.file.replace(/\.[^/.]+$/, '')} secondary={item.tags.artist} />
+				</ListItem>
+			</div>
+		));
+	}
+
+	renderSubFolders(folderId) {
+		console.log('Folders::renderSubFolders(); folderId ', folderId, ' props ', this.props);
+		const current = this.props.folders[folderId];
 		const { next } = current;
 		return next.map(item => {
 			const subFolder = this.props.folders[item];
@@ -85,7 +131,96 @@ class Folders extends React.Component {
 		});
 	}
 
-	/*
+	renderCurrentFolder(folderId) {
+		console.log('Folders::renderCurrentFolder(); folderId ', folderId, ' props ', this.props);
+		const root = this.props.folders[0];
+		const current = this.props.folders[folderId];
+		const dir = current.dir.replace(`${root.dir}/`, '');
+		return <div>Current Folder: {dir}</div>;
+	}
+
+	render() {
+		console.log('Folders::render(); props ', this.props);
+		// const classes = useStyles();
+		const { classes } = this.props;
+		const { folderId } = this.state;
+		return (
+			<Outer>
+				<Inner>
+					<div className={classes.root}>
+						<Paper elevation={0} className={classes.paper}>
+							<Breadcrumbs separator="›" aria-label="Breadcrumb">
+								{this.createBreadCrumbList(folderId)}
+							</Breadcrumbs>
+						</Paper>
+					</div>
+					<List>
+						{this.renderCurrentFolder(folderId)}
+						{this.renderSubFolders(folderId)}
+					</List>
+					<Button variant="contained" color="primary">
+						Hello World
+					</Button>
+				</Inner>
+				<Inner>
+					<List>{this.renderCurrentFiles(folderId)}</List>
+					<Button variant="contained" color="primary">
+						Right
+					</Button>
+				</Inner>
+			</Outer>
+		);
+	}
+}
+
+Folders.propTypes = {
+	classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+	folders: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+	actions: PropTypes.shape({
+		getMusicData: PropTypes.func.isRequired
+	}).isRequired
+};
+
+function mapStateToProps(state) {
+	console.log('Folders::mapStateToProps(), state ', state);
+	return {
+		folders: state.data.folders
+	};
+}
+
+const mapDispatchToProps = dispatch => ({
+	actions: bindActionCreators(actions, dispatch)
+});
+
+export default compose(
+	withStyles(styles),
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)
+)(Folders);
+
+// <ListItem button component={Link} to="/test1">
+/*
+			return mp3.map(item => (
+			<div key={item.tags.fileIdx}>
+				<div>MP3 name {item.file}</div>
+			</div>
+		));
+	*/
+// {/* renderList() {
+// 	console.log('Folders::renderList(); props ', this.props);
+// 	return (<div><hilow/div>)
+// } */}
+
+// const useStyles = makeStyles(theme => ({
+// 	root: {
+// 		justifyContent: 'center',
+// 		flexWrap: 'wrap'
+// 	},
+// }));
+
+/*
 		return next.map(item => {
 			const subFolder = this.props.folders[item];
 			const dir = subFolder.dir.replace(`${current.dir}/`, '');
@@ -96,59 +231,6 @@ class Folders extends React.Component {
 			);
 		});
 */
-	renderCurrentFiles() {
-		console.log('Folders::renderCurrentFiles(); props ', this.props);
-		const current = this.props.folders[this.state.folder];
-		const { mp3 } = current;
-		return mp3.map(item => (
-			<div key={item.tags.fileIdx}>
-				<ListItem button onClick={event => this.selectFile(event, item.tags.fileIdx)}>
-					{/* <ListItemIcon>
-						<GoalsIcon />
-					</ListItemIcon> */}
-					<ListItemText inset primary={item.file.replace(/\.[^/.]+$/, '')} secondary={item.tags.artist} />
-				</ListItem>
-			</div>
-		));
-	}
-	// <ListItem button component={Link} to="/test1">
-	/*
-			return mp3.map(item => (
-			<div key={item.tags.fileIdx}>
-				<div>MP3 name {item.file}</div>
-			</div>
-		));
-	*/
-	// {/* renderList() {
-	// 	console.log('Folders::renderList(); props ', this.props);
-	// 	return (<div><hilow/div>)
-	// } */}
-
-	render() {
-		console.log('Folders::render(); props ', this.props);
-		// const classes = useStyles();
-		return (
-			<Outer>
-				<Inner>
-					<AppBreadCrumbs folder={this.state.folder} />
-					<List>
-						{this.renderCurrentFolder()}
-						{this.renderSubFolders()}
-					</List>
-					<Button variant="contained" color="primary">
-						Hello World
-					</Button>
-				</Inner>
-				<Inner>
-					<List>{this.renderCurrentFiles()}</List>
-					<Button variant="contained" color="primary">
-						Right
-					</Button>
-				</Inner>
-			</Outer>
-		);
-	}
-}
 
 // works
 // render() {
@@ -196,27 +278,3 @@ class Folders extends React.Component {
 // 	);
 // }
 // }
-
-Folders.propTypes = {
-	// widgets: widgetsType.isRequired,
-	folders: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-	actions: PropTypes.shape({
-		getMusicData: PropTypes.func.isRequired
-	}).isRequired
-};
-
-function mapStateToProps(state) {
-	console.log('Folders::mapStateToProps(), state ', state);
-	return {
-		folders: state.data.folders
-	};
-}
-
-const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators(actions, dispatch)
-});
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Folders);
