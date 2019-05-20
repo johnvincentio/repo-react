@@ -9,6 +9,8 @@ import { bindActionCreators, compose } from 'redux';
 import { withStyles } from '@material-ui/core/styles';
 
 // import { makeStyles } from '@material-ui/core/styles';
+// import { useTheme } from '@material-ui/styles';
+
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
@@ -49,10 +51,23 @@ class AppBreadCrumbs extends React.Component {
 		console.log('AppBreadCrumbs::selectFolder; id ', id);
 	};
 
+	createList(folder) {
+		console.log('AppBreadCrumbs::createList(); props ', this.props);
+		const list = [];
+		let current = this.props.folders[folder];
+		list.push(current);
+		while (current.previous !== null) {
+			current = this.props.folders[current.previous];
+			list.push(current);
+		}
+		console.log('list ', list);
+	}
+
 	render() {
 		console.log('AppBreadCrumbs::render(); props ', this.props);
 		// const classes = useStyles();
-		const { classes } = this.props;
+		const { classes, folder } = this.props;
+		this.createList(folder);
 		return (
 			<div className={classes.root}>
 				<Paper elevation={0} className={classes.paper}>
@@ -88,7 +103,8 @@ class AppBreadCrumbs extends React.Component {
 AppBreadCrumbs.propTypes = {
 	// widgets: widgetsType.isRequired,
 	classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-	folders: PropTypes.any.isRequired // eslint-disable-line react/forbid-prop-types
+	folders: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+	folder: PropTypes.string.isRequired
 };
 
 function mapStateToProps(state) {

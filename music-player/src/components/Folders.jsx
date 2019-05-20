@@ -43,7 +43,7 @@ import AppBreadCrumbs from './AppBreadCrumbs';
 
 class Folders extends React.Component {
 	state = {
-		folder: 1,
+		folder: 100,
 		track: null
 	};
 
@@ -130,7 +130,7 @@ class Folders extends React.Component {
 		return (
 			<Outer>
 				<Inner>
-					<AppBreadCrumbs />
+					<AppBreadCrumbs folder={this.state.folder} />
 					<List>
 						{this.renderCurrentFolder()}
 						{this.renderSubFolders()}
