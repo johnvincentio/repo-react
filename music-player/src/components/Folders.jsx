@@ -60,9 +60,9 @@ class Folders extends React.Component {
 		this.props.actions.getMusicData();
 	}
 
-	selectFile = (e, id) => {
+	selectFile = (e, trackId) => {
 		e.preventDefault();
-		console.log('Folders::selectFile; id ', id);
+		console.log('Folders::selectFile; trackId ', trackId);
 	};
 
 	selectFolder = (e, folderId) => {
@@ -80,9 +80,7 @@ class Folders extends React.Component {
 			current = this.props.folders[current.previous];
 			list.push(current);
 		}
-		console.log('(1) list ', list);
 		const arr = list.reverse();
-		console.log('arr ', arr);
 		return arr.map(item => (
 			<div key={item.index}>
 				{item.index === 0 ? (
@@ -155,7 +153,7 @@ class Folders extends React.Component {
 						</Paper>
 					</div>
 					<List>
-						{this.renderCurrentFolder(folderId)}
+						{/* {this.renderCurrentFolder(folderId)} */}
 						{this.renderSubFolders(folderId)}
 					</List>
 					<Button variant="contained" color="primary">
