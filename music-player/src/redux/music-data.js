@@ -2,6 +2,7 @@ const MUSIC_DATA = {
 	folders: [
 		{
 			index: 0,
+			name: '/',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music',
 			previous: null,
 			next: [1, 24, 34, 181, 186, 237, 254, 260, 283, 384, 402, 410],
@@ -10,6 +11,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 1,
+			name: 'Choir',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir',
 			previous: 0,
 			next: [2, 4, 6, 12, 14, 16, 18, 20, 22],
@@ -85,6 +87,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 2,
+			name: 'Derek Lee Ragin_Moses Hogan_Moses Hogan Singers',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Derek Lee Ragin_Moses Hogan_Moses Hogan Singers',
 			previous: 1,
 			next: [3],
@@ -93,6 +96,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 3,
+			name: 'Negro Spirituals',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Derek Lee Ragin_Moses Hogan_Moses Hogan Singers/Negro Spirituals',
 			previous: 2,
 			next: [],
@@ -118,6 +122,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 4,
+			name: 'Pontarddulais Male Choir',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Pontarddulais Male Choir',
 			previous: 1,
 			next: [5],
@@ -126,6 +131,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 5,
+			name: 'Welsh Male Voices Sing Gershwin',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Pontarddulais Male Choir/Welsh Male Voices Sing Gershwin',
 			previous: 4,
 			next: [],
@@ -315,6 +321,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 6,
+			name: 'Ridgewood Singers',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers',
 			previous: 1,
 			next: [7, 8, 9, 10, 11],
@@ -323,6 +330,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 7,
+			name: 'Concert Spring 2010',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers/Concert Spring 2010',
 			previous: 6,
 			next: [],
@@ -524,6 +532,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 8,
+			name: 'JV Singing',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers/JV Singing',
 			previous: 6,
 			next: [],
@@ -532,6 +541,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 9,
+			name: 'Ridgewood Singers 2011 (bass)',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers/Ridgewood Singers 2011 (bass)',
 			previous: 6,
 			next: [],
@@ -582,6 +592,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 10,
+			name: 'Ridgewood Singers Concert - Spring 2011',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers/Ridgewood Singers Concert - Spring 2011',
 			previous: 6,
 			next: [],
@@ -667,6 +678,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 11,
+			name: 'Ridgewood Singers Concert Practice CD',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Ridgewood Singers/Ridgewood Singers Concert Practice CD',
 			previous: 6,
 			next: [],
@@ -952,6 +964,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 12,
+			name: 'Robert De Cormier Counterpoint',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Robert De Cormier Counterpoint',
 			previous: 1,
 			next: [13],
@@ -960,6 +973,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 13,
+			name: 'Let Me Fly_ Music of Struggle, Solace, and Survival in Black America',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Choir/Robert De Cormier Counterpoint/Let Me Fly_ Music of Struggle, Solace, and Survival in Black America',
 			previous: 12,
@@ -994,6 +1008,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 14,
+			name: 'Robert Merrill',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Robert Merrill',
 			previous: 1,
 			next: [15],
@@ -1002,6 +1017,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 15,
+			name: 'Fiddler On The Roof',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/Robert Merrill/Fiddler On The Roof',
 			previous: 14,
 			next: [],
@@ -1028,6 +1044,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 16,
+			name: 'The Cathedrals',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/The Cathedrals',
 			previous: 1,
 			next: [17],
@@ -1036,6 +1053,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 17,
+			name: 'Worship His Glory_ In Acappella Praise',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/The Cathedrals/Worship His Glory_ In Acappella Praise',
 			previous: 16,
 			next: [],
@@ -1062,6 +1080,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 18,
+			name: 'The Elmer Iseler Singers',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/The Elmer Iseler Singers',
 			previous: 1,
 			next: [19],
@@ -1070,6 +1089,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 19,
+			name: 'Spirituals',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Choir/The Elmer Iseler Singers/Spirituals',
 			previous: 18,
 			next: [],
@@ -1095,6 +1115,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 20,
+			name: "US Army Field Band Soldiers' Chorus",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Choir/US Army Field Band Soldiers' Chorus",
 			previous: 1,
 			next: [21],
@@ -1103,6 +1124,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 21,
+			name: 'The Legacy Of Aaron Copland',
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Choir/US Army Field Band Soldiers' Chorus/The Legacy Of Aaron Copland",
 			previous: 20,
 			next: [],
@@ -1340,6 +1362,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 22,
+			name: "Washington Men's Camerata",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Choir/Washington Men's Camerata",
 			previous: 1,
 			next: [23],
@@ -1348,6 +1371,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 23,
+			name: 'The Spirit Of Freedom_ Patriotic Songs & Service Hymns',
 			dir:
 				"/Users/jv/Desktop/MyDocs/JV_Music/Choir/Washington Men's Camerata/The Spirit Of Freedom_ Patriotic Songs & Service Hymns",
 			previous: 22,
@@ -1374,6 +1398,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 24,
+			name: 'Christmas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas',
 			previous: 0,
 			next: [25, 26, 27, 28, 29, 30, 31, 32, 33],
@@ -1382,6 +1407,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 25,
+			name: '100 Classic Christmas Songs',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/100 Classic Christmas Songs',
 			previous: 24,
 			next: [],
@@ -2591,6 +2617,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 26,
+			name: 'A Christmas Concert',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/A Christmas Concert',
 			previous: 24,
 			next: [],
@@ -2825,6 +2852,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 27,
+			name: 'A Very Special Christmas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/A Very Special Christmas',
 			previous: 24,
 			next: [],
@@ -3004,6 +3032,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 28,
+			name: 'Angelic Voices - The Christmas Carol Collection',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/Angelic Voices - The Christmas Carol Collection',
 			previous: 24,
 			next: [],
@@ -3368,6 +3397,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 29,
+			name: 'Christmas with Perry Como',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/Christmas with Perry Como',
 			previous: 24,
 			next: [],
@@ -3492,6 +3522,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 30,
+			name: 'Frank Sinatra-Bing Crosby-Nat King Cole',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/Frank Sinatra-Bing Crosby-Nat King Cole',
 			previous: 24,
 			next: [],
@@ -3681,6 +3712,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 31,
+			name: 'The 99 Most Essential Christmas Masterpieces (Amazon Exclusive)',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Christmas/The 99 Most Essential Christmas Masterpieces (Amazon Exclusive)',
 			previous: 24,
@@ -4893,6 +4925,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 32,
+			name: 'Winter Wonderland [Excelsior]',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/Winter Wonderland [Excelsior]',
 			previous: 24,
 			next: [],
@@ -5219,6 +5252,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 33,
+			name: 'christmas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Christmas/christmas',
 			previous: 24,
 			next: [],
@@ -5532,6 +5566,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 34,
+			name: 'Classical',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical',
 			previous: 0,
 			next: [
@@ -5583,6 +5618,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 35,
+			name: 'Andrea Bocelli',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Andrea Bocelli',
 			previous: 34,
 			next: [36],
@@ -5591,6 +5627,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 36,
+			name: 'Andrea Bocelli - Sacred Arias',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Andrea Bocelli/Andrea Bocelli - Sacred Arias',
 			previous: 35,
 			next: [],
@@ -5783,6 +5820,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 37,
+			name: 'Antonin Dvorák',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonin Dvorák',
 			previous: 34,
 			next: [38, 39],
@@ -5791,6 +5829,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 38,
+			name: 'Symphonies Nos. 4 & 8',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonin Dvorák/Symphonies Nos. 4 & 8',
 			previous: 37,
 			next: [],
@@ -5880,6 +5919,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 39,
+			name: 'Symphony No. 9, Op. 95-Serenade for Strings, Op. 22',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonin Dvorák/Symphony No. 9, Op. 95-Serenade for Strings, Op. 22',
 			previous: 37,
@@ -6003,6 +6043,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 40,
+			name: 'Antonio Vivaldi',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonio Vivaldi',
 			previous: 34,
 			next: [41, 42, 43],
@@ -6011,6 +6052,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 41,
+			name: 'Four Seasons',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonio Vivaldi/Four Seasons',
 			previous: 40,
 			next: [],
@@ -6140,6 +6182,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 42,
+			name: 'Gloria',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonio Vivaldi/Gloria',
 			previous: 40,
 			next: [],
@@ -6453,6 +6496,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 43,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Antonio Vivaldi/The World's Greatest Masterpieces",
 			previous: 40,
 			next: [],
@@ -6683,6 +6727,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 44,
+			name: 'Aram Khachaturian',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Aram Khachaturian',
 			previous: 34,
 			next: [45],
@@ -6691,6 +6736,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 45,
+			name: 'Spartacus',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Aram Khachaturian/Spartacus',
 			previous: 44,
 			next: [],
@@ -6813,6 +6859,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 46,
+			name: 'Bryn Terfel',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Bryn Terfel',
 			previous: 34,
 			next: [47],
@@ -6821,6 +6868,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 47,
+			name: 'Mendelssohn_ Elijah',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Bryn Terfel/Mendelssohn_ Elijah',
 			previous: 46,
 			next: [],
@@ -7363,6 +7411,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 48,
+			name: 'Camille Saint-Saëns',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Camille Saint-Saëns',
 			previous: 34,
 			next: [49, 50],
@@ -7371,6 +7420,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 49,
+			name: "Camille Saint-Saëns- Symphony No.3 In C Minor, Op.78 ('Organ')",
 			dir:
 				"/Users/jv/Desktop/MyDocs/JV_Music/Classical/Camille Saint-Saëns/Camille Saint-Saëns- Symphony No.3 In C Minor, Op.78 ('Organ')",
 			previous: 48,
@@ -7434,6 +7484,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 50,
+			name: 'Saint-Saens- Carnaval des animaux; Symphony No. 3',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Camille Saint-Saëns/Saint-Saens- Carnaval des animaux; Symphony No. 3',
 			previous: 48,
@@ -7741,6 +7792,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 51,
+			name: 'Cesar Franck',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Cesar Franck',
 			previous: 34,
 			next: [52],
@@ -7749,6 +7801,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 52,
+			name: 'Chorale No 3 in A-Minor for OrganChorale',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Cesar Franck/Chorale No 3 in A-Minor for OrganChorale',
 			previous: 51,
 			next: [],
@@ -7775,6 +7828,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 53,
+			name: 'Claude Debussy',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Claude Debussy',
 			previous: 34,
 			next: [54],
@@ -7783,6 +7837,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 54,
+			name: "Debussy's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Claude Debussy/Debussy's Greatest Hits",
 			previous: 53,
 			next: [],
@@ -7872,6 +7927,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 55,
+			name: 'Edvard Grieg',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Edvard Grieg',
 			previous: 34,
 			next: [56],
@@ -7880,6 +7936,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 56,
+			name: 'Grieg Orchestral Works',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Edvard Grieg/Grieg Orchestral Works',
 			previous: 55,
 			next: [],
@@ -8019,6 +8076,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 57,
+			name: 'Edward Elgar',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Edward Elgar',
 			previous: 34,
 			next: [58, 59],
@@ -8027,6 +8085,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 58,
+			name: 'Enigma Variations Op36',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Edward Elgar/Enigma Variations Op36',
 			previous: 57,
 			next: [],
@@ -8176,6 +8235,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 59,
+			name: 'Pomp and Circumstance Marches Op39;',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Edward Elgar/Pomp and Circumstance Marches Op39;',
 			previous: 57,
 			next: [],
@@ -8235,6 +8295,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 60,
+			name: 'Franz Liszt',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Franz Liszt',
 			previous: 34,
 			next: [61],
@@ -8243,6 +8304,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 61,
+			name: "Liszt's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Franz Liszt/Liszt's Greatest Hits",
 			previous: 60,
 			next: [],
@@ -8323,6 +8385,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 62,
+			name: 'Franz Schubert',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Franz Schubert',
 			previous: 34,
 			next: [63],
@@ -8331,6 +8394,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 63,
+			name: "Schubert's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Franz Schubert/Schubert's Greatest Hits",
 			previous: 62,
 			next: [],
@@ -8421,6 +8485,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 64,
+			name: 'Frédéric Chopin',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Frédéric Chopin',
 			previous: 34,
 			next: [65, 66, 67, 68],
@@ -8429,6 +8494,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 65,
+			name: "Chopin's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Frédéric Chopin/Chopin's Greatest Hits",
 			previous: 64,
 			next: [],
@@ -8553,6 +8619,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 66,
+			name: 'Frederic Chopin',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Frédéric Chopin/Frederic Chopin',
 			previous: 64,
 			next: [],
@@ -8697,6 +8764,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 67,
+			name: 'Romantic Piano',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Frédéric Chopin/Romantic Piano',
 			previous: 64,
 			next: [],
@@ -8846,6 +8914,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 68,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Frédéric Chopin/The World's Greatest Masterpieces",
 			previous: 64,
 			next: [],
@@ -8945,6 +9014,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 69,
+			name: 'Geoffrey Burgon',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Geoffrey Burgon',
 			previous: 34,
 			next: [70],
@@ -8953,6 +9023,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 70,
+			name: 'Brideshead Revisited',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Geoffrey Burgon/Brideshead Revisited',
 			previous: 69,
 			next: [],
@@ -8978,6 +9049,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 71,
+			name: 'George Frederick Handel',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Frederick Handel',
 			previous: 34,
 			next: [72, 73, 74],
@@ -8986,6 +9058,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 72,
+			name: 'Messiah 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Frederick Handel/Messiah 1',
 			previous: 71,
 			next: [],
@@ -9253,6 +9326,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 73,
+			name: 'Messiah 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Frederick Handel/Messiah 2',
 			previous: 71,
 			next: [],
@@ -9597,6 +9671,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 74,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Frederick Handel/The World's Greatest Masterpieces",
 			previous: 71,
 			next: [],
@@ -9816,6 +9891,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 75,
+			name: 'George Gershwin',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Gershwin',
 			previous: 34,
 			next: [76, 77],
@@ -9824,6 +9900,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 76,
+			name: 'George Gershwin (1898-1937)-Gershwin on Broadway',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Gershwin/George Gershwin (1898-1937)-Gershwin on Broadway',
 			previous: 75,
@@ -9916,6 +9993,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 77,
+			name: 'The Musical Gala',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/George Gershwin/The Musical Gala',
 			previous: 75,
 			next: [],
@@ -10357,6 +10435,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 78,
+			name: 'Georges Bizet',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Georges Bizet',
 			previous: 34,
 			next: [79, 80],
@@ -10365,6 +10444,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 79,
+			name: 'CARMEN SUITES 1 & 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Georges Bizet/CARMEN SUITES 1 & 2',
 			previous: 78,
 			next: [],
@@ -10516,6 +10596,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 80,
+			name: "L'Arlesienne, Symphony No 1",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Georges Bizet/L'Arlesienne, Symphony No 1",
 			previous: 78,
 			next: [],
@@ -10655,6 +10736,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 81,
+			name: 'Gregorian Chant',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gregorian Chant',
 			previous: 34,
 			next: [82, 83, 84, 85],
@@ -10663,6 +10745,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 82,
+			name: 'A Treasury of Gregorian Chants Vol 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gregorian Chant/A Treasury of Gregorian Chants Vol 1',
 			previous: 81,
 			next: [],
@@ -10837,6 +10920,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 83,
+			name: 'A Treasury of Gregorian Chants Vol 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gregorian Chant/A Treasury of Gregorian Chants Vol 2',
 			previous: 81,
 			next: [],
@@ -10991,6 +11075,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 84,
+			name: 'A Treasury of Gregorian Chants Vol 3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gregorian Chant/A Treasury of Gregorian Chants Vol 3',
 			previous: 81,
 			next: [],
@@ -11135,6 +11220,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 85,
+			name: 'A Treasury of Gregorian Chants Vol 4',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gregorian Chant/A Treasury of Gregorian Chants Vol 4',
 			previous: 81,
 			next: [],
@@ -11257,6 +11343,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 86,
+			name: 'Gustav Holst',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gustav Holst',
 			previous: 34,
 			next: [87],
@@ -11265,6 +11352,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 87,
+			name: 'The Planets',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gustav Holst/The Planets',
 			previous: 86,
 			next: [],
@@ -11381,6 +11469,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 88,
+			name: 'Gustav Mahler',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gustav Mahler',
 			previous: 34,
 			next: [89, 90],
@@ -11389,6 +11478,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 89,
+			name: 'Symphony No 1 - Titan',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gustav Mahler/Symphony No 1 - Titan',
 			previous: 88,
 			next: [],
@@ -11447,6 +11537,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 90,
+			name: 'Symphony No. 6 - Tragic',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Gustav Mahler/Symphony No. 6 - Tragic',
 			previous: 88,
 			next: [],
@@ -11496,6 +11587,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 91,
+			name: 'Igor Stravinsky',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Igor Stravinsky',
 			previous: 34,
 			next: [92],
@@ -11504,6 +11596,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 92,
+			name: "The Rite of Spring-The Fairy's Kiss- Firebird Suite",
 			dir:
 				"/Users/jv/Desktop/MyDocs/JV_Music/Classical/Igor Stravinsky/The Rite of Spring-The Fairy's Kiss- Firebird Suite",
 			previous: 91,
@@ -11744,6 +11837,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 93,
+			name: 'Jean Sibelius',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Jean Sibelius',
 			previous: 34,
 			next: [94],
@@ -11752,6 +11846,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 94,
+			name: 'Jean Sibelius- Tone Poems & Incidental Music',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Jean Sibelius/Jean Sibelius- Tone Poems & Incidental Music',
 			previous: 93,
 			next: [],
@@ -11845,6 +11940,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 95,
+			name: 'Johann Sebastian Bach',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach',
 			previous: 34,
 			next: [96, 97, 98, 99, 100, 101, 102, 103, 104],
@@ -11853,6 +11949,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 96,
+			name: 'Bach Mass in B minor',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Bach Mass in B minor',
 			previous: 95,
 			next: [],
@@ -12186,6 +12283,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 97,
+			name: 'Bach Missa in h-moll',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Bach Missa in h-moll',
 			previous: 95,
 			next: [],
@@ -12519,6 +12617,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 98,
+			name: 'Bach Saint Matthew Passion, BWV 244',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Bach Saint Matthew Passion, BWV 244',
 			previous: 95,
 			next: [],
@@ -13391,6 +13490,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 99,
+			name: "Bach's Greatest Hits, Vol. 1",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Bach's Greatest Hits, Vol. 1",
 			previous: 95,
 			next: [],
@@ -13480,6 +13580,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 100,
+			name: "Bach's Greatest Hits, Vol. 2",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Bach's Greatest Hits, Vol. 2",
 			previous: 95,
 			next: [],
@@ -13639,6 +13740,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 101,
+			name: 'Brandenburg Concerti Nos. 1, 2, & 3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Brandenburg Concerti Nos. 1, 2, & 3',
 			previous: 95,
 			next: [],
@@ -13813,6 +13915,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 102,
+			name: 'Brandenburg Concertos Nos. 4, 5 & 6',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Brandenburg Concertos Nos. 4, 5 & 6',
 			previous: 95,
 			next: [],
@@ -13926,6 +14029,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 103,
+			name: 'Magnificat-Oster-Oratorium - BWV 243-BWV 249',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/Magnificat-Oster-Oratorium - BWV 243-BWV 249',
 			previous: 95,
@@ -14156,6 +14260,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 104,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Sebastian Bach/The World's Greatest Masterpieces",
 			previous: 95,
 			next: [],
@@ -14365,6 +14470,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 105,
+			name: 'Johann Strauss',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Strauss',
 			previous: 34,
 			next: [106, 107],
@@ -14373,6 +14479,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 106,
+			name: 'Waltzes',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Strauss/Waltzes',
 			previous: 105,
 			next: [],
@@ -14442,6 +14549,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 107,
+			name: "World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johann Strauss/World's Greatest Masterpieces",
 			previous: 105,
 			next: [],
@@ -14541,6 +14649,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 108,
+			name: 'Johannes Brahms',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johannes Brahms',
 			previous: 34,
 			next: [109, 110, 111],
@@ -14549,6 +14658,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 109,
+			name: 'Brahms- Symphony No. 3; Tragic Overture',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johannes Brahms/Brahms- Symphony No. 3; Tragic Overture',
 			previous: 108,
 			next: [],
@@ -14673,6 +14783,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 110,
+			name: 'Brahms- Symphony No. 4; Academische Festouvertüre; Hungarian Dances',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johannes Brahms/Brahms- Symphony No. 4; Academische Festouvertüre; Hungarian Dances',
 			previous: 108,
@@ -14768,6 +14879,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 111,
+			name: 'Johannes Brahms- Symphony No. 1, Sonata No. 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Johannes Brahms/Johannes Brahms- Symphony No. 1, Sonata No. 1',
 			previous: 108,
 			next: [],
@@ -14857,6 +14969,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 112,
+			name: 'Joseph Haydn',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Joseph Haydn',
 			previous: 34,
 			next: [113, 114, 115],
@@ -14865,6 +14978,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 113,
+			name: 'Symphonies 100 & 101',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Joseph Haydn/Symphonies 100 & 101',
 			previous: 112,
 			next: [],
@@ -14959,6 +15073,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 114,
+			name: 'Symphonies 100, 101 & 55',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Joseph Haydn/Symphonies 100, 101 & 55',
 			previous: 112,
 			next: [],
@@ -15088,6 +15203,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 115,
+			name: 'Symphonies 101 & 104',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Joseph Haydn/Symphonies 101 & 104',
 			previous: 112,
 			next: [],
@@ -15177,6 +15293,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 116,
+			name: 'Luciano Pavarotti',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Luciano Pavarotti',
 			previous: 34,
 			next: [117, 118, 119],
@@ -15185,6 +15302,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 117,
+			name: '75th Birthday Limited Edition - Luciano Pavarotti (Amazon Exclusive)',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Luciano Pavarotti/75th Birthday Limited Edition - Luciano Pavarotti (Amazon Exclusive)',
 			previous: 116,
@@ -16395,6 +16513,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 118,
+			name: 'Bravo! Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Luciano Pavarotti/Bravo! Disc 1',
 			previous: 116,
 			next: [],
@@ -16558,6 +16677,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 119,
+			name: 'Bravo! Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Luciano Pavarotti/Bravo! Disc 2',
 			previous: 116,
 			next: [],
@@ -16732,6 +16852,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 120,
+			name: 'Ludwig van Beethoven',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven',
 			previous: 34,
 			next: [121, 122, 123, 124, 125, 126, 127],
@@ -16740,6 +16861,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 121,
+			name: '50 Classical Highlights- Beethoven Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/50 Classical Highlights- Beethoven Disc 1',
 			previous: 120,
 			next: [],
@@ -17029,6 +17151,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 122,
+			name: '50 Classical Highlights- Beethoven Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/50 Classical Highlights- Beethoven Disc 2',
 			previous: 120,
 			next: [],
@@ -17318,6 +17441,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 123,
+			name: "Symphonies No. 3 'Eroica'",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/Symphonies No. 3 'Eroica'",
 			previous: 120,
 			next: [],
@@ -17376,6 +17500,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 124,
+			name: 'Symphony No. 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/Symphony No. 2',
 			previous: 120,
 			next: [],
@@ -17401,6 +17526,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 125,
+			name: "Symphony No. 6 'Pastoral'",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/Symphony No. 6 'Pastoral'",
 			previous: 120,
 			next: [],
@@ -17459,6 +17585,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 126,
+			name: 'Symphony No. 8',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/Symphony No. 8',
 			previous: 120,
 			next: [],
@@ -17517,6 +17644,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 127,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Ludwig van Beethoven/The World's Greatest Masterpieces",
 			previous: 120,
 			next: [],
@@ -17616,6 +17744,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 128,
+			name: 'Maurice Ravel',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Maurice Ravel',
 			previous: 34,
 			next: [129, 130],
@@ -17624,6 +17753,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 129,
+			name: 'Bolero',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Maurice Ravel/Bolero',
 			previous: 128,
 			next: [],
@@ -17658,6 +17788,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 130,
+			name: 'Daphnis et Chloè 1. 2. 3.Teil - Rapsodie espagnole',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Maurice Ravel/Daphnis et Chloè 1. 2. 3.Teil - Rapsodie espagnole',
 			previous: 128,
@@ -17888,6 +18019,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 131,
+			name: 'Mendelssohn',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn',
 			previous: 34,
 			next: [132, 133, 134, 135, 136],
@@ -17896,6 +18028,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 132,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn/Greatest Hits',
 			previous: 131,
 			next: [],
@@ -18018,6 +18151,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 133,
+			name: 'Symphony No 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn/Symphony No 1',
 			previous: 131,
 			next: [],
@@ -18043,6 +18177,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 134,
+			name: 'Symphony No 5 Reformation',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn/Symphony No 5 Reformation',
 			previous: 131,
 			next: [],
@@ -18068,6 +18203,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 135,
+			name: 'Symphony No. 3 Scottish Hebides Overture',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn/Symphony No. 3 Scottish Hebides Overture',
 			previous: 131,
 			next: [],
@@ -18137,6 +18273,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 136,
+			name: "Symphony No.4 in A, Op.90 'Italian'",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Mendelssohn/Symphony No.4 in A, Op.90 'Italian'",
 			previous: 131,
 			next: [],
@@ -18221,6 +18358,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 137,
+			name: 'Modest Mussorgsky',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Modest Mussorgsky',
 			previous: 34,
 			next: [138, 139],
@@ -18229,6 +18367,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 138,
+			name: 'Panorama-1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Modest Mussorgsky/Panorama-1',
 			previous: 137,
 			next: [],
@@ -18463,6 +18602,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 139,
+			name: 'Panorama-2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Modest Mussorgsky/Panorama-2',
 			previous: 137,
 			next: [],
@@ -18728,6 +18868,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 140,
+			name: 'Peter Tchaikovsky',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky',
 			previous: 34,
 			next: [141, 142, 143, 144, 145],
@@ -18736,6 +18877,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 141,
+			name: 'Classic Gold',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky/Classic Gold',
 			previous: 140,
 			next: [],
@@ -18885,6 +19027,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 142,
+			name: 'Piano Concerto 1 in B minor, Op. 23',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky/Piano Concerto 1 in B minor, Op. 23',
 			previous: 140,
 			next: [],
@@ -18934,6 +19077,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 143,
+			name: "Tchaikovsky's Nutcracker",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky/Tchaikovsky's Nutcracker",
 			previous: 140,
 			next: [],
@@ -19121,6 +19265,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 144,
+			name: 'Tchaikovsky- Ballet Favorites',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky/Tchaikovsky- Ballet Favorites',
 			previous: 140,
 			next: [],
@@ -19160,6 +19305,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 145,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Peter Tchaikovsky/The World's Greatest Masterpieces",
 			previous: 140,
 			next: [],
@@ -19249,6 +19395,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 146,
+			name: 'Philip Smith',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Philip Smith',
 			previous: 34,
 			next: [147],
@@ -19257,6 +19404,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 147,
+			name: 'Philip Smith, Principal Trumpet, New York Philharmonic',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Philip Smith/Philip Smith, Principal Trumpet, New York Philharmonic',
 			previous: 146,
@@ -19492,6 +19640,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 148,
+			name: 'Rachmaninov',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rachmaninov',
 			previous: 34,
 			next: [149, 150, 151],
@@ -19500,6 +19649,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 149,
+			name: 'Piano Concerto No.3 and Piano Pieces',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rachmaninov/Piano Concerto No.3 and Piano Pieces',
 			previous: 148,
 			next: [],
@@ -19579,6 +19729,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 150,
+			name: 'Rachmaninov',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rachmaninov/Rachmaninov',
 			previous: 148,
 			next: [],
@@ -19878,6 +20029,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 151,
+			name: 'Rachmaninov-Symphony No 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rachmaninov/Rachmaninov-Symphony No 1',
 			previous: 148,
 			next: [],
@@ -19947,6 +20099,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 152,
+			name: 'Richard Wagner',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Richard Wagner',
 			previous: 34,
 			next: [153, 154],
@@ -19955,6 +20108,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 153,
+			name: 'Ouvertüren & Orchestrer',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Richard Wagner/Ouvertüren & Orchestrer',
 			previous: 152,
 			next: [],
@@ -20024,6 +20178,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 154,
+			name: 'Wagner (Red Classics)',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Richard Wagner/Wagner (Red Classics)',
 			previous: 152,
 			next: [],
@@ -20410,6 +20565,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 155,
+			name: 'Rimsky-Korsakov',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rimsky-Korsakov',
 			previous: 34,
 			next: [156],
@@ -20418,6 +20574,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 156,
+			name: 'Scheherazade, etc',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Rimsky-Korsakov/Scheherazade, etc',
 			previous: 155,
 			next: [],
@@ -20499,6 +20656,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 157,
+			name: 'Samuel Barber',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Samuel Barber',
 			previous: 34,
 			next: [158, 159],
@@ -20507,6 +20665,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 158,
+			name: "Barber's Adagio",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Samuel Barber/Barber's Adagio",
 			previous: 157,
 			next: [],
@@ -20580,6 +20739,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 159,
+			name: 'Barber- Violin Concerto; Music for a Scene from Shelley- Souvenirs',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Classical/Samuel Barber/Barber- Violin Concerto; Music for a Scene from Shelley- Souvenirs',
 			previous: 157,
@@ -20738,6 +20898,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 160,
+			name: 'Samuel Sebastian Wesley',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Samuel Sebastian Wesley',
 			previous: 34,
 			next: [161],
@@ -20746,6 +20907,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 161,
+			name: 'Anthems',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Samuel Sebastian Wesley/Anthems',
 			previous: 160,
 			next: [],
@@ -20964,6 +21126,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 162,
+			name: 'Sergei Prokofiev',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Sergei Prokofiev',
 			previous: 34,
 			next: [163],
@@ -20972,6 +21135,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 163,
+			name: 'Prokofiev Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Sergei Prokofiev/Prokofiev Greatest Hits',
 			previous: 162,
 			next: [],
@@ -21091,6 +21255,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 164,
+			name: 'Shostakovich',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Shostakovich',
 			previous: 34,
 			next: [165],
@@ -21099,6 +21264,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 165,
+			name: 'Shostakovich Symphony No. 10',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Shostakovich/Shostakovich Symphony No. 10',
 			previous: 164,
 			next: [],
@@ -21148,6 +21314,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 166,
+			name: 'Sousa',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Sousa',
 			previous: 34,
 			next: [167],
@@ -21156,6 +21323,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 167,
+			name: 'Sousa Marches',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Sousa/Sousa Marches',
 			previous: 166,
 			next: [],
@@ -21324,6 +21492,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 168,
+			name: 'Wolfgang Amadeus Mozart',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart',
 			previous: 34,
 			next: [169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180],
@@ -21332,6 +21501,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 169,
+			name: 'Amadeus Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Amadeus Disc 1',
 			previous: 168,
 			next: [],
@@ -21447,6 +21617,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 170,
+			name: 'Amadeus Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Amadeus Disc 2',
 			previous: 168,
 			next: [],
@@ -21585,6 +21756,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 171,
+			name: 'Mozart Famous Overtures',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart Famous Overtures',
 			previous: 168,
 			next: [],
@@ -21724,6 +21896,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 172,
+			name: 'Mozart Favorites',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart Favorites',
 			previous: 168,
 			next: [],
@@ -21823,6 +21996,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 173,
+			name: 'Mozart Opera Highlights',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart Opera Highlights',
 			previous: 168,
 			next: [],
@@ -22012,6 +22186,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 174,
+			name: 'Mozart- Requiem',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart- Requiem',
 			previous: 168,
 			next: [],
@@ -22166,6 +22341,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 175,
+			name: 'Mozart- Symphonen Nr. 40 & 41',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart- Symphonen Nr. 40 & 41',
 			previous: 168,
 			next: [],
@@ -22255,6 +22431,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 176,
+			name: 'Mozart- die Zauberflöte Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart- die Zauberflöte Disc 1',
 			previous: 168,
 			next: [],
@@ -22511,6 +22688,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 177,
+			name: 'Mozart- die Zauberflöte Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Mozart- die Zauberflöte Disc 2',
 			previous: 168,
 			next: [],
@@ -22833,6 +23011,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 178,
+			name: 'The Best of Mozart',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/The Best of Mozart',
 			previous: 168,
 			next: [],
@@ -22942,6 +23121,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 179,
+			name: "The World's Greatest Masterpieces",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/The World's Greatest Masterpieces",
 			previous: 168,
 			next: [],
@@ -23051,6 +23231,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 180,
+			name: 'Wolfgang Amadeus Mozart',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Classical/Wolfgang Amadeus Mozart/Wolfgang Amadeus Mozart',
 			previous: 168,
 			next: [],
@@ -23208,10 +23389,27 @@ const MUSIC_DATA = {
 			],
 			jpg: []
 		},
-		{ index: 181, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca', previous: 0, next: [182, 184], mp3: [], jpg: [] },
-		{ index: 182, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca/Inkuyo', previous: 181, next: [183], mp3: [], jpg: [] },
+		{
+			index: 181,
+			name: 'Inca',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca',
+			previous: 0,
+			next: [182, 184],
+			mp3: [],
+			jpg: []
+		},
+		{
+			index: 182,
+			name: 'Inkuyo',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca/Inkuyo',
+			previous: 181,
+			next: [183],
+			mp3: [],
+			jpg: []
+		},
 		{
 			index: 183,
+			name: 'South America Inkuyo_ Land Of The Incas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca/Inkuyo/South America Inkuyo_ Land Of The Incas',
 			previous: 182,
 			next: [],
@@ -23449,6 +23647,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 184,
+			name: 'Yurac Malki',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca/Yurac Malki',
 			previous: 181,
 			next: [185],
@@ -23457,6 +23656,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 185,
+			name: 'Traditional Music Of The Incas (Digitally Remastered)',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Inca/Yurac Malki/Traditional Music Of The Incas (Digitally Remastered)',
 			previous: 184,
 			next: [],
@@ -23634,6 +23834,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 186,
+			name: 'Meditational',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational',
 			previous: 0,
 			next: [
@@ -23666,6 +23867,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 187,
+			name: '33bowls',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/33bowls',
 			previous: 186,
 			next: [188],
@@ -23674,6 +23876,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 188,
+			name: '33bowls Tibetan Singing Bowls',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/33bowls/33bowls Tibetan Singing Bowls',
 			previous: 187,
 			next: [],
@@ -23707,6 +23910,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 189,
+			name: 'Ashaneen',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Ashaneen',
 			previous: 186,
 			next: [190],
@@ -23715,6 +23919,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 190,
+			name: 'The Best Healing Music for Relaxation Vol. 3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Ashaneen/The Best Healing Music for Relaxation Vol. 3',
 			previous: 189,
 			next: [],
@@ -23742,6 +23947,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 191,
+			name: 'Binaural Beat Brainwave Subliminal Systems',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems',
 			previous: 186,
 			next: [192, 193, 194, 195, 196, 197],
@@ -23750,6 +23956,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 192,
+			name: 'Communicate With Your Guardian Angels',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Communicate With Your Guardian Angels',
 			previous: 191,
@@ -23772,6 +23979,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 193,
+			name: 'Happiness - Binaural Beat Brainwave Subliminal Systems',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Happiness - Binaural Beat Brainwave Subliminal Systems',
 			previous: 191,
@@ -23794,6 +24002,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 194,
+			name: 'Opening Third Eye',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Opening Third Eye',
 			previous: 191,
@@ -23816,6 +24025,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 195,
+			name: 'Probably the Best Music for Relaxation and Meditation - Single',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Probably the Best Music for Relaxation and Meditation - Single',
 			previous: 191,
@@ -23838,6 +24048,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 196,
+			name: 'Stay Calm and Focused in Stressful Situations',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Stay Calm and Focused in Stressful Situations',
 			previous: 191,
@@ -23860,6 +24071,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 197,
+			name: 'Subliminal Powerful Increase of Focus and Memory_ Binaural Beat Brainwave Subliminal Sy',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Binaural Beat Brainwave Subliminal Systems/Subliminal Powerful Increase of Focus and Memory_ Binaural Beat Brainwave Subliminal Sy',
 			previous: 191,
@@ -23882,6 +24094,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 198,
+			name: "Dan Gibson's Solitudes",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Dan Gibson's Solitudes",
 			previous: 186,
 			next: [199],
@@ -23890,6 +24103,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 199,
+			name: 'Windsong',
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Dan Gibson's Solitudes/Windsong",
 			previous: 198,
 			next: [],
@@ -23927,6 +24141,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 200,
+			name: 'Gyatso',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Gyatso',
 			previous: 186,
 			next: [201],
@@ -23935,6 +24150,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 201,
+			name: 'Meditations for a Clear Mind Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Gyatso/Meditations for a Clear Mind Disc 2',
 			previous: 200,
 			next: [],
@@ -23943,6 +24159,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 202,
+			name: 'Healing Sounds for Deep Sleep and Relaxation',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Healing Sounds for Deep Sleep and Relaxation',
 			previous: 186,
 			next: [203],
@@ -23951,6 +24168,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 203,
+			name: 'Ocean Waves, Wind And Rain_ Relaxing Sounds Of Nature',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Healing Sounds for Deep Sleep and Relaxation/Ocean Waves, Wind And Rain_ Relaxing Sounds Of Nature',
 			previous: 202,
@@ -23973,6 +24191,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 204,
+			name: 'Iasos',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Iasos',
 			previous: 186,
 			next: [205],
@@ -23981,6 +24200,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 205,
+			name: 'Javanese Dream Bells',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Iasos/Javanese Dream Bells',
 			previous: 204,
 			next: [],
@@ -24006,6 +24226,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 206,
+			name: 'Inner Peace',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Inner Peace',
 			previous: 186,
 			next: [207],
@@ -24014,6 +24235,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 207,
+			name: 'Healing Harmony (Music for Meditation, Relaxation, Yoga, Healing, Sleep',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Inner Peace/Healing Harmony (Music for Meditation, Relaxation, Yoga, Healing, Sleep',
 			previous: 206,
@@ -24036,6 +24258,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 208,
+			name: 'Joe Baker',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Joe Baker',
 			previous: 186,
 			next: [209, 210],
@@ -24044,6 +24267,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 209,
+			name: 'Ocean Waves',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Joe Baker/Ocean Waves',
 			previous: 208,
 			next: [],
@@ -24070,6 +24294,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 210,
+			name: 'Thundering Rainstorm',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Joe Baker/Thundering Rainstorm',
 			previous: 208,
 			next: [],
@@ -24091,6 +24316,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 211,
+			name: 'Karma Moffett',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Karma Moffett',
 			previous: 186,
 			next: [212],
@@ -24099,6 +24325,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 212,
+			name: 'Golden Bowls',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Karma Moffett/Golden Bowls',
 			previous: 211,
 			next: [],
@@ -24125,6 +24352,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 213,
+			name: 'Lisa Guyman',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Lisa Guyman',
 			previous: 186,
 			next: [214],
@@ -24133,6 +24361,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 214,
+			name: 'Journey Into Meditation_ Guided Meditations For Healing, Insight And Manifestation',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Lisa Guyman/Journey Into Meditation_ Guided Meditations For Healing, Insight And Manifestation',
 			previous: 213,
@@ -24181,6 +24410,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 215,
+			name: 'Maria Kostelas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Maria Kostelas',
 			previous: 186,
 			next: [216],
@@ -24189,6 +24419,8 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 216,
+			name:
+				'Ancient Voices from Within_ Native American and South American Flute Music for Meditation, Massage, Relaxation, Ins',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Maria Kostelas/Ancient Voices from Within_ Native American and South American Flute Music for Meditation, Massage, Relaxation, Ins',
 			previous: 215,
@@ -24243,6 +24475,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 217,
+			name: 'Meditation',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Meditation',
 			previous: 186,
 			next: [218],
@@ -24251,6 +24484,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 218,
+			name: 'One Presence',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Meditation/One Presence',
 			previous: 217,
 			next: [],
@@ -24375,6 +24609,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 219,
+			name: 'Music for Deep Sleep',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Music for Deep Sleep',
 			previous: 186,
 			next: [220],
@@ -24383,6 +24618,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 220,
+			name: 'Magnificent Sounds of Nature_ Thunderstorm, Ocean Waves, Rain',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Music for Deep Sleep/Magnificent Sounds of Nature_ Thunderstorm, Ocean Waves, Rain',
 			previous: 219,
@@ -24409,6 +24645,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 221,
+			name: 'Relaxation Sampler',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Relaxation Sampler',
 			previous: 186,
 			next: [],
@@ -24538,6 +24775,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 222,
+			name: 'Relaxation Therapy Home By The Sea',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Relaxation Therapy Home By The Sea',
 			previous: 186,
 			next: [223],
@@ -24546,6 +24784,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 223,
+			name: 'Dreamscapes for Deep Sleep, Spa, New Age, Relaxation, Meditation, Heali',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Relaxation Therapy Home By The Sea/Dreamscapes for Deep Sleep, Spa, New Age, Relaxation, Meditation, Heali',
 			previous: 222,
@@ -24570,6 +24809,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 224,
+			name: 'Sleep Music System',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sleep Music System',
 			previous: 186,
 			next: [225],
@@ -24578,6 +24818,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 225,
+			name: 'Sleep Music and Music for Deep Sleep with Nature Sounds and Relaxing So',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sleep Music System/Sleep Music and Music for Deep Sleep with Nature Sounds and Relaxing So',
 			previous: 224,
@@ -24644,6 +24885,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 226,
+			name: 'Sound Healing Center',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sound Healing Center',
 			previous: 186,
 			next: [227],
@@ -24652,6 +24894,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 227,
+			name: 'Zen Garden (Music for Deep Sleep, Meditation, Spa, Healing, Relaxation)',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sound Healing Center/Zen Garden (Music for Deep Sleep, Meditation, Spa, Healing, Relaxation)',
 			previous: 226,
@@ -24674,6 +24917,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 228,
+			name: 'Sounds of Nature White Noise Sound Effects',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sounds of Nature White Noise Sound Effects',
 			previous: 186,
 			next: [229],
@@ -24682,6 +24926,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 229,
+			name: 'Bird Sounds - Morning Birds for Relaxation, Meditation, Yoga , Naturesc',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sounds of Nature White Noise Sound Effects/Bird Sounds - Morning Birds for Relaxation, Meditation, Yoga , Naturesc',
 			previous: 228,
@@ -24706,6 +24951,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 230,
+			name: 'Sounds of Nature for Deep Sleep and Relaxation',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sounds of Nature for Deep Sleep and Relaxation',
 			previous: 186,
 			next: [231],
@@ -24714,6 +24960,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 231,
+			name: 'A Night in the Forest (Nature Sounds)',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Sounds of Nature for Deep Sleep and Relaxation/A Night in the Forest (Nature Sounds)',
 			previous: 230,
@@ -24735,6 +24982,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 232,
+			name: 'Tania Rose',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Tania Rose',
 			previous: 186,
 			next: [233],
@@ -24743,6 +24991,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 233,
+			name: 'Drift',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Tania Rose/Drift',
 			previous: 232,
 			next: [],
@@ -24761,6 +25010,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 234,
+			name: 'The Thunderstorm-Country Stream',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/The Thunderstorm-Country Stream',
 			previous: 186,
 			next: [],
@@ -24814,6 +25064,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 235,
+			name: 'Your Mind Can Do It',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Your Mind Can Do It',
 			previous: 186,
 			next: [236],
@@ -24822,6 +25073,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 236,
+			name: "Schumann's Resonance - 7.83 Hz",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Meditational/Your Mind Can Do It/Schumann's Resonance - 7.83 Hz",
 			previous: 235,
 			next: [],
@@ -24853,6 +25105,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 237,
+			name: 'New Age',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age',
 			previous: 0,
 			next: [238, 242, 248],
@@ -24861,6 +25114,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 238,
+			name: 'Enya',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Enya',
 			previous: 237,
 			next: [239, 240, 241],
@@ -24869,6 +25123,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 239,
+			name: 'Shepherd Moons',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Enya/Shepherd Moons',
 			previous: 238,
 			next: [],
@@ -24994,6 +25249,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 240,
+			name: 'The Memory of Trees',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Enya/The Memory of Trees',
 			previous: 238,
 			next: [],
@@ -25129,6 +25385,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 241,
+			name: 'Watermark',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Enya/Watermark',
 			previous: 238,
 			next: [],
@@ -25233,6 +25490,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 242,
+			name: 'Jean-Michel Jarre',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre',
 			previous: 237,
 			next: [243, 244, 245, 246, 247],
@@ -25241,6 +25499,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 243,
+			name: 'Chronologie',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre/Chronologie',
 			previous: 242,
 			next: [],
@@ -25343,6 +25602,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 244,
+			name: 'En Attendant Cousteau',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre/En Attendant Cousteau',
 			previous: 242,
 			next: [],
@@ -25405,6 +25665,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 245,
+			name: 'Les Concerts in China, Vols. 1-2 Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre/Les Concerts in China, Vols. 1-2 Disc 1',
 			previous: 242,
 			next: [],
@@ -25491,6 +25752,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 246,
+			name: 'Les Concerts in China, Vols. 1-2 Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre/Les Concerts in China, Vols. 1-2 Disc 2',
 			previous: 242,
 			next: [],
@@ -25613,6 +25875,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 247,
+			name: 'Oxygene',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Jean-Michel Jarre/Oxygene',
 			previous: 242,
 			next: [],
@@ -25699,6 +25962,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 248,
+			name: 'Yanni',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni',
 			previous: 237,
 			next: [249, 250, 251, 252, 253],
@@ -25707,6 +25971,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 249,
+			name: 'If I Could Tell You',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni/If I Could Tell You',
 			previous: 248,
 			next: [],
@@ -25842,6 +26107,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 250,
+			name: 'In My Time',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni/In My Time',
 			previous: 248,
 			next: [],
@@ -25956,6 +26222,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 251,
+			name: 'Live at the Acropolis',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni/Live at the Acropolis',
 			previous: 248,
 			next: [],
@@ -26080,6 +26347,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 252,
+			name: 'Reflections of Passion',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni/Reflections of Passion',
 			previous: 248,
 			next: [],
@@ -26259,6 +26527,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 253,
+			name: 'Tribute',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/New Age/Yanni/Tribute',
 			previous: 248,
 			next: [],
@@ -26345,6 +26614,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 254,
+			name: 'Odds-and-ends',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends',
 			previous: 0,
 			next: [255, 257, 259],
@@ -26397,6 +26667,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 255,
+			name: 'Glenn Miller',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends/Glenn Miller',
 			previous: 254,
 			next: [256],
@@ -26405,6 +26676,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 256,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends/Glenn Miller/Greatest Hits',
 			previous: 255,
 			next: [],
@@ -26426,6 +26698,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 257,
+			name: 'Susan Boyle',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends/Susan Boyle',
 			previous: 254,
 			next: [258],
@@ -26434,6 +26707,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 258,
+			name: 'I Dreamed A Dream',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends/Susan Boyle/I Dreamed A Dream',
 			previous: 257,
 			next: [],
@@ -26467,6 +26741,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 259,
+			name: 'funeral',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Odds-and-ends/funeral',
 			previous: 254,
 			next: [],
@@ -26534,6 +26809,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 260,
+			name: 'Other',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other',
 			previous: 0,
 			next: [261, 263, 265, 267, 269, 273, 276, 277, 278, 280, 282],
@@ -26542,6 +26818,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 261,
+			name: 'Aaron Copland',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Aaron Copland',
 			previous: 260,
 			next: [262],
@@ -26550,6 +26827,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 262,
+			name: 'The Legacy Of Aaron Copland',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Aaron Copland/The Legacy Of Aaron Copland',
 			previous: 261,
 			next: [],
@@ -26787,6 +27065,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 263,
+			name: 'Brassed Off',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Brassed Off',
 			previous: 260,
 			next: [264],
@@ -26795,6 +27074,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 264,
+			name: 'Brassed Off',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Brassed Off/Brassed Off',
 			previous: 263,
 			next: [],
@@ -27018,6 +27298,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 265,
+			name: 'Ennio Morricone',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Ennio Morricone',
 			previous: 260,
 			next: [266],
@@ -27026,6 +27307,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 266,
+			name: 'The Mission_ Music From The Motion Picture',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Ennio Morricone/The Mission_ Music From The Motion Picture',
 			previous: 265,
 			next: [],
@@ -27279,6 +27561,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 267,
+			name: 'James Galway',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/James Galway',
 			previous: 260,
 			next: [268],
@@ -27287,6 +27570,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 268,
+			name: 'The Wind Beneath My Wings',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/James Galway/The Wind Beneath My Wings',
 			previous: 267,
 			next: [],
@@ -27466,6 +27750,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 269,
+			name: 'Julian Bream',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Julian Bream',
 			previous: 260,
 			next: [270, 271, 272],
@@ -27474,6 +27759,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 270,
+			name: 'Highlights from the Julian Bream Edition',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Julian Bream/Highlights from the Julian Bream Edition',
 			previous: 269,
 			next: [],
@@ -27686,6 +27972,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 271,
+			name: 'The Ultimate Guitar Collection Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Julian Bream/The Ultimate Guitar Collection Disc 1',
 			previous: 269,
 			next: [],
@@ -27884,6 +28171,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 272,
+			name: 'The Ultimate Guitar Collection Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Julian Bream/The Ultimate Guitar Collection Disc 2',
 			previous: 269,
 			next: [],
@@ -28038,6 +28326,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 273,
+			name: 'Mannheim Steamroller',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Mannheim Steamroller',
 			previous: 260,
 			next: [274, 275],
@@ -28046,6 +28335,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 274,
+			name: 'Classical Gas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Mannheim Steamroller/Classical Gas',
 			previous: 273,
 			next: [],
@@ -28203,6 +28493,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 275,
+			name: 'Fresh Aire 7',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Mannheim Steamroller/Fresh Aire 7',
 			previous: 273,
 			next: [],
@@ -28360,6 +28651,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 276,
+			name: "More Vintage Children's Favourites",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Other/More Vintage Children's Favourites",
 			previous: 260,
 			next: [],
@@ -28386,6 +28678,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 277,
+			name: 'Music of Scotland [Intersound]',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Music of Scotland [Intersound]',
 			previous: 260,
 			next: [],
@@ -28592,6 +28885,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 278,
+			name: 'Tadeusz Machalski',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Tadeusz Machalski',
 			previous: 260,
 			next: [279],
@@ -28600,6 +28894,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 279,
+			name: 'Guitar Collection',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/Tadeusz Machalski/Guitar Collection',
 			previous: 278,
 			next: [],
@@ -28840,6 +29135,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 280,
+			name: 'The Passaport',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/The Passaport',
 			previous: 260,
 			next: [281],
@@ -28848,6 +29144,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 281,
+			name: 'Looping Hit',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Other/The Passaport/Looping Hit',
 			previous: 280,
 			next: [],
@@ -28967,6 +29264,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 282,
+			name: "There'll Always Be an England- The Most Moving Music Ever Written",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Other/There'll Always Be an England- The Most Moving Music Ever Written",
 			previous: 260,
 			next: [],
@@ -29146,6 +29444,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 283,
+			name: 'Rock',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock',
 			previous: 0,
 			next: [
@@ -29195,6 +29494,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 284,
+			name: 'ABBA',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ABBA',
 			previous: 283,
 			next: [285, 286],
@@ -29203,6 +29503,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 285,
+			name: 'Gold- Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ABBA/Gold- Greatest Hits',
 			previous: 284,
 			next: [],
@@ -29426,6 +29727,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 286,
+			name: 'The Visitors',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ABBA/The Visitors',
 			previous: 284,
 			next: [],
@@ -29590,6 +29892,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 287,
+			name: 'Barry White',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Barry White',
 			previous: 283,
 			next: [288],
@@ -29598,6 +29901,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 288,
+			name: 'All-Time Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Barry White/All-Time Greatest Hits',
 			previous: 287,
 			next: [],
@@ -29852,6 +30156,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 289,
+			name: 'Bette Midler',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bette Midler',
 			previous: 283,
 			next: [290, 291],
@@ -29860,6 +30165,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 290,
+			name: 'Beaches',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bette Midler/Beaches',
 			previous: 289,
 			next: [],
@@ -29984,6 +30290,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 291,
+			name: "Some People's Lives",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bette Midler/Some People's Lives",
 			previous: 289,
 			next: [],
@@ -30119,6 +30426,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 292,
+			name: 'Billy Joel',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Billy Joel',
 			previous: 283,
 			next: [293, 294],
@@ -30127,6 +30435,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 293,
+			name: 'Greatest Hits, Vols. 1 & 2 (1973-1985) Disc 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Billy Joel/Greatest Hits, Vols. 1 & 2 (1973-1985) Disc 1',
 			previous: 292,
 			next: [],
@@ -30262,6 +30571,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 294,
+			name: 'Greatest Hits, Vols. 1 & 2 (1973-1985) Disc 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Billy Joel/Greatest Hits, Vols. 1 & 2 (1973-1985) Disc 2',
 			previous: 292,
 			next: [],
@@ -30430,6 +30740,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 295,
+			name: 'Bob Dylan',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bob Dylan',
 			previous: 283,
 			next: [296],
@@ -30438,6 +30749,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 296,
+			name: "Bob Dylan's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bob Dylan/Bob Dylan's Greatest Hits",
 			previous: 295,
 			next: [],
@@ -30562,6 +30874,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 297,
+			name: 'Bob Seger & the Silver Bullet Band',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bob Seger & the Silver Bullet Band',
 			previous: 283,
 			next: [298],
@@ -30570,6 +30883,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 298,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bob Seger & the Silver Bullet Band/Greatest Hits',
 			previous: 297,
 			next: [],
@@ -30738,6 +31052,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 299,
+			name: 'Bonnie Raitt',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bonnie Raitt',
 			previous: 283,
 			next: [300],
@@ -30746,6 +31061,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 300,
+			name: 'Luck of the Draw',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bonnie Raitt/Luck of the Draw',
 			previous: 299,
 			next: [],
@@ -30892,6 +31208,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 301,
+			name: 'Bruce Hornsby & the Range',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bruce Hornsby & the Range',
 			previous: 283,
 			next: [302],
@@ -30900,6 +31217,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 302,
+			name: 'The Way It Is',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bruce Hornsby & the Range/The Way It Is',
 			previous: 301,
 			next: [],
@@ -31013,6 +31331,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 303,
+			name: 'Bruce Springsteen',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bruce Springsteen',
 			previous: 283,
 			next: [304],
@@ -31021,6 +31340,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 304,
+			name: 'Greetings from Asbury Park, N.J',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Bruce Springsteen/Greetings from Asbury Park, N.J',
 			previous: 303,
 			next: [],
@@ -31134,6 +31454,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 305,
+			name: 'Deep Purple',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Deep Purple',
 			previous: 283,
 			next: [306],
@@ -31142,6 +31463,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 306,
+			name: 'Machine Head',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Deep Purple/Machine Head',
 			previous: 305,
 			next: [],
@@ -31233,6 +31555,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 307,
+			name: 'Dire Straits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Dire Straits',
 			previous: 283,
 			next: [308],
@@ -31241,6 +31564,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 308,
+			name: 'Brothers in Arms',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Dire Straits/Brothers in Arms',
 			previous: 307,
 			next: [],
@@ -31354,6 +31678,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 309,
+			name: 'Eagles',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eagles',
 			previous: 283,
 			next: [310, 311, 312],
@@ -31362,6 +31687,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 310,
+			name: 'Eagles Greatest Hits, Vol. 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eagles/Eagles Greatest Hits, Vol. 2',
 			previous: 309,
 			next: [],
@@ -31486,6 +31812,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 311,
+			name: 'Hell Freezes Over',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eagles/Hell Freezes Over',
 			previous: 309,
 			next: [],
@@ -31665,6 +31992,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 312,
+			name: 'Their Greatest Hits (1971-1975)',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eagles/Their Greatest Hits (1971-1975)',
 			previous: 309,
 			next: [],
@@ -31789,6 +32117,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 313,
+			name: 'Electric Light Orchestra',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Electric Light Orchestra',
 			previous: 283,
 			next: [314, 315, 316, 317],
@@ -31797,6 +32126,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 314,
+			name: "ELO's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/Electric Light Orchestra/ELO's Greatest Hits",
 			previous: 313,
 			next: [],
@@ -31932,6 +32262,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 315,
+			name: 'Strange Magic- The Best of Electric Light Orchestra Disc 1',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Rock/Electric Light Orchestra/Strange Magic- The Best of Electric Light Orchestra Disc 1',
 			previous: 313,
@@ -32090,6 +32421,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 316,
+			name: 'Strange Magic- The Best of Electric Light Orchestra Disc 2',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Rock/Electric Light Orchestra/Strange Magic- The Best of Electric Light Orchestra Disc 2',
 			previous: 313,
@@ -32164,6 +32496,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 317,
+			name: 'Zoom',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Electric Light Orchestra/Zoom',
 			previous: 313,
 			next: [],
@@ -32321,6 +32654,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 318,
+			name: 'Elton John',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Elton John',
 			previous: 283,
 			next: [319],
@@ -32329,6 +32663,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 319,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Elton John/Greatest Hits',
 			previous: 318,
 			next: [],
@@ -32464,6 +32799,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 320,
+			name: 'Encomium- A Tribute to Led Zeppelin',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Encomium- A Tribute to Led Zeppelin',
 			previous: 283,
 			next: [],
@@ -32610,6 +32946,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 321,
+			name: 'Eric Clapton',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eric Clapton',
 			previous: 283,
 			next: [322, 323],
@@ -32618,6 +32955,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 322,
+			name: 'Clapton Chronicles- The Best of Eric Clapton',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eric Clapton/Clapton Chronicles- The Best of Eric Clapton',
 			previous: 321,
 			next: [],
@@ -32786,6 +33124,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 323,
+			name: 'The Cream of Clapton',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Eric Clapton/The Cream of Clapton',
 			previous: 321,
 			next: [],
@@ -33009,6 +33348,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 324,
+			name: 'Fleetwood Mac',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Fleetwood Mac',
 			previous: 283,
 			next: [325, 326],
@@ -33017,6 +33357,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 325,
+			name: 'The Dance',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Fleetwood Mac/The Dance',
 			previous: 324,
 			next: [],
@@ -33218,6 +33559,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 326,
+			name: 'Time',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Fleetwood Mac/Time',
 			previous: 324,
 			next: [],
@@ -33277,9 +33619,18 @@ const MUSIC_DATA = {
 			],
 			jpg: []
 		},
-		{ index: 327, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Genesis', previous: 283, next: [328], mp3: [], jpg: [] },
+		{
+			index: 327,
+			name: 'Genesis',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Genesis',
+			previous: 283,
+			next: [328],
+			mp3: [],
+			jpg: []
+		},
 		{
 			index: 328,
+			name: 'Invisible Touch',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Genesis/Invisible Touch',
 			previous: 327,
 			next: [],
@@ -33382,6 +33733,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 329,
+			name: 'Gerry Rafferty',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Gerry Rafferty',
 			previous: 283,
 			next: [330],
@@ -33390,6 +33742,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 330,
+			name: 'Right Down the Line- The Best of Gerry Rafferty-',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Gerry Rafferty/Right Down the Line- The Best of Gerry Rafferty-',
 			previous: 329,
 			next: [],
@@ -33569,6 +33922,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 331,
+			name: 'Gordon Lightfoot',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Gordon Lightfoot',
 			previous: 283,
 			next: [332],
@@ -33577,6 +33931,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 332,
+			name: "Gord's Gold, Vol. 2",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/Gordon Lightfoot/Gord's Gold, Vol. 2",
 			previous: 331,
 			next: [],
@@ -33789,6 +34144,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 333,
+			name: 'Hiroshima',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Hiroshima',
 			previous: 283,
 			next: [334],
@@ -33797,6 +34153,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 334,
+			name: 'The Best of Hiroshima',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Hiroshima/The Best of Hiroshima',
 			previous: 333,
 			next: [],
@@ -33932,6 +34289,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 335,
+			name: 'Joan Armatrading',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Joan Armatrading',
 			previous: 283,
 			next: [336],
@@ -33940,6 +34298,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 336,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Joan Armatrading/Greatest Hits',
 			previous: 335,
 			next: [],
@@ -34163,6 +34522,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 337,
+			name: 'John Denver',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/John Denver',
 			previous: 283,
 			next: [338],
@@ -34171,6 +34531,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 338,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/John Denver/Greatest Hits',
 			previous: 337,
 			next: [],
@@ -34306,6 +34667,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 339,
+			name: 'Mariah Carey',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Mariah Carey',
 			previous: 283,
 			next: [340],
@@ -34314,6 +34676,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 340,
+			name: 'Mariah Carey',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Mariah Carey/Mariah Carey',
 			previous: 339,
 			next: [],
@@ -34460,6 +34823,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 341,
+			name: 'Meat Loaf',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Meat Loaf',
 			previous: 283,
 			next: [342],
@@ -34468,6 +34832,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 342,
+			name: 'Bat Out of Hell',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Meat Loaf/Bat Out of Hell',
 			previous: 341,
 			next: [],
@@ -34559,6 +34924,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 343,
+			name: 'Phil Collins',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Phil Collins',
 			previous: 283,
 			next: [344, 345],
@@ -34567,6 +34933,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 344,
+			name: 'Dance into the Light',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Phil Collins/Dance into the Light',
 			previous: 343,
 			next: [],
@@ -34724,6 +35091,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 345,
+			name: 'Face Value',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Phil Collins/Face Value',
 			previous: 343,
 			next: [],
@@ -34870,6 +35238,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 346,
+			name: 'Robert Palmer',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Robert Palmer',
 			previous: 283,
 			next: [347],
@@ -34878,6 +35247,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 347,
+			name: 'Riptide',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Robert Palmer/Riptide',
 			previous: 346,
 			next: [],
@@ -34991,6 +35361,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 348,
+			name: 'Steve Winwood',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Steve Winwood',
 			previous: 283,
 			next: [349],
@@ -34999,6 +35370,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 349,
+			name: 'Back in the High Life',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Steve Winwood/Back in the High Life',
 			previous: 348,
 			next: [],
@@ -35099,9 +35471,18 @@ const MUSIC_DATA = {
 				'Folder.jpg'
 			]
 		},
-		{ index: 350, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Sting', previous: 283, next: [351], mp3: [], jpg: [] },
+		{
+			index: 350,
+			name: 'Sting',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Sting',
+			previous: 283,
+			next: [351],
+			mp3: [],
+			jpg: []
+		},
 		{
 			index: 351,
+			name: 'Fields of Gold- The Best of Sting 1984-1994',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Sting/Fields of Gold- The Best of Sting 1984-1994',
 			previous: 350,
 			next: [],
@@ -35270,6 +35651,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 352,
+			name: 'Supertramp',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Supertramp',
 			previous: 283,
 			next: [353],
@@ -35278,6 +35660,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 353,
+			name: 'Classics, Vol. 9',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Supertramp/Classics, Vol. 9',
 			previous: 352,
 			next: [],
@@ -35446,6 +35829,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 354,
+			name: 'The Alan Parsons Project',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Alan Parsons Project',
 			previous: 283,
 			next: [355, 356],
@@ -35454,6 +35838,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 355,
+			name: 'Ammonia Avenue',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Alan Parsons Project/Ammonia Avenue',
 			previous: 354,
 			next: [],
@@ -35567,6 +35952,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 356,
+			name: 'Gaudi',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Alan Parsons Project/Gaudi',
 			previous: 354,
 			next: [],
@@ -35658,6 +36044,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 357,
+			name: 'The Cars',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Cars',
 			previous: 283,
 			next: [358],
@@ -35666,6 +36053,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 358,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Cars/Greatest Hits',
 			previous: 357,
 			next: [],
@@ -35816,6 +36204,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 359,
+			name: "The Lovin' Spoonful",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Lovin' Spoonful",
 			previous: 283,
 			next: [360],
@@ -35824,6 +36213,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 360,
+			name: 'Greatest Hits [Buddha]',
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Lovin' Spoonful/Greatest Hits [Buddha]",
 			previous: 359,
 			next: [],
@@ -36124,6 +36514,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 361,
+			name: 'The Moody Blues',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Moody Blues',
 			previous: 283,
 			next: [362],
@@ -36132,6 +36523,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 362,
+			name: 'The Best of the Moody Blues',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Moody Blues/The Best of the Moody Blues',
 			previous: 361,
 			next: [],
@@ -36333,6 +36725,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 363,
+			name: 'The Who',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Who',
 			previous: 283,
 			next: [364, 365],
@@ -36341,6 +36734,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 364,
+			name: '20th Century Masters - The Millennium Collection- The Best of The Who',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Who/20th Century Masters - The Millennium Collection- The Best of The Who',
 			previous: 363,
@@ -36466,6 +36860,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 365,
+			name: "Who's Greatest Hits",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Rock/The Who/Who's Greatest Hits",
 			previous: 363,
 			next: [],
@@ -36623,6 +37018,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 366,
+			name: 'Tom Petty',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Tom Petty',
 			previous: 283,
 			next: [367],
@@ -36631,6 +37027,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 367,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Tom Petty/Greatest Hits',
 			previous: 366,
 			next: [],
@@ -36859,9 +37256,18 @@ const MUSIC_DATA = {
 				'Folder.jpg'
 			]
 		},
-		{ index: 368, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Traffic', previous: 283, next: [369], mp3: [], jpg: [] },
+		{
+			index: 368,
+			name: 'Traffic',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Traffic',
+			previous: 283,
+			next: [369],
+			mp3: [],
+			jpg: []
+		},
 		{
 			index: 369,
+			name: 'The Low Spark of High Heeled Boys',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Traffic/The Low Spark of High Heeled Boys',
 			previous: 368,
 			next: [],
@@ -36942,6 +37348,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 370,
+			name: 'U2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/U2',
 			previous: 283,
 			next: [371, 372, 373, 374],
@@ -36950,6 +37357,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 371,
+			name: 'Achtung Baby',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/U2/Achtung Baby',
 			previous: 370,
 			next: [],
@@ -37061,6 +37469,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 372,
+			name: 'The Best of 1980-1990',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/U2/The Best of 1980-1990',
 			previous: 370,
 			next: [],
@@ -37222,6 +37631,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 373,
+			name: 'The Joshua Tree',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/U2/The Joshua Tree',
 			previous: 370,
 			next: [],
@@ -37350,6 +37760,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 374,
+			name: 'Zooropa',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/U2/Zooropa',
 			previous: 370,
 			next: [],
@@ -37425,6 +37836,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 375,
+			name: 'Van Morrison',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison',
 			previous: 283,
 			next: [376, 377, 378, 379, 380, 381],
@@ -37433,6 +37845,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 376,
+			name: 'A Night in San Francisco 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/A Night in San Francisco 1',
 			previous: 375,
 			next: [],
@@ -37494,6 +37907,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 377,
+			name: 'A Night in San Francisco 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/A Night in San Francisco 2',
 			previous: 375,
 			next: [],
@@ -37539,6 +37953,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 378,
+			name: 'Back on Top',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/Back on Top',
 			previous: 375,
 			next: [],
@@ -37663,6 +38078,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 379,
+			name: 'No Guru, No Method, No Teacher',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/No Guru, No Method, No Teacher',
 			previous: 375,
 			next: [],
@@ -37787,6 +38203,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 380,
+			name: 'Super Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/Super Hits',
 			previous: 375,
 			next: [],
@@ -37911,6 +38328,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 381,
+			name: 'The Healing Game',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/Van Morrison/The Healing Game',
 			previous: 375,
 			next: [],
@@ -38033,9 +38451,18 @@ const MUSIC_DATA = {
 				'Folder.jpg'
 			]
 		},
-		{ index: 382, dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ZZ Top', previous: 283, next: [383], mp3: [], jpg: [] },
+		{
+			index: 382,
+			name: 'ZZ Top',
+			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ZZ Top',
+			previous: 283,
+			next: [383],
+			mp3: [],
+			jpg: []
+		},
 		{
 			index: 383,
+			name: 'Greatest Hits',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Rock/ZZ Top/Greatest Hits',
 			previous: 382,
 			next: [],
@@ -38241,6 +38668,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 384,
+			name: 'Various Artists',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists',
 			previous: 0,
 			next: [385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401],
@@ -38249,6 +38677,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 385,
+			name: '100 Must-Have Amour Romantic Love Song Classics',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/100 Must-Have Amour Romantic Love Song Classics',
 			previous: 384,
 			next: [],
@@ -39464,6 +39893,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 386,
+			name: '111 Amazing Classical- Choral',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/111 Amazing Classical- Choral',
 			previous: 384,
 			next: [],
@@ -40849,6 +41279,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 387,
+			name: '111 Amazing Classical- Music of Love',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/111 Amazing Classical- Music of Love',
 			previous: 384,
 			next: [],
@@ -42206,6 +42637,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 388,
+			name: '111 Amazing Classical- Opera',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/111 Amazing Classical- Opera',
 			previous: 384,
 			next: [],
@@ -43580,6 +44012,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 389,
+			name: '66 Must-Have Sensual Classics',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/66 Must-Have Sensual Classics',
 			previous: 384,
 			next: [],
@@ -44381,6 +44814,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 390,
+			name: 'Classical Masterpieces, Vol. 1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Classical Masterpieces, Vol. 1',
 			previous: 384,
 			next: [],
@@ -44645,6 +45079,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 391,
+			name: 'Favorite Overtures',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Favorite Overtures',
 			previous: 384,
 			next: [],
@@ -44729,6 +45164,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 392,
+			name: 'Great Moments of Opera - Volume 2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Great Moments of Opera - Volume 2',
 			previous: 384,
 			next: [],
@@ -44892,6 +45328,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 393,
+			name: "Listener's Choice- The Best of Opera",
 			dir: "/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Listener's Choice- The Best of Opera",
 			previous: 384,
 			next: [],
@@ -45001,6 +45438,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 394,
+			name: 'Little Big Overtures Box',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Little Big Overtures Box',
 			previous: 384,
 			next: [],
@@ -45406,6 +45844,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 395,
+			name: 'Organ (Red Classics)',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Organ (Red Classics)',
 			previous: 384,
 			next: [],
@@ -45776,6 +46215,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 396,
+			name: 'Pachelbel- Canon & Gigue',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Pachelbel- Canon & Gigue',
 			previous: 384,
 			next: [],
@@ -45859,6 +46299,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 397,
+			name: 'Romeo and Juliet',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/Romeo and Juliet',
 			previous: 384,
 			next: [],
@@ -45968,6 +46409,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 398,
+			name: 'The 99 Darkest Pieces Of Classical Music',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/The 99 Darkest Pieces Of Classical Music',
 			previous: 384,
 			next: [],
@@ -47173,6 +47615,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 399,
+			name: 'The 99 Most Essential Adagios',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/The 99 Most Essential Adagios',
 			previous: 384,
 			next: [],
@@ -48375,6 +48818,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 400,
+			name: 'The 99 Most Essential Relaxing Classics (Amazon Exclusive)',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/The 99 Most Essential Relaxing Classics (Amazon Exclusive)',
 			previous: 384,
@@ -49581,6 +50025,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 401,
+			name: 'The 99 Most Essential Romantic Masterpieces',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Various Artists/The 99 Most Essential Romantic Masterpieces',
 			previous: 384,
 			next: [],
@@ -50781,6 +51226,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 402,
+			name: 'Yoga',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga',
 			previous: 0,
 			next: [403, 405, 407, 409],
@@ -50789,6 +51235,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 403,
+			name: 'Donna De Lory',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Donna De Lory',
 			previous: 402,
 			next: [404],
@@ -50797,6 +51244,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 404,
+			name: 'The Lover and the Beloved',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Donna De Lory/The Lover and the Beloved',
 			previous: 403,
 			next: [],
@@ -50895,6 +51343,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 405,
+			name: 'Jai Uttal & Ben Leinbach',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Jai Uttal & Ben Leinbach',
 			previous: 402,
 			next: [406],
@@ -50903,6 +51352,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 406,
+			name: 'Music For Yoga And Other Joys',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Jai Uttal & Ben Leinbach/Music For Yoga And Other Joys',
 			previous: 405,
 			next: [],
@@ -50977,6 +51427,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 407,
+			name: 'Turiya Nada_ Enlightening Yoga Music',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Turiya Nada_ Enlightening Yoga Music',
 			previous: 402,
 			next: [408],
@@ -50985,6 +51436,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 408,
+			name: 'Cave of the Siddhars Powerful, Transforming & Pure Joy!',
 			dir:
 				'/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Turiya Nada_ Enlightening Yoga Music/Cave of the Siddhars Powerful, Transforming & Pure Joy!',
 			previous: 407,
@@ -51048,6 +51500,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 409,
+			name: 'Yoga Flow Mix 1 - Jala',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/Yoga/Yoga Flow Mix 1 - Jala',
 			previous: 402,
 			next: [],
@@ -51074,6 +51527,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 410,
+			name: 'jvMusic',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic',
 			previous: 0,
 			next: [411, 412, 416, 428],
@@ -51082,6 +51536,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 411,
+			name: 'Music Sheets',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/Music Sheets',
 			previous: 410,
 			next: [],
@@ -51090,6 +51545,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 412,
+			name: 'jvLyrics',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvLyrics',
 			previous: 410,
 			next: [413, 414, 415],
@@ -51098,6 +51554,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 413,
+			name: 'Abba',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvLyrics/Abba',
 			previous: 412,
 			next: [],
@@ -51106,6 +51563,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 414,
+			name: 'Christmas',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvLyrics/Christmas',
 			previous: 412,
 			next: [],
@@ -51114,6 +51572,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 415,
+			name: 'Fiddler on the Roof',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvLyrics/Fiddler on the Roof',
 			previous: 412,
 			next: [],
@@ -51122,6 +51581,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 416,
+			name: 'jvMusicSheets',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets',
 			previous: 410,
 			next: [417, 423, 424, 427],
@@ -51130,6 +51590,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 417,
+			name: 'dec 2010',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010',
 			previous: 416,
 			next: [418, 419, 420, 421, 422],
@@ -51138,6 +51599,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 418,
+			name: 'Extras',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010/Extras',
 			previous: 417,
 			next: [],
@@ -51146,6 +51608,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 419,
+			name: 'Messiah',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010/Messiah',
 			previous: 417,
 			next: [],
@@ -51154,6 +51617,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 420,
+			name: 'Musescore',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010/Musescore',
 			previous: 417,
 			next: [],
@@ -51162,6 +51626,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 421,
+			name: 'scanned',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010/scanned',
 			previous: 417,
 			next: [],
@@ -51170,6 +51635,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 422,
+			name: 'wav files',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/dec 2010/wav files',
 			previous: 417,
 			next: [],
@@ -51178,6 +51644,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 423,
+			name: 'may 2010',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/may 2010',
 			previous: 416,
 			next: [],
@@ -51186,6 +51653,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 424,
+			name: 'may 2011',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/may 2011',
 			previous: 416,
 			next: [425],
@@ -51194,6 +51662,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 425,
+			name: 'scanned',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/may 2011/scanned',
 			previous: 424,
 			next: [426],
@@ -51202,6 +51671,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 426,
+			name: 'OLD',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/may 2011/scanned/OLD',
 			previous: 425,
 			next: [],
@@ -51210,6 +51680,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 427,
+			name: 'music_xml',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvMusicSheets/music_xml',
 			previous: 416,
 			next: [],
@@ -51218,6 +51689,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 428,
+			name: 'jvSibelius',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius',
 			previous: 410,
 			next: [429, 435, 436, 438, 439, 444, 445, 459, 460],
@@ -51226,6 +51698,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 429,
+			name: 'RealThings',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings',
 			previous: 428,
 			next: [430, 431, 432, 434],
@@ -51234,6 +51707,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 430,
+			name: 'OLD',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings/OLD',
 			previous: 429,
 			next: [],
@@ -51242,6 +51716,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 431,
+			name: 'mp3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings/mp3',
 			previous: 429,
 			next: [],
@@ -51300,6 +51775,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 432,
+			name: 'sanyo singing',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings/sanyo singing',
 			previous: 429,
 			next: [433],
@@ -51308,6 +51784,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 433,
+			name: '1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings/sanyo singing/1',
 			previous: 432,
 			next: [],
@@ -51316,6 +51793,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 434,
+			name: 'wav',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/RealThings/wav',
 			previous: 429,
 			next: [],
@@ -51324,6 +51802,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 435,
+			name: 'Scanned Music',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/Scanned Music',
 			previous: 428,
 			next: [],
@@ -51332,6 +51811,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 436,
+			name: 'Sibelius Example Scores',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/Sibelius Example Scores',
 			previous: 428,
 			next: [437],
@@ -51340,6 +51820,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 437,
+			name: 'Project Files',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/Sibelius Example Scores/Project Files',
 			previous: 436,
 			next: [],
@@ -51348,6 +51829,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 438,
+			name: 'Test',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/Test',
 			previous: 428,
 			next: [],
@@ -51356,6 +51838,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 439,
+			name: 'downloads',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/downloads',
 			previous: 428,
 			next: [440, 441, 442, 443],
@@ -51364,6 +51847,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 440,
+			name: '1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/downloads/1',
 			previous: 439,
 			next: [],
@@ -51372,6 +51856,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 441,
+			name: '2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/downloads/2',
 			previous: 439,
 			next: [],
@@ -51380,6 +51865,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 442,
+			name: '3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/downloads/3',
 			previous: 439,
 			next: [],
@@ -51388,6 +51874,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 443,
+			name: '4',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/downloads/4',
 			previous: 439,
 			next: [],
@@ -51396,6 +51883,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 444,
+			name: 'e lucevan le stelle',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/e lucevan le stelle',
 			previous: 428,
 			next: [],
@@ -51404,6 +51892,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 445,
+			name: 'jv1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1',
 			previous: 428,
 			next: [446, 447, 448, 455, 456],
@@ -51412,6 +51901,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 446,
+			name: '1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/1',
 			previous: 445,
 			next: [],
@@ -51420,6 +51910,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 447,
+			name: '2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/2',
 			previous: 445,
 			next: [],
@@ -51428,6 +51919,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 448,
+			name: 'Circle of Life',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life',
 			previous: 445,
 			next: [449, 454],
@@ -51436,6 +51928,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 449,
+			name: 'Keep',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/Keep',
 			previous: 448,
 			next: [450, 451, 452, 453],
@@ -51444,6 +51937,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 450,
+			name: '1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/Keep/1',
 			previous: 449,
 			next: [],
@@ -51452,6 +51946,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 451,
+			name: '2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/Keep/2',
 			previous: 449,
 			next: [],
@@ -51460,6 +51955,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 452,
+			name: '3',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/Keep/3',
 			previous: 449,
 			next: [],
@@ -51468,6 +51964,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 453,
+			name: '4',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/Keep/4',
 			previous: 449,
 			next: [],
@@ -51476,6 +51973,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 454,
+			name: 'carved',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Circle of Life/carved',
 			previous: 448,
 			next: [],
@@ -51484,6 +51982,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 455,
+			name: 'Full',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Full',
 			previous: 445,
 			next: [],
@@ -51492,6 +51991,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 456,
+			name: 'Working',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Working',
 			previous: 445,
 			next: [457, 458],
@@ -51500,6 +52000,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 457,
+			name: '1',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Working/1',
 			previous: 456,
 			next: [],
@@ -51508,6 +52009,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 458,
+			name: '2',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/jv1/Working/2',
 			previous: 456,
 			next: [],
@@ -51516,6 +52018,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 459,
+			name: 'panus',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/panus',
 			previous: 428,
 			next: [],
@@ -51524,6 +52027,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 460,
+			name: 'scores',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/scores',
 			previous: 428,
 			next: [461],
@@ -51532,6 +52036,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 461,
+			name: 'Backup Scores',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/scores/Backup Scores',
 			previous: 460,
 			next: [462],
@@ -51540,6 +52045,7 @@ const MUSIC_DATA = {
 		},
 		{
 			index: 462,
+			name: 'AutoSave',
 			dir: '/Users/jv/Desktop/MyDocs/JV_Music/jvMusic/jvSibelius/scores/Backup Scores/AutoSave',
 			previous: 461,
 			next: [],
