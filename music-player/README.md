@@ -143,3 +143,23 @@ launch.json
     }
 ]}
 
+
+## React players
+
+https://dev.to/ma5ly/lets-make-a-little-audio-player-in-react-p4p
+
+react-sound
+https://github.com/leoasis/react-sound
+https://codesandbox.io/s/4jn966p950
+
+https://www.fullstackreact.com/react-daily-ui/009-music-player/
+
+https://github.com/lijinke666/react-music-player
+
+See react-electron/music-players
+
+players:
+
+https://reactjsexample.com/maybe-the-best-beautiful-html5-responsive-player-component-for-react/
+
+

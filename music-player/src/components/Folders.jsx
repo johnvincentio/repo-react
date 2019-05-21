@@ -63,12 +63,14 @@ class Folders extends React.Component {
 	selectFile = (e, trackId) => {
 		e.preventDefault();
 		console.log('Folders::selectFile; trackId ', trackId);
+		this.setState({ trackId });
 	};
 
 	selectFolder = (e, folderId) => {
 		e.preventDefault();
 		console.log('Folders::selectFolder; folderId ', folderId);
-		this.setState({ folderId, trackId: null });
+		// this.setState({ folderId, trackId: null });
+		this.setState({ folderId });
 	};
 
 	createBreadCrumbList(folder) {
@@ -141,7 +143,11 @@ class Folders extends React.Component {
 		console.log('Folders::render(); props ', this.props);
 		// const classes = useStyles();
 		const { classes } = this.props;
-		const { folderId } = this.state;
+		const { folderId, trackId } = this.state;
+		const current = this.props.folders[folderId];
+		// const mp3Url = trackId === null ? '' : `file://${current.dir}/${current.mp3[trackId].file}`;
+		const mp3Url = `file://${current.dir}/${current.mp3[3].file}`;
+		console.log('mp3Url ', mp3Url);
 		return (
 			<Outer>
 				<Inner>
@@ -164,6 +170,15 @@ class Folders extends React.Component {
 					<List>{this.renderCurrentFiles(folderId)}</List>
 					<Button variant="contained" color="primary">
 						Right
+					</Button>
+				</Inner>
+				<Inner>
+					<audio controls>
+						<source src={mp3Url} type="audio/mpeg" />
+						Your browser does not support the audio element.
+					</audio>
+					<Button variant="contained" color="primary">
+						Bottom
 					</Button>
 				</Inner>
 			</Outer>
