@@ -40,4 +40,5 @@ Pokegame.defaultProps = {
 		{id: 133, name: 'Eevee', type: 'normal', baseExperience: 65}
 	]
 }
+
 export default Pokegame;
