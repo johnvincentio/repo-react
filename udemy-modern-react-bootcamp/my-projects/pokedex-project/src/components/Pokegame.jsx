@@ -15,14 +15,10 @@ class Pokegame extends React.Component {
 	render() {
 		const { data } = this.props;
 		shuffleArray(data);
-		// console.log('(2) data ', data);
 		const hand1 = [data[0], data[1], data[2], data[3]];
 		const total1 = hand1.reduce((sum, item) => sum + item.baseExperience, 0);
 		const hand2 = [data[4], data[5], data[6], data[7]];
 		const total2 = hand2.reduce((sum, item) => sum + item.baseExperience, 0);
-		// console.log('hand1 ', hand1);
-		// console.log('hand2 ', hand2);
-
 		return (
 			<section className='Pokegame'>
 				<Pokedex hand={hand1} total={total1} winner={total1 >= total2} />
@@ -46,7 +42,7 @@ Pokegame.defaultProps = {
 }
 
 Pokegame.propTypes = {
-	data: dataType // eslint-disable-line react/no-typos
+	data: dataType
 };
 
 export default Pokegame;

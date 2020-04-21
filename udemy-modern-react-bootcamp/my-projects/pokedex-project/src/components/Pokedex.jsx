@@ -20,10 +20,9 @@ class Pokedex extends React.Component {
 				</div>
 				<div className="pokedex--total">Total Experience: {total} </div>
 				<div className="pokedex--cards">
-					<Pokecard card = {hand[0]} winner={winner} />
-					<Pokecard card = {hand[1]} winner={winner} />
-					<Pokecard card = {hand[2]} winner={winner} />
-					<Pokecard card = {hand[3]} winner={winner} />
+					{hand.map(item => (
+						<Pokecard key={item.id} card = {item} winner={winner} />
+					))}
 				</div>
 			</div>
 		);
@@ -31,7 +30,7 @@ class Pokedex extends React.Component {
 }
 
 Pokedex.propTypes = {
-	hand: dataType.isRequired, // eslint-disable-line react/no-typos
+	hand: dataType.isRequired,
 	total: PropTypes.number.isRequired,
 	winner: PropTypes.bool.isRequired
 };

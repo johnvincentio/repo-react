@@ -4,10 +4,9 @@
 	background-color: white;
 	width: 150px;
 	height: 180px;
-	// border-radius: 15px;
 	margin: 20px;
-	// box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.44);
 	@include box-shadow(6px 6px 5px 0px rgba(0, 0, 0, 0.44));
+	border-radius: 3px;
 
 	&.winner {
 		@include opacity(1.0);
@@ -15,7 +14,6 @@
 	&.loser {
 		@include opacity(0.5);
 	}
-
 
 	&--image {
 		background-color: $body-background-color;
@@ -39,7 +37,7 @@
 	}
 
 	&:hover {
-		@include transition(all 0.3s);
+		@include transition(all 0.5s);
 		cursor: pointer;
 		@include opacity(1);
 		@include scale(1.05);

@@ -29,7 +29,7 @@ class Pokecard extends React.Component {
 }
 
 Pokecard.propTypes = {
-	card: dataItemType.isRequired, // eslint-disable-line react/no-typos
+	card: dataItemType.isRequired,
 	winner: PropTypes.bool.isRequired
 };
 
