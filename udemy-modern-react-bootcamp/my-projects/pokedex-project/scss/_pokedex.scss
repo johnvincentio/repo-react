@@ -14,8 +14,13 @@
 		}
 	}
 
+	&--total {
+		font-size: 85%;
+	}
+
 	&--cards {
 		display: flex;
 		flex-direction: row;
+		justify-content: center;
 	}
 }

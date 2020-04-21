@@ -1,11 +1,14 @@
 //
 
-$primary-color: #428bca;
-$dark-primary-color: #3071a9;
-$header-color: #f0f0f0;
-$dark-header-color: #afafaf;
+// $primary-color: #428bca;
+// $dark-primary-color: #3071a9;
+// $header-color: #f0f0f0;
+// $dark-header-color: #afafaf;
+
+// background-color: #dcdcdc;
 
 $body-color: #444;
+$body-background-color: #dfdfdf;
 
 $font-family: 'Roboto', sans-serif;
 
@@ -25,7 +28,8 @@ body {
   height: 100%;
   font-family: $font-family;
   font-size: 16px;
-  color: $body-color;
+	color: $body-color;
+	background-color: $body-background-color;
   text-align: center;
   line-height: 1.2;
 }

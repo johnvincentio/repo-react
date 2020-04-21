@@ -1,20 +1,47 @@
 // 
 
 .pokecard {
-	background-color: #dcdcdc;
-	width: 160px;
+	background-color: white;
+	width: 150px;
 	height: 180px;
-	border-radius: 15px;
+	// border-radius: 15px;
 	margin: 20px;
+	// box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.44);
+	@include box-shadow(6px 6px 5px 0px rgba(0, 0, 0, 0.44));
+
+	&.winner {
+		@include opacity(1.0);
+	}
+	&.loser {
+		@include opacity(0.5);
+	}
+
+
+	&--image {
+		background-color: $body-background-color;
+		margin: 5px;
+	}
 
 	&--name {
-		color: blue;
-		padding-top: 10px;
-		font-weight: bold;
+		// color: blue;
+		padding: 10px 0;
+		font-size: 80%;
+		// font-weight: bold;
 	}
 
 	img {
 		width: 96px;
 		height: 96px;
+	}
+
+	&--type, &--exp {
+		font-size: 70%;
+	}
+
+	&:hover {
+		@include transition(all 0.3s);
+		cursor: pointer;
+		@include opacity(1);
+		@include scale(1.05);
 	}
 }

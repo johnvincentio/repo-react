@@ -6,6 +6,8 @@ import React from 'react';
 
 import Pokedex from './Pokedex';
 
+import { dataType } from '../types';
+
 import { shuffleArray } from '../utilities/utils';
 
 class Pokegame extends React.Component {
@@ -42,5 +44,9 @@ Pokegame.defaultProps = {
 		{id: 133, name: 'Eevee', type: 'normal', baseExperience: 65}
 	]
 }
+
+Pokegame.propTypes = {
+	data: dataType // eslint-disable-line react/no-typos
+};
 
 export default Pokegame;
