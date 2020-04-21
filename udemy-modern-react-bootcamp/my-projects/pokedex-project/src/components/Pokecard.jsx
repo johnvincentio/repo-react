@@ -4,11 +4,13 @@
 
 import React from 'react';
 
+import { createImageUrl } from '../utilities/utils';
+
 class Pokecard extends React.Component {
 
 	render() {
 		const { id, name, type, baseExperience } = this.props.card;
-		const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+		const imageUrl = createImageUrl(id);
 
 		return (
 			<div className="pokecard">
