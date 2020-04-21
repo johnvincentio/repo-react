@@ -1,0 +1,15 @@
+// 
+
+.pokecard {
+	background-color: #dcdcdc;
+	width: 160px;
+	height: 180px;
+	border-radius: 15px;
+	margin: 20px;
+
+	&--name {
+		color: blue;
+		padding-top: 10px;
+		font-weight: bold;
+	}
+}

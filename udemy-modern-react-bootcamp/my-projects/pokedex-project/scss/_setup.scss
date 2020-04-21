@@ -1,5 +1,12 @@
 //
 
+$primary-color: #428bca;
+$dark-primary-color: #3071a9;
+$header-color: #f0f0f0;
+$dark-header-color: #afafaf;
+
+$body-color: #444;
+
 $font-family: 'Roboto', sans-serif;
 
 // font-family: 'Open Sans', sans-serif;
@@ -18,7 +25,7 @@ body {
   height: 100%;
   font-family: $font-family;
   font-size: 16px;
-  color: #444;
+  color: $body-color;
   text-align: center;
   line-height: 1.2;
 }
@@ -44,11 +51,6 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-
-$primary-color: #428bca;
-$dark-primary-color: #3071a9;
-$header-color: #f0f0f0;
-$dark-header-color: #afafaf;
 
 .error {
   color: red;
