@@ -1,6 +1,21 @@
 //
 
 .pokedex {
-	display: flex;
-	flex-direction: row;
+
+	&--result {
+		font-size: 140%;
+		margin: 10px 0;
+
+		&.winner {
+			color: green;
+		}
+		&.loser {
+			color: red;
+		}
+	}
+
+	&--cards {
+		display: flex;
+		flex-direction: row;
+	}
 }
