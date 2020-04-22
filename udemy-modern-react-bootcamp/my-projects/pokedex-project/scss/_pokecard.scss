@@ -88,22 +88,4 @@ $deck-left-offset: 40px;
 	&--type, &--exp {
 		font-size: 70%;
 	}
-
-	&:hover-jv {
-	// 	animation: shake 2s infinite;
-  // animation-direction: alternate;
-		@include transition(all 0.5s);
-		cursor: pointer;
-		@include opacity(1);
-		// width: 170px;
-		// height: 190px;
-
-		scale: 0.5;
-
-		// transform: scale(1.5, 1.5);
-		// @include scale(1.5);
-		// transform: scale(2);
-
-		// transform: skew(25deg, 25deg);
-	}
 }
