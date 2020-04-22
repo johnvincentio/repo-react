@@ -13,10 +13,10 @@ class Pokecard extends React.Component {
 
 	render() {
 		const { player, index, card, winner, dealCards } = this.props;
-		console.log('index ', index, ' dealCards ', dealCards);
+		// console.log('Pokecard::render(); index ', index, ' dealCards ', dealCards);
 		const { id, name, type, baseExperience } = card;
 		const imageUrl = createImageUrl(id);
-		const clz = `pokecard ${winner ? "winner" : "loser"} ${player}${index} ${dealCards ? "deal" : "deck"}`
+		const clz = `pokecard ${winner ? "winner" : "loser"} C${player}${index} ${dealCards ? "deal" : "deck"}`
 		return (
 			<div className={clz}>
 				<div className="pokecard--image">
@@ -31,7 +31,7 @@ class Pokecard extends React.Component {
 }
 
 Pokecard.propTypes = {
-	player: PropTypes.string.isRequired,
+	player: PropTypes.number.isRequired,
 	index: PropTypes.number.isRequired,
 	card: dataItemType.isRequired,
 	winner: PropTypes.bool.isRequired,

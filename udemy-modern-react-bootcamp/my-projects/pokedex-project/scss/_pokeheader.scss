@@ -1,15 +1,21 @@
-//
+// 
 
-.pokedex {
+.pokeheader {
 
-	&--cards {
-		position: relative;
+	position: relative;
+
+	&.player1 {
+		top: $top-offset-player-1;
+		margin-bottom: 20px;
+	}
+	&.player2 {
+		top: $top-offset-player-2;
 	}
 
 	&--result {
 		font-size: 140%;
 		margin: 10px 0;
-
+		
 		&.winner {
 			color: green;
 		}
@@ -21,10 +27,4 @@
 	&--total {
 		font-size: 85%;
 	}
-
-	// &--cards {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// 	justify-content: center;
-	// }
 }

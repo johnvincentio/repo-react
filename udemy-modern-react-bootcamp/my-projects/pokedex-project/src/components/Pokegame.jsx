@@ -1,10 +1,9 @@
 //
 
-/* eslint-disable react/prefer-stateless-function */
-
 import React from 'react';
 
-import Pokedex from './Pokedex';
+import PokeHeader from './PokeHeader';
+import Pokecard from './Pokecard';
 
 import { dataType } from '../types';
 
@@ -18,7 +17,7 @@ class Pokegame extends React.Component {
 		this.state = {
 			dealCards: false,
 		};
-		this.timer = setTimeout(this.enableCards, 250);
+		this.timer = setTimeout(this.enableCards, 400);
 	}
 
 	componentWillUnmount() {
@@ -37,21 +36,41 @@ class Pokegame extends React.Component {
 		const hand2 = data.slice(4, 8);
 		const total2 = hand2.reduce((sum, item) => sum + item.baseExperience, 0);
 		return (
-			<section>
-				<Pokedex
-					player="A"
-					hand={hand1}
+			<section className="pokegame">
+				<PokeHeader 
+					player={1}
 					total={total1}
 					winner={total1 >= total2}
-					dealCards={this.state.dealCards}
 				/>
-				<Pokedex
-					player="B"
-					hand={hand2}
-					total={total2}
-					winner={total2 > total1}
-					dealCards={this.state.dealCards}
-				/>
+				<div>
+					{hand1.map((item, index) => (
+						<Pokecard
+							key={item.id}
+							player={1}
+							index={index}
+							card={item}
+							winner={total1 >= total2}
+							dealCards={this.state.dealCards}
+						/>
+					))}
+					<PokeHeader 
+						player={2}
+						total={total2}
+						winner={total2 > total1}
+					/>
+					<div>
+						{hand2.map((item, index) => (
+							<Pokecard
+								key={item.id}
+								player={2}
+								index={index}
+								card={item}
+								winner={total2 > total1}
+								dealCards={this.state.dealCards}
+							/>
+						))}
+					</div>
+				</div>
 			</section>
 		);
 	}

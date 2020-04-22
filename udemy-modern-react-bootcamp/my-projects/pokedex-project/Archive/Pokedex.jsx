@@ -13,13 +13,10 @@ class Pokedex extends React.Component {
 
 	render() {
 		const { player, hand, total, winner, dealCards } = this.props;
-		console.log('Pokedex::render(); dealCards ', dealCards);
+		console.log('Pokedex::render(); dealCards ', dealCards, ' player ', player);
 		return (
 			<div className="pokedex">
-				<div className={`pokedex--result ${ winner ? "winner" : "loser"}`}>
-					{winner ? "Winning Hand" : "Losing Hand"}
-				</div>
-				<div className="pokedex--total">Total Experience: {total} </div>
+
 				<div className="pokedex--cards">
 					{hand.map((item, index) => (
 						<Pokecard

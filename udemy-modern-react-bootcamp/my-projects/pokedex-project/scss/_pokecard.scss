@@ -1,30 +1,42 @@
 // 
 
+$deck-top-offset: 20px;
+$deck-left-offset: 40px;
+
+
 @mixin abc($player, $card) {
 	@debug "player #{$player} card #{$card}";
-	$top: ($player - 1) * 8 + ($card * 2);
-	@debug "top #{$top}";
-	$a2: ($player * 240);
-	$a1: ($card * 200);
-	$jv1: ($player == 1);
-	@debug "jv1 #{$jv1}";
-	$delay: (($player - 1) * 4 + $card) * 0.25;
-	@debug "delay #{$delay}";
 
-	$clz: if($jv1, "A", "B");
-	@debug "clz #{$clz}";
+	$deck-top: $deck-top-offset + ($player - 1) * 8 + ($card * 2);
+	@debug "deck-top #{$deck-top}";
 
-	&.#{$clz}#{$card} {
-		transition: transform #{$delay}s ease-out;
+	$toX: 180 + ($card * 200);
+	$toY: ($player - 1) * 250;
+
+	$duration: 1 + (($player - 1) * 4 + $card) * 0.25;
+	@debug "duration #{$duration}";
+
+	&.C#{$player}#{$card} {
+		// transition: transform #{$duration}s ease-out;
+		transition: transform 1s ease-out;
 		
 		&.deck {
-			top: #{$top}px; left: 0px;
+			top: #{$deck-top}; left: #{$deck-left-offset};
 		}
 		&.deal {
-			transform: translate(#{$a1}px, #{$a2}px);
+			transform: translate(#{$toX}px, #{$toY}px);
 		}
 	}
 }
+
+// @keyframes shake {
+//   0% {
+//     transform: skewY(20deg);
+//   }
+//   100% {
+//     transform: skewY(-20deg);
+//   }
+// }
 
 .pokecard {
 
@@ -71,10 +83,18 @@
 		font-size: 70%;
 	}
 
-	// &:hover {
-	// 	@include transition(all 0.5s);
-	// 	cursor: pointer;
-	// 	@include opacity(1);
-	// 	@include scale(1.05);
-	// }
+	&:hover {
+	// 	animation: shake 2s infinite;
+  // animation-direction: alternate;
+		@include transition(all 0.5s);
+		cursor: pointer;
+		@include opacity(1);
+		width: 170px;
+		height: 190px;
+		// transform: scale(1.5, 1.5);
+		// @include scale(1.5);
+		// transform: scale(2);
+
+		// transform: skew(25deg, 25deg);
+	}
 }
