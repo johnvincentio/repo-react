@@ -1,0 +1,30 @@
+.wrapper {
+  position:relative;
+}
+
+.card {
+  display:block;
+  width:140px;
+  height:200px;
+  background:white;
+  border:1px solid black;
+  border-radius:5px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.9);
+  position:absolute;
+  /* transition:transform 0.5s ease-out; */
+}
+
+#draw {
+  margin:20px;
+}
+
+.card:nth-child(2) {left:20px;}
+.card:nth-child(3) {left:40px;}
+.card:nth-child(4) {left:60px;}
+.card:nth-child(5) {left:80px;}
+
+.first.outOfStack {transform:translate(0, 240px);}
+.second.outOfStack {transform:translate(150px, 240px);}
+.third.outOfStack {transform:translate(300px, 240px);}
+.fourth.outOfStack {transform:translate(450px, 240px);}
+.fifth.outOfStack {transform:translate(600px, 240px);}

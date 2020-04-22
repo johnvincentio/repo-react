@@ -11,18 +11,47 @@ import { dataType } from '../types';
 import { shuffleArray } from '../utilities/utils';
 
 class Pokegame extends React.Component {
+	constructor(props) {
+		super(props);
+		this.enableCards = this.enableCards.bind(this);
+
+		this.state = {
+			dealCards: false,
+		};
+		this.timer = setTimeout(this.enableCards, 250);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.timer);
+	}
+	
+	enableCards() {
+		this.setState({dealCards: true});
+	}
 
 	render() {
 		const { data } = this.props;
 		shuffleArray(data);
-		const hand1 = [data[0], data[1], data[2], data[3]];
+		const hand1 = data.slice(0, 4);
 		const total1 = hand1.reduce((sum, item) => sum + item.baseExperience, 0);
-		const hand2 = [data[4], data[5], data[6], data[7]];
+		const hand2 = data.slice(4, 8);
 		const total2 = hand2.reduce((sum, item) => sum + item.baseExperience, 0);
 		return (
-			<section className='Pokegame'>
-				<Pokedex hand={hand1} total={total1} winner={total1 >= total2} />
-				<Pokedex hand={hand2} total={total2} winner={total2 > total1} />
+			<section>
+				<Pokedex
+					player="A"
+					hand={hand1}
+					total={total1}
+					winner={total1 >= total2}
+					dealCards={this.state.dealCards}
+				/>
+				<Pokedex
+					player="B"
+					hand={hand2}
+					total={total2}
+					winner={total2 > total1}
+					dealCards={this.state.dealCards}
+				/>
 			</section>
 		);
 	}

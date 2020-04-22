@@ -2,6 +2,10 @@
 
 .pokedex {
 
+	&--cards {
+		position: relative;
+	}
+
 	&--result {
 		font-size: 140%;
 		margin: 10px 0;
@@ -18,9 +22,9 @@
 		font-size: 85%;
 	}
 
-	&--cards {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-	}
+	// &--cards {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	justify-content: center;
+	// }
 }

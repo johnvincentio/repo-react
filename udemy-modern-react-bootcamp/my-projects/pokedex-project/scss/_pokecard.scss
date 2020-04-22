@@ -1,6 +1,40 @@
 // 
 
+@mixin abc($player, $card) {
+	@debug "player #{$player} card #{$card}";
+	$top: ($player - 1) * 8 + ($card * 2);
+	@debug "top #{$top}";
+	$a2: ($player * 240);
+	$a1: ($card * 200);
+	$jv1: ($player == 1);
+	@debug "jv1 #{$jv1}";
+	$delay: (($player - 1) * 4 + $card) * 0.25;
+	@debug "delay #{$delay}";
+
+	$clz: if($jv1, "A", "B");
+	@debug "clz #{$clz}";
+
+	&.#{$clz}#{$card} {
+		transition: transform #{$delay}s ease-out;
+		
+		&.deck {
+			top: #{$top}px; left: 0px;
+		}
+		&.deal {
+			transform: translate(#{$a1}px, #{$a2}px);
+		}
+	}
+}
+
 .pokecard {
+
+	position: absolute;
+
+	@for $i from 0 through 3 {
+		@include abc(1, $i);
+		@include abc(2, $i);
+	}
+
 	background-color: white;
 	width: 150px;
 	height: 180px;
@@ -14,6 +48,7 @@
 	&.loser {
 		@include opacity(0.5);
 	}
+
 
 	&--image {
 		background-color: $body-background-color;
@@ -36,10 +71,10 @@
 		font-size: 70%;
 	}
 
-	&:hover {
-		@include transition(all 0.5s);
-		cursor: pointer;
-		@include opacity(1);
-		@include scale(1.05);
-	}
+	// &:hover {
+	// 	@include transition(all 0.5s);
+	// 	cursor: pointer;
+	// 	@include opacity(1);
+	// 	@include scale(1.05);
+	// }
 }

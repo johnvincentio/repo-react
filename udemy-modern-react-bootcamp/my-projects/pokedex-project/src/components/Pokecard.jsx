@@ -12,11 +12,13 @@ import { createImageUrl } from '../utilities/utils';
 class Pokecard extends React.Component {
 
 	render() {
-		const { card, winner } = this.props;
+		const { player, index, card, winner, dealCards } = this.props;
+		console.log('index ', index, ' dealCards ', dealCards);
 		const { id, name, type, baseExperience } = card;
 		const imageUrl = createImageUrl(id);
+		const clz = `pokecard ${winner ? "winner" : "loser"} ${player}${index} ${dealCards ? "deal" : "deck"}`
 		return (
-			<div className={`pokecard ${ winner ? "winner" : "loser"}`}>
+			<div className={clz}>
 				<div className="pokecard--image">
 					<img src={imageUrl} alt={name} />
 				</div>
@@ -29,8 +31,11 @@ class Pokecard extends React.Component {
 }
 
 Pokecard.propTypes = {
+	player: PropTypes.string.isRequired,
+	index: PropTypes.number.isRequired,
 	card: dataItemType.isRequired,
-	winner: PropTypes.bool.isRequired
+	winner: PropTypes.bool.isRequired,
+	dealCards: PropTypes.bool.isRequired
 };
 
 export default Pokecard;

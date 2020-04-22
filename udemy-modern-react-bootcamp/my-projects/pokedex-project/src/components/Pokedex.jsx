@@ -12,7 +12,8 @@ import { dataType } from '../types';
 class Pokedex extends React.Component {
 
 	render() {
-		const { hand, total, winner } = this.props;
+		const { player, hand, total, winner, dealCards } = this.props;
+		console.log('Pokedex::render(); dealCards ', dealCards);
 		return (
 			<div className="pokedex">
 				<div className={`pokedex--result ${ winner ? "winner" : "loser"}`}>
@@ -20,8 +21,15 @@ class Pokedex extends React.Component {
 				</div>
 				<div className="pokedex--total">Total Experience: {total} </div>
 				<div className="pokedex--cards">
-					{hand.map(item => (
-						<Pokecard key={item.id} card = {item} winner={winner} />
+					{hand.map((item, index) => (
+						<Pokecard
+							key={item.id}
+							player={player}
+							index={index}
+							card={item}
+							winner={winner}
+							dealCards={dealCards}
+						/>
 					))}
 				</div>
 			</div>
@@ -30,9 +38,11 @@ class Pokedex extends React.Component {
 }
 
 Pokedex.propTypes = {
+	player: PropTypes.string.isRequired,
 	hand: dataType.isRequired,
 	total: PropTypes.number.isRequired,
-	winner: PropTypes.bool.isRequired
+	winner: PropTypes.bool.isRequired,
+	dealCards: PropTypes.bool.isRequired
 };
 
 export default Pokedex;
