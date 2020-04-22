@@ -4,7 +4,7 @@ $deck-top-offset: 20px;
 $deck-left-offset: 40px;
 
 
-@mixin abc($player, $card) {
+@mixin card($player, $card) {
 	// @debug "player #{$player} card #{$card}";
 
 	$deck-top: $deck-top-offset + ($player - 1) * 8 + ($card * 2);
@@ -49,8 +49,8 @@ $deck-left-offset: 40px;
 	position: absolute;
 
 	@for $i from 0 through 3 {
-		@include abc(1, $i);
-		@include abc(2, $i);
+		@include card(1, $i);
+		@include card(2, $i);
 	}
 
 	background-color: white;
@@ -67,7 +67,6 @@ $deck-left-offset: 40px;
 		@include opacity(0.5);
 	}
 
-
 	&--image {
 		background-color: $body-background-color;
 		margin: 5px;
@@ -76,7 +75,7 @@ $deck-left-offset: 40px;
 	&--name {
 		// color: blue;
 		padding: 10px 0;
-		font-size: 80%;
+		font-size: 90%;
 		// font-weight: bold;
 	}
 
