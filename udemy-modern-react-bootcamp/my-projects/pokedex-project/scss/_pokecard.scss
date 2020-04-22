@@ -5,16 +5,16 @@ $deck-left-offset: 40px;
 
 
 @mixin abc($player, $card) {
-	@debug "player #{$player} card #{$card}";
+	// @debug "player #{$player} card #{$card}";
 
 	$deck-top: $deck-top-offset + ($player - 1) * 8 + ($card * 2);
-	@debug "deck-top #{$deck-top}";
+	// @debug "deck-top #{$deck-top}";
 
 	$toX: 180 + ($card * 200);
 	$toY: ($player - 1) * 250;
 
 	$duration: 1 + (($player - 1) * 4 + $card) * 0.25;
-	@debug "duration #{$duration}";
+	// @debug "duration #{$duration}";
 
 	&.C#{$player}#{$card} {
 		// transition: transform #{$duration}s ease-out;
@@ -25,6 +25,12 @@ $deck-left-offset: 40px;
 		}
 		&.deal {
 			transform: translate(#{$toX}px, #{$toY}px);
+			&:hover {
+				@include transition(all 0.5s);
+				cursor: pointer;
+				@include opacity(1);
+				transform: scale(1.02) translate(#{$toX}px, #{$toY}px);
+			}
 		}
 	}
 }
@@ -83,14 +89,17 @@ $deck-left-offset: 40px;
 		font-size: 70%;
 	}
 
-	&:hover {
+	&:hover-jv {
 	// 	animation: shake 2s infinite;
   // animation-direction: alternate;
 		@include transition(all 0.5s);
 		cursor: pointer;
 		@include opacity(1);
-		width: 170px;
-		height: 190px;
+		// width: 170px;
+		// height: 190px;
+
+		scale: 0.5;
+
 		// transform: scale(1.5, 1.5);
 		// @include scale(1.5);
 		// transform: scale(2);
