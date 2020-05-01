@@ -9,9 +9,7 @@ class BoxForm extends React.Component {
 		this.state = this.initState();
 	}
 
-	initState = () => {
-		return { width: `100`, height: `100`, color: `blue` };
-	}
+	initState = () => ({ width: `100`, height: `100`, color: `blue` });
 
 	handleChange = ({ target: { name, value } }) => {
 		// console.log('handleChange; name ', name, ' value ', value)
