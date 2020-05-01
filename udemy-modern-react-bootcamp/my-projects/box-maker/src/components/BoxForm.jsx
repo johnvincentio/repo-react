@@ -3,6 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { v4 as uuidv4 } from 'uuid';
+
 class BoxForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,17 +14,13 @@ class BoxForm extends React.Component {
 	initState = () => ({ width: `100`, height: `100`, color: `blue` });
 
 	handleChange = ({ target: { name, value } }) => {
-		// console.log('handleChange; name ', name, ' value ', value)
-		this.setState({
-			[name]: value
-		});
+		this.setState({ [name]: value });
 	};
 
 	handleSubmit = (e) => {
-		// console.log('handleSubmit')
 		e.preventDefault();
-		this.props.add(this.state);
-		this.setState(this.initState())
+		this.props.add( { ...this.state, id: uuidv4() });
+		this.setState(this.initState());
 	}
 
 	render() {
@@ -57,4 +55,5 @@ class BoxForm extends React.Component {
 BoxForm.propTypes = {
 	add: PropTypes.func.isRequired
 }
+
 export default BoxForm;

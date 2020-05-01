@@ -1,19 +1,18 @@
+/* eslint-disable react/prefer-stateless-function */
 //
+
+// eslint-disable react/prefer-stateless-function
 
 import React from 'react';
 import PropTypes from 'prop-types';
 
 class Box extends React.Component {
 
-	handleClick = () => {
-		this.props.remove(this.props.box.id);
-	}
-
 	render() {
 		const { width, height, color } = this.props.box;
 		const style = { width: `${width}px`, height: `${height}px`, backgroundColor: `${color}` };
 		return (
-			<div className="box" style={style} onClick={this.handleClick} />
+			<div className="box" style={style} onClick={this.props.remove} />
 		);
 	}
 }
