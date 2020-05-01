@@ -12,11 +12,11 @@ class BoxForm extends React.Component {
 	}
 
 	initState = () => {
-		return { width: `100`, height: `100`, color: 'blue' };
+		return { width: `100`, height: `100`, color: `blue` };
 	}
 
 	handleChange = ({ target: { name, value } }) => {
-		console.log('handleChange; name ', name, ' value ', value)
+		// console.log('handleChange; name ', name, ' value ', value)
 		this.setState({
 			[name]: value
 		});
@@ -35,19 +35,19 @@ class BoxForm extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 					<div>
 						<label htmlFor="height">
-						Height
+							Height
 							<input onChange={this.handleChange} value={this.state.height} id="height" name="height" type="text" />
 						</label>
 					</div>
 					<div>
 						<label htmlFor="width">
-						Width
+							Width
 							<input onChange={this.handleChange} value={this.state.width} id="width" name="width" type="text" />
 						</label>
 					</div>
 					<div>
 						<label htmlFor="color">
-						Color
+							Color
 							<input onChange={this.handleChange} value={this.state.color} id="color" name="color" type="text" />
 						</label>
 					</div>
