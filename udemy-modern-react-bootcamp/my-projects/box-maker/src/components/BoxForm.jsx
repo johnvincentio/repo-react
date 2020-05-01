@@ -12,7 +12,7 @@ class BoxForm extends React.Component {
 	}
 
 	initState = () => {
-		return { width: 0, height: 0, color: '' };
+		return { width: `100`, height: `100`, color: 'blue' };
 	}
 
 	handleChange = ({ target: { name, value } }) => {

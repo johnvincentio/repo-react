@@ -17,9 +17,7 @@ class Box extends React.Component {
 		console.log('style ', style)
 
 		return (
-			<div className="box" style={style} onClick={this.handleClick}>
-				in box 99
-			</div>
+			<div className="box" style={style} onClick={this.handleClick} />
 		);
 	}
 }
