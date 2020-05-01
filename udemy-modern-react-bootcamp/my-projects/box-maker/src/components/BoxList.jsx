@@ -1,7 +1,5 @@
 //
 
-/* eslint-disable react/prefer-stateless-function */
-
 import React from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -18,16 +16,21 @@ class BoxList extends React.Component {
 	}
 
 	handleAdd = box => {
-		console.log('handleAdd; box ', box);
+		// console.log('handleAdd; box ', box);
 		this.setState(prevState => {
 			const boxlist = [ ...prevState.boxlist, { ...box, id: uuidv4() }];
-			console.log('boxlist ', boxlist);
+			// console.log('boxlist ', boxlist);
 			return { boxlist };
 		});
 	}
 
 	handleRemove = id => {
-		console.log('handleRemove; id ', id);
+		// console.log('handleRemove; id ', id);
+		this.setState(prevState => {
+			const boxlist = prevState.boxlist.filter(item => item.id !== id)
+			// console.log('boxlist ', boxlist);
+			return { boxlist };
+		});
 	}
 
 	render() {

@@ -1,7 +1,5 @@
 // 
 
-/* eslint-disable react/prefer-stateless-function */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -23,7 +21,7 @@ class BoxForm extends React.Component {
 	};
 
 	handleSubmit = (e) => {
-		console.log('handleSubmit')
+		// console.log('handleSubmit')
 		e.preventDefault();
 		this.props.add(this.state);
 		this.setState(this.initState())

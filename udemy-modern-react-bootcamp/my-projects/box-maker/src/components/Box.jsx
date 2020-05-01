@@ -1,7 +1,5 @@
 //
 
-/* eslint-disable react/prefer-stateless-function */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -14,8 +12,6 @@ class Box extends React.Component {
 	render() {
 		const { width, height, color } = this.props.box;
 		const style = { width: `${width}px`, height: `${height}px`, backgroundColor: `${color}` };
-		console.log('style ', style)
-
 		return (
 			<div className="box" style={style} onClick={this.handleClick} />
 		);
@@ -33,15 +29,3 @@ Box.propTypes = {
 }
 
 export default Box;
-
-/*
-style  { width: "150px", height: "180px", backgroundColor: "black" }
-
-<div key={id} style={{width: "200px", height: "150px", color: "red", backgroundColor: "green"}}>
-	in box
-</div>
-
-<div key={id} style={{style}}>
-	in box
-</div>
-*/
