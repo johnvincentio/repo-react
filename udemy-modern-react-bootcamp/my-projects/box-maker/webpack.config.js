@@ -8,11 +8,11 @@ const SWPreCacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const copyWebpackPluginOptions = 'warning'; // info, debug, warning
+// const copyWebpackPluginOptions = 'warning'; // info, debug, warning
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -22,12 +22,8 @@ require('dotenv').config();
  * Define folders
  */
 
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
-// const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
 const ICONS_FOLDER = path.resolve(__dirname, './icons');
 const DIST_FOLDER = path.resolve(__dirname, './dist');
-const INCLUDE_SCSS_FOLDER = path.resolve(__dirname, './src');
-const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
 
 /*
  * Define plugins
@@ -135,17 +131,13 @@ const plugins = [
 	// new CleanWebpackPlugin([DIST_FOLDER]),
 
 	// list all React app required env variables
-	new webpack.EnvironmentPlugin(['HOME_URL', 'NODE_ENV', 'GITHUB_TOKEN']),
+	new webpack.EnvironmentPlugin(['HOME_URL', 'NODE_ENV']),
 
 	HTMLPlugin,
 
 	extractSCSSBundle, // create css bundle from scss
-	extractCSSBundle, // allow import file.css
+	extractCSSBundle // allow import file.css
 
-	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	})
 ];
 
 if (PRODUCTION_MODE) {
