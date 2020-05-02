@@ -5,7 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 class TodoForm extends React.Component {
 	constructor(props) {
@@ -13,13 +13,16 @@ class TodoForm extends React.Component {
 		this.state = { ...this.props.todo };
 	}
 
+	initState = () => ({ id: ``, task: 'New Todo', complete: false });
+
 	onChange = ( {target: { name, value }}) => this.setState({ [name]: value });
 
 	onSubmit = e => {
 		e.preventDefault();
 		console.log('TodoForm::onSubmit; this.state ', this.state);
 		if (this.props.adding) {
-			this.props.save({ ...this.state, id: uuidv4() });
+			this.props.save({ ...this.state, id: uuid() });
+			this.setState(this.initState());
 		}
 		else {
 			this.props.save(this.state);
@@ -57,7 +60,6 @@ TodoForm.propTypes = {
 	adding: PropTypes.bool.isRequired,
 	save: PropTypes.func.isRequired
 }
-
 
 TodoForm.defaultProps = {
 	todo: {
