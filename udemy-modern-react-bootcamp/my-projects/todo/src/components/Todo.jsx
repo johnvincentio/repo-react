@@ -29,7 +29,7 @@ class Todo extends React.Component {
 	}
 
 	render() {
-		console.log('Todo::render(); this.props ', this.props, ' this.state ', this.state);
+		// console.log('Todo::render(); this.props ', this.props, ' this.state ', this.state);
 		const { todo } = this.props;
 		const clz = classnames(`todo--task`, todo.complete ? `complete` : `incomplete`);
 		return (
