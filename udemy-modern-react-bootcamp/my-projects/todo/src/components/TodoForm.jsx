@@ -10,20 +10,26 @@ import { v4 as uuidv4 } from 'uuid';
 class TodoForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			task: 'New Todo'
-		}
+		this.state = { ...this.props.todo };
 	}
 
 	onChange = ( {target: { name, value }}) => this.setState({ [name]: value });
 
 	onSubmit = e => {
 		e.preventDefault();
-		this.props.add({ ...this.state, id: uuidv4(), complete: false })
+		console.log('TodoForm::onSubmit; this.state ', this.state);
+		if (this.props.add) {
+			this.props.save(this.state);
+		}
+		else {
+			// do save edit
+			this.props.save(this.state);
+		}
 	}
 
 	render() {
-
+		console.log('TodoForm::render(); this.props ', this.props, ' this.state ', this.state);
+		const text = this.props.add ? `Add Todo` : `Save`;
 		return (
 			<div>
 				<div>
@@ -36,7 +42,7 @@ class TodoForm extends React.Component {
 						name='task'
 						value={this.state.task}
 						onChange={this.onChange} />
-					<button type='submit'>Add Todo</button>
+					<button type='submit'>{text}</button>
 				</form>
 			</div>
 		);
@@ -44,7 +50,22 @@ class TodoForm extends React.Component {
 }
 
 TodoForm.propTypes = {
-	add: PropTypes.func.isRequired
+	todo: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		task: PropTypes.string.isRequired,
+		complete: PropTypes.bool.isRequired
+	}),
+	add: PropTypes.bool.isRequired,
+	save: PropTypes.func.isRequired
+}
+
+
+TodoForm.defaultProps = {
+	todo: {
+		id: uuidv4(),
+		task: 'New Todo',
+		complete: false
+	}
 }
 
 export default TodoForm;

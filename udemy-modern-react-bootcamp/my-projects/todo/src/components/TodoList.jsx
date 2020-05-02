@@ -19,8 +19,8 @@ class TodoList extends React.Component {
 		this.setState(prevState => ({	todos: [ ...prevState.todos, todo] }));
 	}
 
-	handleToggleStatus = id => {
-		console.log('TodoList::handleToggleStatus; id ', id);
+	handleToggleComplete = id => {
+		console.log('TodoList::handleToggleComplete; id ', id);
 		this.setState(prevState => {
 			const list = prevState.todos.map(todo => {
 				if (todo.id === id) {
@@ -29,11 +29,20 @@ class TodoList extends React.Component {
 				return todo;
 			});
 			return { todos: list }
-		})
+		});
 	}
 
-	handleEdit = id => {
-		console.log('TodoList::handleEdit; id ', id);
+	handleEdit = todo => {
+		console.log('TodoList::handleEdit; todo ', todo);
+		this.setState(prevState => {
+			const list = prevState.todos.map(item => {
+				if (todo.id === item.id) {
+					return { ...todo };
+				}
+				return todo;
+			});
+			return { todos: list }
+		});
 	}
 
 	handleDelete = id => {
@@ -41,7 +50,7 @@ class TodoList extends React.Component {
 	}
 
 	render() {
-
+		console.log('TodoList::render(); this.props ', this.props, ' this.state ', this.state);
 		return (
 			<div className="todolist">
 				<div className="todolist--header">
@@ -53,13 +62,13 @@ class TodoList extends React.Component {
 						<Todo
 							key={todo.id}
 							todo={todo}
-							toggleState={() => this.handleToggleStatus(todo.id)}
-							edit={() => this.handleEdit(todo.id)}
+							toggleState={() => this.handleToggleComplete(todo.id)}
+							edit={this.handleEdit}
 							delete={() => this.handleDelete(todo.id)}
 						/>
 					)}
 				</div>
-				<TodoForm add={this.addTodo} />
+				<TodoForm add save={this.addTodo} />
 			</div>
 		);
 	}
