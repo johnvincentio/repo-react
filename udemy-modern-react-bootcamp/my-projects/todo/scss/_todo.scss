@@ -1,0 +1,13 @@
+// 
+
+.todo {
+
+	&--task {
+		&.complete {
+			background-color: blue;
+		}
+		&.incomplete {
+			background-color: green;
+		}
+	}
+}

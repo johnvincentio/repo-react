@@ -7,7 +7,7 @@ import React from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 
-class App extends React.Component {
+class TodoList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,20 +16,32 @@ class App extends React.Component {
 	}
 
 	addTodo = todo => {
-		console.log('addTodo ', todo)
 		this.setState(prevState => ({	todos: [ ...prevState.todos, todo] }));
+	}
+
+	handleToggleStatus = id => {
+		console.log('TodoList::handleToggleStatus; id ', id);
+		this.setState(prevState => {
+			const list = prevState.todos.map(todo => {
+				if (todo.id === id) {
+					return { ...todo, complete: !todo.complete };
+				}
+				return todo;
+			});
+			return { todos: list }
+		})
 	}
 
 	render() {
 
 		return (
-			<div>
-				<div>
+			<div className="todolist">
+				<div className="todolist--header">
 					<h1>Todo List!</h1>
 					<h2>A Simple React Todo List App</h2>
 				</div>
-				<div>
-					{this.state.todos.map(todo => <Todo key={todo.id} todo={todo} />)}
+				<div className="todolist--list">
+					{this.state.todos.map(todo => <Todo key={todo.id} todo={todo} toggleState={() => this.handleToggleStatus(todo.id)} />)}
 				</div>
 				<TodoForm add={this.addTodo} />
 			</div>
@@ -37,4 +49,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default TodoList;
