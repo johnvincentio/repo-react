@@ -37,7 +37,7 @@ class TodoList extends React.Component {
 	}
 
 	handleDelete = id => {
-		console.log('TodoList::handleDelete; id ', id);
+		this.setState(prevState => ({ todos: prevState.todos.filter(todo => id !== todo.id) }));
 	}
 
 	render() {
