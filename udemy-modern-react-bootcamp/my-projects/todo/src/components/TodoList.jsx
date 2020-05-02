@@ -56,9 +56,9 @@ class TodoList extends React.Component {
 						<Todo
 							key={todo.id}
 							todo={todo}
-							toggleComplete={() => this.toggleComplete(todo.id)}
+							toggleComplete={this.toggleComplete}
 							update={this.update}
-							remove={() => this.remove(todo.id)}
+							remove={this.remove}
 						/>
 					)}
 				</div>

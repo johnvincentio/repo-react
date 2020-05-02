@@ -23,9 +23,17 @@ class Todo extends React.Component {
 		this.setState(prevState => ({ update: ! prevState.update }));
 	}
 
+	handleToggle = () => {
+		this.props.toggleComplete(this.props.todo.id);
+	}
+
 	handleUpdate = todo => {
 		this.props.update(todo);
 		this.handleToggleUpdate();
+	}
+
+	handleRemove = () => {
+		this.props.remove(this.props.todo.id);
 	}
 
 	render() {
@@ -40,13 +48,13 @@ class Todo extends React.Component {
 					<div className="todo">
 						<div
 							className={clz}
-							onClick={this.props.toggleComplete}
+							onClick={this.handleToggle}
 						>
 							{todo.task}
 						</div>
 						<div className="todo--buttons">
 							<button type="button" onClick={this.handleToggleUpdate}>Update</button>
-							<button type="button" onClick={this.props.remove}>Delete</button>
+							<button type="button" onClick={this.handleRemove}>Delete</button>
 						</div>
 					</div>
 				)}
