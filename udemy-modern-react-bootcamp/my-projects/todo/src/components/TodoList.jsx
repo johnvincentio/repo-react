@@ -11,7 +11,7 @@ class TodoList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			todos: [{ id: 1, task: 'wash face', complete: false }]
+			todos: [{ id: `1`, task: 'wash face', complete: false }]
 		}
 	}
 

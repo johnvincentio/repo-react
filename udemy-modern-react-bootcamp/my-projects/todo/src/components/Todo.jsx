@@ -5,6 +5,8 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import classnames from 'classnames';
 
 class Todo extends React.Component {
@@ -28,6 +30,17 @@ class Todo extends React.Component {
 			</div>
 		);
 	}
+}
+
+Todo.propTypes = {
+	edit: PropTypes.func.isRequired,
+	delete: PropTypes.func.isRequired,
+	toggleState: PropTypes.func.isRequired,
+	todo: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		task: PropTypes.string.isRequired,
+		complete: PropTypes.bool.isRequired
+	}).isRequired
 }
 
 export default Todo;

@@ -3,6 +3,7 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -40,6 +41,10 @@ class TodoForm extends React.Component {
 			</div>
 		);
 	}
+}
+
+TodoForm.propTypes = {
+	add: PropTypes.func.isRequired
 }
 
 export default TodoForm;
