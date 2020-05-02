@@ -55,6 +55,10 @@
 			-webkit-appearance: none;
 			cursor: pointer;
 			color: #fff;
+
+			&:hover {
+				color: rgba(0, 0, 0, 0.1);
+			}
 		}
 	}
 }

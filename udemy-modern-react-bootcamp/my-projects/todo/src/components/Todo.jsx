@@ -53,8 +53,12 @@ class Todo extends React.Component {
 							{todo.task}
 						</div>
 						<div className="todo--buttons">
-							<button type="button" onClick={this.handleToggleUpdate}>Update</button>
-							<button type="button" onClick={this.handleRemove}>Delete</button>
+							<button type="button" onClick={this.handleToggleUpdate}>
+								<i className='fas fa-pen' />
+							</button>
+							<button type="button" onClick={this.handleRemove}>
+								<i className='fas fa-trash' />
+							</button>
 						</div>
 					</div>
 				)}
