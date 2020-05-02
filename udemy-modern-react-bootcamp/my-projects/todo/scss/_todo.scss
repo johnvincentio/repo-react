@@ -27,22 +27,19 @@
 			transition: opacity 300ms ease-in-out;
 			transition-delay: 200ms;
 			opacity: 0.5;
-		}
-		&.incomplete {
-			// background-color: lightgreen;
-		}
-	}
 
-	&--task:before .complete {
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: -0.5rem;
-		display: block;
-		width: 0%;
-		height: 4px;
-		background: #fff;
-		animation: strikeitem 0.3s ease-in 0s forwards;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: -0.5rem;
+				display: block;
+				width: 0%;
+				height: 4px;
+				background: #fff;
+				animation: strikeitem 0.3s ease-in 0s forwards;
+			}
+		}
 	}
 
 	&--buttons {
