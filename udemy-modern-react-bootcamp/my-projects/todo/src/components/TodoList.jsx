@@ -47,10 +47,7 @@ class TodoList extends React.Component {
 		console.log('TodoList::render(); this.props ', this.props, ' this.state ', this.state);
 		return (
 			<div className="todolist">
-				<div className="todolist--header">
-					<h1>Todo List!</h1>
-					<h2>A Simple React Todo List App</h2>
-				</div>
+				<h1>Todo List! <span>An Animated Todo List Made With React</span></h1>			
 				<div className="todolist--list">
 					{this.state.todos.map(todo =>
 						<Todo

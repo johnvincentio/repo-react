@@ -33,20 +33,15 @@ class TodoForm extends React.Component {
 		console.log('TodoForm::render(); this.props ', this.props, ' this.state ', this.state);
 		const text = this.props.adding ? `Add Todo` : `Save`;
 		return (
-			<div>
-				<div>
-				TodoForm
-				</div>
-				<form onSubmit={this.onSubmit}>
-					<input
-						type='text'
-						id='task'
-						name='task'
-						value={this.state.task}
-						onChange={this.onChange} />
-					<button type='submit'>{text}</button>
-				</form>
-			</div>
+			<form className="todoform" onSubmit={this.onSubmit}>
+				<input
+					type='text'
+					id='task'
+					name='task'
+					value={this.state.task}
+					onChange={this.onChange} />
+				<button type='submit'>{text}</button>
+			</form>
 		);
 	}
 }
