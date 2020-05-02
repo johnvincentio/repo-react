@@ -22,7 +22,6 @@ class TodoForm extends React.Component {
 			this.props.save({ ...this.state, id: uuidv4() });
 		}
 		else {
-			// do save edit
 			this.props.save(this.state);
 		}
 	}

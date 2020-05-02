@@ -20,7 +20,7 @@ class TodoList extends React.Component {
 	}
 
 	update = todo => {
-		console.log('TodoList::update; todo ', todo);
+		// console.log('TodoList::update; todo ', todo);
 		this.setState(prevState => {
 			const todos = prevState.todos.map(item => {
 				return todo.id === item.id ? { ...todo } : todo;
@@ -34,7 +34,7 @@ class TodoList extends React.Component {
 	}
 
 	toggleComplete = id => {
-		console.log('TodoList::toggleComplete; id ', id);
+		// console.log('TodoList::toggleComplete; id ', id);
 		this.setState(prevState => {
 			const todos = prevState.todos.map(todo => {
 				return todo.id === id ? { ...todo, complete: !todo.complete } : todo;
