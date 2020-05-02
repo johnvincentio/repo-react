@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 import { v4 as uuid } from 'uuid';
 
+import classnames from 'classnames'
+
 class TodoForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -32,8 +34,9 @@ class TodoForm extends React.Component {
 	render() {
 		console.log('TodoForm::render(); this.props ', this.props, ' this.state ', this.state);
 		const text = this.props.adding ? `Add Todo` : `Save`;
+		const clz = classnames(`todoform`, this.props.adding ? `add` : `update`);
 		return (
-			<form className="todoform" onSubmit={this.onSubmit}>
+			<form className={clz} onSubmit={this.onSubmit}>
 				<input
 					type='text'
 					id='task'

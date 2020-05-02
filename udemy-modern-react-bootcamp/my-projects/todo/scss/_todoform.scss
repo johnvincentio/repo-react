@@ -5,6 +5,10 @@
   display: flex;
 	flex-wrap: wrap;
 	
+	&.update {
+		margin-bottom: 3rem;
+	}
+
 	label {
 		min-width: 100%;
 		margin-bottom: 0.5rem;
