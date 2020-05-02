@@ -11,7 +11,7 @@ class TodoList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			todos: [{ id: `1`, task: 'wash face', complete: false }]
+			todos: []
 		}
 	}
 
@@ -20,10 +20,10 @@ class TodoList extends React.Component {
 	}
 
 	update = todo => {
-		// console.log('TodoList::update; todo ', todo);
+		// console.log('TodoList::update; todo ', todo, ' this.state ', this.state);
 		this.setState(prevState => {
 			const todos = prevState.todos.map(item => {
-				return todo.id === item.id ? { ...todo } : todo;
+				return todo.id === item.id ? { ...todo } : item;
 			});
 			return { todos };
 		});
