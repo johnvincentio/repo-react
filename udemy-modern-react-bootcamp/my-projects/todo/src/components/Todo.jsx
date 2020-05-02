@@ -21,6 +21,10 @@ class Todo extends React.Component {
 				>
 					{todo.task}
 				</div>
+				<div className="todo--buttons">
+					<button type="button" onClick={this.props.edit}>Edit</button>
+					<button type="button" onClick={this.props.delete}>Delete</button>
+				</div>
 			</div>
 		);
 	}

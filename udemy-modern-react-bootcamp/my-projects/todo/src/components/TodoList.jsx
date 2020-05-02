@@ -32,6 +32,14 @@ class TodoList extends React.Component {
 		})
 	}
 
+	handleEdit = id => {
+		console.log('TodoList::handleEdit; id ', id);
+	}
+
+	handleDelete = id => {
+		console.log('TodoList::handleDelete; id ', id);
+	}
+
 	render() {
 
 		return (
@@ -41,7 +49,15 @@ class TodoList extends React.Component {
 					<h2>A Simple React Todo List App</h2>
 				</div>
 				<div className="todolist--list">
-					{this.state.todos.map(todo => <Todo key={todo.id} todo={todo} toggleState={() => this.handleToggleStatus(todo.id)} />)}
+					{this.state.todos.map(todo =>
+						<Todo
+							key={todo.id}
+							todo={todo}
+							toggleState={() => this.handleToggleStatus(todo.id)}
+							edit={() => this.handleEdit(todo.id)}
+							delete={() => this.handleDelete(todo.id)}
+						/>
+					)}
 				</div>
 				<TodoForm add={this.addTodo} />
 			</div>
