@@ -15,17 +15,17 @@ class Todo extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			edit: false
+			update: false
 		}
 	}
 
-	handleToggleEdit = () => {
-		this.setState(prevState => ({ edit: ! prevState.edit }));
+	handleToggleUpdate = () => {
+		this.setState(prevState => ({ update: ! prevState.update }));
 	}
 
-	handleEdit = todo => {
-		this.props.edit(todo);
-		this.handleToggleEdit();
+	handleUpdate = todo => {
+		this.props.update(todo);
+		this.handleToggleUpdate();
 	}
 
 	render() {
@@ -34,19 +34,19 @@ class Todo extends React.Component {
 		const clz = classnames(`todo--task`, todo.complete ? `complete` : `incomplete`);
 		return (
 			<div>
-				{this.state.edit ? (
-					<TodoForm add={false} todo={todo} save={this.handleEdit} />
+				{this.state.update ? (
+					<TodoForm adding={false} todo={todo} save={this.handleUpdate} />
 				) : (
 					<div className="todo">
 						<div
 							className={clz}
-							onClick={this.props.toggleState}
+							onClick={this.props.toggleComplete}
 						>
 							{todo.task}
 						</div>
 						<div className="todo--buttons">
-							<button type="button" onClick={this.handleToggleEdit}>Edit</button>
-							<button type="button" onClick={this.props.delete}>Delete</button>
+							<button type="button" onClick={this.handleToggleUpdate}>Update</button>
+							<button type="button" onClick={this.props.remove}>Delete</button>
 						</div>
 					</div>
 				)}
@@ -56,9 +56,9 @@ class Todo extends React.Component {
 }
 
 Todo.propTypes = {
-	edit: PropTypes.func.isRequired,
-	delete: PropTypes.func.isRequired,
-	toggleState: PropTypes.func.isRequired,
+	update: PropTypes.func.isRequired,
+	remove: PropTypes.func.isRequired,
+	toggleComplete: PropTypes.func.isRequired,
 	todo: PropTypes.shape({
 		id: PropTypes.string.isRequired,
 		task: PropTypes.string.isRequired,

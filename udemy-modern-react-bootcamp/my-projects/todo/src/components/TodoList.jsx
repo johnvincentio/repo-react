@@ -15,38 +15,32 @@ class TodoList extends React.Component {
 		}
 	}
 
-	addTodo = todo => {
+	create = todo => {
 		this.setState(prevState => ({	todos: [ ...prevState.todos, todo] }));
 	}
 
-	handleToggleComplete = id => {
-		console.log('TodoList::handleToggleComplete; id ', id);
+	update = todo => {
+		console.log('TodoList::update; todo ', todo);
 		this.setState(prevState => {
-			const list = prevState.todos.map(todo => {
-				if (todo.id === id) {
-					return { ...todo, complete: !todo.complete };
-				}
-				return todo;
+			const todos = prevState.todos.map(item => {
+				return todo.id === item.id ? { ...todo } : todo;
 			});
-			return { todos: list }
+			return { todos };
 		});
 	}
 
-	handleEdit = todo => {
-		console.log('TodoList::handleEdit; todo ', todo);
-		this.setState(prevState => {
-			const list = prevState.todos.map(item => {
-				if (todo.id === item.id) {
-					return { ...todo };
-				}
-				return todo;
-			});
-			return { todos: list }
-		});
-	}
-
-	handleDelete = id => {
+	remove = id => {
 		this.setState(prevState => ({ todos: prevState.todos.filter(todo => id !== todo.id) }));
+	}
+
+	toggleComplete = id => {
+		console.log('TodoList::toggleComplete; id ', id);
+		this.setState(prevState => {
+			const todos = prevState.todos.map(todo => {
+				return todo.id === id ? { ...todo, complete: !todo.complete } : todo;
+			});
+			return { todos }
+		});
 	}
 
 	render() {
@@ -62,13 +56,13 @@ class TodoList extends React.Component {
 						<Todo
 							key={todo.id}
 							todo={todo}
-							toggleState={() => this.handleToggleComplete(todo.id)}
-							edit={this.handleEdit}
-							delete={() => this.handleDelete(todo.id)}
+							toggleComplete={() => this.toggleComplete(todo.id)}
+							update={this.update}
+							remove={() => this.remove(todo.id)}
 						/>
 					)}
 				</div>
-				<TodoForm add save={this.addTodo} />
+				<TodoForm adding save={this.create} />
 			</div>
 		);
 	}

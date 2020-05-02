@@ -18,8 +18,8 @@ class TodoForm extends React.Component {
 	onSubmit = e => {
 		e.preventDefault();
 		console.log('TodoForm::onSubmit; this.state ', this.state);
-		if (this.props.add) {
-			this.props.save(this.state);
+		if (this.props.adding) {
+			this.props.save({ ...this.state, id: uuidv4() });
 		}
 		else {
 			// do save edit
@@ -29,7 +29,7 @@ class TodoForm extends React.Component {
 
 	render() {
 		console.log('TodoForm::render(); this.props ', this.props, ' this.state ', this.state);
-		const text = this.props.add ? `Add Todo` : `Save`;
+		const text = this.props.adding ? `Add Todo` : `Save`;
 		return (
 			<div>
 				<div>
@@ -55,14 +55,14 @@ TodoForm.propTypes = {
 		task: PropTypes.string.isRequired,
 		complete: PropTypes.bool.isRequired
 	}),
-	add: PropTypes.bool.isRequired,
+	adding: PropTypes.bool.isRequired,
 	save: PropTypes.func.isRequired
 }
 
 
 TodoForm.defaultProps = {
 	todo: {
-		id: uuidv4(),
+		id: ``,
 		task: 'New Todo',
 		complete: false
 	}
