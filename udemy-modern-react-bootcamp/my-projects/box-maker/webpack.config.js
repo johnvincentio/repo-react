@@ -196,7 +196,7 @@ if (!PRODUCTION_MODE) {
 		contentBase: DIST_FOLDER,
 		compress: false,
 		// inline: true,
-		port: 9432,
+		port: 9435,
 		clientLogLevel: 'info',
 		historyApiFallback: true,
 		proxy: {
