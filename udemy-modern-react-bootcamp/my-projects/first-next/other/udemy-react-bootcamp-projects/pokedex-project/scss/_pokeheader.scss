@@ -1,0 +1,30 @@
+// 
+
+.pokeheader {
+
+	position: relative;
+
+	&.player1 {
+		top: $top-offset-player-1;
+		margin-bottom: 20px;
+	}
+	&.player2 {
+		top: $top-offset-player-2;
+	}
+
+	&--result {
+		font-size: 140%;
+		margin: 10px 0;
+		
+		&.winner {
+			color: green;
+		}
+		&.loser {
+			color: red;
+		}
+	}
+
+	&--total {
+		font-size: 85%;
+	}
+}

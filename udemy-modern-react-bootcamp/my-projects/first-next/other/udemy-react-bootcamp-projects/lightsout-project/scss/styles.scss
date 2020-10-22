@@ -1,0 +1,45 @@
+//
+
+@font-face {
+  font-family: 'Neon';
+  src: local('Neon'), url(../src/assets/fonts/neon.ttf) format('truetype');
+}
+
+// $font-family: 'Roboto', sans-serif;
+$font-family: sans-serif;
+$neon-font-family: 'Neon', sans-serif;
+
+$lights-on-color: yellow;
+$lights-on-lighter-color: #f0f0cf;
+
+$lights-off-color: #10100e;
+$lights-off-lighter-color: #797970;
+
+$button-background-color: #912691;
+$darker-button-background-color: #4f164f;
+$button-color: white;
+
+$pulse-on-start-color: $lights-off-lighter-color;
+$pulse-on-end-color: $lights-on-lighter-color;
+
+$pulse-off-start-color: $lights-on-lighter-color;
+$pulse-off-end-color: $lights-off-lighter-color;
+
+$background-color: black;
+
+@import 'setup';
+@import 'mixins';
+
+%boxshadow {
+	@include box-shadow(1px 1px 6px 1px rgba(0,0,0,0.53));
+}
+
+%borderRadius {
+	@include rounded(5px);
+}
+
+@import 'board';
+@import 'grid';
+@import 'sign';
+
+@import 'responsive';

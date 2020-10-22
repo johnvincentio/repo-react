@@ -1,0 +1,60 @@
+// 
+
+$primary-color: blue;
+$dark-primary-color: darkblue;
+
+$ball-color: salmon;
+
+.lottery {
+	margin: 20px auto;
+	border: 1px solid #b3aaaa;
+	border-radius: 3px;
+	max-width: 600px;
+
+	&--title {
+		margin: 10px auto;
+		font-size: 1.5em;
+		font-weight: bolder;
+	}
+
+	&--balls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+	}
+
+	&--ball {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: $ball-color;
+		color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		margin: 10px;
+	}
+
+  &--button {
+    display: block;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 12px;
+    margin: 20px auto;
+    width: 140px;
+    background-color: $primary-color;
+    color: white;
+    text-decoration: none;
+		@include opacity(0.9);
+
+    &:hover {
+      background-color: $dark-primary-color;
+      @include transition(all 0.3s);
+      cursor: pointer;
+      @include opacity(1);
+    }
+	}
+	
+}
