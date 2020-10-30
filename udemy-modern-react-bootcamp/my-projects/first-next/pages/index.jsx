@@ -34,7 +34,7 @@ class Index extends Component {
 		console.log('Index::getInitialProps()');
 		const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
 		const { data } = res;
-		console.log('data[0] ', res.data[0]);
+		// console.log('data[0] ', res.data[0]);
 		return { posts: data };
 	}
 
