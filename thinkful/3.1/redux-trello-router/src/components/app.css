@@ -1,0 +1,17 @@
+header {
+    background-color: #0D47A1;
+    color: white;
+    margin-bottom: 20px;
+    position: absolute;
+    height: 64px;
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+header a {
+    color: white;
+}
+

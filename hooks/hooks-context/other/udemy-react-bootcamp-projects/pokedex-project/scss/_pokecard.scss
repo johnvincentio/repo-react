@@ -1,0 +1,91 @@
+// 
+
+$deck-top-offset: 20px;
+$deck-left-offset: 40px;
+
+
+@mixin card($player, $card) {
+	// @debug "player #{$player} card #{$card}";
+
+	$deck-top: $deck-top-offset + ($player - 1) * 8 + ($card * 2);
+	// @debug "deck-top #{$deck-top}";
+
+	$toX: 180 + ($card * 200);
+	$toY: ($player - 1) * 250;
+
+	$duration: 1 + (($player - 1) * 4 + $card) * 0.25;
+	// @debug "duration #{$duration}";
+
+	&.C#{$player}#{$card} {
+		// transition: transform #{$duration}s ease-out;
+		// transition: transform 1s ease-out;
+		@include transition(transform 1s ease-out);
+		
+		&.deck {
+			top: #{$deck-top}; left: #{$deck-left-offset};
+		}
+		&.deal {
+			transform: translate(#{$toX}px, #{$toY}px);
+			&:hover {
+				@include transition(all 0.5s);
+				cursor: pointer;
+				@include opacity(1);
+				transform: scale(1.02) translate(#{$toX}px, #{$toY}px);
+			}
+		}
+	}
+}
+
+// @keyframes shake {
+//   0% {
+//     transform: skewY(20deg);
+//   }
+//   100% {
+//     transform: skewY(-20deg);
+//   }
+// }
+
+.pokecard {
+
+	position: absolute;
+
+	@for $i from 0 through 3 {
+		@include card(1, $i);
+		@include card(2, $i);
+	}
+
+	background-color: white;
+	width: 150px;
+	height: 180px;
+	margin: 20px;
+	@include box-shadow(6px 6px 5px 0px rgba(0, 0, 0, 0.44));
+	border-radius: 3px;
+
+	&.winner {
+		@include opacity(1.0);
+	}
+	&.loser {
+		@include opacity(0.5);
+	}
+
+	&--image {
+		background-color: $body-background-color;
+		margin: 5px;
+	}
+
+	&--name {
+		// color: blue;
+		padding: 10px 0;
+		font-size: 90%;
+		// font-weight: bold;
+	}
+
+	img {
+		width: 96px;
+		height: 96px;
+	}
+
+	&--type, &--exp {
+		font-size: 70%;
+	}
+}

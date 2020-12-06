@@ -1,0 +1,41 @@
+// 
+
+.keyboard {
+	@extend %boxshadow2;
+	@extend %borderRadius;
+
+	margin: 0 30px 30px 30px;
+	padding: 12px;
+
+	background-color: $secondary-color;
+
+	&--key {
+		@extend %letters;
+
+		border: 1px solid $dark-primary-color;
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+		border-radius: 10px;
+		outline: none;
+	}
+
+	&--key.used {
+		background-color: $dark-primary-color;
+		color: $dark-primary-color;
+		@include opacity(0.5);
+	}
+
+	&--key.unused {
+		background-color: $secondary-color;
+		color: $dark-primary-color;
+		@include opacity(1);
+
+		&:hover {
+			background-color: $dark-primary-color;
+			color: white;
+      @include transition(all 0.3s);
+      cursor: pointer;
+    }
+	}
+}

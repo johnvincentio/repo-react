@@ -1,0 +1,10 @@
+.home-page {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    padding: 74px 10px 10px 10px;
+}
+
+.home-page input {
+    margin: 1em auto 0 auto;
+}

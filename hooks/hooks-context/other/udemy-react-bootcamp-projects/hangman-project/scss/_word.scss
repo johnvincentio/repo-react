@@ -1,0 +1,33 @@
+// 
+
+.word {
+	@extend %boxshadow;
+	@extend %borderRadius;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	margin: 40px auto 60px auto;
+	padding: 20px;
+
+	max-width: 90%;
+
+	background-color: $secondary-color;
+
+	&--key {
+		@extend %letters;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-bottom: 1px solid $dark-primary-color;
+		margin: 10px;
+		width: 35px;
+		height: 35px;
+		background-color: $secondary-color;
+		color: $dark-primary-color;
+		outline: none;
+	}
+}
