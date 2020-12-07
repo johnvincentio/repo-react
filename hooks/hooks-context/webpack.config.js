@@ -80,10 +80,10 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './src/index.tsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx', './scss/styles.scss'];
 
 config.resolve = {
-	extensions: ['.js', '.jsx', '.ts', '.tsx']
+	extensions: ['.js', '.jsx']
 };
 
 /*
@@ -150,8 +150,8 @@ config.module = {
 					loader: 'css-loader',
 					options: {
 						sourceMap: true,
-						modules: true,
-						localIdentName: '[local]___[hash:base64:5]'
+						modules: true
+						// localIdentName: '[local]___[hash:base64:5]'
 					}
 				},
 				{
@@ -227,7 +227,7 @@ const plugins = [
 	// new CleanWebpackPlugin([DIST_FOLDER]),
 
 	// list all React app required env variables
-	new webpack.EnvironmentPlugin(['HOME_URL', 'SERVER_URL', 'NODE_ENV', 'GOOGLE_APP_ID']),
+	new webpack.EnvironmentPlugin(['HOME_URL', 'NODE_ENV', 'GOOGLE_APP_ID']),
 
 	HTMLPlugin,
 	// new InlineSourcePlugin(),
@@ -236,23 +236,37 @@ const plugins = [
 	extractCSSBundle, // allow import file.css
 
 	// copy images
-	new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-		debug: copyWebpackPluginOptions
-	}),
-
-	// copy static assets
-	new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/google9104b904281bf3a3.html', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/robots.txt', to: '.' }], {
-		debug: copyWebpackPluginOptions
-	}),
-	new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
-		debug: copyWebpackPluginOptions
+	new CopyWebpackPlugin({
+		patterns: [
+			{ from: 'src/images', to: 'images' },
+			{ from: 'static/sitemap.xml', to: '.' },
+			{ from: 'static/google9104b904281bf3a3.html', to: '.' },
+			{ from: 'static/robots.txt', to: '.' },
+			{ from: 'static/favicon_package', to: '.' }
+			// { from: 'scss/fonts', to: 'assets/fonts' }
+			// { debug: 'info' }
+		]
 	})
+
+
+
+	// new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
+	// 	debug: copyWebpackPluginOptions
+	// }),
+
+	// // copy static assets
+	// new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
+	// 	debug: copyWebpackPluginOptions
+	// }),
+	// new CopyWebpackPlugin([{ from: 'static/google9104b904281bf3a3.html', to: '.' }], {
+	// 	debug: copyWebpackPluginOptions
+	// }),
+	// new CopyWebpackPlugin([{ from: 'static/robots.txt', to: '.' }], {
+	// 	debug: copyWebpackPluginOptions
+	// }),
+	// new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
+	// 	debug: copyWebpackPluginOptions
+	// })
 
 	// new CopyWebpackPlugin([{ from: 'scss/fonts', to: 'assets/fonts' }], { debug: 'info' })
 ];

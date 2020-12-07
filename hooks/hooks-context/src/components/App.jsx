@@ -34,9 +34,9 @@ class App extends React.Component {
 
 	render() {
 		return (
-  <div className="ui container">
-  <div className="outer">App...</div>
-  <Gallery images={data} />
+			<div className="ui container">
+				<div className="outer">App...</div>
+				<Gallery images={data} />
 			</div>
 		);
 	}
