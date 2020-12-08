@@ -30,7 +30,7 @@ const ICONS_FOLDER = path.resolve(__dirname, './src/assets/icons');
 const DIST_FOLDER = path.resolve(__dirname, './dist');
 const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
 const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
-const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
+// const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
 
 
 /*
@@ -172,7 +172,8 @@ config.module = {
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 			// include: [FONTS_FOLDER, ICONS_FOLDER],
-			include: [ICONS_FOLDER, IMAGES_FOLDER],
+			// include: [ICONS_FOLDER, IMAGES_FOLDER],
+			include: [ICONS_FOLDER],
 			loader: 'file-loader?name=assets/[name].[ext]'
 		}
 	]
@@ -238,7 +239,7 @@ const plugins = [
 	// copy images
 	new CopyWebpackPlugin({
 		patterns: [
-			{ from: 'src/images', to: 'images' },
+			// { from: 'src/images', to: 'images' },
 			{ from: 'static/sitemap.xml', to: '.' },
 			{ from: 'static/google9104b904281bf3a3.html', to: '.' },
 			{ from: 'static/robots.txt', to: '.' },
