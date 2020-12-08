@@ -7,7 +7,7 @@ export default function SimpleFormInputHook() {
 	return (
 		<div>
 			<h1>
-        Email is: {email} & Password is: {password}
+        Email is: {email} &amp; Password is: {password}
 			</h1>
 			<input type='text' value={email} onChange={updateEmail} />
 			<input type='text' value={password} onChange={updatePassword} />

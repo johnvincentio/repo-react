@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 export default function SimpleFormHooks() {
@@ -9,7 +10,7 @@ export default function SimpleFormHooks() {
 		<div>
 			<h1>The value is...{email}</h1>
 			<input type='text' value={email} onChange={handleChange} />
-			<button 
+			<button
 				type="button"
 				onClick={() => setEmail("")}
 			>

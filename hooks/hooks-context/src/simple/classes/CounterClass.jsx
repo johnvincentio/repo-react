@@ -16,7 +16,7 @@ class CounterClass extends Component {
 	render() {
 		return (
 			<div>
-				<h1>The Count Is: {this.state.count}</h1>
+				<h1>(CounterClass) The Count Is: {this.state.count}</h1>
 				<button onClick={this.increment}>Add 1</button>
 			</div>
 		);
