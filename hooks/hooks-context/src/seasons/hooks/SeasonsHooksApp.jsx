@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import SeasonDisplay from '../SeasonDisplay';
 import Spinner from '../Spinner';
-import useLocation from './useLocation';
+import useLocation from '../../hooks/useLocation';
 
 const SeasonHooksApp = () => {
 	const [lat, errorMessage] = useLocation();

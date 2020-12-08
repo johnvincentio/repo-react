@@ -1,5 +1,6 @@
 import React from "react";
-import useInputState from "./hooks/useInputState";
+
+import useInputState from "../../hooks/useInputState";
 
 export default function SimpleFormInputHook() {
 	const [email, updateEmail, resetEmail] = useInputState("");
