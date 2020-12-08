@@ -14,8 +14,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const copyWebpackPluginOptions = 'warning'; // info, debug, warning
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const transforms = require('./transforms');
@@ -31,7 +29,6 @@ const DIST_FOLDER = path.resolve(__dirname, './dist');
 const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
 const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
 // const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
-
 
 /*
  * Define plugins
@@ -248,8 +245,6 @@ const plugins = [
 			// { debug: 'info' }
 		]
 	})
-
-
 
 	// new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
 	// 	debug: copyWebpackPluginOptions

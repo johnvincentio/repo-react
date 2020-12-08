@@ -9,7 +9,13 @@
   "parser": "babel-eslint",
   "globals": {},
   "rules": {
-    "no-console": 0,
+		"object-curly-spacing": ["error", "always", { "objectsInObjects": false }],
+		"comma-spacing": ["error", { "before": false, "after": true }],
+		"space-in-parens": ["error", "never"],
+		"array-bracket-spacing": ["error", "never"],
+		"semi": ["error", "always"],
+		"key-spacing": ["error"],
+		"no-console": 0,
     "max-len": [
       "error",
       {

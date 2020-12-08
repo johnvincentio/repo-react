@@ -9,7 +9,12 @@ export default function SimpleFormHooks() {
 		<div>
 			<h1>The value is...{email}</h1>
 			<input type='text' value={email} onChange={handleChange} />
-			<button onClick={() => setEmail("")}>Submit</button>
+			<button 
+				type="button"
+				onClick={() => setEmail("")}
+			>
+				Submit
+			</button>
 		</div>
 	);
 }

@@ -1,4 +1,3 @@
-
 `webpack-dev-server` causes
 
 ```
@@ -25,19 +24,43 @@ did not use
 }
 
 ```
+
 npm info "eslint-config-airbnb@latest" peerDependencies
+
 ```
 
 ```
+
 npm info "react-dom@latest" peerDependencies
+
 ```
 
 ```
+
 npm info "eslint-config-airbnb@latest" devDependencies
 
 npm info "eslint-config-airbnb@latest" dependencies
 
 npm info "eslint-config-airbnb@latest" peerDependencies
+
+```
+
+```
+
+{
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+"source.fixAll.eslint": true
+}
+}
+
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+
 ```
 
 
+
+
+```
