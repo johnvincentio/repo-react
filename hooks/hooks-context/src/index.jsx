@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { appTheme } from './themes/themes';
 
 import Root from './root/Root';
-import App from './components/App';
+// import App from './components/App';
 
 import { register } from './serviceWorker';
 
@@ -29,6 +29,7 @@ if (token) {
 }
 */
 
+
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(
 		<MuiThemeProvider theme={appTheme}>
@@ -41,13 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 });
 
+
 register();
 
 /*
-	ReactDOM.render(
-		<App />,
-		document.getElementById('root')
-	);
+ReactDOM.render(
+	<App />,
+	document.getElementById('root')
+);
 */
 
 /*
