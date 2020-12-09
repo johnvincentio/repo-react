@@ -40,7 +40,9 @@
         "specialLink": ["to"]
       }
     ],
-    "react/destructuring-assignment": ["off", "always"]
+		"react/destructuring-assignment": ["off", "always"],
+		"react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
-  "plugins": ["react", "jsx-a11y", "import"]
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks"]
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function useToggle(initialVal = false) {
 	// call useState, "reserve piece of state"
@@ -9,4 +9,5 @@ function useToggle(initialVal = false) {
 	// return piece of state AND a function to toggle it
 	return [state, toggle];
 }
+
 export default useToggle;
