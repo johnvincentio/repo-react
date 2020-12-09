@@ -5,7 +5,6 @@ import UserList from './UserList';
 
 const ResourcesApp = () => {
 	const [resource, setResource] = useState('posts');
-
 	return (
 		<div>
 			<UserList />

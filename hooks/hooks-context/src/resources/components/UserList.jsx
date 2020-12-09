@@ -4,6 +4,7 @@ import useResources from '../../hooks/useResources';
 
 const UserList = () => {
 	const users = useResources('users');
+	console.log('UserList; users ', users);
 
 	return (
 		<ul>

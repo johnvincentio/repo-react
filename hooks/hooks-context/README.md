@@ -1,3 +1,19 @@
+
+```
+		"object-curly-spacing": ["error", "always", { "objectsInObjects": false }],
+		"comma-spacing": ["error", { "before": false, "after": true }],
+		"space-in-parens": ["error", "never"],
+		"array-bracket-spacing": ["error", "never"],
+		"semi": ["error", "always"],
+		"key-spacing": ["error"],
+		"comma-dangle": ["error", "never"],
+		"no-trailing-spaces": "error",
+```
+
+```
+		"arrow-parens": ["error", "as-needed"],
+```
+
 `webpack-dev-server` causes
 
 ```

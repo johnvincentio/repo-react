@@ -20,8 +20,8 @@ class App extends Component {
 		return (
 			<div className="App">
 				<ResourcesApp />
-				{/* <SeasonApp />
-				<SeasonsHooksApp /> */}
+				{/* <SeasonApp /> */}
+				{/* <SeasonsHooksApp /> */}
 				<CounterClass />
 				<CounterHooks />
 				<Toggler />
