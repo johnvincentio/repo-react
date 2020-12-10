@@ -49,6 +49,4 @@ function Todo({ id, task, completed, removeTodo, toggleTodo, editTodo }) {
 	);
 }
 
-
-
 export default Todo;
