@@ -45,6 +45,21 @@
 		"react/destructuring-assignment": ["off", "always"],
 		"react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-  },
+	},
+	// "overrides": [
+  //   {
+  //     "files": [ "*.js", "*.jsx" ],
+  //     "excludedFiles": "*.test.js",
+  //     "rules": {
+  //       "quotes": [ "error", "single" ]
+  //     }
+	// 	},
+	// 	{
+  //     "files": [ "*.css" ],
+  //     "rules": {
+  //       "quotes": [ "error", "single" ]
+  //     }
+  //   }
+  // ],
   "plugins": ["react", "jsx-a11y", "import", "react-hooks"]
 }

@@ -22,11 +22,9 @@ const transforms = require('./transforms');
  * Define folders
  */
 
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
 // const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
 const ICONS_FOLDER = path.resolve(__dirname, './src/assets/icons');
 const DIST_FOLDER = path.resolve(__dirname, './dist');
-const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
 const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
 // const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
 
@@ -77,7 +75,7 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
 
 const config = {};
 
-config.entry = ['./src/index.jsx', './scss/styles.scss'];
+config.entry = ['./src/index.jsx'];
 
 config.resolve = {
 	extensions: ['.js', '.jsx']
@@ -130,41 +128,10 @@ config.module = {
 			loader: 'babel-loader'
 		},
 		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_SRC_FOLDER,
-			exclude: [SCSS_FOLDER, /node_modules/],
-			use: ['style-loader', 'css-loader', 'sass-loader']
-		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				{
-					loader: 'css-loader',
-					options: {
-						sourceMap: true,
-						modules: true
-						// localIdentName: '[local]___[hash:base64:5]'
-					}
-				},
-				{
-					loader: 'sass-loader'
-				}
-			]
-		},
-		{
 			test: /\.css$/,
 			include: INCLUDE_CSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [
-				MiniCssExtractPlugin.loader,
-				{ loader: 'css-loader', options: { url: false, sourceMap: true } },
-				{ loader: 'sass-loader', options: { sourceMap: true } }
-			]
+			exclude: [/node_modules/],
+			use: ['style-loader', 'css-loader']
 		},
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
@@ -175,47 +142,6 @@ config.module = {
 		}
 	]
 };
-
-/*
-beware:
-
-ValidationError: CSS Loader Invalid Options
-    
-		options should NOT have additional properties
-use older css-loader, v2.1.1
-*/
-
-/*
-* Music player used this
-*
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader']
-		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_SRC_FOLDER,
-			exclude: [SCSS_FOLDER, /node_modules/],
-			use: [
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				{
-					loader: 'css-loader',
-					options: {
-						sourceMap: true,
-						modules: true,
-						localIdentName: '[local]___[hash:base64:5]'
-					}
-				},
-				{
-					loader: 'sass-loader'
-				}
-			]
-		},
-*/
 
 /*
  * Define plugins
@@ -245,26 +171,6 @@ const plugins = [
 			// { debug: 'info' }
 		]
 	})
-
-	// new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }], {
-	// 	debug: copyWebpackPluginOptions
-	// }),
-
-	// // copy static assets
-	// new CopyWebpackPlugin([{ from: 'static/sitemap.xml', to: '.' }], {
-	// 	debug: copyWebpackPluginOptions
-	// }),
-	// new CopyWebpackPlugin([{ from: 'static/google9104b904281bf3a3.html', to: '.' }], {
-	// 	debug: copyWebpackPluginOptions
-	// }),
-	// new CopyWebpackPlugin([{ from: 'static/robots.txt', to: '.' }], {
-	// 	debug: copyWebpackPluginOptions
-	// }),
-	// new CopyWebpackPlugin([{ from: 'static/favicon_package', to: '.' }], {
-	// 	debug: copyWebpackPluginOptions
-	// })
-
-	// new CopyWebpackPlugin([{ from: 'scss/fonts', to: 'assets/fonts' }], { debug: 'info' })
 ];
 
 if (PRODUCTION_MODE) {
