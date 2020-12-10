@@ -32,7 +32,9 @@
     "indent": [2, "tab", { "SwitchCase": 1 }],
     "no-tabs": 0,
     "react/jsx-indent": ["off", 2],
-    "react/jsx-indent-props": ["off", 2],
+		"react/jsx-indent-props": ["off", 2],
+		"quotes": ["error", "single"],
+		"jsx-quotes": [2, "prefer-single"],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
