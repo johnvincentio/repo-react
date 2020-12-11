@@ -2,6 +2,7 @@
 
 export const WORDS = {
 	english: {
+		title: 'My App',
 		signin: 'Sign In',
 		email: 'Email',
 		password: 'Password',
@@ -10,6 +11,7 @@ export const WORDS = {
 		flag: '🇬🇧'
 	},
 	french: {
+		title: 'Mon Appli',
 		signin: 'Se Connecter',
 		email: 'Adresse Electronique',
 		password: 'Mot de Passe',
@@ -18,6 +20,7 @@ export const WORDS = {
 		flag: '🇫🇷'
 	},
 	spanish: {
+		title: 'Mi App',
 		signin: 'Registrarse',
 		email: 'Correo Electronico',
 		password: 'Contrasena',
