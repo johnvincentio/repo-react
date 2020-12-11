@@ -1,9 +1,0 @@
-node_modules
-
-*.md
-project.todo
-*.bmpr
-
-dist
-icons
-other
