@@ -20,26 +20,7 @@ import styles from './styles/FormStyles';
 
 import { LanguageContext } from './contexts/LanguageContext';
 
-const words = {
-	english: {
-		signin: 'Sign In',
-		email: 'Email',
-		password: 'Password',
-		remember: 'Remember Me'
-	},
-	french: {
-		signin: 'Se Connecter',
-		email: 'Adresse Electronique',
-		password: 'Mot de Passe',
-		remember: 'Souviens-toi De Mio'
-	},
-	spanish: {
-		signin: 'Registrarse',
-		email: 'Correo Electronico',
-		password: 'Contrasena',
-		remember: 'Recuerdame'
-	}
-};
+import { WORDS } from './Words';
 
 class Form extends Component {
 	static contextType = LanguageContext;
@@ -47,7 +28,7 @@ class Form extends Component {
 	render() {
 		const { language, changeLanguage } = this.context;
 		const { classes } = this.props;
-		const { signin, email, password, remember } = words[language];
+		const { signin, email, password, remember } = WORDS[language];
 		return (
 			<main className={classes.main}>
 				<Paper className={classes.paper}>
