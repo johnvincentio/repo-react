@@ -53,7 +53,7 @@
 	"scripts": {
 		"start": "webpack serve",
 		"dev": "webpack --mode development --progress",
-		"build": "webpack --mode production --progress",
+		"production": "webpack --mode production --progress",
 		"serve-help": "serve --help",
 		"serve": "serve -l 8230 dist",
 		"test": "jest",
