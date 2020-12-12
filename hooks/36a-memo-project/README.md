@@ -1,4 +1,10 @@
 
+deprecated eslint-loader@4.0.2: This loader has been deprecated. Please use eslint-webpack-plugin
+
+deprecated sw-precache@5.2.1: Please migrate to Workbox: https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+
+deprecated sw-toolbox@3.6.0: Please migrate to Workbox: https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+
 `webpack-dev-server` causes
 
 ```

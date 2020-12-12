@@ -63,9 +63,12 @@ npm i normalize-scss serve underscore --save-dev
 #
 #  html-webpack-plugin@5.0.0-alpha.6  is required for webpack 5.
 #
+# sw-precache-webpack-plugin is deprecated, see https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+#
 
 npm i clean-webpack-plugin copy-webpack-plugin css-loader file-loader \
 html-webpack-plugin@5.0.0-alpha.6 \
-mini-css-extract-plugin node-sass sass-loader style-loader terser-webpack-plugin sw-precache-webpack-plugin --save-dev
+mini-css-extract-plugin node-sass sass-loader style-loader terser-webpack-plugin \
+workbox-webpack-plugin --save-dev
 
 npm i jest enzyme enzyme-adapter-react-16 react-test-renderer --save-dev
