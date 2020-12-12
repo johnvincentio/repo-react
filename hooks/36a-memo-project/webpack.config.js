@@ -10,7 +10,9 @@ const SWPreCacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const TerserPlugin = require('terser-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -19,16 +21,26 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const transforms = require('./transforms');
 
 /*
+ * Define types
+ */
+
+const CSS_ONLY = true;
+const TYPESCRIPT_ENABLED = false;
+
+/*
  * Define folders
  */
 
-const SCSS_FOLDER = path.resolve(__dirname, './scss');
-// const FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
-const ICONS_FOLDER = path.resolve(__dirname, './src/assets/icons');
-const DIST_FOLDER = path.resolve(__dirname, './dist');
-const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
 const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
-// const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
+const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
+const SCSS_FOLDER = path.resolve(__dirname, './scss');
+
+const SCSS_FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
+const FONTS_FOLDER = path.resolve(__dirname, './src/fonts');
+const ICONS_FOLDER = path.resolve(__dirname, './src/icons');
+const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
+
+const DIST_FOLDER = path.resolve(__dirname, './dist');
 
 /*
  * Define plugins
@@ -75,13 +87,17 @@ const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
  * Define entry points
  */
 
+const entry = TYPESCRIPT_ENABLED ? ['./src/index.tsx'] : ['./src/index.jsx'];
+if (! CSS_ONLY) entry.push('./scss/styles.scss');
+
+const extensions = TYPESCRIPT_ENABLED ? ['.ts', 'tsx', '.js', '.jsx'] : ['.js', '.jsx'];
+
 const config = {};
+config.entry = entry;
+config.resolve = { extensions };
 
-config.entry = ['./src/index.jsx', './scss/styles.scss'];
-
-config.resolve = {
-	extensions: ['.js', '.jsx']
-};
+console.log('config.entry ', config.entry);
+console.log('config.resolve ', config.resolve);
 
 /*
  * Define optimization
@@ -101,10 +117,10 @@ config.optimization = {
 		name: 'manifest'
 	},
 	minimizer: [
-		new UglifyJsPlugin({
-			sourceMap: true,
-			uglifyOptions: {
-				ecma: 8,
+		new TerserPlugin({
+			// sourceMap: true
+			terserOptions: {
+				// ecma: 8,
 				mangle: false,
 				keep_classnames: true,
 				keep_fnames: true
@@ -116,6 +132,64 @@ config.optimization = {
 /*
  * Define rules
  */
+
+const cssRules = [
+	{
+		test: /\.css$/,
+		include: INCLUDE_CSS_FOLDER,
+		exclude: [/node_modules/],
+		use: ['style-loader', 'css-loader']
+	}
+];
+
+/*
+beware:
+error: ValidationError: CSS Loader Invalid Options
+cause: options should NOT have additional properties
+solution: use older css-loader, v2.1.1
+then able to use localIdentName:
+*/
+const scssRules = [
+	{
+		test: /\.(sass|scss)$/,
+		include: SCSS_SRC_FOLDER,
+		exclude: [SCSS_FOLDER, /node_modules/],
+		use: ['style-loader', 'css-loader', 'sass-loader']
+	},
+	{
+		test: /\.(sass|scss)$/,
+		include: SCSS_FOLDER,
+		exclude: [SCSS_SRC_FOLDER, /node_modules/],
+		use: [
+			{
+				loader: MiniCssExtractPlugin.loader
+			},
+			{
+				loader: 'css-loader',
+				options: {
+					sourceMap: true,
+					modules: true
+				// localIdentName: '[local]___[hash:base64:5]'
+				}
+			},
+			{
+				loader: 'sass-loader'
+			}
+		]
+	},
+	{
+		test: /\.css$/,
+		include: INCLUDE_CSS_FOLDER,
+		exclude: [SCSS_SRC_FOLDER, /node_modules/],
+		use: [
+			MiniCssExtractPlugin.loader,
+			{ loader: 'css-loader', options: { url: false, sourceMap: true }},
+			{ loader: 'sass-loader', options: { sourceMap: true }}
+		]
+	}
+];
+
+const useCssRules = CSS_ONLY ? cssRules : scssRules;
 
 config.module = {
 	rules: [
@@ -129,93 +203,18 @@ config.module = {
 			exclude: /node_modules/,
 			loader: 'babel-loader'
 		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_SRC_FOLDER,
-			exclude: [SCSS_FOLDER, /node_modules/],
-			use: ['style-loader', 'css-loader', 'sass-loader']
-		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				{
-					loader: 'css-loader',
-					options: {
-						sourceMap: true,
-						modules: true
-						// localIdentName: '[local]___[hash:base64:5]'
-					}
-				},
-				{
-					loader: 'sass-loader'
-				}
-			]
-		},
-		{
-			test: /\.css$/,
-			include: INCLUDE_CSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [
-				MiniCssExtractPlugin.loader,
-				{ loader: 'css-loader', options: { url: false, sourceMap: true }},
-				{ loader: 'sass-loader', options: { sourceMap: true }}
-			]
-		},
+		...useCssRules,
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-			// include: [FONTS_FOLDER, ICONS_FOLDER],
-			// include: [ICONS_FOLDER, IMAGES_FOLDER],
-			include: [ICONS_FOLDER],
-			loader: 'file-loader?name=assets/[name].[ext]'
+			include: [SCSS_FONTS_FOLDER, FONTS_FOLDER, ICONS_FOLDER, IMAGES_FOLDER],
+			loader: 'file-loader',
+			options: {
+				name: 'assets/[name].[ext]'
+			}
 		}
 	]
 };
-
-/*
-beware:
-
-ValidationError: CSS Loader Invalid Options
-
-		options should NOT have additional properties
-use older css-loader, v2.1.1
-*/
-
-/*
-* Music player used this
-*
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_FOLDER,
-			exclude: [SCSS_SRC_FOLDER, /node_modules/],
-			use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader']
-		},
-		{
-			test: /\.(sass|scss)$/,
-			include: SCSS_SRC_FOLDER,
-			exclude: [SCSS_FOLDER, /node_modules/],
-			use: [
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				{
-					loader: 'css-loader',
-					options: {
-						sourceMap: true,
-						modules: true,
-						localIdentName: '[local]___[hash:base64:5]'
-					}
-				},
-				{
-					loader: 'sass-loader'
-				}
-			]
-		},
-*/
+console.log('rules ', config.module.rules);
 
 /*
  * Define plugins
@@ -233,16 +232,18 @@ const plugins = [
 	extractSCSSBundle, // create css bundle from scss
 	extractCSSBundle, // allow import file.css
 
-	// copy images
+	// copy assets
 	new CopyWebpackPlugin({
 		patterns: [
-			// { from: 'src/images', to: 'images' },
+			{ from: SCSS_FONTS_FOLDER, to: 'fonts', noErrorOnMissing: true },
+			{ from: FONTS_FOLDER, to: 'fonts', noErrorOnMissing: true },
+			{ from: ICONS_FOLDER, to: 'icons', noErrorOnMissing: true },
+			{ from: IMAGES_FOLDER, to: 'images', noErrorOnMissing: true },
+
 			{ from: 'static/sitemap.xml', to: '.' },
 			{ from: 'static/google9104b904281bf3a3.html', to: '.' },
 			{ from: 'static/robots.txt', to: '.' },
 			{ from: 'static/favicon_package', to: '.' }
-			// { from: 'scss/fonts', to: 'assets/fonts' }
-			// { debug: 'info' }
 		]
 	})
 ];

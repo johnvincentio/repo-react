@@ -1,7 +1,43 @@
 
-npm i react react-dom react-router-dom react-dnd  react-dnd-html5-backend react-loadable react-redux react-responsive redux redux-logger redux-thunk prop-types --save
+#
+# to track webpack deprecations:
+#
+# node --trace-deprecation ./node_modules/.bin/webpack
+#
 
-npm i webpack@4.44.2  webpack-cli@3.3.12 webpack-dev-server@3.11.0 --save-dev
+#
+#  track dependencies
+#
+
+# npm info "eslint-config-airbnb@latest" peerDependencies
+# npm info "react-dom@latest" peerDependencies
+# npm info "eslint-config-airbnb@latest" devDependencies
+# npm info "eslint-config-airbnb@latest" dependencies
+# npm info "eslint-config-airbnb@latest" peerDependencies
+
+
+npm i react react-dom react-router-dom react-dnd  react-dnd-html5-backend react-loadable react-redux react-responsive \
+redux redux-logger redux-thunk prop-types --save
+
+#
+# webpack 4
+#
+# does not support terser-webpack-plugin
+#
+# must use webpack 5
+#
+# npm i webpack@4.44.2  webpack-cli@3.3.12 webpack-dev-server@3.11.0 --save-dev
+
+#
+npm i webpack  webpack-cli webpack-dev-server --save-dev
+#
+# Webpack 5 has trouble with webpack-dev-server, which may not yet have been updated.
+#
+# Error: Cannot find module 'webpack-cli/bin/config-yargs'
+# Require stack:
+#    - /Users/jv/Desktop/MyDevelopment/github/repo-react/hooks/36a-memo-project/node_modules/webpack-dev-server/bin/webpack-dev-server.js
+#
+
 
 npm i styled-components uuid moment dotenv classnames axios --save
 
@@ -24,9 +60,12 @@ npm i eslint-config-airbnb eslint-config-prettier eslint-loader --save-dev
 
 npm i normalize-scss serve underscore --save-dev
 
-npm i clean-webpack-plugin copy-webpack-plugin css-loader file-loader html-webpack-plugin mini-css-extract-plugin \
-node-sass sass-loader style-loader uglifyjs-webpack-plugin sw-precache-webpack-plugin --save-dev
+#
+#  html-webpack-plugin@5.0.0-alpha.6  is required for webpack 5.
+#
+
+npm i clean-webpack-plugin copy-webpack-plugin css-loader file-loader \
+html-webpack-plugin@5.0.0-alpha.6 \
+mini-css-extract-plugin node-sass sass-loader style-loader terser-webpack-plugin sw-precache-webpack-plugin --save-dev
 
 npm i jest enzyme enzyme-adapter-react-16 react-test-renderer --save-dev
-
-

@@ -1,6 +1,4 @@
 
-
-
 `webpack-dev-server` causes
 
 ```
@@ -16,30 +14,4 @@ fails
 npm i webpack@4.44.2 webpack-cli@3.3.12 --save-dev
 npm i webpack@4.44.2 webpack-cli webpack-dev-server --save-dev
 ```
-
-did not use
-
-```
-"devDependencies": {
-	"acorn": "^8.0.4",
-	"enzyme-adapter-react-16": "^1.15.5",
-	"react-test-renderer": "^16.14.0",
-}
-
-```
-npm info "eslint-config-airbnb@latest" peerDependencies
-```
-
-```
-npm info "react-dom@latest" peerDependencies
-```
-
-```
-npm info "eslint-config-airbnb@latest" devDependencies
-
-npm info "eslint-config-airbnb@latest" dependencies
-
-npm info "eslint-config-airbnb@latest" peerDependencies
-```
-
 
