@@ -3,12 +3,13 @@ import React, { useContext } from 'react';
 
 import TextField from '@material-ui/core/TextField';
 
-import { TodosContext } from './contexts/todos.context';
+import { DispatchContext } from './contexts/todos.context';
 
 import useInputState from './hooks/useInputState';
 
 function EditTodoForm({ id, task, toggleEditForm }) {
-	const { dispatch } = useContext(TodosContext);
+	console.log('EditTodoForm; id ', id);
+	const dispatch = useContext(DispatchContext);
 	const [value, handleChange, reset] = useInputState(task);
 	return (
 		<form
@@ -30,4 +31,5 @@ function EditTodoForm({ id, task, toggleEditForm }) {
 		</form>
 	);
 }
+
 export default EditTodoForm;

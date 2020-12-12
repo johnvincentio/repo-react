@@ -13,6 +13,7 @@ import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
 function TodoApp() {
+	console.log('TodoApp');
 	return (
 		<Paper
 			style={{
