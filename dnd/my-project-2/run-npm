@@ -1,0 +1,105 @@
+
+#
+# to track webpack deprecations:
+#
+# node --trace-deprecation ./node_modules/.bin/webpack
+#
+
+#
+#  track dependencies
+#
+
+# npm info "react@latest" devDependencies
+# npm info "react@latest" peerDependencies
+
+# npm info "eslint-config-airbnb@latest" peerDependencies
+# npm info "react-dom@latest" peerDependencies
+# npm info "eslint-config-airbnb@latest" devDependencies
+# npm info "eslint-config-airbnb@latest" dependencies
+# npm info "eslint-config-airbnb@latest" peerDependencies
+
+
+npm i react@16.14.0 react-dom@16.14.0 react-router-dom@5.2.0 react-loadable react-redux \
+redux redux-logger redux-thunk prop-types --save
+
+# npm i react-responsive --save
+
+npm i react-dnd@5.0.0 react-dnd-html5-backend@3.0.2 --save
+# npm i react-dnd  react-dnd-html5-backend --save
+
+
+npm i react-big-calendar react-tag-input --save
+
+
+#
+# webpack 4
+#
+# does not support terser-webpack-plugin
+#
+# must use webpack 5
+#
+# npm i webpack@4.44.2  webpack-cli@3.3.12 webpack-dev-server@3.11.0 --save-dev
+
+#
+npm i webpack  webpack-cli webpack-dev-server --save-dev
+
+
+#
+# Webpack 5 has trouble with webpack-dev-server, which may not yet have been updated.
+#
+# Error: Cannot find module 'webpack-cli/bin/config-yargs'
+# Require stack:
+#    - /Users/jv/Desktop/MyDevelopment/github/repo-react/hooks/36a-memo-project/node_modules/webpack-dev-server/bin/webpack-dev-server.js
+#
+
+
+npm i styled-components uuid dotenv classnames axios --save
+
+# @date-io/core@^1.3.6
+
+npm i moment @date-io/moment@^1.3.6 --save
+
+npm i @material-ui/core @material-ui/icons @material-ui/pickers --save
+
+npm i @babel/runtime --save
+
+npm i eslint --save-dev
+
+npm i @babel/core babel-eslint babel-jest babel-loader --save-dev
+
+npm i @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-syntax-dynamic-import \
+@babel/plugin-transform-runtime @babel/preset-env @babel/preset-react @babel/preset-typescript --save-dev
+
+npm i webpack-bundle-analyzer  webpack-manifest-plugin --save-dev
+
+npm i eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks --save-dev
+
+npm i eslint-config-airbnb eslint-config-prettier eslint-webpack-plugin --save-dev
+
+npm i normalize-scss serve underscore --save-dev
+
+#
+#  html-webpack-plugin@5.0.0-alpha.6  is required for webpack 5.
+#
+# sw-precache-webpack-plugin is deprecated, see https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+#
+
+npm i clean-webpack-plugin copy-webpack-plugin css-loader file-loader \
+html-webpack-plugin@5.0.0-alpha.6 \
+mini-css-extract-plugin node-sass sass-loader style-loader terser-webpack-plugin \
+workbox-webpack-plugin --save-dev
+
+npm i jest enzyme enzyme-adapter-react-16 react-test-renderer@16.4.0 --save-dev
+
+#
+#  app specific
+#
+
+# npm i namor --save
+# unique-string
+
+npm i immutability-helper --save
+
+npm i react-table --save
+
+npm i  @emotion/core @emotion/styled @emotion/react --save
