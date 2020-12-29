@@ -1,0 +1,74 @@
+@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Row {
+  position: relative;
+  display: inline-flex;
+  height: 70px;
+  width: 100%;
+  background: #eee;
+  border: 1px solid #bbb;
+  overflow-x: scroll;
+}
+
+.Cell {
+  flex: 1;
+  height: 70px;
+  width: 150px;
+  min-width: 150px;
+  background: #ddd;
+}
+.Cell.Cell_is-dragging-over:hover {
+  background: cyan;
+}
+
+.Cell + .Cell {
+  border-left: 1px solid #bbb;
+}
+
+.Entity {
+  position: absolute;
+  display: inline-flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: blueviolet;
+  cursor: pointer;
+}
+
+.Enitity__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 80%;
+}
+.Enitity__drag-handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+}
+
+.react-resizable {
+  position: relative;
+  padding-right: 5px;
+  display: inline-flex;
+  width: 100%;
+}
+.react-resizable-handle {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    background: gray;
+    background-position: bottom right;
+    padding: 0 3px 3px 0;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    box-sizing: border-box;
+    cursor: e-resize;
+}

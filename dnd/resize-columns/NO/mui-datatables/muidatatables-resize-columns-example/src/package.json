@@ -1,0 +1,14 @@
+{
+  "name": "muidatatables-custom-toolbar",
+  "version": "1.0.0",
+  "description": "An example on how to use MUIDatatables",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "4.10.2",
+    "@material-ui/icons": "4.9.1",
+    "mui-datatables": "3.3.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  }
+}

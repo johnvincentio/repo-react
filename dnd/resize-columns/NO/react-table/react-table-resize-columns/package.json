@@ -1,0 +1,26 @@
+{
+  "name": "react-table-resize-columns",
+  "version": "0.0.8",
+  "description": null,
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "1.4.3",
+    "@material-ui/icons": "2.0.1",
+    "mime-to-extensions": "1.0.2",
+    "namor": "1.0.1",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-file-icon": "0.2.0",
+    "react-table": "6.8.6"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
