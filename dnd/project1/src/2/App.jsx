@@ -2,6 +2,8 @@
 import React from 'react';
 // import ResizePanel from "react-resize-panel";
 
+import styled from 'styled-components';
+
 import classNames from 'classnames/bind';
 
 import ResizePanel from './components/ResizePanel';
@@ -12,6 +14,14 @@ import styleScss from './scss.module.scss';
 
 import './abc.css';
 import './def.scss';
+
+export const Intro = styled.p`
+	background-color: purple;
+	line-height: normal;
+	text-align: center;
+	font-weight: 300;
+	padding: 4em 0;
+`;
 
 console.log('App; style ', style);
 
@@ -25,6 +35,7 @@ export default () => (
 		<div className='src_scss_rule'>load from src/def.scss</div>
 		<div className='scss_scss_rule'>rule in /scss/styles.scss</div>
 		<div className={cxScss('scss_module_css_rule')}>load from src/scss.modules.scss</div>
+		<Intro>Styled Component</Intro>
 
 		<div className={cx('container')}>
 			<ResizePanel direction='s'>

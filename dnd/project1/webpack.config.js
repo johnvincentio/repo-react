@@ -142,18 +142,10 @@ const scssRules = [
 		test: /\.(sass|scss)$/,
 		include: SCSS_FOLDER,
 		exclude: [SRC_FOLDER, /node_modules/],
-
-		// include: SRC_FOLDER,
-		// exclude: [SCSS_FOLDER, /node_modules/],
-
-		// use: ['style-loader', 'css-loader', 'sass-loader']
 		use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 	},
 	{
 		test: /\.(sass|scss)$/,
-		// include: SCSS_FOLDER,
-		// exclude: [SRC_FOLDER, /node_modules/],
-
 		include: SRC_FOLDER,
 		exclude: [SCSS_FOLDER, /node_modules/],
 		oneOf: [
