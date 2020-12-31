@@ -7,7 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { appTheme } from './themes/themes';
 
-import App1 from './1/App';
+import App1 from './2/App';
 
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(

@@ -31,8 +31,8 @@ const TYPESCRIPT_ENABLED = false;
  * Define folders
  */
 
-const INCLUDE_CSS_FOLDER = path.resolve(__dirname, './src');
-const SCSS_SRC_FOLDER = path.resolve(__dirname, './src');
+const SRC_FOLDER = path.resolve(__dirname, './src');
+
 const SCSS_FOLDER = path.resolve(__dirname, './scss');
 
 const SCSS_FONTS_FOLDER = path.resolve(__dirname, './scss/fonts');
@@ -41,6 +41,14 @@ const ICONS_FOLDER = path.resolve(__dirname, './src/icons');
 const IMAGES_FOLDER = path.resolve(__dirname, './src/images');
 
 const DIST_FOLDER = path.resolve(__dirname, './dist');
+
+/*
+ * Define production mode
+ */
+
+// console.log('webpack; node-env ', process.env.NODE_ENV);
+const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
+// console.log('webpack; PRODUCTION_MODE ', PRODUCTION_MODE);
 
 /*
  * Define plugins
@@ -66,22 +74,16 @@ const HTMLPlugin = new HtmlWebpackPlugin({
 	FACEBOOK_APP_ID: transforms.FACEBOOK_APP_ID
 });
 
-const extractSCSSBundle = new MiniCssExtractPlugin({
-	filename: '[name].[contenthash].css',
-	chunkFilename: '[id].[contenthash].css'
-});
+const extractCSSOptions = PRODUCTION_MODE ?
+	{
+		filename: '[name].[contenthash].css',
+		chunkFilename: '[id].[contenthash].css'
+	} :
+	{
+		filename: '[name].css'
+	};
 
-const extractCSSBundle = new MiniCssExtractPlugin({
-	filename: '[name].css'
-});
-
-/*
- * Define production mode
- */
-
-// console.log('webpack; node-env ', process.env.NODE_ENV);
-const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
-// console.log('webpack; PRODUCTION_MODE ', PRODUCTION_MODE);
+const extractCSSBundle = new MiniCssExtractPlugin(extractCSSOptions);
 
 /*
  * Define entry points
@@ -92,24 +94,9 @@ if (!CSS_ONLY) entry.push('./scss/styles.scss');
 
 const extensions = TYPESCRIPT_ENABLED ? ['.ts', 'tsx', '.js', '.jsx'] : ['.js', '.jsx'];
 
-// const fallback = {
-// 	"fs": false,
-// 	"tls": false,
-// 	"net": false,
-// 	"path": false,
-// 	"zlib": false,
-// 	"http": false,
-// 	"https": false,
-// 	"stream": false,
-// 	"crypto": false,
-// 	"crypto-browserify": false,
-// };
-
 const config = {};
 config.entry = entry;
 config.resolve = { extensions };
-
-// config.resolve = { extensions, fallback };
 
 // console.log('config.entry ', config.entry);
 // console.log('config.resolve ', config.resolve);
@@ -147,29 +134,20 @@ config.optimization = {
  * Define rules
  */
 
-const cssRules = [
-	{
-		test: /\.css$/,
-		include: INCLUDE_CSS_FOLDER,
-		exclude: [/node_modules/],
-		use: ['style-loader', 'css-loader']
-	}
-];
-
 // localIdentName: '[name]__[local]___[hash:base64:5]'
-const cssLocalIdentName = PRODUCTION_MODE ? '[hash:base64:5]' : '[path][name]__[local]';
+// const cssLocalIdentName = PRODUCTION_MODE ? '[hash:base64:5]' : '[path][name]__[local]';
 
 const scssRules = [
 	{
 		test: /\.(sass|scss)$/,
-		include: SCSS_SRC_FOLDER,
-		exclude: [SCSS_FOLDER, /node_modules/],
+		include: SCSS_FOLDER,
+		exclude: [SRC_FOLDER, /node_modules/],
 		use: ['style-loader', 'css-loader', 'sass-loader']
 	},
 	{
 		test: /\.(sass|scss)$/,
-		include: SCSS_FOLDER,
-		exclude: [SCSS_SRC_FOLDER, /node_modules/],
+		include: SRC_FOLDER,
+		exclude: [SCSS_FOLDER, /node_modules/],
 		use: [
 			{
 				loader: MiniCssExtractPlugin.loader
@@ -179,7 +157,7 @@ const scssRules = [
 				options: {
 					sourceMap: true,
 					modules: {
-						localIdentName: cssLocalIdentName
+						localIdentName: PRODUCTION_MODE ? '[hash:base64:5]' : '[path][name]__[local]'
 					}
 				}
 			},
@@ -187,20 +165,30 @@ const scssRules = [
 				loader: 'sass-loader'
 			}
 		]
-	},
+	}];
+
+const cssRules = [
 	{
 		test: /\.css$/,
-		include: INCLUDE_CSS_FOLDER,
-		exclude: [SCSS_SRC_FOLDER, /node_modules/],
-		use: [
-			MiniCssExtractPlugin.loader,
-			{ loader: 'css-loader', options: { url: false, sourceMap: true }},
-			{ loader: 'sass-loader', options: { sourceMap: true }}
+		include: SRC_FOLDER,		// get css files in src/*
+		exclude: [SCSS_FOLDER, /node_modules/],
+		oneOf: [
+			{
+				test: /\.module\.css$/,			// handle modules, ex: app.module.css
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: { modules: true, esModule: true }
+					}
+				]
+			},
+			{
+				use: [MiniCssExtractPlugin.loader, 'css-loader']		// handle css, ex: board.css
+			}
 		]
 	}
 ];
-
-const useCssRules = CSS_ONLY ? cssRules : scssRules;
 
 config.module = {
 	rules: [
@@ -214,9 +202,11 @@ config.module = {
 			exclude: /node_modules/,
 			loader: 'babel-loader'
 		},
-		...useCssRules,
+		...scssRules, ...cssRules,
 		{
 			test: /\.svg$/,
+			include: SRC_FOLDER,
+			exclude: [/node_modules/, SCSS_FONTS_FOLDER, FONTS_FOLDER, ICONS_FOLDER, IMAGES_FOLDER],
 			use: [
 				{
 					loader: 'svg-url-loader',
@@ -229,6 +219,7 @@ config.module = {
 		{
 			test: /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 			include: [SCSS_FONTS_FOLDER, FONTS_FOLDER, ICONS_FOLDER, IMAGES_FOLDER],
+			exclude: /node_modules/,
 			loader: 'file-loader',
 			options: {
 				name: 'assets/[name].[ext]'
@@ -250,8 +241,7 @@ const plugins = [
 
 	HTMLPlugin,
 
-	extractSCSSBundle, // create css bundle
-	extractCSSBundle, // allow import file.css
+	extractCSSBundle, // allow import scss and css
 
 	new CopyWebpackPlugin({			// copy assets
 		patterns: [
@@ -355,3 +345,45 @@ if (!PRODUCTION_MODE) {
 }
 
 module.exports = config;
+
+/*
+const cssRules = [
+	{
+		test: /\.css$/,
+		include: INCLUDE_CSS_FOLDER,
+		exclude: [/node_modules/],
+		use: ['style-loader', 'css-loader']
+	}
+];
+*/
+
+// {
+// 	test: /\.css$/,
+// 	use: [
+// 		MiniCssExtractPlugin.loader,
+// 		{
+// 			loader: 'css-loader',
+// 			options: { modules: true, exportOnlyLocals: false }
+// 		}
+// 	]
+// }
+// {
+// 	test: /\.css$/,
+// 	// include: INCLUDE_CSS_FOLDER,
+// 	// exclude: [SCSS_SRC_FOLDER, /node_modules/],
+// 	use: [MiniCssExtractPlugin.loader, 'css-loader']
+// }
+// {
+// 	test: /\.css$/,
+// 	include: INCLUDE_CSS_FOLDER,
+// 	exclude: [SCSS_SRC_FOLDER, /node_modules/],
+// 	use: [
+// 		MiniCssExtractPlugin.loader,
+// 		{ loader: 'css-loader', options: { url: false, sourceMap: true }}
+// 		// { loader: 'sass-loader', options: { sourceMap: true }}
+// 	]
+// }
+
+// const extractCSSBundle = new MiniCssExtractPlugin({
+// 	filename: PRODUCTION_MODE ? '[name]-[contenthash].css' : '[name].css'
+// });
