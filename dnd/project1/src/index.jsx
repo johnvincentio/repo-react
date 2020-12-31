@@ -7,13 +7,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { appTheme } from './themes/themes';
 
-import Root from './root/Root';
+import App1 from './1/App';
 
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(
 		<MuiThemeProvider theme={appTheme}>
 			<CssBaseline />
-			<Root />
+			<App1 />
 		</MuiThemeProvider>,
 		document.getElementById('root')
 	);
