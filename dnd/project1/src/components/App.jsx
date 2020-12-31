@@ -1,35 +1,15 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import Gallery from './Gallery';
 
 import './App.scss';
 
-const data = [
-	{ id: 0, url: 'https://www.internet-resources.johnvincent.io/resources/images/logos/react.ico', description: 'React' },
-	{ id: 1, url: 'https://www.internet-resources.johnvincent.io/resources/images/logos/babel.ico', description: 'Babel' },
-	{ id: 2, url: 'https://www.internet-resources.johnvincent.io/resources/images/logos/webpack.ico', description: 'Webpack' }
-];
-// const message = require('./message');
-// document.write(message.sayHello());
+const App = () => (
+	<div className='wrap'>
+		<div className='resize horizontal'>Resize me!</div>
+		<div className='resize vertical'>Resize me!</div>
+		<div className='resize both'>Resize me!</div>
+	</div>
+);
 
-class App extends React.Component {
-	constructor(props) {
-		super(props);
-		console.log('>>> App; constructor');
-		console.log(props);
-		console.log('<<< App; constructor');
-	}
-
-	render() {
-		return (
-			<div className='ui container'>
-				<div className='outer'>App...</div>
-				<Gallery images={data} />
-			</div>
-		);
-	}
-}
 
 export default App;

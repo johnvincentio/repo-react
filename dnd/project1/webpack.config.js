@@ -341,7 +341,7 @@ if (!PRODUCTION_MODE) {
 		// publicPath: '/',
 		compress: false,
 		// inline: true,
-		port: 8065,
+		port: 8305,
 		clientLogLevel: 'info',
 		historyApiFallback: true,
 		proxy: {
