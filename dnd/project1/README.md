@@ -1,8 +1,6 @@
 
-Change port 8065
+### Change port
 
-* webpack.config.js
-* .env
+`react-update-port <port>`
 
 Production mode in development uses port 8165.
-
