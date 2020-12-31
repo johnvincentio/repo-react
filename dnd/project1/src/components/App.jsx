@@ -1,15 +1,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-import * as actions from '../redux/actions';
 
 import Gallery from './Gallery';
 
 import './App.scss';
-// import './App.css';
 
 const data = [
 	{ id: 0, url: 'https://www.internet-resources.johnvincent.io/resources/images/logos/react.ico', description: 'React' },
@@ -27,12 +22,6 @@ class App extends React.Component {
 		console.log('<<< App; constructor');
 	}
 
-	componentDidMount() {
-		console.log('>>> App; componentDidMount');
-		this.props.actions.getUserData();
-		console.log('<<< App; componentDidMount');
-	}
-
 	render() {
 		return (
 			<div className='ui container'>
@@ -43,18 +32,4 @@ class App extends React.Component {
 	}
 }
 
-App.propTypes = {
-	actions: PropTypes.shape({
-		getUserData: PropTypes.func.isRequired
-	}).isRequired
-};
-
-const mapStateToProps = state => ({
-	data: state.dataReducer.data
-});
-
-const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators(actions, dispatch)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

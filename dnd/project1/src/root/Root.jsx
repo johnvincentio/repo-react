@@ -15,9 +15,9 @@ const Root = () => (
 	<div>
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/" component={App} />
-				<Route exact path="/one" component={PageOne} />
-				<Route exact path="/two" component={PageTwo} />
+				<Route exact path='/' component={App} />
+				<Route exact path='/one' component={PageOne} />
+				<Route exact path='/two' component={PageTwo} />
 				<Route component={NotFoundPage} />
 			</Switch>
 		</BrowserRouter>
