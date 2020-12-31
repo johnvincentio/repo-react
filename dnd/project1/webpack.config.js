@@ -142,27 +142,34 @@ const scssRules = [
 		test: /\.(sass|scss)$/,
 		include: SCSS_FOLDER,
 		exclude: [SRC_FOLDER, /node_modules/],
-		use: ['style-loader', 'css-loader', 'sass-loader']
+
+		// include: SRC_FOLDER,
+		// exclude: [SCSS_FOLDER, /node_modules/],
+
+		// use: ['style-loader', 'css-loader', 'sass-loader']
+		use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 	},
 	{
 		test: /\.(sass|scss)$/,
+		// include: SCSS_FOLDER,
+		// exclude: [SRC_FOLDER, /node_modules/],
+
 		include: SRC_FOLDER,
 		exclude: [SCSS_FOLDER, /node_modules/],
-		use: [
+		oneOf: [
 			{
-				loader: MiniCssExtractPlugin.loader
+				test: /\.module\.s?css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: { modules: true, esModule: true }
+					},
+					'sass-loader'
+				]
 			},
 			{
-				loader: 'css-loader',
-				options: {
-					sourceMap: true,
-					modules: {
-						localIdentName: PRODUCTION_MODE ? '[hash:base64:5]' : '[path][name]__[local]'
-					}
-				}
-			},
-			{
-				loader: 'sass-loader'
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 			}
 		]
 	}];
@@ -387,3 +394,30 @@ const cssRules = [
 // const extractCSSBundle = new MiniCssExtractPlugin({
 // 	filename: PRODUCTION_MODE ? '[name]-[contenthash].css' : '[name].css'
 // });
+
+// {
+// 	test: /\.(sass|scss)$/,
+// 	// include: SCSS_FOLDER,
+// 	// exclude: [SRC_FOLDER, /node_modules/],
+
+// 	include: SRC_FOLDER,
+// 	exclude: [SCSS_FOLDER, /node_modules/],
+// 	use: [
+// 		{
+// 			loader: MiniCssExtractPlugin.loader
+// 		},
+// 		{
+// 			loader: 'css-loader',
+// 			options: {
+// 				sourceMap: true,
+// 				modules: {
+// 					localIdentName: PRODUCTION_MODE ? '[hash:base64:5]' : '[path][name]__[local]'
+// 				}
+// 			}
+// 		},
+// 		{
+// 			loader: 'sass-loader'
+// 		}
+// 	]
+// }];
+
