@@ -68,3 +68,18 @@ npm i jest enzyme enzyme-adapter-react-16 react-test-renderer@16.4.0 chai --save
 npm i svg-url-loader --save-dev
 
 npm i styled-components --save
+
+#
+# load faker
+#
+
+npm i faker --save
+
+#
+# react-table
+#
+npm i react-table --save
+
+npm i immutability-helper --save
+
+npm i namor@1.1.2 --save
