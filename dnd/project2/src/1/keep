@@ -1,0 +1,366 @@
+
+
+import React from "react";
+import {Table, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { fetchData, TableData } from "./fetchData";
+import { SortableHeader } from "./sortableTableHeader";
+ 
+export const TableExample = () => {
+    const dataList = fetchData();
+    return(
+        <div>
+            <Table>
+                <SortableHeader/>
+                <TableBody>
+                    {dataList.map((data) => { return(
+                        <TableRow>
+                            <TableCell>
+                                {data.name}
+                            </TableCell>
+                            <TableCell>
+                                {data.hours}
+                            </TableCell>
+                            <TableCell>
+                                {data.startDate.toDateString()}
+                            </TableCell>
+                            <TableCell>
+                                {data.department}
+                            </TableCell>
+                        </TableRow>
+                        )})}
+                </TableBody>
+            </Table>
+        </div>
+    )
+}
+
+import React from "react";
+import { TableHead, TableRow, TableCell } from "@material-ui/core";
+ 
+export const SortableHeader = () => {
+    return (
+        <TableHead>
+            <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>Hours</TableCell>
+                <TableCell>Date</TableCell>
+                <TableCell>Department</TableCell>
+            </TableRow>
+        </TableHead>
+    );
+};
+
+interface SortingConfiguration{
+    propertyName: keyof TableData,
+    sortType: SortingType,
+}
+ 
+enum SortingType{
+    Ascending,
+    Descending,
+
+const [sortConfig, updateSortConfig] = useState<SortingConfiguration[]>([]);
+  //Below is an example of sorting columns by name by default.
+  const [initializedSortConfig, updateInitSortConfig] = useState<SortingConfiguration[]>([
+      {propertyName: 'name', sortConfig: SortingType.Descending}
+  ]);
+
+const sortBy = useCallback(
+       (propertyName: keyof TableData) => {
+           let pendingChange = [...sortConfig];
+           const index = pendingChange.findIndex((config) => 
+                           config.propertyName ===     propertyName)
+           if(index > -1){
+               // Existing configuration
+           } else {
+               // No existing configuration
+           }
+           updateSortConfig([...pendingChange]);
+       },
+       [sortConfig]
+   )
+
+if(index > -1){
+              // Existing configuration
+          } else {
+              pendingChange = [
+                  ...pendingChange,
+                  { propertyName: propertyName, sortType: SortingType.Descending },
+              ];
+          }
+
+const sortBy = useCallback(
+       (propertyName: keyof TableData) => {
+           let pendingChange = [...sortConfig];
+           const index = pendingChange.findIndex((config) => 
+                                   config.propertyName === propertyName)
+           if(index > -1){
+               //Save the sortType
+               var currentSortType = pendingChange[index].sortType;
+               //Remove existing config
+               pendingChange.splice(index, 1);
+               //check if the sort type we saved is descending
+               if (currentSortType === SortingType.Descending) {
+                   pendingChange = [
+                       ...pendingChange,
+                       { propertyName: propertyName, sortType: SortingType.Ascending },
+                   ];
+               }
+           } else {
+               pendingChange = [
+                   ...pendingChange,
+                   { propertyName: propertyName, sortType: SortingType.Descending },
+               ];
+           }
+           updateSortConfig([...pendingChange]);
+       },
+       [sortConfig]
+   )
+
+<Table>
+    <SortableHeader 
+          sortBy={sortBy} 
+          sortConfig={sortConfig}
+          />
+      <TableBody>
+        ………
+</Table>
+</TableBody>
+</pre>
+ 
+<pre class="brush:js">
+interface SortableHeaderProps{
+    sortBy: (string: keyof TableData) => void;
+    sortConfig: SortingConfiguration[];
+}
+ 
+export const SortableHeader = ({sortBy, sortConfig}:SortableHeaderProps) => {
+    return (
+        <TableHead>
+            <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>Hours</TableCell>
+                <TableCell>Date</TableCell>
+                <TableCell>Department</TableCell>
+            </TableRow>
+        </TableHead>
+    );
+};
+
+" {="" return(="" <tablecell="" key="{index}>" {data.label}="" <="" tablecell>="" )="" })}="" tablerow>="" tablehead>="" );="" 
+
+
+<TableHead>
+           <TableRow>
+               {tableColumn.map((column, index) => {
+                   return(
+                       <TableCell key={index} 
+                           className={headerCell}
+                           onClick={()=>sortBy(column.property)}
+                       >
+                           {column.label}
+                       </TableCell>
+                   )
+               })}
+           </TableRow>
+       </TableHead>
+
+const getSortDirection = (property:keyof TableData) => {
+       var config = sortConfig.find((sortConfig) => sortConfig.propertyName === property)
+       if(config){
+           if(config.sortType === SortingType.Descending){
+               return <ArrowDownwardIcon/>
+           }
+           else {
+               return <ArrowUpwardIcon/>
+           }
+       }
+       return null;
+   }
+
+export const SortableHeader = ({sortBy, sortConfig}:SortableHeaderProps) => {
+ 
+    const {headerCell, sortLabel} = useStyles();
+ 
+    const tableColumn = [
+        {label:'Name', property:'name'},
+        {label:'Hours', property:'hours'},
+        {label:'Date', property:'startDate'},
+        {label:'Department', property:'department'}
+        ] as TableColumn[];
+ 
+    const getSortDirection = (property:keyof TableData) => {
+        var config = sortConfig.find((sortConfig) => sortConfig.propertyName === property)
+        return config ?
+            config.sortType === SortingType.Descending ?
+                <ArrowDownwardIcon/>
+                :<ArrowUpwardIcon/>
+            :null
+    }
+ 
+    return (
+        <TableHead>
+            <TableRow>
+                {tableColumn.map((column, index) => {
+                    return(
+                        <TableCell key={index} 
+                            className={headerCell}
+                            onClick={()=>sortBy(column.property)}
+                        >
+                            <span className={sortLabel}>
+                                {column.label}
+                                {getSortDirection(column.property)}
+                            </span>
+                        </TableCell>
+                    )
+                })}
+            </TableRow>
+        </TableHead>
+    );
+};
+
+//Set up default ordering
+       let sorted = linq.from(dataList).orderBy(() => 1);
+
+let sorted = linq.from(dataList).orderBy(() => 1);
+        //Loop through the queue
+        sortConfig.forEach((sortConfig) => {
+            if (sortConfig.sortType === SortingType.Ascending) {
+                //Ascending sorting
+            } else {
+                //Descending sorting
+            }
+        });
+
+if (sortConfig.sortType === SortingType.Ascending) {
+               sorted = sorted
+                   .thenBy((dataRow) => dataRow[sortConfig.propertyName]);
+           } else {
+               sorted = sorted
+                   .thenByDescending((dataRow) => dataRow[sortConfig.propertyName]);
+           }
+
+const sortedRows = useMemo(() => {
+        //Set up default ordering
+        let sorted = linq.from(dataList).orderBy(() => 1);
+        //Loop through the queue
+        sortConfig.forEach((sortConfig) => {
+            if (sortConfig.sortType === SortingType.Ascending) {
+                sorted = sorted
+                    .thenBy((dataRow) => (dataRow[sortConfig.propertyName] === null ? -1 : 1))
+                    .thenBy((dataRow) => dataRow[sortConfig.propertyName]);
+            } else {
+                sorted = sorted
+                    .thenByDescending((dataRow) =>
+                    dataRow[sortConfig.propertyName] === null ? -1 : 1
+                    )
+                    .thenByDescending((dataRow) => dataRow[sortConfig.propertyName]);
+            }
+        });
+        return sorted.toArray();
+    }, [sortConfig, dataList]);
+
+export interface SortingConfiguration{
+    propertyName: keyof TableData,
+    sortType: SortingType,
+    compareFunction: TableDataComparable
+}
+ 
+export type TableDataComparable = ((a: TableData, b:TableData) => number);
+
+const sortBy = useCallback(
+        (propertyName: keyof TableData, compareFunction: TableDataComparable) => {
+            let pendingChange = [...sortConfig];
+            const index = pendingChange.findIndex((config) => config.propertyName === propertyName)
+            if(index > -1){
+                //Save the sortType
+                var currentSortType = pendingChange[index].sortType;
+                //Remove existing config
+                pendingChange.splice(index, 1);
+                //check if the sort type we saved is descending
+                if (currentSortType === SortingType.Descending) {
+                    pendingChange = [
+                        ...pendingChange,
+                        { propertyName: propertyName, sortType: SortingType.Ascending , compareFunction: compareFunction},
+                    ];
+                }
+            } else {
+                pendingChange = [
+                    ...pendingChange,
+                    { propertyName: propertyName, sortType: SortingType.Descending, compareFunction: compareFunction },
+                ];
+            }
+            updateSortConfig([...pendingChange]);
+        },
+        [sortConfig]
+    )
+
+interface SortableHeaderProps {
+    sortBy: (string: keyof TableData, compareFunction: TableDataComparable) => void;
+    sortConfig: SortingConfiguration[];
+}
+...
+const CompareByEquality = (column: keyof TableData) => (a: TableData, b: TableData) => {
+        if(a[column] === b[column]){
+            return 0
+        } else{
+            if (a[column] > b[column]){
+                return 1;
+            }
+            return -1;
+        }
+    }
+ 
+    const tableColumn = [
+        {   label: 'Name', 
+            property: 'name', 
+            compareFunction: 
+            (a: TableData, b: TableData) => {
+                 return a['name'].localeCompare(b['name'] as string) 
+            } 
+        },
+        {
+            label: 'Hours', 
+            property: 'hours',
+            compareFunction: CompareByEquality('hours')
+        },
+        {   label: 'Date', 
+            property: 'startDate', 
+            compareFunction: CompareByEquality('startDate') 
+        },
+        {   label: 'Department',
+            property: 'department', 
+            compareFunction: CompareByEquality('department') }
+    ] as TableColumn[];
+
+<TableCell key={index}
+            className={headerCell}
+        onClick={() => sortBy(column.property, column.compareFunction)}
+>
+<TableCell key={index}
+            className={headerCell}
+        onClick={() => sortBy(column.property, column.compareFunction)}
+>
+
+const sortedRows = useMemo(() => {
+        if(sortConfig.length === 0){
+            return [...dataList];
+        }
+        let sorted = [...dataList].sort(
+            (a: TableData, b:TableData) =>{
+                 for(const config of sortConfig){
+                    const result = (config.compareFunction(a,b))
+                    if(result !== 0){
+                        if(config.sortType === SortingType.Ascending){
+                            return result;
+                        }
+                        else{
+                            return -result;
+                        }
+                    }
+                }
+                return 0;
+            }
+        )
+        return(sorted)
+    }, [sortConfig, dataList]);
