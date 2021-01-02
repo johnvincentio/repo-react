@@ -83,3 +83,6 @@ npm i react-table --save
 npm i immutability-helper --save
 
 npm i namor@1.1.2 --save
+
+npm i react-router-breadcrumbs-hoc --save
+
