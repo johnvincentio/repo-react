@@ -3,12 +3,12 @@
 import React from 'react';
 import { Table, TableRow, TableCell, TableBody } from '@material-ui/core';
 
-import { fetchData } from './fetchData.ts';
-import { SortableHeader } from './SortableHeader';
+import { fetchData } from './fetchData';
+import SortableHeader from './SortableHeader';
 
-export const TableExample = () => {
+const TableExample = () => {
 	const dataList = fetchData();
-	return(
+	return (
 		<div>
 			<Table>
 				<SortableHeader/>
@@ -34,3 +34,6 @@ export const TableExample = () => {
 		</div>
 	);
 };
+
+export default TableExample;
+

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { TableHead, TableRow, TableCell } from '@material-ui/core';
 
-export const SortableHeader = () => (
+const SortableHeader = () => (
 	<TableHead>
 		<TableRow>
 			<TableCell>Name</TableCell>
@@ -14,3 +14,5 @@ export const SortableHeader = () => (
 		</TableRow>
 	</TableHead>
 );
+
+export default SortableHeader;

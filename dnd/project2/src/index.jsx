@@ -7,7 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { appTheme } from './themes/themes';
 
-import { TableExample } from './1/TableExample';
+import TableExample from './1/TableExample';
 
 document.addEventListener('DOMContentLoaded', () => {
 	ReactDOM.render(
