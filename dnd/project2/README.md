@@ -9,3 +9,7 @@ Added:
 
 npm i react-draggable lodash.debounce cash-dom --save
 
+
+
+https://codesandbox.io/s/gargroh-v7-drag-column-beautiful-react-dnd-encww
+
