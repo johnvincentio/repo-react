@@ -99,9 +99,9 @@ function Table({ columns, data }) {
 	// Render the UI for your table
 	return (
 		<div>
-			<div {...getTableProps()} className='table'>
-				<div>
-					{headerGroups.map(headerGroup => (
+			{/* <div {...getTableProps()} className='table'> */}
+			{/* <div> */}
+			{/* {headerGroups.map(headerGroup => (
 						<DragDropContext
 							onDragStart={() => {
 								currentColOrder.current = flatColumns.map(o => o.id);
@@ -118,13 +118,6 @@ function Table({ columns, data }) {
 									colOrder.splice(sIndex, 1);
 									colOrder.splice(dIndex, 0, dragUpdateObj.draggableId);
 									setColumnOrder(colOrder);
-
-									// console.log(
-									//   "onDragUpdate",
-									//   dragUpdateObj.destination.index,
-									//   dragUpdateObj.source.index
-									// );
-									// console.log(temp);
 								}
 							}}
 						>
@@ -166,15 +159,14 @@ function Table({ columns, data }) {
 												}
 											</Draggable>
 										))}
-										{/* {droppableProvided.placeholder} */}
 									</div>
 								)}
 							</Droppable>
 						</DragDropContext>
-					))}
-				</div>
+					))} */}
+			{/* </div> */}
 
-				<div className='rows' {...getTableBodyProps()}>
+			{/* <div className='rows' {...getTableBodyProps()}>
 					{rows.map(
 						(row, i) =>
 							prepareRow(row) || (
@@ -187,11 +179,11 @@ function Table({ columns, data }) {
 								</div>
 							)
 					)}
-				</div>
-			</div>
-			<pre>
+				</div> */}
+			{/* </div> */}
+			{/* <pre>
 				<code>{JSON.stringify(state, null, 2)}</code>
-			</pre>
+			</pre> */}
 		</div>
 	);
 }
