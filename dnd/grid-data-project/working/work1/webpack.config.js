@@ -18,8 +18,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const transforms = require('./transforms');
-
 /*
  * Define types
  */
@@ -46,8 +44,7 @@ const DIST_FOLDER = path.resolve(__dirname, './dist');
  * Define production mode
  */
 
-// console.log('webpack; node-env ', process.env.NODE_ENV);
-const PRODUCTION_MODE = process.env.NODE_ENV === 'production';
+const PRODUCTION_MODE = false;
 // console.log('webpack; PRODUCTION_MODE ', PRODUCTION_MODE);
 
 /*
@@ -58,20 +55,7 @@ const HTMLPlugin = new HtmlWebpackPlugin({
 	template: './templates/index.hbs',
 	file: './index.html',
 	hash: false,
-	chunksSortMode: 'none',
-	// inlineSource: 'manifest~.+\\.js',
-	HOME_URL: transforms.HOME_URL,
-	TITLE: transforms.TITLE,
-	DESCRIPTION: transforms.DESCRIPTION,
-	KEYWORDS: transforms.KEYWORDS,
-	AUTHOR: transforms.AUTHOR,
-	AUTHOR_IMAGE: transforms.AUTHOR_IMAGE,
-	TWITTER_USERNAME: transforms.TWITTER_USERNAME,
-	GOOGLE_PROFILE: transforms.GOOGLE_PROFILE,
-	GOOGLE_SITE_VERIFICATION: transforms.GOOGLE_SITE_VERIFICATION,
-	GOOGLE_ANALYTICS_UA: transforms.GOOGLE_ANALYTICS_UA,
-	GOOGLE_ANALYTICS_URL: transforms.GOOGLE_ANALYTICS_URL,
-	FACEBOOK_APP_ID: transforms.FACEBOOK_APP_ID
+	chunksSortMode: 'none'
 });
 
 const extractCSSOptions = PRODUCTION_MODE ?
@@ -234,8 +218,6 @@ config.module = {
 
 const plugins = [
 
-	new webpack.EnvironmentPlugin(['NODE_ENV']),
-
 	new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
 
 	HTMLPlugin,
@@ -247,12 +229,12 @@ const plugins = [
 			{ from: SCSS_FONTS_FOLDER, to: 'fonts', noErrorOnMissing: true },
 			{ from: FONTS_FOLDER, to: 'fonts', noErrorOnMissing: true },
 			{ from: ICONS_FOLDER, to: 'icons', noErrorOnMissing: true },
-			{ from: IMAGES_FOLDER, to: 'images', noErrorOnMissing: true },
+			{ from: IMAGES_FOLDER, to: 'images', noErrorOnMissing: true }
 
-			{ from: 'static/sitemap.xml', to: '.' },
-			{ from: 'static/google9104b904281bf3a3.html', to: '.' },
-			{ from: 'static/robots.txt', to: '.' },
-			{ from: 'static/favicon_package', to: '.' }
+			// { from: 'static/sitemap.xml', to: '.' },
+			// { from: 'static/google9104b904281bf3a3.html', to: '.' },
+			// { from: 'static/robots.txt', to: '.' },
+			// { from: 'static/favicon_package', to: '.' }
 		]
 	})
 ];
@@ -330,7 +312,7 @@ if (!PRODUCTION_MODE) {
 		// publicPath: '/',
 		compress: false,
 		// inline: true,
-		port: 8040,
+		port: 8430,
 		clientLogLevel: 'info',
 		historyApiFallback: true,
 		proxy: {

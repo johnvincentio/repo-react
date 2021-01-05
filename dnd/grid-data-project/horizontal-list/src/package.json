@@ -1,0 +1,15 @@
+{
+  "name": "horizontal-list",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/mmrp44okvj",
+  "main": "index.js",
+  "dependencies": {
+    "antd": "3.11.2",
+    "re-resizable": "4.11.0",
+    "react": "16.4.1",
+    "react-beautiful-dnd": "10.0.0",
+    "react-dom": "16.4.1"
+  }
+}
