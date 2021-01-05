@@ -35,14 +35,8 @@ class App extends React.Component {
 		document.body.style.color = 'inherit';
 		document.body.style.backgroundColor = 'inherit';
 		const { destination, source, draggableId } = result;
-
-		if (!destination) {
-			return;
-		}
-
-		if (destination.droppableId === source.droppableId && destination.index === source.index) {
-			return;
-		}
+		if (!destination) return;
+		if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
 		const column = this.state.columns[source.droppableId];
 		const newTaskIds = Array.from(column.taskIds);
@@ -66,7 +60,6 @@ class App extends React.Component {
 		this.setState(newState);
 	};
 
-	// onDragStart, onDragUpdate
 	render() {
 		return (
 			<DragDropContext
