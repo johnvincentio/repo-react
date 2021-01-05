@@ -14,7 +14,7 @@ const Container = styled.div`
   margin-bottom: 8px;
   background-color: ${props =>
 		props.isDragDisabled
-			?'lightgrey'
+			? 'lightgrey'
 			: props.isDragging
 				? 'lightGreen'
 				: 'white'};

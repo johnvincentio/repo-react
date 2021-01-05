@@ -17,7 +17,7 @@ class App extends React.Component {
 	state = initialData;
 
 	onDragStart = start => {
-		console.log('App::onDragStart; start ', start);
+		// console.log('App::onDragStart; start ', start);
 		document.body.style.color = 'orange';
 		document.body.style.transition = 'background-color 0.2s ease';
 		const homeIndex = this.state.columnOrder.indexOf(start.source.droppableId);
