@@ -119,6 +119,7 @@
 		"workbox-webpack-plugin": "^6.0.2"
 	},
 	"dependencies": {
+		"@atlaskit/css-reset": "^6.0.5",
 		"@babel/runtime": "^7.12.5",
 		"dotenv": "^8.2.0",
 		"namor": "^1.1.2",
