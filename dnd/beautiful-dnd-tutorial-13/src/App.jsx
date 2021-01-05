@@ -1,6 +1,7 @@
 
 /* eslint-disable react/jsx-props-no-spreading */
 
+// eslint-disable-next-line max-classes-per-file
 import React from 'react';
 
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -14,6 +15,33 @@ import initialData from './initial-data';
 const Container = styled.div`
 	display: flex;
 `;
+
+class InnerList extends React.PureComponent {
+	render() {
+		const { column, taskMap, index } = this.props;
+		const tasks = column.taskIds.map(taskId => taskMap[taskId]);
+		return <Column column={column} tasks={tasks} index={index} />;
+	}
+}
+
+// class InnerList extends React.Component {
+// 	shouldComponentUpdate(nextProps) {
+// 		if (
+// 			nextProps.column === this.props.column &&
+//       nextProps.taskMap === this.props.taskMap &&
+//       nextProps.index === this.props.index
+// 		) {
+// 			return false;
+// 		}
+// 		return true;
+// 	}
+
+// 	render() {
+// 		const { column, taskMap, index } = this.props;
+// 		const tasks = column.taskIds.map(taskId => taskMap[taskId]);
+// 		return <Column column={column} tasks={tasks} index={index} />;
+// 	}
+// }
 
 class App extends React.Component {
 	state = initialData;
@@ -127,8 +155,14 @@ class App extends React.Component {
 								// console.log('App: columnOrder.map, columnId ', columnId, ' index ', index);
 								const column = this.state.columns[columnId];
 								// console.log('column ', column);
-								const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
-								return <Column key={column.id} column={column} tasks={tasks} index={index} />;
+								// const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
+
+								return <InnerList
+									key={column.id}
+									column={column}
+									taskMap={this.state.tasks}
+									index={index}
+								/>;
 							})}
 							{provided.placeholder}
 						</Container>
