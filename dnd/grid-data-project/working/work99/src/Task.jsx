@@ -23,6 +23,7 @@ const obj = {
 	status: '100px',
 	estimate: '80px'
 };
+
 export default class Task extends React.Component {
 	render() {
 		return (

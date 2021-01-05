@@ -5,13 +5,29 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 import styled from 'styled-components';
 
+import Header from './Header';
 import Column from './Column';
 
 import initialData from './initial-data';
 
 const Container = styled.div`
 	display: flex;
+	flex-direction: column;
+	border: 1px solid green;
 `;
+
+const Item = styled.div`
+border: 1px solid lightblue;
+border-radius: 2px;
+width: ${props => props.width};
+`;
+
+const DataHeaders = {
+	content: { width: '200px', title: 'Task' },
+	status: { width: '100px', title: 'Status' },
+	estimate: { width: '80px', title: 'Estimate' }
+};
+
 class App extends React.Component {
 	state = initialData;
 
@@ -68,6 +84,8 @@ class App extends React.Component {
 				onDragUpdate = {this.onDragUpdate}
 			>
 				<Container>
+					<Header info={DataHeaders} />
+
 					{this.state.columnOrder.map((columnId) => {
 						const column = this.state.columns[columnId];
 						const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
