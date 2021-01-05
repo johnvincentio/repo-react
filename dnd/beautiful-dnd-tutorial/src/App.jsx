@@ -3,8 +3,6 @@ import React from 'react';
 
 import { DragDropContext } from 'react-beautiful-dnd';
 
-import './bundle.css';
-
 import Column from './Column';
 
 import initialData from './initial-data';
@@ -16,11 +14,10 @@ class App extends React.Component {
 
 	}
 
+	// onDragStart, onDragUpdate
 	render() {
 		return (
-			<DragDropContext
-
-			>
+			<DragDropContext onDragEnd = {this.onDragEnd}>
 				{this.state.columnOrder.map((columnId) => {
 					const column = this.state.columns[columnId];
 					const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
