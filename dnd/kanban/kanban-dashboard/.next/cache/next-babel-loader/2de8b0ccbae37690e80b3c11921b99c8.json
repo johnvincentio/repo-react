@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './client';\nexport * from './provider';","map":{"version":3,"sources":["/Users/jv/Desktop/MyDevelopment/github/repo-react/dnd/kanban/kanban-dashboard/src/service/index.ts"],"names":[],"mappings":"AAAA,cAAc,UAAd;AACA,cAAc,YAAd","sourcesContent":["export * from './client';\nexport * from './provider';\n"]},"metadata":{},"sourceType":"module"}
