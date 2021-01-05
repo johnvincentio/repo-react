@@ -11,36 +11,30 @@ const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
   padding: 8px;
-	margin-bottom: 8px;
-	display: flex;
-
-	background-color: ${props =>
+  margin-bottom: 8px;
+  background-color: ${props =>
 		props.isDragDisabled
-			?'lightgrey'
+			? 'lightgrey'
 			: props.isDragging
 				? 'lightGreen'
 				: 'white'};
 `;
 
-const Handle = styled.div`
-  width: 20px;
-  height: 20px;
-  background-color: orange;
-  border-radius: 4px;
-  margin-right: 8px;
-`;
+// const Handle = styled.div`
+//   width: 20px;
+//   height: 20px;
+//   background-color: orange;
+//   border-radius: 4px;
+//   margin-right: 8px;
+// `;
 
 export default class Task extends React.Component {
-
 	render() {
-		console.log('Task::render; props ', this.props);
 		const isDragDisabled = this.props.task.id === 'task-1';
-		console.log('isDragDisabled ', isDragDisabled);
 		return (
 			<Draggable
 				draggableId={this.props.task.id}
 				index={this.props.index}
-				// eslint-disable-next-line react/jsx-boolean-value
 				isDragDisabled={isDragDisabled}
 			>
 				{(provided, snapshot) => {
