@@ -4,10 +4,12 @@ cmd return to create a task.
 
 starting with beautiful-dnd/beautiful-dnd-tutorial-2
 
-☐ add additional task properties
+✔ add additional task properties @done (1/6/2021, 10:23:53 AM)
 
-☐ add column headers
+✔ add column headers @done (1/6/2021, 10:23:56 AM)
 
-☐ use same width for column headers and task
+✔ use same width for column headers and task @done (1/6/2021, 10:23:58 AM)
+
+☐ DnD the headers
 
 

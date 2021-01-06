@@ -55,25 +55,29 @@ class App extends React.Component {
 		if (!destination) return;
 		if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
-		const column = this.state.columns[source.droppableId];
-		const newTaskIds = Array.from(column.taskIds);
-		newTaskIds.splice(source.index, 1);
-		newTaskIds.splice(destination.index, 0, draggableId);
+		const { tasks } = this.state;
+		const fromIndex = source.index;
+		const toIndex = destination.index;
+		console.log('fromIndex ', fromIndex);
+		console.log('toIndex ', toIndex);
 
-		const newColumn = {
-			...column,
-			taskIds: newTaskIds
-		};
-
-		const newState = {
-			...this.state,
-			columns: {
-				...this.state.columns,
-				[newColumn.id]: newColumn
+		const before = toIndex < fromIndex;
+		const newTasks = [];
+		tasks.forEach((task, idx) => {
+			if (idx !== fromIndex) {
+				if (before && idx === toIndex) {
+					newTasks.push(tasks[fromIndex]);
+				}
+				newTasks.push(tasks[idx]);
+				if (!before && idx === toIndex) {
+					newTasks.push(tasks[fromIndex]);
+				}
 			}
-		};
-		console.log('newState ', newState);
+		});
+		console.log('newTasks ', newTasks);
 
+		const newState = { ...this.state, tasks: newTasks };
+		console.log('newState ', newState);
 		this.setState(newState);
 	};
 
@@ -87,12 +91,8 @@ class App extends React.Component {
 				<Container>
 					<Header info={DataHeaders} />
 
-					{this.state.columnOrder.map((columnId) => {
-						const column = this.state.columns[columnId];
-						const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
+					<Column tasks={this.state.tasks} />
 
-						return <Column key={column.id} column={column} tasks={tasks} />;
-					})}
 				</Container>
 			</DragDropContext>
 		);
