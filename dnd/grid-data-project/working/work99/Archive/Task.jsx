@@ -12,6 +12,14 @@ const Container = styled.div`
 	display: flex;
 `;
 
+const Handle = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 4px;
+  margin-right: 8px;
+`;
+
 const Item = styled.div`
 border: 1px solid lightblue;
 border-radius: 2px;
@@ -28,6 +36,9 @@ export default class Task extends React.Component {
 	render() {
 		return (
 			<Container>
+				<Handle
+					{...this.props.dragHandleProps}
+				/>
 				<Item width={obj.content}>
 					{this.props.task.content}
 				</Item>

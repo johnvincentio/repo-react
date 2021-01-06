@@ -6,12 +6,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
 
-import Task from './Task';
-
 const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
-  padding: 8px;
+	// padding: 8px;
+	// margin-top: 6px;
+	padding: 6px 0;
   margin-bottom: 8px;
 	background-color: ${props => (props.isDragging ? 'lightGreen' : 'white')};
 	display: flex;
@@ -24,6 +24,18 @@ const Handle = styled.div`
   border-radius: 4px;
   margin-right: 8px;
 `;
+
+const Item = styled.div`
+border: 1px solid lightblue;
+border-radius: 2px;
+width: ${props => props.width};
+`;
+
+const obj = {
+	content: '200px',
+	status: '100px',
+	estimate: '80px'
+};
 
 export default class DraggableTask extends React.Component {
 	render() {
@@ -38,10 +50,22 @@ export default class DraggableTask extends React.Component {
 							// {...provided.dragHandleProps}
 							isDragging={snapshot.isDragging}
 						>
+
+							{/* <Container> */}
 							<Handle
 								{...provided.dragHandleProps}
 							/>
-							<Task task={this.props.task} />
+							<Item width={obj.content}>
+								{this.props.task.content}
+							</Item>
+							<Item width={obj.status}>
+								{this.props.task.status}
+							</Item>
+							<Item width={obj.estimate}>
+								{this.props.task.estimate}
+							</Item>
+							{/* </Container> */}
+
 						</Container>
 					);}}
 			</Draggable>

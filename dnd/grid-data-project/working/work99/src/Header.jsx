@@ -33,7 +33,7 @@ const Item = styled.div`
 const Handle = styled.div`
   width: 20px;
   height: 20px;
-  background-color: orange;
+  background-color: blue;
   border-radius: 4px;
   margin-right: 8px;
 `;
