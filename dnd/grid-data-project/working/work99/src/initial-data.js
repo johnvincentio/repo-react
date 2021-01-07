@@ -7,10 +7,9 @@ const initialData = {
 		{ id: 'task-4', content: '4 - Cook dinner', status: 'Finished', estimate: '2w 1d' }
 	],
 	headers: [
-		{ id: 'fixed', width: '28px', title: 'del' },
-		{ id: 'content', width: '200px', title: 'Task' },
-		{ id: 'status', width: '100px', title: 'Status' },
-		{ id: 'estimate', width: '80px', title: 'Estimate' }
+		{ id: 0, width: '200px', title: 'Task' },
+		{ id: 1, width: '100px', title: 'Status' },
+		{ id: 2, width: '80px', title: 'Estimate' }
 	]
 };
 

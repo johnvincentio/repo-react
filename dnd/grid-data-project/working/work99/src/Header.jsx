@@ -5,6 +5,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Droppable, Draggable } from 'react-beautiful-dnd';
+
 // const Container = styled.div`
 //   border: 1px solid lightgrey;
 //   border-radius: 2px;
@@ -43,21 +45,101 @@ export default class Header extends React.Component {
 	render() {
 		const { header } = this.props;
 		return (
-			<Container>
-				{/* <Handle /> */}
-				{header.map(item => {
-					console.log('item ', item);
+			<Droppable droppableId='header-droppable' direction='horizontal' type='header'>
+				{(provided, snapshot) => {
+					console.log('Header; provided ', provided, ' snapshot ', snapshot);
 					return (
-						<Item key={item.id} width={item.width}>
-							{item.title}
-						</Item>
+						<Container
+							ref={provided.innerRef}
+							{...provided.droppableProps}
+							isDraggingOver={snapshot.isDraggingOver}
+						>
+							<Item key='header-0' width='20px'>A</Item>
+
+							{header.map(item => {
+								console.log('item ', item);
+								return (
+									<Draggable
+										key={`yyy-header-${item.id}`}
+										draggableId={`${item.title}-${item.id}`}
+										index={item.id}
+									>
+										{(provided, snapshot) => {
+											console.log('Header; provided ', provided, ' snapshot ', snapshot);
+											return (
+												<Item
+													key={`header-${item.id}`}
+													width={item.width}
+													ref={provided.innerRef}
+													{...provided.draggableProps}
+													{...provided.dragHandleProps}
+													isDragging={snapshot.isDragging}
+												>
+													{item.title}
+												</Item>
+											);
+										}}
+									</Draggable>
+								);
+							})}
+							{provided.placeholder}
+						</Container>
 					);
-				})}
-			</Container>
+				}}
+			</Droppable>
 		);
 	}
 }
+/*
+												<div
+													key={`zzz-header-${item.id}`}
+													ref={provided.innerRef}
+													{...provided.draggableProps}
+													{...provided.dragHandleProps}
+													isDragging={snapshot.isDragging}
+												>
+													<Item key={`header-${item.id}`} width={item.width}>
+														{item.title}
+													</Item>
+												</div>
 
+			<Draggable draggableId={this.props.task.id} index={this.props.index}>
+				{(provided, snapshot) => {
+					console.log('Task; provided ', provided, 'snapshot ', snapshot);
+					return (
+						<Container
+							ref={provided.innerRef}
+							{...provided.draggableProps}
+							isDragging={snapshot.isDragging}
+						>
+							<Handle
+								{...provided.dragHandleProps}
+							/>
+							<Item width={obj.content}>
+								{this.props.task.content}
+							</Item>
+							<Item width={obj.status}>
+								{this.props.task.status}
+							</Item>
+							<Item width={obj.estimate}>
+								{this.props.task.estimate}
+							</Item>
+						</Container>
+					);}}
+			</Draggable>
+*/
+/*
+						return (
+							<TaskList
+								ref={provided.innerRef}
+								{...provided.droppableProps}
+								isDraggingOver={snapshot.isDraggingOver}
+							>
+								<InnerList tasks={this.props.tasks} />
+								{provided.placeholder}
+							</TaskList>
+						);
+*/
 /*
 <Item width={info.content.width}>
 	{info.content.title}
