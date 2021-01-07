@@ -6,11 +6,29 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import DraggableItem from './DraggableItem';
 
-const DropList = styled.div`
+const DropContainer = styled.div`
+	border: 1px solid brown;
+	margin: 8px;
 	padding: 8px;
 	transition: background-color 0.2s ease;
 	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
 `;
+
+// const Container = styled.div`
+//   margin: 8px;
+//   border: 1px solid brown;
+// 	border-radius: 2px;
+// 	display: flex;
+
+// 	margin-bottom: 8px;
+// 	padding: 8px;
+// `;
+
+// const DropList = styled.div`
+// 	padding: 8px;
+// 	transition: background-color 0.2s ease;
+// 	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
+// `;
 
 export default class TabularList extends React.Component {
 
@@ -75,7 +93,7 @@ export default class TabularList extends React.Component {
 						const nothing = '';
 						// console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
 						return (
-							<DropList
+							<DropContainer
 								ref={provided.innerRef}
 								{...provided.droppableProps}
 								isDraggingOver={snapshot.isDraggingOver}
@@ -84,7 +102,7 @@ export default class TabularList extends React.Component {
 									<DraggableItem key={row.id} headers={headers} row={row} index={index} />
 								))}
 								{provided.placeholder}
-							</DropList>
+							</DropContainer>
 						);
 					}}
 				</Droppable>

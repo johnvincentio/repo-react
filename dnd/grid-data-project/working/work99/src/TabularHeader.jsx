@@ -7,6 +7,8 @@ import styled from 'styled-components';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+import { Resizable } from 're-resizable';
+
 const Container = styled.div`
   margin: 8px;
   border: 1px solid brown;
@@ -49,7 +51,7 @@ export default class TabularHeader extends React.Component {
 		if (!destination) return;
 		if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
-		const { list, onUpdate } = this.props;
+		const { list } = this.props;
 		const fromIndex = source.index;
 		const toIndex = destination.index;
 		console.log('fromIndex ', fromIndex);
@@ -69,12 +71,16 @@ export default class TabularHeader extends React.Component {
 			}
 		});
 		console.log('newList ', newList);
-		onUpdate(newList);
+		this.props.onHeaderUpdate(newList);
 	}
+
+	updateColumnWidth = (delta, index) => {
+		this.props.onWidthUpdate(delta, index);
+	};
 
 	render() {
 		const { list } = this.props;
-		console.log('TabularHeader::render(); list ', this.props.list);
+		console.log('TabularHeader::render(); list ', list);
 		return (
 			<DragDropContext
 				onDragEnd = {this.onDragEnd}
@@ -93,27 +99,50 @@ export default class TabularHeader extends React.Component {
 							>
 								<Item key='header-0' width='20px'>A</Item>
 
-								{list.map(item => {
+								{list.map((item, idx) => {
+									// console.log('next ', next);
 									const nothing = '';
+									// const item = list.find(item => item.id === next);
 									// console.log('item ', item);
 									return (
 										<Draggable
 											key={`header-${item.id}`}
 											draggableId={`${item.title}-${item.id}`}
-											index={item.id}
+											index={idx}
 										>
 											{(provided, snapshot) => {
 												const nothing = '';
 												// console.log('Header; provided ', provided, ' snapshot ', snapshot);
 												return (
 													<Item
-														width={item.width}
 														ref={provided.innerRef}
 														{...provided.draggableProps}
 														{...provided.dragHandleProps}
 														isDragging={snapshot.isDragging}
 													>
-														{item.title}
+														<Resizable
+															defaultSize={{ width: item.width, height: '100%' }}
+															onResizeStart={e => e.stopPropagation()}
+															onResizeStop={(e, d, ref, delta) =>
+																this.updateColumnWidth(delta, idx)
+															}
+															enable={{
+																top: false,
+																right: false,
+																bottom: false,
+																left: true,
+																topRight: false,
+																bottomRight: false,
+																bottomLeft: false,
+																topLeft: false
+															}}
+															style={{
+																padding: '8px 8px 8px 4px',
+																borderLeft: 'solid 1px rgb(232, 232, 232)'
+															}}
+  		 											>
+															{item.title}
+														</Resizable>
 													</Item>
 												);
 											}}

@@ -18,11 +18,23 @@ const TabularContainer = styled.div`
 class App extends React.Component {
 	state = initialData;
 
-	onUpdateHeader = headers => {
-		console.log('App::onUpdateHeader, headers ', headers);
+	onHeaderUpdate = headers => {
+		console.log('App::onHeaderUpdate, headers ', headers);
 		const newState = { ...this.state, headers };
 		console.log('newState ', newState);
 		this.setState(newState);
+	}
+
+	onWidthUpdate = (delta, index)  => {
+		console.log('App::onWidthUpdate; delta ', delta, ' index ', index);
+
+		// const items = Array.from(this.state.items);
+  	// items[index].width += delta.width;
+
+  	// this.setState({ items });
+		// const newState = { ...this.state, headers };
+		// console.log('newState ', newState);
+		// this.setState(newState);
 	}
 
 	onUpdateList = list => {
@@ -36,7 +48,11 @@ class App extends React.Component {
 		console.log('App::render()');
 		return (
 			<TabularContainer>
-				<TabularHeader list={this.state.headers} onUpdate={this.onUpdateHeader} />
+				<TabularHeader
+					list={this.state.headers}
+					onHeaderUpdate={this.onHeaderUpdate}
+					onWidthUpdate={this.onWidthUpdate}
+				/>
 				<TabularList
 					list={this.state.list}
 					headers={this.state.headers}
