@@ -62,7 +62,8 @@ export default class TabularList extends React.Component {
 	};
 
 	render() {
-		console.log('TabularList::render(); list ', this.props.list);
+		const { list, headers } = this.props;
+		console.log('TabularList::render(); list ', list);
 		return (
 			<DragDropContext
 				onDragEnd = {this.onDragEnd}
@@ -78,8 +79,8 @@ export default class TabularList extends React.Component {
 								{...provided.droppableProps}
 								isDraggingOver={snapshot.isDraggingOver}
 							>
-								{this.props.list.map((listItem, index) => (
-									<DraggableItem key={listItem.id} item={listItem} index={index} />
+								{list.map((row, index) => (
+									<DraggableItem key={row.id} headers={headers} row={row} index={index} />
 								))}
 								{provided.placeholder}
 							</DropList>

@@ -37,7 +37,11 @@ class App extends React.Component {
 		return (
 			<TabularContainer>
 				<TabularHeader list={this.state.headers} onUpdate={this.onUpdateHeader} />
-				<TabularList list={this.state.list} onUpdate={this.onUpdateList}  />
+				<TabularList
+					list={this.state.list}
+					headers={this.state.headers}
+					onUpdate={this.onUpdateList}
+				/>
 			</TabularContainer>
 		);
 	}

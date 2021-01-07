@@ -40,34 +40,29 @@ const obj = {
 export default class DraggableItem extends React.Component {
 
 	render() {
-		const { item } = this.props;
+		const { headers, row, index } = this.props;
 		return (
-			<Draggable draggableId={item.id} index={this.props.index}>
+			<Draggable draggableId={row.id} index={index}>
 				{(provided, snapshot) => {
 					console.log('DraggableItem; provided ', provided, 'snapshot ', snapshot);
 					return (
 						<Container
 							ref={provided.innerRef}
 							{...provided.draggableProps}
-							// {...provided.dragHandleProps}
 							isDragging={snapshot.isDragging}
 						>
-
-							{/* <Container> */}
 							<Handle
 								{...provided.dragHandleProps}
 							/>
 							<Item width={obj.content}>
-								{item.content}
+								{row.content}
 							</Item>
 							<Item width={obj.status}>
-								{item.status}
+								{row.status}
 							</Item>
 							<Item width={obj.estimate}>
-								{item.estimate}
+								{row.estimate}
 							</Item>
-							{/* </Container> */}
-
 						</Container>
 					);}}
 			</Draggable>
