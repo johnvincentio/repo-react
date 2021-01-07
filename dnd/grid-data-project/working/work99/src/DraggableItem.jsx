@@ -37,12 +37,14 @@ const obj = {
 	estimate: '80px'
 };
 
-export default class DraggableTask extends React.Component {
+export default class DraggableItem extends React.Component {
+
 	render() {
+		const { item } = this.props;
 		return (
-			<Draggable draggableId={this.props.task.id} index={this.props.index}>
+			<Draggable draggableId={item.id} index={this.props.index}>
 				{(provided, snapshot) => {
-					console.log('Task; provided ', provided, 'snapshot ', snapshot);
+					console.log('DraggableItem; provided ', provided, 'snapshot ', snapshot);
 					return (
 						<Container
 							ref={provided.innerRef}
@@ -56,13 +58,13 @@ export default class DraggableTask extends React.Component {
 								{...provided.dragHandleProps}
 							/>
 							<Item width={obj.content}>
-								{this.props.task.content}
+								{item.content}
 							</Item>
 							<Item width={obj.status}>
-								{this.props.task.status}
+								{item.status}
 							</Item>
 							<Item width={obj.estimate}>
-								{this.props.task.estimate}
+								{item.estimate}
 							</Item>
 							{/* </Container> */}
 

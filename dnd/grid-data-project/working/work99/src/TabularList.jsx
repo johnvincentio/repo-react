@@ -4,42 +4,96 @@ import React from 'react';
 import styled from 'styled-components';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
-import DraggableTask from './DraggableTask';
+import DraggableItem from './DraggableItem';
 
-const Container = styled.div`
-  margin: 8px;
-  border: 1px solid brown;
-  border-radius: 2px;
-`;
-
-const TaskList = styled.div`
+const DropList = styled.div`
 	padding: 8px;
 	transition: background-color 0.2s ease;
 	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
 `;
 
 export default class TabularList extends React.Component {
+
+	onDragStart = start => {
+		console.log('TabularList::onDragStart; start ', start);
+		const { type } = start;
+		document.body.style.color = 'orange';
+		document.body.style.transition = 'background-color 0.2s ease';
+	}
+
+	onDragUpdate = update => {
+		console.log('TabularList::onDragUpdate; update ', update);
+		const { destination } = update;
+		const opacity = destination
+			? destination.index /Object.keys(this.props.list).length
+			: 0;
+		document.body.style.backgroundColor = `rgba(153, 141, 217, ${opacity})`;
+	}
+
+	onDragEnd = result => {
+		console.log('TabularList::onDragEnd; result ', result);
+		document.body.style.color = 'inherit';
+		document.body.style.backgroundColor = 'inherit';
+		const { destination, source, draggableId } = result;
+		if (!destination) return;
+		if (destination.droppableId === source.droppableId && destination.index === source.index) return;
+
+		const { list, onUpdate } = this.props;
+		const fromIndex = source.index;
+		const toIndex = destination.index;
+		console.log('fromIndex ', fromIndex);
+		console.log('toIndex ', toIndex);
+
+		const before = toIndex < fromIndex;
+		const newList = [];
+		list.forEach((task, idx) => {
+			if (idx !== fromIndex) {
+				if (before && idx === toIndex) {
+					newList.push(list[fromIndex]);
+				}
+				newList.push(list[idx]);
+				if (!before && idx === toIndex) {
+					newList.push(list[fromIndex]);
+				}
+			}
+		});
+		console.log('newList ', newList);
+		onUpdate(newList);
+	};
+
 	render() {
-		console.log('TabularList; tasks ', this.props.tasks);
+		console.log('TabularList::render(); list ', this.props.list);
 		return (
-			<DragDropContext onDragEnd={this.onDragEnd}>
-				<Droppable droppableId='tasks-droppable' type='task'>
+			<DragDropContext
+				onDragEnd = {this.onDragEnd}
+				onDragStart = {this.onDragStart}
+				onDragUpdate = {this.onDragUpdate}
+			>
+				<Droppable droppableId='tabular-list-droppable' type='list'>
 					{(provided, snapshot) => {
 						console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
 						return (
-							<TaskList
+							<DropList
 								ref={provided.innerRef}
 								{...provided.droppableProps}
 								isDraggingOver={snapshot.isDraggingOver}
 							>
-								{this.props.tasks.map((task, index) => (
-									<DraggableTask key={task.id} task={task} index={index} />
+								{this.props.list.map((listItem, index) => (
+									<DraggableItem key={listItem.id} item={listItem} index={index} />
 								))}
 								{provided.placeholder}
-							</TaskList>
+							</DropList>
 						);}}
 				</Droppable>
 			</DragDropContext>
 		);
 	}
 }
+
+/*
+const Container = styled.div`
+  margin: 8px;
+  border: 1px solid brown;
+  border-radius: 2px;
+`;
+*/
