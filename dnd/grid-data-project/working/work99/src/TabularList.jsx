@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import DraggableTask from './DraggableTask';
 
@@ -22,14 +22,14 @@ const TaskList = styled.div`
 	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
 `;
 
-export default class Column extends React.Component {
+export default class TabularList extends React.Component {
 	render() {
-		console.log('TaskList; tasks ', this.props.tasks);
+		console.log('TabularList; tasks ', this.props.tasks);
 		return (
-			<Container>
+			<DragDropContext onDragEnd={this.onDragEnd}>
 				<Droppable droppableId='tasks-droppable' type='task'>
 					{(provided, snapshot) => {
-						console.log('Column; provided ', provided, ' snapshot ', snapshot);
+						console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
 						return (
 							<TaskList
 								ref={provided.innerRef}
@@ -43,7 +43,7 @@ export default class Column extends React.Component {
 							</TaskList>
 						);}}
 				</Droppable>
-			</Container>
+			</DragDropContext>
 		);
 	}
 }
