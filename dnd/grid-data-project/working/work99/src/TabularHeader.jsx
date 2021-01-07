@@ -3,27 +3,26 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import styled from 'styled-components';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import { Resizable } from 're-resizable';
 
-const Container = styled.div`
-  margin: 8px;
-  border: 1px solid brown;
-	border-radius: 2px;
-	display: flex;
+import { HeaderContainer, HeaderItem } from './Styles';
 
-	margin-bottom: 8px;
-	padding: 8px;
-`;
+// const HeaderItem = styled.div`
+// 	border: 1px solid lightblue;
+// 	border-radius: 2px;
+// 	width: ${props => props.width};
+// 	margin-right: 8px;
+// `;
 
-const Item = styled.div`
-	border: 1px solid lightblue;
-	border-radius: 2px;
-	width: ${props => props.width};
-`;
+// const Sizer = {
+// 	// backgroundColor: 'red',
+// 	padding: '0px 8px 0px 8px',
+// 	borderLeft: 'solid 1px rgb(232, 232, 232)',
+// 	borderRight: 'solid 1px rgb(232, 232, 232)'
+// };
 
 export default class TabularHeader extends React.Component {
 
@@ -92,12 +91,12 @@ export default class TabularHeader extends React.Component {
 						const nothing = '';
 						// console.log('Header; provided ', provided, ' snapshot ', snapshot);
 						return (
-							<Container
+							<HeaderContainer
 								ref={provided.innerRef}
 								{...provided.droppableProps}
 								isDraggingOver={snapshot.isDraggingOver}
 							>
-								<Item key='header-0' width='28px'>A</Item>
+								<HeaderItem key='header-0' width='20px' />
 
 								{list.map((item, idx) => {
 									// console.log('next ', next);
@@ -112,45 +111,48 @@ export default class TabularHeader extends React.Component {
 										>
 											{(provided, snapshot) => {
 												const nothing = '';
-												// console.log('Header; provided ', provided, ' snapshot ', snapshot);
+												const sizer = {
+													// backgroundColor: 'red',
+													padding: '0px 8px 0px 8px',
+													borderLeft: 'solid 1px rgb(232, 232, 232)',
+													borderRight: 'solid 1px rgb(232, 232, 232)'
+												};
+												console.log('Header; provided ', provided, ' snapshot ', snapshot);
 												return (
-													<Item
-														ref={provided.innerRef}
-														{...provided.draggableProps}
-														{...provided.dragHandleProps}
-														isDragging={snapshot.isDragging}
-													>
-														<Resizable
-															defaultSize={{ width: item.width, height: '100%' }}
-															onResizeStart={e => e.stopPropagation()}
-															onResizeStop={(e, d, ref, delta) =>
-																this.updateColumnWidth(delta, idx)
-															}
-															enable={{
-																top: false,
-																right: true,
-																bottom: false,
-																left: true,
-																topRight: false,
-																bottomRight: false,
-																bottomLeft: false,
-																topLeft: false
-															}}
-															style={{
-																padding: '8px 8px 8px 4px',
-																borderLeft: 'solid 1px rgb(232, 232, 232)'
-															}}
-  		 											>
+													<Resizable
+														defaultSize={{ width: item.width, height: '100%' }}
+														onResizeStart={e => e.stopPropagation()}
+														onResizeStop={(e, d, ref, delta) =>
+															this.updateColumnWidth(delta, idx)
+														}
+														enable={{
+															top: false,
+															right: true,
+															bottom: false,
+															left: true,
+															topRight: false,
+															bottomRight: false,
+															bottomLeft: false,
+															topLeft: false
+														}}
+														style={sizer}
+  		 										>
+														<HeaderItem
+															ref={provided.innerRef}
+															{...provided.draggableProps}
+															{...provided.dragHandleProps}
+															isDragging={snapshot.isDragging}
+														>
 															{item.title}
-														</Resizable>
-													</Item>
+														</HeaderItem>
+													</Resizable>
 												);
 											}}
 										</Draggable>
 									);
 								})}
 								{provided.placeholder}
-							</Container>
+							</HeaderContainer>
 						);
 					}}
 				</Droppable>
@@ -159,6 +161,12 @@ export default class TabularHeader extends React.Component {
 	}
 }
 
+/*
+style={{
+	padding: '0px 8px 0px 8px',
+	borderLeft: 'solid 1px rgb(232, 232, 232)',
+	borderRight: 'solid 1px rgb(232, 232, 232)'
+}}
 // const Handle = styled.div`
 //   width: 20px;
 //   height: 20px;

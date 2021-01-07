@@ -1,30 +1,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React from 'react';
-import styled from 'styled-components';
+
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import DraggableItem from './DraggableItem';
 
-const DropContainer = styled.div`
-	border: 1px solid brown;
-	margin: 8px;
-	padding: 8px;
-	transition: background-color 0.2s ease;
-	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
-`;
+import { TabularListDropContainer } from './Styles';
 
-// const Container = styled.div`
-//   margin: 8px;
-//   border: 1px solid brown;
-// 	border-radius: 2px;
-// 	display: flex;
-
-// 	margin-bottom: 8px;
-// 	padding: 8px;
-// `;
-
-// const DropList = styled.div`
+// const TabularListDropContainer = styled.div`
+// 	border: 1px solid brown;
+// 	margin: 8px;
 // 	padding: 8px;
 // 	transition: background-color 0.2s ease;
 // 	background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
@@ -93,7 +79,7 @@ export default class TabularList extends React.Component {
 						const nothing = '';
 						// console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
 						return (
-							<DropContainer
+							<TabularListDropContainer
 								ref={provided.innerRef}
 								{...provided.droppableProps}
 								isDraggingOver={snapshot.isDraggingOver}
@@ -102,7 +88,7 @@ export default class TabularList extends React.Component {
 									<DraggableItem key={row.id} headers={headers} row={row} index={index} />
 								))}
 								{provided.placeholder}
-							</DropContainer>
+							</TabularListDropContainer>
 						);
 					}}
 				</Droppable>
@@ -110,11 +96,3 @@ export default class TabularList extends React.Component {
 		);
 	}
 }
-
-/*
-const Container = styled.div`
-  margin: 8px;
-  border: 1px solid brown;
-  border-radius: 2px;
-`;
-*/

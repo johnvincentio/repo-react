@@ -8,12 +8,14 @@ import TabularList from './TabularList';
 
 import initialData from './initial-data';
 
-const TabularContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	border: 1px solid green;
-	margin: 5px;
-`;
+import { TabularContainer } from './Styles';
+
+// const TabularContainer = styled.div`
+// 	display: flex;
+// 	flex-direction: column;
+// 	border: 1px solid green;
+// 	margin: 5px;
+// `;
 
 class App extends React.Component {
 	state = initialData;
