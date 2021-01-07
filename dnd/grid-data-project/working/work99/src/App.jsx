@@ -1,12 +1,10 @@
 
 import React from 'react';
 
-import { DragDropContext } from 'react-beautiful-dnd';
-
 import styled from 'styled-components';
 
-import Header from './Header';
-import Column from './Column';
+import TabularHeader from './TabularHeader';
+import TabularList from './TabularList';
 
 import initialData from './initial-data';
 
@@ -15,12 +13,6 @@ const Container = styled.div`
 	flex-direction: column;
 	border: 1px solid green;
 	margin: 5px;
-`;
-
-const Item = styled.div`
-border: 1px solid lightblue;
-border-radius: 2px;
-width: ${props => props.width};
 `;
 
 class App extends React.Component {
@@ -76,11 +68,19 @@ class App extends React.Component {
 		this.setState(newState);
 	};
 
+	onUpdateHeader = header => {
+		console.log('onUpdateHeader, header ', header);
+	}
+
+	onUpdateList = list => {
+		console.log('onUpdateList, list ', list);
+	}
+
 	render() {
 		return (
 			<Container>
-				<Header header={this.state.headers} onUpdate={this.updateHeader} />
-				<Column tasks={this.state.tasks} onUpdate={this.updateTasks}  />
+				<TabularHeader header={this.state.headers} onUpdate={this.onUpdateHeader} />
+				<TabularList tasks={this.state.tasks} onUpdate={this.onUpdateList}  />
 			</Container>
 		);
 	}
