@@ -42,8 +42,6 @@ export const TabularListDropContainer = styled.div`
 export const DraggableContainer = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
-	// padding: 8px;
-	// margin-top: 6px;
 	padding: 6px 0;
   margin-bottom: 8px;
 	background-color: ${props => (props.isDragging ? 'lightGreen' : 'white')};
@@ -55,7 +53,6 @@ export const DraggableHandle = styled.div`
 	height: 20px;
 	background-color: orange;
 	border-radius: 4px;
-	// margin-right: 8px;
 `;
 
 export const DraggableItem = styled.div`
