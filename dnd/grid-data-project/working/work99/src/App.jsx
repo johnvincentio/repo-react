@@ -23,12 +23,6 @@ border-radius: 2px;
 width: ${props => props.width};
 `;
 
-const DataHeaders = {
-	content: { width: '200px', title: 'Task' },
-	status: { width: '100px', title: 'Status' },
-	estimate: { width: '80px', title: 'Estimate' }
-};
-
 class App extends React.Component {
 	state = initialData;
 
@@ -89,10 +83,8 @@ class App extends React.Component {
 				onDragUpdate = {this.onDragUpdate}
 			>
 				<Container>
-					<Header info={DataHeaders} />
-
+					<Header header={this.state.headers} />
 					<Column tasks={this.state.tasks} />
-
 				</Container>
 			</DragDropContext>
 		);
