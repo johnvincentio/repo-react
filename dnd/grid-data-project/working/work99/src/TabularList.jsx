@@ -15,14 +15,14 @@ const DropList = styled.div`
 export default class TabularList extends React.Component {
 
 	onDragStart = start => {
-		console.log('TabularList::onDragStart; start ', start);
+		// console.log('TabularList::onDragStart; start ', start);
 		const { type } = start;
 		document.body.style.color = 'orange';
 		document.body.style.transition = 'background-color 0.2s ease';
 	}
 
 	onDragUpdate = update => {
-		console.log('TabularList::onDragUpdate; update ', update);
+		// console.log('TabularList::onDragUpdate; update ', update);
 		const { destination } = update;
 		const opacity = destination
 			? destination.index /Object.keys(this.props.list).length
@@ -31,7 +31,7 @@ export default class TabularList extends React.Component {
 	}
 
 	onDragEnd = result => {
-		console.log('TabularList::onDragEnd; result ', result);
+		// console.log('TabularList::onDragEnd; result ', result);
 		document.body.style.color = 'inherit';
 		document.body.style.backgroundColor = 'inherit';
 		const { destination, source, draggableId } = result;
@@ -41,8 +41,8 @@ export default class TabularList extends React.Component {
 		const { list, onUpdate } = this.props;
 		const fromIndex = source.index;
 		const toIndex = destination.index;
-		console.log('fromIndex ', fromIndex);
-		console.log('toIndex ', toIndex);
+		// console.log('fromIndex ', fromIndex);
+		// console.log('toIndex ', toIndex);
 
 		const before = toIndex < fromIndex;
 		const newList = [];
@@ -57,13 +57,13 @@ export default class TabularList extends React.Component {
 				}
 			}
 		});
-		console.log('newList ', newList);
+		// console.log('newList ', newList);
 		onUpdate(newList);
 	};
 
 	render() {
 		const { list, headers } = this.props;
-		console.log('TabularList::render(); list ', list);
+		// console.log('TabularList::render(); list ', list);
 		return (
 			<DragDropContext
 				onDragEnd = {this.onDragEnd}
@@ -72,7 +72,8 @@ export default class TabularList extends React.Component {
 			>
 				<Droppable droppableId='tabular-list-droppable' type='list'>
 					{(provided, snapshot) => {
-						console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
+						const nothing = '';
+						// console.log('TabularList; provided ', provided, ' snapshot ', snapshot);
 						return (
 							<DropList
 								ref={provided.innerRef}
@@ -84,7 +85,8 @@ export default class TabularList extends React.Component {
 								))}
 								{provided.placeholder}
 							</DropList>
-						);}}
+						);
+					}}
 				</Droppable>
 			</DragDropContext>
 		);

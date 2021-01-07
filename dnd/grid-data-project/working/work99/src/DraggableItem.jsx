@@ -31,12 +31,6 @@ border-radius: 2px;
 width: ${props => props.width};
 `;
 
-const obj = {
-	content: '200px',
-	status: '100px',
-	estimate: '80px'
-};
-
 export default class DraggableItem extends React.Component {
 
 	render() {
@@ -44,7 +38,8 @@ export default class DraggableItem extends React.Component {
 		return (
 			<Draggable draggableId={row.id} index={index}>
 				{(provided, snapshot) => {
-					console.log('DraggableItem; provided ', provided, 'snapshot ', snapshot);
+					// console.log('DraggableItem; provided ', provided, 'snapshot ', snapshot);
+					const nothing = '';
 					return (
 						<Container
 							ref={provided.innerRef}
@@ -55,7 +50,8 @@ export default class DraggableItem extends React.Component {
 								{...provided.dragHandleProps}
 							/>
 							{headers.map(header => {
-								console.log('header ', header);
+								const nothing = '';
+								// console.log('header ', header);
 								return (
 									<Item key={`item-${header.id}-${row.id}`} width={header.width}>
 										{row[header.field]}

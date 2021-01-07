@@ -1,5 +1,5 @@
 
-
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
@@ -83,7 +83,8 @@ export default class TabularHeader extends React.Component {
 			>
 				<Droppable droppableId='header-droppable' direction='horizontal' type='header'>
 					{(provided, snapshot) => {
-						console.log('Header; provided ', provided, ' snapshot ', snapshot);
+						const nothing = '';
+						// console.log('Header; provided ', provided, ' snapshot ', snapshot);
 						return (
 							<Container
 								ref={provided.innerRef}
@@ -93,7 +94,8 @@ export default class TabularHeader extends React.Component {
 								<Item key='header-0' width='20px'>A</Item>
 
 								{list.map(item => {
-									console.log('item ', item);
+									const nothing = '';
+									// console.log('item ', item);
 									return (
 										<Draggable
 											key={`header-${item.id}`}
@@ -101,7 +103,8 @@ export default class TabularHeader extends React.Component {
 											index={item.id}
 										>
 											{(provided, snapshot) => {
-												console.log('Header; provided ', provided, ' snapshot ', snapshot);
+												const nothing = '';
+												// console.log('Header; provided ', provided, ' snapshot ', snapshot);
 												return (
 													<Item
 														width={item.width}
