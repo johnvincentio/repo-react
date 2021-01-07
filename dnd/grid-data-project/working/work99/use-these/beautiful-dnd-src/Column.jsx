@@ -49,36 +49,42 @@ class InnerList extends React.Component {
 export default class Column extends React.Component {
 	render() {
 		return (
-			<Draggable draggableId={this.props.column.id} index={this.props.index}>
-				{(provided) => (
-					<Container
-						{...provided.draggableProps}
-						ref={provided.innerRef}
-					>
-						<Title {...provided.dragHandleProps}>
-							{this.props.column.title}
-						</Title>
-						<Droppable
-							droppableId={this.props.column.id}
-							type='task'
+			<DragDropContext
+				onDragEnd = {this.onDragEnd}
+				onDragStart = {this.onDragStart}
+				onDragUpdate = {this.onDragUpdate}
+			>
+				<Draggable draggableId={this.props.column.id} index={this.props.index}>
+					{(provided) => (
+						<Container
+							{...provided.draggableProps}
+							ref={provided.innerRef}
 						>
-							{(provided, snapshot) => {
-								console.log('Column; provided ', provided, ' snapshot ', snapshot);
-								return (
-									<TaskList
-										ref={provided.innerRef}
-										{...provided.droppableProps}
-										isDraggingOver={snapshot.isDraggingOver}
-									>
-										<InnerList tasks={this.props.tasks} />
-										{provided.placeholder}
-									</TaskList>
-								);
-							}}
-						</Droppable>
-					</Container>
+							<Title {...provided.dragHandleProps}>
+								{this.props.column.title}
+							</Title>
+							<Droppable
+								droppableId={this.props.column.id}
+								type='task'
+							>
+								{(provided, snapshot) => {
+									console.log('Column; provided ', provided, ' snapshot ', snapshot);
+									return (
+										<TaskList
+											ref={provided.innerRef}
+											{...provided.droppableProps}
+											isDraggingOver={snapshot.isDraggingOver}
+										>
+											<InnerList tasks={this.props.tasks} />
+											{provided.placeholder}
+										</TaskList>
+									);
+								}}
+							</Droppable>
+						</Container>
 			        )}
-			</Draggable>
+				</Draggable>
+			</DragDropContext>
 		);
 	}
 }

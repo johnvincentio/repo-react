@@ -28,6 +28,7 @@ class App extends React.Component {
 
 	onDragStart = start => {
 		console.log('App::onDragStart; start ', start);
+		const { type } = start;
 		document.body.style.color = 'orange';
 		document.body.style.transition = 'background-color 0.2s ease';
 	}
@@ -77,16 +78,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<DragDropContext
-				onDragEnd = {this.onDragEnd}
-				onDragStart = {this.onDragStart}
-				onDragUpdate = {this.onDragUpdate}
-			>
-				<Container>
-					<Header header={this.state.headers} />
-					<Column tasks={this.state.tasks} />
-				</Container>
-			</DragDropContext>
+			<Container>
+				<Header header={this.state.headers} onUpdate={this.updateHeader} />
+				<Column tasks={this.state.tasks} onUpdate={this.updateTasks}  />
+			</Container>
 		);
 	}
 }

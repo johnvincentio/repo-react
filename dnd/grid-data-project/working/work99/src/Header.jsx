@@ -5,7 +5,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 // const Container = styled.div`
 //   border: 1px solid lightgrey;
@@ -45,48 +45,49 @@ export default class Header extends React.Component {
 	render() {
 		const { header } = this.props;
 		return (
-			<Droppable droppableId='header-droppable' direction='horizontal' type='header'>
-				{(provided, snapshot) => {
-					console.log('Header; provided ', provided, ' snapshot ', snapshot);
-					return (
-						<Container
-							ref={provided.innerRef}
-							{...provided.droppableProps}
-							isDraggingOver={snapshot.isDraggingOver}
-						>
-							<Item key='header-0' width='20px'>A</Item>
+			<DragDropContext onDragEnd={this.onDragEnd}>
+				<Droppable droppableId='header-droppable' direction='horizontal' type='header'>
+					{(provided, snapshot) => {
+						console.log('Header; provided ', provided, ' snapshot ', snapshot);
+						return (
+							<Container
+								ref={provided.innerRef}
+								{...provided.droppableProps}
+								isDraggingOver={snapshot.isDraggingOver}
+							>
+								<Item key='header-0' width='20px'>A</Item>
 
-							{header.map(item => {
-								console.log('item ', item);
-								return (
-									<Draggable
-										key={`yyy-header-${item.id}`}
-										draggableId={`${item.title}-${item.id}`}
-										index={item.id}
-									>
-										{(provided, snapshot) => {
-											console.log('Header; provided ', provided, ' snapshot ', snapshot);
-											return (
-												<Item
-													key={`header-${item.id}`}
-													width={item.width}
-													ref={provided.innerRef}
-													{...provided.draggableProps}
-													{...provided.dragHandleProps}
-													isDragging={snapshot.isDragging}
-												>
-													{item.title}
-												</Item>
-											);
-										}}
-									</Draggable>
-								);
-							})}
-							{provided.placeholder}
-						</Container>
-					);
-				}}
-			</Droppable>
+								{header.map(item => {
+									console.log('item ', item);
+									return (
+										<Draggable
+											key={`header-${item.id}`}
+											draggableId={`${item.title}-${item.id}`}
+											index={item.id}
+										>
+											{(provided, snapshot) => {
+												console.log('Header; provided ', provided, ' snapshot ', snapshot);
+												return (
+													<Item
+														width={item.width}
+														ref={provided.innerRef}
+														{...provided.draggableProps}
+														{...provided.dragHandleProps}
+														isDragging={snapshot.isDragging}
+													>
+														{item.title}
+													</Item>
+												);
+											}}
+										</Draggable>
+									);
+								})}
+								{provided.placeholder}
+							</Container>
+						);
+					}}
+				</Droppable>
+			</DragDropContext>
 		);
 	}
 }
