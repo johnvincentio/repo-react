@@ -3,27 +3,19 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import styled from 'styled-components';
+
 import { Draggable } from 'react-beautiful-dnd';
 
-import { DraggableContainer, DraggableHandle } from './Styles';
+import { DraggableContainer, DraggableHandle, DraggableItem } from './Styles';
 
-
-const Item = styled.div`
-border: 1px solid lightblue;
-border-radius: 2px;
-width: ${props => props.width}px;
-margin-left: 4px;
-`;
-
-export default class DraggableItem extends React.Component {
+export default class TabularItem extends React.Component {
 
 	render() {
 		const { headers, row, index } = this.props;
 		return (
 			<Draggable draggableId={row.id} index={index}>
 				{(provided, snapshot) => {
-					// console.log('DraggableItem; provided ', provided, 'snapshot ', snapshot);
+					// console.log('TabularItem; provided ', provided, 'snapshot ', snapshot);
 					const nothing = '';
 					return (
 						<DraggableContainer
@@ -38,9 +30,9 @@ export default class DraggableItem extends React.Component {
 								const nothing = '';
 								// console.log('header ', header);
 								return (
-									<Item key={`item-${header.id}-${row.id}`} width={header.width}>
+									<DraggableItem key={`item-${header.id}-${row.id}`} width={header.width}>
 										{row[header.field]}
-									</Item>
+									</DraggableItem>
 								);
 							})}
 						</DraggableContainer>
