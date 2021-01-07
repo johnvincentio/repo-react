@@ -1,0 +1,50 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "globals": {},
+  "rules": {
+		"object-curly-spacing": ["error", "always", { "objectsInObjects": false }],
+		"comma-spacing": ["error", { "before": false, "after": true }],
+		"space-in-parens": ["error", "never"],
+		"array-bracket-spacing": ["error", "never"],
+		"semi": ["error", "always"],
+		"key-spacing": ["error"],
+		"comma-dangle": ["error", "never"],
+		"no-trailing-spaces": "error",
+		"no-console": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "comments": 120,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignorePattern": "^import\\s.+\\sfrom\\s.+;$"
+      }
+    ],
+    "indent": [2, "tab", { "SwitchCase": 1 }],
+    "no-tabs": 0,
+    "react/jsx-indent": ["off", 2],
+		"react/jsx-indent-props": ["off", 2],
+		"quotes": ["error", "single"],
+		"jsx-quotes": [2, "prefer-single"],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+		"react/destructuring-assignment": ["off", "always"],
+		"react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks"]
+}
