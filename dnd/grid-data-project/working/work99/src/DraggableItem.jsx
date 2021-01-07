@@ -54,15 +54,14 @@ export default class DraggableItem extends React.Component {
 							<Handle
 								{...provided.dragHandleProps}
 							/>
-							<Item width={obj.content}>
-								{row.content}
-							</Item>
-							<Item width={obj.status}>
-								{row.status}
-							</Item>
-							<Item width={obj.estimate}>
-								{row.estimate}
-							</Item>
+							{headers.map(header => {
+								console.log('header ', header);
+								return (
+									<Item key={`item-${header.id}-${row.id}`} width={header.width}>
+										{row[header.field]}
+									</Item>
+								);
+							})}
 						</Container>
 					);}}
 			</Draggable>
