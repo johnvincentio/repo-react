@@ -22,15 +22,6 @@ export const HeaderContainer = styled.div`
 	// padding: 8px;
 `;
 
-export const HeaderItem = styled.div`
-	border: 1px solid lightblue;
-	border-radius: 2px;
-	transition: background-color 0.2s ease;
-	background-color: ${props => (props.isDragging ? 'black' : 'white')};
-	// width: ${props => props.width};
-	// margin-right: 8px;
-`;
-
 export const HeaderSpacerItem = styled.div`
 	width: 20px;
 `;
@@ -41,6 +32,30 @@ export const createSizer = first => ({
 	borderLeft: first ? 'solid 1px rgb(232, 232, 232)' : 'none',
 	borderRight: 'solid 1px rgb(232, 232, 232)'
 });
+
+export const HeaderItemContainer = styled.div`
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+export const HeaderItem = styled.div`
+	border: 1px solid lightblue;
+	border-radius: 2px;
+	transition: background-color 0.2s ease;
+	background-color: ${props => (props.isDragging ? 'black' : 'white')};
+	// width: ${props => props.width};
+	// margin-right: 8px;
+`;
+
+export const SortItem = styled.button`
+	width: 10px;
+	height: 10px;
+	background-color: ${props => (props.ascending ? 'green' : 'blue')};
+`;
+
+
 
 export const TabularListDropContainer = styled.div`
 	border: 1px solid brown;

@@ -8,7 +8,10 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import { Resizable } from 're-resizable';
 
-import { HeaderContainer, HeaderSpacerItem, HeaderItem, createSizer } from './Styles';
+import {
+	HeaderContainer, HeaderSpacerItem, HeaderItem,
+	SortItem, createSizer, HeaderItemContainer
+} from './Styles';
 
 export default class TabularHeader extends React.Component {
 
@@ -63,6 +66,10 @@ export default class TabularHeader extends React.Component {
 		this.props.onWidthUpdate(delta, index);
 	};
 
+	onClickSort = e => {
+		console.log('onClickSort; e ', e);
+	}
+
 	render() {
 		const { list } = this.props;
 		console.log('TabularHeader::render(); list ', list);
@@ -109,6 +116,8 @@ export default class TabularHeader extends React.Component {
 												};
 												console.log('idx ', idx, ' enable ', enable);
 												console.log('Header; provided ', provided, ' snapshot ', snapshot);
+												const active = true;		// TODO
+												const ascending = true;	// TODO
 												return (
 													<Resizable
 														defaultSize={{ width: item.width, height: '100%' }}
@@ -119,14 +128,17 @@ export default class TabularHeader extends React.Component {
 														enable={enable}
 														style={sizer}
   		 										>
-														<HeaderItem
-															ref={provided.innerRef}
-															{...provided.draggableProps}
-															{...provided.dragHandleProps}
-															isDragging={snapshot.isDragging}
-														>
-															{item.title}
-														</HeaderItem>
+														 <HeaderItemContainer>
+															<HeaderItem
+																ref={provided.innerRef}
+																{...provided.draggableProps}
+																{...provided.dragHandleProps}
+																isDragging={snapshot.isDragging}
+															>
+																{item.title}
+															</HeaderItem>
+															<SortItem active={active} ascending={ascending} onClick={() => this.onClickSort(idx)} />
+														</HeaderItemContainer>
 													</Resizable>
 												);
 											}}
