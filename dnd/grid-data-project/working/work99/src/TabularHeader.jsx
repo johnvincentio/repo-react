@@ -96,13 +96,23 @@ export default class TabularHeader extends React.Component {
 											index={idx}
 										>
 											{(provided, snapshot) => {
-												const nothing = '';
 												const sizer = {
-													// backgroundColor: 'red',
+													marginLeft: '4px',
 													padding: '0px 8px 0px 8px',
-													borderLeft: 'solid 1px rgb(232, 232, 232)',
+													borderLeft: idx === 0 ? 'solid 1px rgb(232, 232, 232)' : 'none',
 													borderRight: 'solid 1px rgb(232, 232, 232)'
 												};
+												const enable = {
+													top: false,
+													right: true,
+													bottom: false,
+													left: idx === 0,
+													topRight: false,
+													bottomRight: false,
+													bottomLeft: false,
+													topLeft: false
+												};
+												console.log('idx ', idx, ' enable ', enable);
 												console.log('Header; provided ', provided, ' snapshot ', snapshot);
 												return (
 													<Resizable
@@ -111,16 +121,7 @@ export default class TabularHeader extends React.Component {
 														onResizeStop={(e, d, ref, delta) =>
 															this.updateColumnWidth(delta, idx)
 														}
-														enable={{
-															top: false,
-															right: true,
-															bottom: false,
-															left: true,
-															topRight: false,
-															bottomRight: false,
-															bottomLeft: false,
-															topLeft: false
-														}}
+														enable={enable}
 														style={sizer}
   		 										>
 														<HeaderItem
