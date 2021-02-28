@@ -1,0 +1,68 @@
+#
+# DO NOT PUT  PID  in this file unless specifically excluded in .gitignore
+#
+
+#
+# development
+#
+NODE_ENV=development
+HOME_URL=http://localhost:8065
+
+SERVER_APIS_URL=http://localhost:3100
+
+#
+# production in a development enviroment
+#
+# NODE_ENV=production
+# HOME_URL=http://localhost:8165
+
+
+#
+# production
+#
+# NODE_ENV=production
+# HOME_URL=https://www.taskmuncher.com
+
+
+
+#
+# Basic site info
+#
+TITLE=TaskMuncher
+DESCRIPTION=TaskMuncher is a responsive, cross-platform Task Management Productivity Web based application by John Vincent. Organize and keep track of everything so you can get it all done and enjoy more peace of mind.
+KEYWORDS=TaskMuncher, Task Management, Mern, React, material-ui
+
+AUTHOR=John Vincent
+AUTHOR_IMAGE=images/john-vincent.jpg
+
+#
+# twitter username
+#
+TWITTER_USERNAME=
+
+#
+# google profile 
+#
+GOOGLE_PROFILE=
+
+#
+# Google site verification 
+#
+GOOGLE_SITE_VERIFICATION=
+
+#
+# Google authentication 
+#
+GOOGLE_APP_ID=
+
+#
+# Google Analytics 
+#
+GOOGLE_ANALYTICS_UA=
+GOOGLE_ANALYTICS_URL=
+
+#
+# Facebook - dev and prod are different
+#
+FACEBOOK_APP_ID=
+
