@@ -3,8 +3,8 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 
-import { COLUMN_NAMES } from './example/constants';
-import { tasks } from './example/tasks';
+import { COLUMN_NAMES } from './constants';
+import { tasks } from './tasks';
 
 const MovableItem = ({ name, index, currentColumnName, moveCardHandler, setItems }) => {
 	const changeItemColumn = (currentItem, columnName) => {
