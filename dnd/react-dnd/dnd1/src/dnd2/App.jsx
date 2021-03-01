@@ -9,6 +9,8 @@ import MovableItem from './MovableItem';
 
 import { columns } from './columns';
 
+import './app.scss';
+
 const App = () => {
 	const [items, setItems] = useState(columns);
 	const isMobile = window.innerWidth < 600;
