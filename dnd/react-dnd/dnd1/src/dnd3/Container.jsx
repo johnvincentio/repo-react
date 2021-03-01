@@ -2,18 +2,23 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-const Column = ({ children, className, title }) => {
-	const [{ isOver, canDrop }, drop] = useDrop({
+const Container = ({ children, className, title, dropHandler }) => {
+	const [{ isOver, canDrop }, dropRef] = useDrop({
 		accept: 'column_type',
 		drop: () => ({ name: title }),
+		// drop: (item, monitor) => {
+		// 	console.log('Container::useDrop::drop; item ', item, ' monitor ', monitor);
+		// 	return dropHandler(item);
+		// },
 		collect: (monitor) => ({
 			isOver: monitor.isOver(),
 			canDrop: monitor.canDrop()
 		}),
 		// Override monitor.canDrop() function
-		canDrop: (item) =>
-			// console.log('Column::canDrop; item ', item);
-			 true
+		canDrop: (item) => {
+			console.log('Container::useDrop::canDrop; item ', item);
+			return true;
+		}
 
 	});
 
@@ -29,11 +34,11 @@ const Column = ({ children, className, title }) => {
 	};
 
 	return (
-		<div ref={drop} className={className} style={{ backgroundColor: getBackgroundColor() }}>
+		<div ref={dropRef} className={className} style={{ backgroundColor: getBackgroundColor() }}>
 			<p>{title}</p>
 			{children}
 		</div>
 	);
 };
 
-export default Column;
+export default Container;
