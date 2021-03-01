@@ -2,22 +2,51 @@
 import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
-const MovableItem = ({ id, name, index, moveCardHandler, setItems }) => {
-
-	// const changeItemColumn = (currentItem) => {
-	// 	console.log('MovableItem::changeItemColumn; currentItem ', currentItem);
-	// 	// setItems((prevState) => prevState.map(e => ({
-	// 	// 	...e,
-	// 	// 	column: e.name === currentItem.name ? columnName : e.column
-	// 	// })));
-	// };
+const MovableItem = ({ id, name, index, moveCardHandler, setItems, dropHandler }) => {
 
 	const ref = useRef(null);
 
-	const [, drop] = useDrop({
+	const [{ isOver }, drop] = useDrop({
 		accept: 'column_type',
-		// drop: () => move(id),
-		hover(item, monitor) {
+		collect: (monitor) => ({
+			isOver: !!monitor.isOver()
+		}),
+		drop: (item, monitor) => {
+			console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
+			const abc = monitor.getItem();
+			console.log('abc ', abc);
+			dropHandler({ from: abc.index, to: index });
+		}
+	});
+
+	const [{ isDragging }, dragRef] = useDrag({
+		item: { id, index, name, type: 'column_type' },
+		end: (item, monitor) => {
+			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
+			const dropResult = monitor.getDropResult();
+			console.log('MovableItem::useDrag; dropResult ', dropResult);
+		},
+		collect: (monitor) => ({
+			isDragging: monitor.isDragging()
+		})
+	});
+
+	const opacity = isDragging ? 0.4 : 1;
+	const back = isOver ? '#bbf' : 'rgba(0,0,0,.12';
+
+	dragRef(drop(ref));
+
+	return (
+		<div ref={ref} className='movable-item' style={{ opacity, backgroundColor: back }}>
+			{name}
+		</div>
+	);
+};
+
+export default MovableItem;
+
+/*
+		hoverJV(item, monitor) {
 			if (!ref.current) {
 				return;
 			}
@@ -56,33 +85,4 @@ const MovableItem = ({ id, name, index, moveCardHandler, setItems }) => {
 			// to avoid expensive index searches.
 			item.index = hoverIndex;
 		}
-	});
-
-	const [{ isDragging }, dragRef] = useDrag({
-		item: { index, name, type: 'column_type' },
-		end: (item, monitor) => {
-			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
-			const dropResult = monitor.getDropResult();
-			const jv = monitor.sourceId;
-			console.log('jv ', jv);
-			console.log('MovableItem::useDrag; dropResult ', dropResult);
-
-			// changeItemColumn(item);
-		},
-		collect: (monitor) => ({
-			isDragging: monitor.isDragging()
-		})
-	});
-
-	const opacity = isDragging ? 0.4 : 1;
-
-	dragRef(drop(ref));
-
-	return (
-		<div ref={ref} className='movable-item' style={{ opacity }}>
-			{name}
-		</div>
-	);
-};
-
-export default MovableItem;
+*/

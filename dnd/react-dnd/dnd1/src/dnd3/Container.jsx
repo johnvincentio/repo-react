@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { useDrop } from 'react-dnd';
 
-const Container = ({ children, className, title, dropHandler }) =>
+const Container = ({ children, className, title }) =>
 // const [{ isOver, canDrop }, dropRef] = useDrop({
 // 	accept: 'column_type',
 // 	// drop: () => ({ name: title }),
