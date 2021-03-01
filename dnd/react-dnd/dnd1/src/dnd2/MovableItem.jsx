@@ -2,10 +2,10 @@
 import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
-import { COLUMN_NAMES } from './constants';
+const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 
-const MovableItem = ({ name, index, currentColumnName, moveCardHandler, setItems }) => {
 	const changeItemColumn = (currentItem, columnName) => {
+		console.log('MovableItem::changeItemColumn; currentItem ', currentItem, ' columnName ', columnName);
 		setItems((prevState) => prevState.map(e => ({
 			...e,
 			column: e.name === currentItem.name ? columnName : e.column
@@ -56,29 +56,31 @@ const MovableItem = ({ name, index, currentColumnName, moveCardHandler, setItems
 	});
 
 	const [{ isDragging }, drag] = useDrag({
-		item: { index, name, currentColumnName, type: 'Our first type' },
+		item: { index, name, type: 'Our first type' },
 		end: (item, monitor) => {
+			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
+			console.log('dropResult ', dropResult);
 
-			if (dropResult) {
-				const { DO_IT, IN_PROGRESS, AWAITING_REVIEW, DONE } = COLUMN_NAMES;
-				switch (dropResult.name) {
-					case IN_PROGRESS:
-						changeItemColumn(item, IN_PROGRESS);
-						break;
-					case AWAITING_REVIEW:
-						changeItemColumn(item, AWAITING_REVIEW);
-						break;
-					case DONE:
-						changeItemColumn(item, DONE);
-						break;
-					case DO_IT:
-						changeItemColumn(item, DO_IT);
-						break;
-					default:
-						break;
-				}
-			}
+			// if (dropResult) {
+			// 	const { DO_IT, IN_PROGRESS, AWAITING_REVIEW, DONE } = COLUMN_NAMES;
+			// 	switch (dropResult.name) {
+			// 		case IN_PROGRESS:
+			// 			changeItemColumn(item, IN_PROGRESS);
+			// 			break;
+			// 		case AWAITING_REVIEW:
+			// 			changeItemColumn(item, AWAITING_REVIEW);
+			// 			break;
+			// 		case DONE:
+			// 			changeItemColumn(item, DONE);
+			// 			break;
+			// 		case DO_IT:
+			// 			changeItemColumn(item, DO_IT);
+			// 			break;
+			// 		default:
+			// 			break;
+			// 	}
+			// }
 		},
 		collect: (monitor) => ({
 			isDragging: monitor.isDragging()

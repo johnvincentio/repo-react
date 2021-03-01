@@ -7,11 +7,10 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 import Column from './Column';
 import MovableItem from './MovableItem';
 
-import { COLUMN_NAMES } from './constants';
-import { tasks } from './tasks';
+import { columns } from './columns';
 
 const App = () => {
-	const [items, setItems] = useState(tasks);
+	const [items, setItems] = useState(columns);
 	const isMobile = window.innerWidth < 600;
 
 	const moveCardHandler = (dragIndex, hoverIndex) => {
@@ -32,34 +31,20 @@ const App = () => {
 		}
 	};
 
-	const returnItemsForColumn = (columnName) => items
-		.filter((item) => item.column === columnName)
-		.map((item, index) => (
-			<MovableItem key={item.id}
-				name={item.name}
-				currentColumnName={item.column}
-				setItems={setItems}
-				index={index}
-				moveCardHandler={moveCardHandler}
-			/>
-		));
-
-	const { DO_IT, IN_PROGRESS, AWAITING_REVIEW, DONE } = COLUMN_NAMES;
+	const returnItemsForColumn = () => items.map((item, index) => (
+		<MovableItem key={item.id}
+			name={item.name}
+			setItems={setItems}
+			index={index}
+			moveCardHandler={moveCardHandler}
+		/>
+	));
 
 	return (
 		<div className='container'>
 			<DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-				<Column title={DO_IT} className='column do-it-column'>
-					{returnItemsForColumn(DO_IT)}
-				</Column>
-				<Column title={IN_PROGRESS} className='column in-progress-column'>
-					{returnItemsForColumn(IN_PROGRESS)}
-				</Column>
-				<Column title={AWAITING_REVIEW} className='column awaiting-review-column'>
-					{returnItemsForColumn(AWAITING_REVIEW)}
-				</Column>
-				<Column title={DONE} className='column done-column'>
-					{returnItemsForColumn(DONE)}
+				<Column title='outer' className='column do-it-column'>
+					{returnItemsForColumn()}
 				</Column>
 			</DndProvider>
 		</div>
