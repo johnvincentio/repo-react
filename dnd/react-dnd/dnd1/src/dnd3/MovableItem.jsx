@@ -2,20 +2,21 @@
 import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
-const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
+const MovableItem = ({ id, name, index, moveCardHandler, setItems }) => {
 
-	// const changeItemColumn = (currentItem, columnName) => {
-	// 	console.log('MovableItem::changeItemColumn; currentItem ', currentItem, ' columnName ', columnName);
-	// 	setItems((prevState) => prevState.map(e => ({
-	// 		...e,
-	// 		column: e.name === currentItem.name ? columnName : e.column
-	// 	})));
+	// const changeItemColumn = (currentItem) => {
+	// 	console.log('MovableItem::changeItemColumn; currentItem ', currentItem);
+	// 	// setItems((prevState) => prevState.map(e => ({
+	// 	// 	...e,
+	// 	// 	column: e.name === currentItem.name ? columnName : e.column
+	// 	// })));
 	// };
 
 	const ref = useRef(null);
 
 	const [, drop] = useDrop({
 		accept: 'column_type',
+		// drop: () => move(id),
 		hover(item, monitor) {
 			if (!ref.current) {
 				return;
@@ -57,34 +58,16 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 		}
 	});
 
-	const [{ isDragging }, drag] = useDrag({
+	const [{ isDragging }, dragRef] = useDrag({
 		item: { index, name, type: 'column_type' },
 		end: (item, monitor) => {
 			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
+			const jv = monitor.sourceId;
+			console.log('jv ', jv);
 			console.log('MovableItem::useDrag; dropResult ', dropResult);
 
 			// changeItemColumn(item);
-
-			// if (dropResult) {
-			// 	const { DO_IT, IN_PROGRESS, AWAITING_REVIEW, DONE } = COLUMN_NAMES;
-			// 	switch (dropResult.name) {
-			// 		case IN_PROGRESS:
-			// 			changeItemColumn(item, IN_PROGRESS);
-			// 			break;
-			// 		case AWAITING_REVIEW:
-			// 			changeItemColumn(item, AWAITING_REVIEW);
-			// 			break;
-			// 		case DONE:
-			// 			changeItemColumn(item, DONE);
-			// 			break;
-			// 		case DO_IT:
-			// 			changeItemColumn(item, DO_IT);
-			// 			break;
-			// 		default:
-			// 			break;
-			// 	}
-			// }
 		},
 		collect: (monitor) => ({
 			isDragging: monitor.isDragging()
@@ -93,7 +76,7 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 
 	const opacity = isDragging ? 0.4 : 1;
 
-	drag(drop(ref));
+	dragRef(drop(ref));
 
 	return (
 		<div ref={ref} className='movable-item' style={{ opacity }}>

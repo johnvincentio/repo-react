@@ -42,7 +42,9 @@ const App = () => {
 	};
 
 	const returnItemsForContainer = () => items.map((item, index) => (
-		<MovableItem key={item.id}
+		<MovableItem
+			key={item.id}
+			id={item.id}
 			name={item.name}
 			setItems={setItems}
 			index={index}
