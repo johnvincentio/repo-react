@@ -23,12 +23,14 @@ const App = () => {
 		if (dragItem) {
 			setItems((prevState => {
 				const coppiedStateArray = [...prevState];
+				console.log('App::moveCardHandler::setItems; prevState (before) ', prevState);
 
 				// remove item by "hoverIndex" and put "dragItem" instead
 				const prevItem = coppiedStateArray.splice(hoverIndex, 1, dragItem);
 
 				// remove item by "dragIndex" and put "prevItem" instead
 				coppiedStateArray.splice(dragIndex, 1, prevItem[0]);
+				console.log('App::moveCardHandler::setItems; coppiedStateArray (after) ', coppiedStateArray);
 
 				return coppiedStateArray;
 			}));

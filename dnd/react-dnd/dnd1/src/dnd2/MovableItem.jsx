@@ -4,13 +4,13 @@ import { useDrag, useDrop } from 'react-dnd';
 
 const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 
-	const changeItemColumn = (currentItem, columnName) => {
-		console.log('MovableItem::changeItemColumn; currentItem ', currentItem, ' columnName ', columnName);
-		setItems((prevState) => prevState.map(e => ({
-			...e,
-			column: e.name === currentItem.name ? columnName : e.column
-		})));
-	};
+	// const changeItemColumn = (currentItem, columnName) => {
+	// 	console.log('MovableItem::changeItemColumn; currentItem ', currentItem, ' columnName ', columnName);
+	// 	setItems((prevState) => prevState.map(e => ({
+	// 		...e,
+	// 		column: e.name === currentItem.name ? columnName : e.column
+	// 	})));
+	// };
 
 	const ref = useRef(null);
 
@@ -34,6 +34,7 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 			const clientOffset = monitor.getClientOffset();
 			// Get pixels to the top
 			const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+
 			// Only perform the move when the mouse has crossed half of the items height
 			// When dragging downwards, only move when the cursor is below 50%
 			// When dragging upwards, only move when the cursor is above 50%
@@ -45,6 +46,7 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 			if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
 				return;
 			}
+
 			// Time to actually perform the action
 			moveCardHandler(dragIndex, hoverIndex);
 			// Note: we're mutating the monitor item here!
