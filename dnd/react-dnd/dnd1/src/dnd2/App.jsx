@@ -45,9 +45,9 @@ const App = () => {
 	));
 
 	return (
-		<div className='container'>
+		<div>
 			<DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-				<Column title='outer' className='column do-it-column'>
+				<Column title='outer' className='container'>
 					{returnItemsForColumn()}
 				</Column>
 			</DndProvider>

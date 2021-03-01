@@ -90,7 +90,6 @@ const extractCSSBundle = new MiniCssExtractPlugin(extractCSSOptions);
  */
 
 const entry = TYPESCRIPT_ENABLED ? ['./src/index.tsx'] : ['./src/index.jsx'];
-if (!CSS_ONLY) entry.push('./scss/styles.scss');
 
 const extensions = TYPESCRIPT_ENABLED ? ['.ts', 'tsx', '.js', '.jsx'] : ['.js', '.jsx'];
 
