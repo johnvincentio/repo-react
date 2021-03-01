@@ -11,10 +11,10 @@ const Column = ({ children, className, title }) => {
 			canDrop: monitor.canDrop()
 		}),
 		// Override monitor.canDrop() function
-		canDrop: (item) => {
-			console.log('canDrop; item ', item);
-			return true;
-		}
+		canDrop: (item) =>
+			// console.log('Column::canDrop; item ', item);
+			 true
+
 	});
 
 	const getBackgroundColor = () => {

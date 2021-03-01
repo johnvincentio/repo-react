@@ -15,7 +15,7 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 	const ref = useRef(null);
 
 	const [, drop] = useDrop({
-		accept: 'Our first type',
+		accept: 'column_type',
 		hover(item, monitor) {
 			if (!ref.current) {
 				return;
@@ -56,11 +56,13 @@ const MovableItem = ({ name, index, moveCardHandler, setItems }) => {
 	});
 
 	const [{ isDragging }, drag] = useDrag({
-		item: { index, name, type: 'Our first type' },
+		item: { index, name, type: 'column_type' },
 		end: (item, monitor) => {
 			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
-			console.log('dropResult ', dropResult);
+			console.log('MovableItem::useDrag; dropResult ', dropResult);
+
+			// changeItemColumn(item);
 
 			// if (dropResult) {
 			// 	const { DO_IT, IN_PROGRESS, AWAITING_REVIEW, DONE } = COLUMN_NAMES;

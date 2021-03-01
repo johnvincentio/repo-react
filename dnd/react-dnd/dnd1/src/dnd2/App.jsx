@@ -14,7 +14,9 @@ const App = () => {
 	const isMobile = window.innerWidth < 600;
 
 	const moveCardHandler = (dragIndex, hoverIndex) => {
+		console.log('App::moveCardHandler; dragIndex ', dragIndex, ' hoverIndex ', hoverIndex);
 		const dragItem = items[dragIndex];
+		console.log('App::moveCardHandler;dragItem ', dragItem);
 
 		if (dragItem) {
 			setItems((prevState => {
