@@ -6,7 +6,7 @@ import { useDrag, useDrop } from 'react-dnd';
 
 import { ITEM_TYPE } from './constants';
 
-const MovableItem = ({ indexList, name, indexItem }) => {
+const MovableItem = ({ indexList, name, indexItem, dropItemHandler }) => {
 
 	const ref = useRef(null);
 
@@ -20,7 +20,10 @@ const MovableItem = ({ indexList, name, indexItem }) => {
 			console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
 			console.log('indexList ', indexList, ' indexItem ', indexItem, ' abc ', abc);
-			// dropHandler({ from: abc.index, to: index });
+			dropItemHandler({
+				from: { column: abc.indexList, item: abc.indexItem },
+				to: { column: indexList, item: indexItem }
+			});
 		}
 		// canDrop: (item) => true
 	});
@@ -61,7 +64,8 @@ const MovableItem = ({ indexList, name, indexItem }) => {
 MovableItem.propTypes = {
 	indexList: PropTypes.number.isRequired,
 	name: PropTypes.string.isRequired,
-	indexItem: PropTypes.number.isRequired
+	indexItem: PropTypes.number.isRequired,
+	dropItemHandler: PropTypes.func.isRequired
 };
 
 export default MovableItem;
