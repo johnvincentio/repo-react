@@ -42,22 +42,21 @@ export function handleMoveColumn(fromIndex, toIndex, fromList, toList) {
 	return { from: newFromList, to: newToList };
 }
 
-
 export const handleMoveItemToList = (fromColumnIndex, fromIndex, toColumnIndex, toIndex, list) => {
-	console.log('handleMoveItemToList; fromColumnIndex ', fromColumnIndex,
-		' toColumnIndex ', toColumnIndex, ' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
+	// console.log('handleMoveItemToList; fromColumnIndex ', fromColumnIndex,
+	// ' toColumnIndex ', toColumnIndex, ' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
 
 	const newList = JSON.parse(JSON.stringify(list));
 	const fromColumnItem = newList[fromColumnIndex];
 	const toColumnItem = newList[toColumnIndex];
-	console.log('fromColumnItem ', fromColumnItem);
-	console.log('toColumnItem ', toColumnItem);
+	// console.log('fromColumnItem ', fromColumnItem);
+	// console.log('toColumnItem ', toColumnItem);
 
 	const update = handleMoveColumn(fromIndex, toIndex, fromColumnItem.list, toColumnItem.list);
 	// console.log('update ', update);
 	fromColumnItem.list = update.from;
 	toColumnItem.list = update.to;
 
-	console.log('newList ', newList);
+	// console.log('newList ', newList);
 	return newList;
 };

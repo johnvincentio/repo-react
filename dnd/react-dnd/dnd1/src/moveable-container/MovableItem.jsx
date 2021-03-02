@@ -17,9 +17,9 @@ const MovableItem = ({ indexList, name, indexItem, dropItemHandler }) => {
 			canDrop: monitor.canDrop()
 		}),
 		drop: (item, monitor) => {
-			console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
+			// console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
-			console.log('indexList ', indexList, ' indexItem ', indexItem, ' abc ', abc);
+			// console.log('indexList ', indexList, ' indexItem ', indexItem, ' abc ', abc);
 			dropItemHandler({
 				from: { column: abc.indexList, item: abc.indexItem },
 				to: { column: indexList, item: indexItem }
@@ -31,9 +31,9 @@ const MovableItem = ({ indexList, name, indexItem, dropItemHandler }) => {
 	const [{ isDragging }, dragRef] = useDrag({
 		item: { indexList, indexItem, name, type: ITEM_TYPE },
 		end: (item, monitor) => {
-			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
+			// console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
-			console.log('MovableItem::useDrag; dropResult ', dropResult);
+			// console.log('MovableItem::useDrag; dropResult ', dropResult);
 		},
 		collect: (monitor) => ({
 			isDragging: monitor.isDragging()
@@ -69,13 +69,3 @@ MovableItem.propTypes = {
 };
 
 export default MovableItem;
-
-/*
-		if (isOver) {
-			if (canDrop) {
-				return 'rgb(188,251,255)';
-			}
-			return 'rgb(255,188,188)';
-		}
-		return '';
-*/

@@ -17,9 +17,9 @@ const MovableList = ({ children, name, index, dropListHandler }) => {
 			canDrop: monitor.canDrop()
 		}),
 		drop: (item, monitor) => {
-			console.log('MovableList::drop; item ', item, ' monitor ', monitor);
+			// console.log('MovableList::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
-			console.log('index ', index, ' abc ', abc);
+			// console.log('index ', index, ' abc ', abc);
 			dropListHandler({ from: abc.index, to: index });
 		}
 		// canDrop: (item) => true
@@ -28,9 +28,9 @@ const MovableList = ({ children, name, index, dropListHandler }) => {
 	const [{ isDragging }, dragRef] = useDrag({
 		item: { index, name, type: LIST_TYPE },
 		end: (item, monitor) => {
-			console.log('MovableList::useDrag::end; item ', item, ' monitor ', monitor);
+			// console.log('MovableList::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
-			console.log('MovableList::useDrag; dropResult ', dropResult);
+			// console.log('MovableList::useDrag; dropResult ', dropResult);
 		},
 		collect: (monitor) => ({
 			isDragging: monitor.isDragging()

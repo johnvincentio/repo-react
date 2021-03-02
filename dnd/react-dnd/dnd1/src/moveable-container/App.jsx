@@ -19,28 +19,28 @@ const App = () => {
 	const isMobile = window.innerWidth < 600;
 
 	const dropListHandler = (obj) => {
-		console.log('App::dropListHandler; obj ', obj);
+		// console.log('App::dropListHandler; obj ', obj);
 		const { from, to } = obj;
 		if (from === to) return;
 		const list = handleMoveList(from, to, data);
-		console.log(' data ', data, ' list ', list);
+		// console.log(' data ', data, ' list ', list);
 		setData(list);
 	};
 
 	const dropItemHandler = obj => {
-		console.log('App::dropItemHandler; obj ', obj);
+		// console.log('App::dropItemHandler; obj ', obj);
 		const { from, to } = obj;
 		if (from.column === to.column) {
 			if (from.item === to.item) return;
-			console.log('data ', data);
+			// console.log('data ', data);
 			const list = handleMoveItemWithinList(from.column, from.item, to.item, data);
-			console.log('data ', data, ' list ', list);
+			// console.log('data ', data, ' list ', list);
 			setData(list);
 		}
 		else {
-			console.log('data ', data);
+			// console.log('data ', data);
 			const list = handleMoveItemToList(from.column, from.item, to.column, to.item, data);
-			console.log('data ', data, ' list ', list);
+			// console.log('data ', data, ' list ', list);
 			setData(list);
 		}
 	};
