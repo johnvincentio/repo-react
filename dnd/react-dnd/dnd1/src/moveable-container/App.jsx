@@ -12,7 +12,7 @@ import { columns } from './columns';
 import './app.scss';
 
 const App = () => {
-	const [items, setItems] = useState(columns);
+	const [data, setData] = useState(columns);
 	const isMobile = window.innerWidth < 600;
 
 	const handleMoveList = (fromIndex, toIndex, list) => {
@@ -35,12 +35,12 @@ const App = () => {
 	const dropHandler = (obj) => {
 		console.log('App::dropHandler; obj ', obj);
 		const { from, to } = obj;
-		const list = handleMoveList(from, to, items);
-		console.log(' items ', items, ' list ', list);
-		setItems(list);
+		const list = handleMoveList(from, to, data);
+		console.log(' data ', data, ' list ', list);
+		setData(list);
 	};
 
-	const returnItemsForContainer = () => items.map((item, index) => (
+	const returnItemsForContainer = () => data.map((item, index) => (
 		<MovableList
 			key={item.id}
 			name={item.name}
