@@ -2,13 +2,18 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const MovableList = ({ name, index }) => {
+const MovableItem = ({ name, index }) => {
 
-	console.log('in MovableList');
+	console.log('in MovableItem');
 
 	return (
 		<div className='movable-item'>{name}</div>
 	);
 };
 
-export default MovableList;
+MovableItem.propTypes = {
+	name: PropTypes.string.isRequired,
+	index: PropTypes.number.isRequired
+};
+
+export default MovableItem;
