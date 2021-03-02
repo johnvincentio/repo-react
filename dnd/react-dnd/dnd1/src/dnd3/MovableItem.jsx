@@ -1,5 +1,7 @@
 
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+
 import { useDrag, useDrop } from 'react-dnd';
 
 const MovableItem = ({ name, index, dropHandler }) => {
@@ -53,6 +55,12 @@ const MovableItem = ({ name, index, dropHandler }) => {
 			{name}
 		</div>
 	);
+};
+
+MovableItem.propTypes = {
+	name: PropTypes.string.isRequired,
+	index: PropTypes.number.isRequired,
+	dropHandler: PropTypes.func.isRequired
 };
 
 export default MovableItem;
