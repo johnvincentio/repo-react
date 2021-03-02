@@ -20,18 +20,13 @@ p {
 	height: calc(100vh - 100px);
 }
 
-.column {
-	height: max-content;
-	min-height: 100px;
-	width: 160px;
+// .column {
+// 	height: max-content;
+// 	min-height: 100px;
+// 	width: 160px;
+// }
 
-	// display: flex;
-	// justify-content: center;
-	// flex-wrap: wrap;
-
-}
-
-.movable-item {
+.movable-list {
 	border-radius: 5px;
 	background-color: #fafdff;
 	height: 100px;

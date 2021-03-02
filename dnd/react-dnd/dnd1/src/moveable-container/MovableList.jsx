@@ -50,7 +50,7 @@ const MovableList = ({ name, index, dropHandler }) => {
 	dragRef(dropRef(ref));
 
 	return (
-		<div ref={ref} className='movable-item' style={{ opacity, backgroundColor: getBackgroundColor() }}>
+		<div ref={ref} className='movable-list' style={{ opacity, backgroundColor: getBackgroundColor() }}>
 			{name}
 		</div>
 	);
