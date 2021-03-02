@@ -32,28 +32,6 @@ const App = () => {
 		return newList;
 	};
 
-	const moveCardHandler = (dragIndex, hoverIndex) => {
-		console.log('App::moveCardHandler; dragIndex ', dragIndex, ' hoverIndex ', hoverIndex);
-		const dragItem = items[dragIndex];
-		console.log('App::moveCardHandler;dragItem ', dragItem);
-
-		if (dragItem) {
-			setItems((prevState => {
-				const coppiedStateArray = [...prevState];
-				console.log('App::moveCardHandler::setItems; prevState (before) ', prevState);
-
-				// remove item by "hoverIndex" and put "dragItem" instead
-				const prevItem = coppiedStateArray.splice(hoverIndex, 1, dragItem);
-
-				// remove item by "dragIndex" and put "prevItem" instead
-				coppiedStateArray.splice(dragIndex, 1, prevItem[0]);
-				console.log('App::moveCardHandler::setItems; coppiedStateArray (after) ', coppiedStateArray);
-
-				return coppiedStateArray;
-			}));
-		}
-	};
-
 	const dropHandler = (obj) => {
 		console.log('App::dropHandler; obj ', obj);
 		const { from, to } = obj;
@@ -67,9 +45,7 @@ const App = () => {
 			key={item.id}
 			id={item.id}
 			name={item.name}
-			setItems={setItems}
 			index={index}
-			moveCardHandler={moveCardHandler}
 			dropHandler={dropHandler}
 		/>
 	));
@@ -86,26 +62,3 @@ const App = () => {
 };
 
 export default App;
-
-/*
-	moveTask(from, to, before, tasks) {
-		if (! tasks) throw Error('Exception in tasksService::moveTask');
-
-		const list = JSON.parse(JSON.stringify(tasks));
-		const move = tasks.find(item => item.taskid === from);
-
-		const newList = [];
-		list.forEach(item => {
-			if (item.taskid !== from) {
-				if (before && item.taskid === to) {
-					newList.push(move);
-				}
-				newList.push(item);
-				if (!before && item.taskid === to) {
-					newList.push(move);
-				}
-			}
-		});
-		return newList;
-	},
-*/
