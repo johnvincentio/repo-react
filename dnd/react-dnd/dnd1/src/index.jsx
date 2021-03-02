@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './original/App';
+import App from './moveable-container/App';
 
 ReactDOM.render(
 	<React.StrictMode>
