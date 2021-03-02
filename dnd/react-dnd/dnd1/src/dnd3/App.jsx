@@ -4,7 +4,6 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 
-import Container from './Container';
 import MovableItem from './MovableItem';
 
 import { columns } from './columns';
@@ -43,7 +42,6 @@ const App = () => {
 	const returnItemsForContainer = () => items.map((item, index) => (
 		<MovableItem
 			key={item.id}
-			id={item.id}
 			name={item.name}
 			index={index}
 			dropHandler={dropHandler}
@@ -53,9 +51,10 @@ const App = () => {
 	return (
 		<div>
 			<DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-				<Container title='outer' className='container'>
+				<div className='container'>
+					<p>Outer</p>
 					{returnItemsForContainer()}
-				</Container>
+				</div>
 			</DndProvider>
 		</div>
 	);

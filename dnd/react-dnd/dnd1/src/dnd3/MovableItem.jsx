@@ -6,10 +6,11 @@ const MovableItem = ({ name, index, dropHandler }) => {
 
 	const ref = useRef(null);
 
-	const [{ isOver }, drop] = useDrop({
+	const [{ isOver, canDrop }, dropRef] = useDrop({
 		accept: 'column_type',
 		collect: (monitor) => ({
-			isOver: !!monitor.isOver()
+			isOver: !!monitor.isOver(),
+			canDrop: monitor.canDrop()
 		}),
 		drop: (item, monitor) => {
 			console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
@@ -17,6 +18,7 @@ const MovableItem = ({ name, index, dropHandler }) => {
 			console.log('abc ', abc);
 			dropHandler({ from: abc.index, to: index });
 		}
+		// canDrop: (item) => true
 	});
 
 	const [{ isDragging }, dragRef] = useDrag({
@@ -31,13 +33,23 @@ const MovableItem = ({ name, index, dropHandler }) => {
 		})
 	});
 
-	const opacity = isDragging ? 0.4 : 1;
-	const back = isOver ? '#bbf' : 'rgba(0,0,0,.12';
+	const getBackgroundColor = () => {
+		if (isOver) {
+			if (canDrop) {
+				return 'rgb(188,251,255)';
+			}
+			return 'rgb(255,188,188)';
+		}
+		return '';
+	};
 
-	dragRef(drop(ref));
+	const opacity = isDragging ? 0.4 : 1;
+	// const back = isOver ? '#bbf' : 'rgba(0,0,0,.12';
+
+	dragRef(dropRef(ref));
 
 	return (
-		<div ref={ref} className='movable-item' style={{ opacity, backgroundColor: back }}>
+		<div ref={ref} className='movable-item' style={{ opacity, backgroundColor: getBackgroundColor() }}>
 			{name}
 		</div>
 	);

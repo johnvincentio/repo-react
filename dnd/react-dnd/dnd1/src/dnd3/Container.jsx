@@ -2,6 +2,24 @@
 import React from 'react';
 
 const Container = ({ children, className, title }) =>
+	 (
+		<div className={className}>
+			<p>{title}</p>
+			{children}
+		</div>
+	);
+
+export default Container;
+
+/*
+	return (
+		<div ref={dropRef} className={className} style={{ backgroundColor: getBackgroundColor() }}>
+			<p>{title}</p>
+			{children}
+		</div>
+	);
+*/
+
 // const [{ isOver, canDrop }, dropRef] = useDrop({
 // 	accept: 'column_type',
 // 	// drop: () => ({ name: title }),
@@ -30,22 +48,3 @@ const Container = ({ children, className, title }) =>
 // 	}
 // 	return '';
 // };
-
-	 (
-		<div className={className}>
-			<p>{title}</p>
-			{children}
-		</div>
-	)
-;
-
-export default Container;
-
-/*
-	return (
-		<div ref={dropRef} className={className} style={{ backgroundColor: getBackgroundColor() }}>
-			<p>{title}</p>
-			{children}
-		</div>
-	);
-*/
