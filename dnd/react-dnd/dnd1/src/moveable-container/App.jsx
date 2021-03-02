@@ -40,10 +40,10 @@ const App = () => {
 		setData(list);
 	};
 
-	const returnItemsForContainer = () => data.map((item, index) => (
+	const returnItemsForContainer = () => data.map((column, index) => (
 		<MovableList
-			key={item.id}
-			name={item.name}
+			key={column.id}
+			name={column.name}
 			index={index}
 			dropHandler={dropHandler}
 		/>
@@ -53,8 +53,14 @@ const App = () => {
 		<div>
 			<DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
 				<div className='container'>
-					<p>Outer</p>
-					{returnItemsForContainer()}
+					{data.map((column, index) => (
+						<MovableList
+							key={column.id}
+							name={column.name}
+							index={index}
+							dropHandler={dropHandler}
+						/>
+					))}
 				</div>
 			</DndProvider>
 		</div>
