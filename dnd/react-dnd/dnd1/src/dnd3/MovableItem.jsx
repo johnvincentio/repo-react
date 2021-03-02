@@ -46,7 +46,6 @@ const MovableItem = ({ name, index, dropHandler }) => {
 	};
 
 	const opacity = isDragging ? 0.4 : 1;
-	// const back = isOver ? '#bbf' : 'rgba(0,0,0,.12';
 
 	dragRef(dropRef(ref));
 
