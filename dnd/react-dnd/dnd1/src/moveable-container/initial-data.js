@@ -1,7 +1,7 @@
 
 /* eslint-disable import/prefer-default-export */
 
-export const columns = [
+export const initialData = [
 	{
 		id: 1,
 		name: 'Column 1',

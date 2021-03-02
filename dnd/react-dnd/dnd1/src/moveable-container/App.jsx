@@ -7,12 +7,12 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 
 import MovableList from './MovableList';
 
-import { columns } from './columns';
+import { initialData } from './initial-data';
 
 import './app.scss';
 
 const App = () => {
-	const [data, setData] = useState(columns);
+	const [data, setData] = useState(initialData);
 	const isMobile = window.innerWidth < 600;
 
 	const handleMoveList = (fromIndex, toIndex, list) => {
