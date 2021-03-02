@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 import { useDrag, useDrop } from 'react-dnd';
 
+import { LIST_TYPE } from './constants';
+
 const MovableList = ({ children, name, index, dropHandler }) => {
 
 	const ref = useRef(null);
 
 	const [{ isOver, canDrop }, dropRef] = useDrop({
-		accept: 'column_type',
+		accept: LIST_TYPE,
 		collect: (monitor) => ({
 			isOver: !!monitor.isOver(),
 			canDrop: monitor.canDrop()
@@ -24,7 +26,7 @@ const MovableList = ({ children, name, index, dropHandler }) => {
 	});
 
 	const [{ isDragging }, dragRef] = useDrag({
-		item: { index, name, type: 'column_type' },
+		item: { index, name, type: LIST_TYPE },
 		end: (item, monitor) => {
 			console.log('MovableList::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
