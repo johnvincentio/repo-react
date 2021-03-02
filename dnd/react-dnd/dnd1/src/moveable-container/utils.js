@@ -16,8 +16,21 @@ export const handleMoveList = (fromIndex, toIndex, list) => {
 	return newList;
 };
 
-export 	const moveTaskToContainer = (fromColumnid, toColumnid, fromIndex, toIndex) => {
-	// console.log('MultipleMoveable::moveTaskToContainer; fromColumnid ', fromColumnid,
+export const handleMoveItemWithinList = (fromColumnIndex, fromIndex, toIndex, list) => {
+	console.log('handleMoveItemWithinList; fromColumnIndex ', fromColumnIndex,
+		' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
+	const newList = JSON.parse(JSON.stringify(list));
+	const updateColumn = newList[fromColumnIndex];
+	updateColumn.list = handleMoveList(fromIndex, toIndex, updateColumn.list);
+	console.log('newList ', newList);
+	return newList;
+};
+
+
+
+
+export const moveTaskToContainer = (fromColumnid, toColumnid, fromIndex, toIndex) => {
+	// console.log('moveTaskToContainer; fromColumnid ', fromColumnid,
 	// ' toColumnid ', toColumnid, ' fromIndex ', fromIndex, ' toIndex ', toIndex);
 	const { datatype, subtype } = dataObject;
 	const newObject = { ...dataObject };
