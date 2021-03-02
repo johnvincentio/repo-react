@@ -21,6 +21,7 @@ const App = () => {
 	const dropListHandler = (obj) => {
 		console.log('App::dropListHandler; obj ', obj);
 		const { from, to } = obj;
+		if (from === to) return;
 		const list = handleMoveList(from, to, data);
 		console.log(' data ', data, ' list ', list);
 		setData(list);
