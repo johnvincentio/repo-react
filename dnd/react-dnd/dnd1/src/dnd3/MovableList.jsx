@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useDrag, useDrop } from 'react-dnd';
 
-const MovableItem = ({ name, index, dropHandler }) => {
+const MovableList = ({ name, index, dropHandler }) => {
 
 	const ref = useRef(null);
 
@@ -15,7 +15,7 @@ const MovableItem = ({ name, index, dropHandler }) => {
 			canDrop: monitor.canDrop()
 		}),
 		drop: (item, monitor) => {
-			console.log('MovableItem::drop; item ', item, ' monitor ', monitor);
+			console.log('MovableList::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
 			console.log('abc ', abc);
 			dropHandler({ from: abc.index, to: index });
@@ -26,9 +26,9 @@ const MovableItem = ({ name, index, dropHandler }) => {
 	const [{ isDragging }, dragRef] = useDrag({
 		item: { index, name, type: 'column_type' },
 		end: (item, monitor) => {
-			console.log('MovableItem::useDrag::end; item ', item, ' monitor ', monitor);
+			console.log('MovableList::useDrag::end; item ', item, ' monitor ', monitor);
 			const dropResult = monitor.getDropResult();
-			console.log('MovableItem::useDrag; dropResult ', dropResult);
+			console.log('MovableList::useDrag; dropResult ', dropResult);
 		},
 		collect: (monitor) => ({
 			isDragging: monitor.isDragging()
@@ -50,16 +50,16 @@ const MovableItem = ({ name, index, dropHandler }) => {
 	dragRef(dropRef(ref));
 
 	return (
-		<div ref={ref} className='movable-item' style={{ opacity, backgroundColor: getBackgroundColor() }}>
+		<div ref={ref} className='movable-list' style={{ opacity, backgroundColor: getBackgroundColor() }}>
 			{name}
 		</div>
 	);
 };
 
-MovableItem.propTypes = {
+MovableList.propTypes = {
 	name: PropTypes.string.isRequired,
 	index: PropTypes.number.isRequired,
 	dropHandler: PropTypes.func.isRequired
 };
 
-export default MovableItem;
+export default MovableList;

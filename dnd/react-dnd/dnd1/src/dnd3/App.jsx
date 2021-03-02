@@ -5,7 +5,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 
-import MovableItem from './MovableItem';
+import MovableList from './MovableList';
 
 import { columns } from './columns';
 
@@ -41,7 +41,7 @@ const App = () => {
 	};
 
 	const returnItemsForContainer = () => items.map((item, index) => (
-		<MovableItem
+		<MovableList
 			key={item.id}
 			name={item.name}
 			index={index}
