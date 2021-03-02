@@ -17,37 +17,47 @@ export const handleMoveList = (fromIndex, toIndex, list) => {
 };
 
 export const handleMoveItemWithinList = (fromColumnIndex, fromIndex, toIndex, list) => {
-	console.log('handleMoveItemWithinList; fromColumnIndex ', fromColumnIndex,
-		' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
+	// console.log('handleMoveItemWithinList; fromColumnIndex ', fromColumnIndex,
+	// ' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
 	const newList = JSON.parse(JSON.stringify(list));
 	const updateColumn = newList[fromColumnIndex];
 	updateColumn.list = handleMoveList(fromIndex, toIndex, updateColumn.list);
-	console.log('newList ', newList);
+	// console.log('newList ', newList);
 	return newList;
 };
 
+export function handleMoveColumn(fromIndex, toIndex, fromList, toList) {
+	const moveItem = fromList[fromIndex];
+
+	const newFromList = [];
+	fromList.forEach((item, idx) => {
+		if (idx !== fromIndex) newFromList.push(item);
+	});
+
+	const newToList = [];
+	toList.forEach((item, idx) => {
+		if (idx === toIndex) newToList.push(moveItem);
+		newToList.push(item);
+	});
+	return { from: newFromList, to: newToList };
+}
 
 
+export const handleMoveItemToList = (fromColumnIndex, fromIndex, toColumnIndex, toIndex, list) => {
+	console.log('handleMoveItemToList; fromColumnIndex ', fromColumnIndex,
+		' toColumnIndex ', toColumnIndex, ' fromIndex ', fromIndex, ' toIndex ', toIndex, ' list ', list);
 
-export const moveTaskToContainer = (fromColumnid, toColumnid, fromIndex, toIndex) => {
-	// console.log('moveTaskToContainer; fromColumnid ', fromColumnid,
-	// ' toColumnid ', toColumnid, ' fromIndex ', fromIndex, ' toIndex ', toIndex);
-	const { datatype, subtype } = dataObject;
-	const newObject = { ...dataObject };
-	const fromColumnItem = newObject.data.find(item => item.columnid === fromColumnid);
-	// console.log('fromColumnItem ', fromColumnItem);
-	const toColumnItem = newObject.data.find(item => item.columnid === toColumnid);
-	// console.log('toColumnItem ', toColumnItem);
+	const newList = JSON.parse(JSON.stringify(list));
+	const fromColumnItem = newList[fromColumnIndex];
+	const toColumnItem = newList[toColumnIndex];
+	console.log('fromColumnItem ', fromColumnItem);
+	console.log('toColumnItem ', toColumnItem);
 
-	const fromMoveId = fromColumnItem.list[fromIndex].id;
-	const toMoveId = toColumnItem.list[toIndex].id;
-	const containerId = toColumnItem.columnid;
-
-	const update = handleMoveList(fromIndex, toIndex, fromColumnItem.list, toColumnItem.list);
+	const update = handleMoveColumn(fromIndex, toIndex, fromColumnItem.list, toColumnItem.list);
 	// console.log('update ', update);
 	fromColumnItem.list = update.from;
 	toColumnItem.list = update.to;
-	// console.log('newObject ', newObject);
-	// setDataObject(newObject);
-};
 
+	console.log('newList ', newList);
+	return newList;
+};

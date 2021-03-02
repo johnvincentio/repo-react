@@ -8,7 +8,7 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 import MovableList from './MovableList';
 import MovableItem from './MovableItem';
 
-import { handleMoveList, handleMoveItemWithinList } from './utils';
+import { handleMoveList, handleMoveItemWithinList, handleMoveItemToList } from './utils';
 
 import { initialData } from './initial-data';
 
@@ -38,12 +38,11 @@ const App = () => {
 			setData(list);
 		}
 		else {
-			// move item to another container.
+			console.log('data ', data);
+			const list = handleMoveItemToList(from.column, from.item, to.column, to.item, data);
+			console.log('data ', data, ' list ', list);
+			setData(list);
 		}
-		//  && from.item === to.item)
-
-		// console.log(' data ', data, ' list ', list);
-		// setData(list);
 	};
 
 	return (
