@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useDrag, useDrop } from 'react-dnd';
 
-const MovableList = ({ name, index, dropHandler }) => {
+const MovableList = ({ children, name, index, dropHandler }) => {
 
 	const ref = useRef(null);
 
@@ -52,6 +52,7 @@ const MovableList = ({ name, index, dropHandler }) => {
 	return (
 		<div ref={ref} className='movable-list' style={{ opacity, backgroundColor: getBackgroundColor() }}>
 			{name}
+			{children}
 		</div>
 	);
 };

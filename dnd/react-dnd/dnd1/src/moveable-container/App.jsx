@@ -6,6 +6,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 
 import MovableList from './MovableList';
+import MovableItem from './MovableItem';
 
 import { initialData } from './initial-data';
 
@@ -43,15 +44,23 @@ const App = () => {
 	return (
 		<div>
 			<DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-				<div className='container'>
-					{data.map((column, index) => (
+				<div className='container-list'>
+					{data.map((column, idx1) => (
 						<MovableList
-							key={column.id}
+							key={`column-${column.id}`}
 							name={column.name}
-							index={index}
+							index={idx1}
 							dropHandler={dropHandler}
 						>
-							<div>inner</div>
+							<div className='container-item'>
+								{column.list.map((task, idx2) => (
+									<MovableItem
+										key={`item-${task.id}`}
+										name={task.name}
+										index={idx2}
+									/>
+								))}
+							</div>
 						</MovableList>
 					))}
 				</div>
