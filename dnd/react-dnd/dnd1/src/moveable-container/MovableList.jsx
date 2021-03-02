@@ -6,7 +6,7 @@ import { useDrag, useDrop } from 'react-dnd';
 
 import { LIST_TYPE } from './constants';
 
-const MovableList = ({ children, name, index, dropHandler }) => {
+const MovableList = ({ children, name, index, dropListHandler }) => {
 
 	const ref = useRef(null);
 
@@ -20,7 +20,7 @@ const MovableList = ({ children, name, index, dropHandler }) => {
 			console.log('MovableList::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
 			console.log('index ', index, ' abc ', abc);
-			dropHandler({ from: abc.index, to: index });
+			dropListHandler({ from: abc.index, to: index });
 		}
 		// canDrop: (item) => true
 	});
@@ -60,9 +60,10 @@ const MovableList = ({ children, name, index, dropHandler }) => {
 };
 
 MovableList.propTypes = {
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 	name: PropTypes.string.isRequired,
 	index: PropTypes.number.isRequired,
-	dropHandler: PropTypes.func.isRequired
+	dropListHandler: PropTypes.func.isRequired
 };
 
 export default MovableList;

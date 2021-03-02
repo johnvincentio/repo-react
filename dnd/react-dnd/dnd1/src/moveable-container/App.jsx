@@ -33,8 +33,8 @@ const App = () => {
 		return newList;
 	};
 
-	const dropHandler = (obj) => {
-		console.log('App::dropHandler; obj ', obj);
+	const dropListHandler = (obj) => {
+		console.log('App::dropListHandler; obj ', obj);
 		const { from, to } = obj;
 		const list = handleMoveList(from, to, data);
 		console.log(' data ', data, ' list ', list);
@@ -50,7 +50,7 @@ const App = () => {
 							key={`column-${column.id}`}
 							name={column.name}
 							index={idx1}
-							dropHandler={dropHandler}
+							dropListHandler={dropListHandler}
 						>
 							<div className='container-item'>
 								{column.list.map((task, idx2) => (
