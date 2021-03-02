@@ -19,7 +19,7 @@ const MovableList = ({ children, name, index, dropHandler }) => {
 		drop: (item, monitor) => {
 			console.log('MovableList::drop; item ', item, ' monitor ', monitor);
 			const abc = monitor.getItem();
-			console.log('abc ', abc);
+			console.log('index ', index, ' abc ', abc);
 			dropHandler({ from: abc.index, to: index });
 		}
 		// canDrop: (item) => true

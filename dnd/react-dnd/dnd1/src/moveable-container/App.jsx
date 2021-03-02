@@ -56,8 +56,9 @@ const App = () => {
 								{column.list.map((task, idx2) => (
 									<MovableItem
 										key={`item-${task.id}`}
+										indexList={idx1}
 										name={task.name}
-										index={idx2}
+										indexItem={idx2}
 									/>
 								))}
 							</div>
