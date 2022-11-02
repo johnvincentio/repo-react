@@ -46,7 +46,7 @@
     "html-webpack-plugin": "2.22.0",
     "less": "2.7.1",
     "less-loader": "2.2.3",
-    "nib": "1.1.0",
+    "nib": "1.2.0",
     "react-hot-loader": "3.0.0-beta.2",
     "redux-thunk": "2.1.0",
     "style-loader": "0.13.1",
